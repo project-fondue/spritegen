@@ -37,10 +37,10 @@
    define('SPRITE_DIR', '/tmp/css-sprite-gen-sprites/');
    define('MAX_FILE_SIZE', 10485760);
    define('CHECKSUM', 'iweoruewior324239243842f');
-   define('ASSETS_DIR', '/assets/');
+   define('ASSETS_DIR', '');
    define('TRANSLATIONS_DEFAULT_LANG', 'en');
-   define('TRANSLATIONS_PATH', 'translations/');
-   define('TRANSLATIONS_CACHE', 'translations/cache/');
+   define('TRANSLATIONS_PATH', '../translations/');
+   define('TRANSLATIONS_CACHE', '../translations/cache/');
    define('TRANSLATIONS_ALLOW_SHOW_KEYS', true);
    define('TEMPLATE_PATH', 'templates/');
    define('TEMPLATE_LOCALES_PATH', 'locales/');
@@ -52,12 +52,14 @@
    
    $aLanguages = array(
       'af' => 'Afrikaans',
-      'cn' => 'Chinese',
+      'cn' => '中文',
+      'nl' => 'Nederlands',
       'en' => 'English',
-      'fr' => 'French',
-      'de' => 'German',
-      'it' => 'Italian',
-      'es' => 'Spanish',
-      'se' => 'Swedish'
+      'fr' => 'français',
+      'de' => 'Deutsch',
+      'it' => 'italiano',
+      'pt' => 'português',
+      'es' => 'Español',
+      'se' => 'svenska'
    );
 ?>

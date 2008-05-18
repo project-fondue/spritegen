@@ -3,10 +3,10 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title><?php echo $translation->Get('site.title'); ?> <?php echo $title; ?></title>
-   <link rel="stylesheet" href="<?php echo $assetsDir; ?>c/reset.css" type="text/css">
-   <link rel="stylesheet" href="<?php echo $assetsDir; ?>c/default.css" type="text/css">
+   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/reset.css" type="text/css">
+   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/default.css" type="text/css">
    <!--[if IE]>
-      <link rel="stylesheet" href="<?php echo $assetsDir; ?>c/ie.css" type="text/css">
+      <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/ie.css" type="text/css">
    <![endif]-->                                                                          
    <meta name="robots" content="all" >
    <meta http-equiv="imagetoolbar" content="false" >
@@ -56,7 +56,11 @@
          </div>
          <p id="your-language"><a href="<?php echo $appRoot; ?>section/your-language/"><?php echo $translation->Get('menu.language.your-language')?></a></p>
          <div class="ads">
-            <?php require('includes/text-ads.inc.php'); ?>
+            <?php
+               if (file_exists('master/text-ads.inc.php')) {
+                  require('../master/text-ads.inc.php');
+               }
+            ?>
          </div>
          <?php echo $content; ?>
          <div id="footer">
@@ -64,11 +68,11 @@
          </div>
       </div>
    </div>
-   <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-   <script type="text/javascript">
-      _uacct = "UA-118655-3";
-      urchinTracker();
-   </script>
+   <?php
+      if (file_exists('master/analytics.inc.php')) {
+         require('../master/analytics.inc.php');
+      }
+   ?>
 </body> 
  
 </html>

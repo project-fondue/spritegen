@@ -30,7 +30,7 @@
                                                                   */
    /***************************************************************/
    
-   require('includes/config.inc.php');
+   require('../includes/config.inc.php');
    
    // check for language
    if (isset($_GET['lang']) && array_key_exists($_GET['lang'], $aLanguages)) {

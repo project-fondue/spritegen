@@ -9,7 +9,7 @@ page.title.your-language = Votre langue
 menu.home = Accueil
 menu.what-are-css-sprites = Qu'est-ce qu'un Sprite CSS ?
 menu.tool-help = Aide
-menu.report-bug = Report Bug
+menu.report-bug = Signaler un bug
 
 menu.language.label = Langue
 menu.language.button = Changer

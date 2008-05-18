@@ -53,7 +53,11 @@
             
             // if the recorded timestamp varies from the selected language file then the translations have changed
             // update the cache
-            if ($aCache['timestamp'] == filemtime($this->sFile) && (!isset($aCache['parent-filename']) || $aCache['parent-timestamp'] == filemtime($aCache['parent-filename']))) { // not changed
+            if (
+               $aCache['timestamp'] == filemtime($this->sFile) && 
+               (!isset($aCache['parent-filename']) || 
+               $aCache['parent-timestamp'] == filemtime($aCache['parent-filename']))
+            ) { // not changed
                $this->aTranslations = $aCache['translations'];
             } else { // changed
                $this->Process();

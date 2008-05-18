@@ -40,7 +40,10 @@
       }
       
       protected function HasError($sField) {
-         if ($this->bFormPosted && (in_array($sField, $this->aFormErrors['missing']) || array_key_exists($sField, $this->aFormErrors['invalid']))) {
+         if (
+            $this->bFormPosted && (in_array($sField, $this->aFormErrors['missing']) || 
+            array_key_exists($sField, $this->aFormErrors['invalid']))
+         ) {
             return true;
          }
          return false;

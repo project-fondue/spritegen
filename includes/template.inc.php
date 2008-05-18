@@ -43,7 +43,13 @@
       protected $iCacheLength;
       protected $oCache = null;
       
-      public function __construct($sTemplate, $sLang = '', $sTemplatePath = TEMPLATE_PATH, $iCacheLength = TEMPLATE_CACHE_LENGTH, $bDebug = TEMPLATE_DEBUG) {
+      public function __construct(
+         $sTemplate,
+         $sLang = '',
+         $sTemplatePath = TEMPLATE_PATH,
+         $iCacheLength = TEMPLATE_CACHE_LENGTH,
+         $bDebug = TEMPLATE_DEBUG
+      ) {
          $this->sTemplate = $sTemplate;
          $this->sLang = $sLang;
          $this->sTemplatePath = $sTemplatePath;
@@ -76,7 +82,13 @@
          return false;
       }
       
-      public function Set($sName, $vValue, $bStripHtml = TEMPLATE_STRIP_HTML, $bConvertEntities = TEMPLATE_CONVERT_ENTITIES, $sCharSet = TEMPLATE_ENCODING) {
+      public function Set(
+         $sName,
+         $vValue,
+         $bStripHtml = TEMPLATE_STRIP_HTML,
+         $bConvertEntities = TEMPLATE_CONVERT_ENTITIES,
+         $sCharSet = TEMPLATE_ENCODING
+      ) {
          $this->aVars[$sName] = $vValue;
          
          // variable value might be a reference to a sub-template
@@ -91,10 +103,6 @@
          }
       }
       
-      public function AddFunction($sFunctionName) {
-         $this->aFunctions[] = $sFunctionName;
-      }
-      
       public function AddPostFilter($sFunctionName) {
          $this->aPostFilters[] = $sFunctionName;
       }
@@ -107,7 +115,8 @@
             foreach ($this->aVars as $sKey => &$vValue) {
                // is this variable a reference to a sub-template
                if ($vValue instanceof Template) {
-                  // pass variables from parent to sub-template but don't override variables in sub-template if they already exist as they are more specific
+                  // pass variables from parent to sub-template but don't override variables in sub-template 
+                  // if they already exist as they are more specific
                   foreach ($this->aVars as $sSubKey => $vSubValue) {
                      if (!($vSubValue instanceof Template) && !array_key_exists($sSubKey, $vValue->aVars)) {
                         $vValue->aVars[$sSubKey] = $vSubValue;
@@ -130,7 +139,10 @@
             }
             // use output buffers to capture data from require statement and store in variable
             ob_start();
-            if ($this->sLang != '' && file_exists($this->sTemplatePath.TEMPLATE_LOCALES_PATH."$this->sLang/".$this->sTemplate)) {
+            if (
+               $this->sLang != '' && 
+               file_exists($this->sTemplatePath.TEMPLATE_LOCALES_PATH."$this->sLang/".$this->sTemplate)
+            ) {
                $this->AddCacheCondition($this->sLang);
                require($this->sTemplatePath.TEMPLATE_LOCALES_PATH."$this->sLang/".$this->sTemplate);
             } else {

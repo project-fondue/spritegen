@@ -30,10 +30,14 @@
                                                                   */
    /***************************************************************/
    
-   require('includes/config.inc.php');
+   require('../includes/config.inc.php');
    
    // check parameters haven't been modified, checksum is used to prevent people guessing the URL to saved images
-   if (isset($_GET['file']) && preg_match("/^csg-[a-f0-9]+\.(gif|png|jpg)$/", $_GET['file']) && isset($_GET['hash']) && md5($_GET['file'].CHECKSUM) == $_GET['hash']) {
+   if (
+      isset($_GET['file']) && 
+      preg_match("/^csg-[a-f0-9]+\.(gif|png|jpg)$/", $_GET['file']) && 
+      isset($_GET['hash']) && md5($_GET['file'].CHECKSUM) == $_GET['hash']
+   ) {
       $sFilename = SPRITE_DIR.$_GET['file'];
       
       // file may not exist as folder is cleaned up every 30 mins

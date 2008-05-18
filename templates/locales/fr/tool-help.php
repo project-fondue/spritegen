@@ -18,7 +18,7 @@
    <dt>Espacement horizontal</dt>
    <dd>Il d&#233;termine l'espacement horizontal entre les lignes d'images du fichier image r&#233;sultat. Cette valeur doit &#234;tre assez large pour prendre en compte le <a href="http://creativebits.org/webdev/safari_background_repeat_bug_fix">bug de r&#233;p&#233;tition de fond de Safari</a>. Nous vous sugg&#233;rons de laisser le param&#232;tre par d&#233;faut.</dd>
    <dt>Espacement vertical</dt>
-   <dd>Il d&#233;termine l'espacement vertical entre les images cons&#233;cutives. Cette valeur doit &#234;tre assez large pour prendre en compte la possibilit&#233; d'augmenter les tailles de polices par les utilisateurs. En g&#233;n&#233;ral, nous vous recommandons que la conception de votre site supporte que les visiteurs puissent accroître leur taille de police &#224; deux reprises avant que l'image de fond suivante soit atteinte et devienne visible dans la s&#233;quence des images.</dd>
+   <dd>Il d&#233;termine l'espacement vertical entre les images cons&#233;cutives. Cette valeur doit &#234;tre assez large pour prendre en compte la possibilit&#233; d'augmenter les tailles de polices par les utilisateurs. En g&#233;n&#233;ral, nous vous recommandons que la conception de votre site supporte que les visiteurs puissent accro&#238;tre leur taille de police &#224; deux reprises avant que l'image de fond suivante soit atteinte et devienne visible dans la s&#233;quence des images.</dd>
    <dt>Couleur de fond</dt>
    <dd>Positionne la couleur de fond de l'image r&#233;sultat. Ce champ doit &#234;tre une valeur de couleur exprim&#233;e en hexad&#233;cimal sur 6 digits. S'il reste blanc et que le format de sortie est GIF ou PNG alors le fond sera transparent.</dd>
    <dt>Format du fichier Sprite</dt>

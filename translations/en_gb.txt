@@ -1,4 +1,0 @@
-{inherits en} # include english translations
-
-site.title = Tool title = \# test | # comment
-menu.language.button = Set

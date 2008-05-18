@@ -1,10 +1,24 @@
-CSS Sprite Generator was written by Ed Eliot & Stuart Colville. It's covered under the BSD license outlined below.
+CSS Sprite Generator was written by Ed Eliot & Stuart Colville.
 
 /***************************************************************/
-/* Software License Agreement (BSD License)
+/* Licensed under BSD License with the following exceptions:
+
+   -----------------------------------------------------------------
+   * Design elements (images, CSS) relating to the "Website Performance" 
+     branding and web site remain copyright of Ed Eliot & 
+     Stuart Colville and should not be used without written 
+     permission.
+   * If you host a copy of the tool publicly in a largely unaltered 
+     form and with the same application name then you must add clear 
+     notices to explain that it is a copy of the original and provide 
+     a link back to our that original hosted version 
+     at http://spritegen.website-performance.org/.
+   ------------------------------------------------------------------
 
    Copyright (C) 2007-2008, Ed Eliot & Stuart Colville.
    All rights reserved.
+   
+   Software License Agreement (BSD License)
    
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are met:
@@ -36,4 +50,4 @@ If you have any questions about the tool you can contact us at contact@website-p
 http://www.ejeliot.com/
 http://muffinresearch.co.uk/
 
-Use of the tool is free although commercial users are encouraged to make a small donation to support continued development. See donation button at http://spritegen.website-performance.org/.
+Use of the tool is free although commercial users are encouraged to make a small donation to support continued development.

@@ -101,7 +101,10 @@
       }
       
       public function ProcessFile() {
-         if (isset($_FILES['path']['name']) && substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip') {
+         if (
+            isset($_FILES['path']['name']) && 
+            substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip'
+         ) {
             if (!is_dir(UPLOAD_DIR)) {
                mkdir(UPLOAD_DIR);
             }
@@ -170,7 +173,12 @@
             
             $sFileClass = $this->FormatClassName($sFileClass);
             
-            if (!empty($sFileClass) && isset($aPathParts['extension']) && in_array(strtoupper($aPathParts['extension']), $this->aImageTypes) && substr($sFile, 0, 1) != '.') {
+            if (
+               !empty($sFileClass) && 
+               isset($aPathParts['extension']) && 
+               in_array(strtoupper($aPathParts['extension']), $this->aImageTypes) && 
+               substr($sFile, 0, 1) != '.'
+            ) {
                $sExtension = $aPathParts['extension'];
             
                $sFileMD5 = md5(file_get_contents($sFilePath));

@@ -33,30 +33,29 @@
    // publically accessible document root
    define('APP_ROOT', '/');
    // location of action scripts (corresponding to page types)
-   define('ACTIONS_DIR', 'actions/');
+   define('ACTIONS_DIR', '../actions/');
    // directory to store uploaded ZIP files
-   define('UPLOAD_DIR', '/var/www/vhosts/website-performance.org/subdomains/spritegen/cache/css-sprite-gen-source-files/');
+   define('UPLOAD_DIR', '../cache/css-sprite-gen-source-files/');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
    define('UNZIP_BINARY', '/usr/bin/unzip');
    // location to store generated sprite images
-   define('SPRITE_DIR', '/var/www/vhosts/website-performance.org/subdomains/spritegen/cache/css-sprite-gen-sprites/');
+   define('SPRITE_DIR', '../cache/css-sprite-gen-sprites/');
    // maximum file upload size - specified in bytes
    define('MAX_FILE_SIZE', 1048576);
    // secret used to check validity of download link request
    define('CHECKSUM', 'iweoruewior324239243842f');
-   // in our installation we've set up a separate virtual host for assets - CSS & JS. This sets far futures expires headers to ensure resources
-   // are cached effectively. If you prefer you can store these resources under your main virtual host and modify this path accordingly. / should do.
-   define('ASSETS_DIR', 'http://assets.website-performance.org/');
+   // location of CSS, JS & images - set this if you want to load these from a separate virtual host
+   define('ASSETS_DIR', '');
    // default translations language, this is what it'll use if none is specified
    define('TRANSLATIONS_DEFAULT_LANG', 'en');
    // location of translation files - these contain key/value pairs
-   define('TRANSLATIONS_PATH', 'translations/');
+   define('TRANSLATIONS_PATH', '../translations/');
    // once parsed translation files are cached, this specifies where to store the cache files
-   define('TRANSLATIONS_CACHE', '/var/www/vhosts/website-performance.org/cache/translations/');
+   define('TRANSLATIONS_CACHE', '../cache/translations/');
    // determines whether or not adding showKeys=true parameter is active
    define('TRANSLATIONS_ALLOW_SHOW_KEYS', true);
    // path to templates
-   define('TEMPLATE_PATH', 'templates/');
+   define('TEMPLATE_PATH', '../templates/');
    // path to localised versions of templates, each locale is stored in a separate directory
    define('TEMPLATE_LOCALES_PATH', 'locales/');
    // other template settings, you don't need to change these
