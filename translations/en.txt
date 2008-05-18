@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} &amp; {1}. All Rights Reserved. 
+
+page.title.home = CSS Sprite Generator
+page.title.what-are-css-sprites = What are CSS sprites?
+page.title.tool-help = Help
+page.title.your-language = Your Language
+
+menu.home = Home
+menu.what-are-css-sprites = What are CSS sprites?
+menu.tool-help = Help
+menu.report-bug = Report Bug
+
+menu.language.label = Language
+menu.language.button = Change
+menu.language.your-language = Your language not listed? Help us provide it.
+
+form.legend.source-files = Source Files
+form.legend.resize-source-images = Resize Source Images
+form.legend.image-duplicates = Image Duplicates
+form.legend.sprite-output-options = Sprite Output Options
+form.legend.css-output-options = CSS Output Options
+
+form.label.upload-images = Upload Images (ZIP)
+form.label.width = Width
+form.label.height = Height
+form.label.maintain-aspect-ratio = Maintain aspect ratio
+form.label.ignore-duplicates = Ignore duplicate images
+form.label.merge-duplicates = Remove duplicate images but merge rules
+form.label.horizontal-offset = Horizontal Offset
+form.label.vertical-offset = Vertical Offset
+form.label.background-colour = Background / Transparency Colour \# (optional)
+form.label.use-transparency = Use Background Colour for Transparency
+form.label.sprite-output-format = Sprite Output Format
+form.label.css-prefix = CSS Prefix (optional)
+form.label.filename-pattern-match = Filename Pattern Match (optional)
+form.label.class-prefix = Class Prefix (optional)
+form.label.css-suffix = CSS Suffix (optional)
+
+form.hint.max-upload-size = Max Upload Size: {0}MB
+form.hint.transparency = If left blank white will be used for non-transparent images, black for transparent
+form.hint.css-prefix = CSS to insert before the class name
+form.hint.filename-pattern-match = e.g. icon-([0-9]+).png - matches the numeric part of each filename and uses this for the class names in the generated CSS
+form.hint.class-prefix = cannot start with a number
+form.hint.css-suffix = CSS to insert after the class name
+form.hint.file-selected = File currently selected, leave upload box blank to reuse.
+
+form.button.show-picker = Show Picker
+form.button.hide-picker = Hide Picker
+form.button.create-sprite = Create Sprite Image &amp; CSS
+
+form.errors.title = Submission Errors
+form.errors.invalid-file = You didn't select a file or the file you uploaded was invalid. Perhaps it wasn't a ZIP or it was larger than the maximum upload size.
+form.errors.zip = The ZIP you uploaded didn't contain at least 2 images. Please check the ZIP (and/or &quot;Filename Pattern Match&quot; if used) and re-upload.
+form.errors.missing.widthresize = No resize width specified.
+form.errors.missing.heightresize = No resize height specified.
+form.errors.missing.hoffset = No horizontal offset specified.
+form.errors.missing.voffset = No vertical offset specified.
+form.errors.invalid.hoffset.isnumber = Invalid horizontal offset specified. It should be a number between 1 and 100.
+form.errors.invalid.voffset.isnumber = Invalid vertical offset specified. It should be a number between 1 and 100.
+form.errors.invalid.bckground.ishex = Invalid background colour specified. It should be a 3 or 6 digit hexadecimal value.
+form.errors.invalid.tagspre.iscss = Invalid CSS prefix specified. It can only contain the characters a-z, 0-9, _, -, \# and .
+form.errors.invalid.classpre.isclassprefix = Invalid class prefix specified. It can only contain the characters a-z, 0-9, _ and -
+form.errors.invalid.tagspost.iscss = Invalid CSS suffix specified. It can only contain the characters: a-z, 0-9, _, -, \# and .
+
+form.result.reset = Close &amp; Reset Form
+form.result.title.css-rules = CSS Rules
+form.result.title.sprite-image = Sprite Image
+form.result.dont-forget = Don't forget to add a background rule to reference the sprite image. Something like this, for example:
+form.result.download = &raquo;Download Sprite Image

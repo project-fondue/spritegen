@@ -1,0 +1,70 @@
+site.title = Webblad Prestasie Bevordering |
+site.copyright = Kopiereg &copy; {0} &amp; {1}. Alle Regte Voorbehou. 
+
+page.title.home = CSS Sprite Genereerder
+page.title.what-are-css-sprites = Wat is CSS sprites?
+page.title.tool-help = Help
+page.title.your-language = Jou Taal
+
+menu.home = Tuis
+menu.what-are-css-sprites = Wat is CSS sprites?
+menu.tool-help = Help
+menu.report-bug = Report Bug
+
+menu.language.label = Taal
+menu.language.button = Verander
+menu.language.your-language = Jou taal nie gelys? Help ons verbeter.
+
+form.legend.source-files = Oorspronklike Leêrs
+form.legend.resize-source-images = Verstel Oorspronklike Beelde
+form.legend.image-duplicates = Beeld Duplikate
+form.legend.sprite-output-options = Sprite Uitset Opsies
+form.legend.css-output-options = CSS Uitset Opsies
+
+form.label.upload-images = Laai Beelde (ZIP)
+form.label.width = Breedte
+form.label.height = Hoogte
+form.label.maintain-aspect-ratio = Behou aspeks verhouding
+form.label.ignore-duplicates = Ignoreer duplikaat beelde
+form.label.merge-duplicates = Verwyder duplikaat beelde maar verenig reëls
+form.label.horizontal-offset = Horisontale Afset
+form.label.vertical-offset = Vertikale Afset
+form.label.background-colour = Agtergrond / Deursigtigheid Kleur \# (optioneel)
+form.label.use-transparency = Gebruik Agtergrond Kleur as Deursigtigheid Kleur
+form.label.sprite-output-format = Sprite Uitset Formaat
+form.label.css-prefix = CSS Voorvoegsel (optioneel)
+form.label.filename-pattern-match = Leêrnaam Patroon Toets (optioneel)
+form.label.class-prefix = Klas Voorvoegsel (optioneel)
+form.label.css-suffix = CSS Agtervoegsel (optioneel)
+
+form.hint.max-upload-size = Maks Oplaai Grootte: {0}MB
+form.hint.transparency = los leeg vir GIF/PNG deursigtigheid
+form.hint.css-prefix = CSS om in te voeg voor die klas naam
+form.hint.filename-pattern-match = bv. ikoon-([0-9]+).png - vind die numeriese gedeelte van elke leêrnaam en gebruik dit vir die klas name in die gegenereerde CSS
+form.hint.class-prefix = kan nie met `n nommer begin nie
+form.hint.css-suffix = CSS om aan te heg aan die einde van die klas naam
+form.hint.file-selected = Leêr huidiglik geselekteer, hou die oplaai boksie leeg om weer te gebruik.
+
+form.button.show-picker = Wys Kieser
+form.button.hide-picker = Verwyder Kieser
+form.button.create-sprite = Skep Sprite Beeld &amp; CSS
+
+form.errors.title = Submissie Foute
+form.errors.invalid-file = Jy het nie `n leêr gekies nie, of die leêr wat jy opgelaai het was foutief.  Dalk was dit nie `n ZIP nie, of dit was dalk groter as die maksimum oplaai grootte.
+form.errors.zip = Die ZIP wat jy opgelaai het, het nie ten minste 2 beelde bevat nie. Toets asb. die ZIP (en/of &quot;Leêrnaam Patroon Toets&quot; indien gebruik) en probeer weer.
+form.errors.missing.widthresize = Geen verstel breedte gespesifiseer.
+form.errors.missing.heightresize = Geen verstel hoogte gespesifiseer.
+form.errors.missing.hoffset = Geen horisontale afset gespesifiseer.
+form.errors.missing.voffset = Geen vertikale afset gespesifiseer.
+form.errors.invalid.hoffset.isnumber = Foutiewe horisontale afset gespesifiseer. Dit moet `n nommer tussen 1 en 100 wees.
+form.errors.invalid.voffset.isnumber = Foutiewe vertikale afset gespesifiseer. Dit moet `n nommer tussen 1 en 100 wees.
+form.errors.invalid.bckground.ishex = Foutiewe agtergrond kleur gespesifiseer.  Dit moet `n 3 of 6 letter heksadesimale nommer bevat.
+form.errors.invalid.tagspre.iscss = Foutiewe CSS voorvoegsel gespesifiseer.  Dit mag slegs die karakters a-z, 0-9, _, -, \# en . bevat.
+form.errors.invalid.classpre.isclassprefix = Foutiewe klas voorvoegsel gespesifiseer.  Dit mag slegs die karakters a-z, 0-9, _ en - bevat.
+form.errors.invalid.tagspost.iscss = Foutiewe CSS agtervoegsel gespesifiseer.  Dit mag slegs die karakters a-z, 0-9, _, -, \# en . bevat.
+
+form.result.reset = Sluit &amp; Herstel Vorm
+form.result.title.css-rules = CSS reëls
+form.result.title.sprite-image = Sprite Beeld
+form.result.dont-forget = Moenie vergeet om `n agtergrond reël by te voeg om na die sprite beeld te verwys nie.  Iets soos hierdie, bv:
+form.result.download = &raquo;Laai die Sprite Beeld Af

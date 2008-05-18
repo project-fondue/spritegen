@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} et {1}. Tous droits r&\#233;serv&\#233;s.
+
+page.title.home = G&\#233;n&\#233;rateur de Sprites CSS
+page.title.what-are-css-sprites = Qu'est-ce qu'un Sprite CSS ?
+page.title.tool-help = Aide
+page.title.your-language = Votre langue
+
+menu.home = Accueil
+menu.what-are-css-sprites = Qu'est-ce qu'un Sprite CSS ?
+menu.tool-help = Aide
+menu.report-bug = Report Bug
+
+menu.language.label = Langue
+menu.language.button = Changer
+menu.language.your-language = Votre langue n'est pas list&\#233;e ? Aidez-nous &\#224; la fournir.
+
+form.legend.source-files = Fichiers sources
+form.legend.resize-source-images = Redimensionner les images sources
+form.legend.image-duplicates = Images dupliqu&\#233;es
+form.legend.sprite-output-options = Options du Sprite g&\#233;n&\#233;r&\#233;
+form.legend.css-output-options = Options des CSS g&\#233;n&\#233;r&\#233;s
+
+form.label.upload-images = Images &\#224; transf&\#233;rer (ZIP)
+form.label.width = Largeur
+form.label.height = Hauteur
+form.label.maintain-aspect-ratio = Maintenir les proportions de l'image
+form.label.ignore-duplicates = Ignorer les images dupliqu&\#233;es
+form.label.merge-duplicates = Supprimer les images dupliqu&\#233;es mais combiner les classes en une seule
+form.label.horizontal-offset = Espacement horizontal
+form.label.vertical-offset = Espacement vertical
+form.label.background-colour = Couleur de fond / Couleur de transparence \\# (optionnel)
+form.label.use-transparency = Utiliser la couleur de fond pour la transparence
+form.label.sprite-output-format = Format du fichier Sprite
+form.label.css-prefix = Pr&\#233;fixe de CSS (optionnel)
+form.label.filename-pattern-match = Expression r&\#233;guli&\#232;re du nom de fichier Sprite (optionnel)
+form.label.class-prefix = Pr&\#233;fix de classe (optionnel)
+form.label.css-suffix = Suffixe de CSS (optionnel)
+
+form.hint.max-upload-size = Taille maximale de transfert: {0}Mo
+form.hint.transparency = Laissez blanc pour la transparence des GIF/PNG
+form.hint.css-prefix = CSS &\#224; ins&\#233;rer avant le nom de classe
+form.hint.filename-pattern-match = ex. icon-([0-9]+).png - recherche la partie num&\#233;rique de chaque nom de fichier et l'utilise comme nom de classe dans le CSS g&\#233;n&\#233;r&\#233;
+form.hint.class-prefix = Ne peux pas commencer par un nombre
+form.hint.css-suffix = CSS &\#224; ins&\#233;rer apr&\#232;s le nom de classe
+form.hint.file-selected = Un fichier est d&\#233;j&\#224; s&\#233;lectionn&\#233;, laissez blanc pour le r&\#233;utiliser.
+
+form.button.show-picker = Afficher le s&\#233;lecteur
+form.button.hide-picker = Masquer le s&\#233;lecteur
+form.button.create-sprite = Cr&\#233;er le Sprite et le CSS
+
+form.errors.title = Erreurs de soumission
+form.errors.invalid-file = Vous n'avez pas s&\#233;lectionn&\#233; de fichier ou bien le fichier que vous avez transf&\#233;r&\#233; est invalide. Peut-&\#234;tre que ce n'est pas un ZIP ou bien qu'il d&\#233;passe la taille maximale autoris&\#233;e.
+form.errors.zip = Le ZIP que vous avez transf&\#233;r&\#233; ne contient pas au moins 2 images. Veuillez v&\#233;rifier le ZIP (et/ou l'&quot;Expression r&\#233;guli&\#232;re du nom de fichier Sprite&quot; si elle est utilis&\#233;e) et re-transf&\#233;rez le.
+form.errors.missing.widthresize = Auncun redimensionnement de largeur n'est indiqu&\#233;.
+form.errors.missing.heightresize = Auncun redimensionnement de hauteur n'est indiqu&\#233;.
+form.errors.missing.hoffset = Auncun espacement horizontal n'est indiqu&\#233;.
+form.errors.missing.voffset = Auncun espacement vertical n'est indiqu&\#233;.
+form.errors.invalid.hoffset.isnumber = L'espacement horizontal indiqu&\#233; est invalide. Cela doit &\#234;tre un nombre entre 1 et 100.
+form.errors.invalid.voffset.isnumber = L'espacement vertical indiqu&\#233; est invalide. Cela doit &\#234;tre un nombre entre 1 et 100.
+form.errors.invalid.bckground.ishex = La couleur de fond indiqu&\#233;e est invalide. Cela doit &\#234;tre une valeur hexad&\#233;cimale de 3 or 6 digits.
+form.errors.invalid.tagspre.iscss = Le pr&\#233;fixe CSS indiqu&\#233; est invalide. Il ne peut contenir que les caract&\#232;res a-z, 0-9, _, -, \\# et .
+form.errors.invalid.classpre.isclassprefix = Le pr&\#233;fixe de classe indiqu&\#233; est invalide. Il ne peut contenir que les caract&\#232;res a-z, 0-9, _ et -
+form.errors.invalid.tagspost.iscss = Le suffixe CSS indiqu&\#233; est invalide. Il ne peut contenir que les caract&\#232;res a-z, 0-9, _, -, \\# et .
+
+form.result.reset = Fermer et r&\#233;-initialiser le formulaire
+form.result.title.css-rules = R&\#232;gles de CSS
+form.result.title.sprite-image = Image Sprite
+form.result.dont-forget = N'oubliez pas de rajouter une r&\#232;gle de fond pour r&\#233;f&\#233;rencer l'image Sprite. Cela doit ressembler &\#224; cela, par exemple :
+form.result.download = &raquo;T&\#233;l&\#233;charger l'image Sprite

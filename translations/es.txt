@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} &amp; {1}. Todos los Derechos Reservados. 
+
+page.title.home = Generador de Sprite CSS
+page.title.what-are-css-sprites = &iquest;Qu&eacute; son los Sprites CSS?
+page.title.tool-help = Ayuda
+page.title.your-language = Tu idioma
+
+menu.home = Inicio
+menu.what-are-css-sprites = &iquest;Qu&eacute; son los Sprites CSS?
+menu.tool-help = Ayuda
+menu.report-bug = Report Bug
+
+menu.language.label = Idioma
+menu.language.button = Cambiar
+menu.language.your-language = &iquest;Tu idioma no est&aacute; en la lista? &iexcl;Ay&uacute;danos a incorporarlo!
+
+form.legend.source-files = Ficheros
+form.legend.resize-source-images = Redimensionar im&aacute;genes originales
+form.legend.image-duplicates = Im&aacute;genes duplicadas
+form.legend.sprite-output-options = Opciones del Sprite generado 
+form.legend.css-output-options = Opciones del CSS generado
+
+form.label.upload-images = Subir im&aacute;genes (ZIP)
+form.label.width = Ancho
+form.label.height = Alto
+form.label.maintain-aspect-ratio = Mantener relaci\363n de aspecto
+form.label.ignore-duplicates = Ignorar im&aacute;genes duplicadas
+form.label.merge-duplicates = Quitar im&aacute;genes duplicadas pero combinar las clases en una sola
+form.label.horizontal-offset = Desplazamiento horizontal
+form.label.vertical-offset = Desplazamiento vertical
+form.label.background-colour = Color de fondo / Color de transparencia \# (opcional)
+form.label.use-transparency = Utiliza color de fondo para transparencia
+form.label.sprite-output-format = Formato del fichero Sprite
+form.label.css-prefix = Prefijo CSS (opcional)
+form.label.filename-pattern-match = Plantilla de nombre de fichero (opcional)
+form.label.class-prefix = Prefijo de Clase (opcional)
+form.label.css-suffix = Sufijo CSS (opcional)
+
+form.hint.max-upload-size = M&aacute;ximo tama&ntilde;o para subir: {0}MB
+form.hint.transparency = dejar en blanco para transparencia GIF/PNG
+form.hint.css-prefix = CSS para insertar antes del nombre de la clase
+form.hint.filename-pattern-match = p.ej. icono-([0-9]+).png - busca la parte num&eacute;rica de cada fichero y la utiliza para los nombres de clase en el CSS generado 
+form.hint.class-prefix = no puede empezar por un n&uacute;mero
+form.hint.css-suffix = CSS para insertar despu&eacute;s del nombre de la clase
+form.hint.file-selected = Fichero actualmente seleccionado, d&eacute;jalo en blanco para poder reutilizarlo.
+
+form.button.show-picker = Muestra Picker
+form.button.hide-picker = Oculta Picker
+form.button.create-sprite = Crear im&aacute;gen y CSS
+
+form.errors.title = Errores de env&iacute;o
+form.errors.invalid-file = No seleccionaste un fichero o el que has subido no es v&aacute;lido. Quiz&aacute;s no era un ZIP o era de mayor tama&ntilde;o que el permitido.
+form.errors.zip = El ZIP que has subido no ten&iacute;a 2 im&aacute;genes como m&iacute;nimo. Por favor, comprueba el ZIP (y/o la &quot;Plantilla de nombre de fichero&quot; si la has utilizado) y vuelve a subirlo.
+form.errors.missing.widthresize = No se ha especificado el ancho de redimensionado.
+form.errors.missing.heightresize = No se ha especificado el alto de redimensionado.
+form.errors.missing.hoffset = No se ha especificado el desplazamiento horizontal.
+form.errors.missing.voffset = No se ha especificado el desplazamiento vertical.
+form.errors.invalid.hoffset.isnumber = El desplazamiento horizontal especificado no es v&aacute;lido. Debe ser un n&uacute;mero entre 1 y 100.
+form.errors.invalid.voffset.isnumber = El desplazamiento vertial especificado no es v&aacute;lido. Debe ser un n&uacute;mero entre 1 y 100.
+form.errors.invalid.bckground.ishex = El color de fondo especificado no es v&aacute;lido. Debe ser un valor hexadecimal de 3 o 6 d&iacute;gitos.
+form.errors.invalid.tagspre.iscss = El prefijo CSS especificado no es v&aacute;lido. S&oacute;lo puede contener los caracteres a-z, 0-9, _, -, \# y .
+form.errors.invalid.classpre.isclassprefix = El prefijo de clase especificado no es v&aacute;lido. S&oacute;lo puede contener los caracteres a-z, 0-9, _ y -
+form.errors.invalid.tagspost.iscss = El sufijo CSS especifivado no es v&aacute;lido. S&oacute;lo puede contener los caracteres a-z, 0-9, _, -, \# y .
+
+form.result.reset = Cerrar y limpiar el formulario
+form.result.title.css-rules = Reglas CSS
+form.result.title.sprite-image = Imagen del Sprite
+form.result.dont-forget = No olvides a&ntilde;adir una regla de color de fondo para referenciar a la imagen del Sprite. Algo como por ejemplo:
+form.result.download = &raquo;Descargar la imagen del Sprite

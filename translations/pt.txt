@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright © {0} & {1}. Todos os Direitos Reservados. 
+
+page.title.home = Gerador de Sprites CSS
+page.title.what-are-css-sprites = O que são sprites CSS?
+page.title.tool-help = Ajuda
+page.title.your-language = Língua
+
+menu.home = Início
+menu.what-are-css-sprites = O que são sprites CSS?
+menu.tool-help = Ajuda
+menu.report-bug = Reportar Bug
+
+menu.language.label = Língua
+menu.language.button = Alterar
+menu.language.your-language = A tua língua não está disponível? Ajuda-nos a providencia-la.
+
+form.legend.source-files = Ficheiros Fonte
+form.legend.resize-source-images = Redimensionar Imagens Fonte
+form.legend.image-duplicates = Imagens Duplicadas
+form.legend.sprite-output-options = Opções de Sáida da Sprite
+form.legend.css-output-options = Opções de Saída CSS
+
+form.label.upload-images = Carregar Imagens (ZIP)
+form.label.width = Largura
+form.label.height = Altura
+form.label.maintain-aspect-ratio = Manter relação
+form.label.ignore-duplicates = Ignorar imagens duplicadas
+form.label.merge-duplicates = Remover imagens duplicadas mas fundir regras
+form.label.horizontal-offset = Offset Horizontal
+form.label.vertical-offset = Offset Vertical
+form.label.background-colour = Cor do Fundo / Transparência \# (opcional)
+form.label.use-transparency = Utilizar a Cor do Fundo para Transparência
+form.label.sprite-output-format = Formato de Saída da Sprite
+form.label.css-prefix = Prefixo CSS (opcional)
+form.label.filename-pattern-match = Padrão do nome do ficheiro (opcional)
+form.label.class-prefix = Prefixo das classes (opcional)
+form.label.css-suffix = Sufixo CSS (opcional)
+
+form.hint.max-upload-size = Tamanho máximo do ficheiro: {0}MB
+form.hint.transparency = Se deixado em branco será utilizada para imagens opacas, e preto para transparentes
+form.hint.css-prefix = CSS para inserir antes do nome das classes
+form.hint.filename-pattern-match = e.g. icon-([0-9]+).png - corresponde à parte numérica de cada nome de ficheiro e é usada para os nomes das classes no CSS gerado
+form.hint.class-prefix = não pode começar com um número
+form.hint.css-suffix = CSS a inserir após o nome das classes
+form.hint.file-selected = Arquivo actualmente seleccionado, deixe caixa de carregamento em branco para reuso.
+
+form.button.show-picker = Mostrar Selector
+form.button.hide-picker = Ocultar Selector
+form.button.create-sprite = Criar Imagens Sprite & CSS
+
+form.errors.title = Erros na Submissão
+form.errors.invalid-file = Você não seleccionou um arquivo ou o arquivo que você carregou era inválido. Talvez não era um ficheiro ZIP ou era maior do que o tamanho máximo permitido.
+form.errors.zip = O ZIP que carregou não contém pelos menos 2 imagens. Verifique o ficheiro ZIP (e/ou se "Padrão do nome do ficheiro" está a ser utilizado) e volte a carregar o ficheiro.
+form.errors.missing.widthresize = Nenhuma largura especificada para redimensionamento.
+form.errors.missing.heightresize = Nenhuma altura especificada para redimensionamento.
+form.errors.missing.hoffset = Nenhum offset horizontal especificado.
+form.errors.missing.voffset = Nenhum offset vertical especificado.
+form.errors.invalid.hoffset.isnumber = Offset horizontal especificado inválido. Deve ser um número entre 1 e 100.
+form.errors.invalid.voffset.isnumber = Offset vertical especificado inválido. Deve ser um número entre 1 e 100.
+form.errors.invalid.bckground.ishex = Valor da cor de fundo especificado inválido. Deve ser um valor hexadecimal com 3 ou 6 dígitos.
+form.errors.invalid.tagspre.iscss = Prefixo CSS especificado inválido. Pode conter apenas os caracteres a-z, 0-9, _, -, \# e .
+form.errors.invalid.classpre.isclassprefix = Prefixo da classe especificado inválido. Pode conter apenas os caracteres a-z, 0-9, _ e -
+form.errors.invalid.tagspost.iscss = Sufixo CSS especificado inválido. Pode conter apenas os caracteres : a-z, 0-9, _, -, \# e .
+
+form.result.reset = Fechar & Limpar Formulário
+form.result.title.css-rules = Regras CSS
+form.result.title.sprite-image = Imagem Sprite
+form.result.dont-forget = Não se esqueça de adicionar uma regra no fundo que referencie a imagem sprite. Algo com isto, por exemplo:
+form.result.download = » Guardar Imagem Sprite

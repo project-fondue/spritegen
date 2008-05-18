@@ -1,0 +1,256 @@
+body {
+   background: #fff;
+   margin: 10px 0;
+   text-align: center;
+}
+#page {
+   width: 760px;
+   margin: 0 auto;
+   text-align: left;
+}
+#content {
+   margin-bottom: 10px;
+}
+h1 {
+   font-size: 153.9%;
+   text-transform: uppercase;  
+   padding: 7px 0 5px 0;
+   color: #666;  
+   text-align: right;
+}
+h2 {
+   padding: 10px 0;
+   font-weight: bold;
+   font-size: 109%;
+}
+h3 {
+   background: #eee;
+   padding: 7px;
+   font-weight: bold;
+}
+a {
+   color: #363;
+   text-decoration: none;
+} 
+a:visited {
+   color: #393;
+}
+a:hover {
+   text-decoration: underline;
+}
+img {
+   border: none;
+}
+dt {
+   border-bottom: 1px solid #777;
+   padding: 7px 0;
+   margin: 10px 0;
+   font-weight: bold;
+}
+dd {
+   margin: 0;
+}
+em {
+   color: #393;
+}
+table {
+   border-collapse: collapse;
+}
+th {
+   border-bottom: 2px solid #555;
+   padding-bottom: 2px;
+} 
+td {
+   border-bottom: 1px solid #777;
+   padding: 2px;
+}
+#menu {      
+   background: #f6f6f6;
+   border: 1px solid #777;
+   border-width: 1px 0;
+   padding: 3px 0;  
+   margin-top: 5px;
+   text-align: right;
+   
+} 
+#menu ul {
+   float: left;
+   margin-top: 3px;
+}
+#menu li {  
+   float: left;
+   margin-right: 10px;
+   font-size: 120%;
+   font-weight: lighter;
+   text-transform: uppercase;
+}
+
+#menu li a {
+   display: block;
+   padding: 3px 5px;  
+}
+#menu li a:hover {
+   text-decoration: none;
+}
+#menu li.active a, #menu li.active a:link, #menu li.active a:visited {  
+   border-top: 1px solid #06c345;    
+   border-left: 1px solid #06c345;    
+   border-right: 1px solid #393;    
+   border-bottom: 1px solid #393;    
+   background: #3c3;
+   margin-top: -2px;
+   color:#fff; 
+}
+#menu form, #menu div {
+   display: inline;
+}
+#menu form label {
+   color: #666;
+}
+#menu form input {
+   font-size: 85%;
+}    
+#your-language {
+   margin: 10px 0;
+   font-size: 85%;
+   text-align: right;
+}
+#result {
+   position: relative;
+   background: #eee;
+   border: 1px solid #777;
+   padding: 7px;
+   margin: 10px 0;
+}
+#result .close {
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   font-size: 85%;
+}
+#result .code-container {
+   border: 1px solid #ccc;
+   overflow: auto;
+   width: 100%;
+   height: 200px;
+}
+#options fieldset { 
+   border: 1px dotted #777;
+   margin-bottom: 20px;
+   /* containing floats */
+   overflow: hidden;
+   zoom: 1;
+}
+#options legend {
+   font-weight: bold;
+}
+#options label {
+   clear: left;
+   display: block;
+   width: 17em;
+}
+#options span {
+   width: 22em;
+   margin-left: 5px;
+}
+#options label, #options span {
+   line-height: 1.7em;
+}
+#options label, #options input, #options select, #options span {
+   float: left;
+   margin-bottom: 5px;
+}
+#file-container {
+   float: left;
+}
+#file-container input, #file-container span {
+   float: none;
+}
+#options .duplicates label {
+   width: 35em;
+}
+#options .sub {
+   float: none;
+}
+#options span, #options .optional {
+   color: #555;
+}
+#options .show {
+   display: block;
+}
+#options .hide {
+   display: none;
+}
+#options label.error {
+   color: #f00;
+}
+#error, #options input.error {
+   background: #fcc;
+   border: 1px solid #f00;
+}
+#error {
+   width: 744px;
+   margin: 10px 0;
+   padding: 0 7px 3px 7px;
+   list-style: disc;
+}
+#error li {
+   margin: 0 0 7px 15px;
+}
+#footer { 
+   border-top: 1px dotted #777;
+   padding-bottom: 20px;
+   margin: 10px 0;
+   font-size: 93%;
+   color: #333;
+   text-align: right;
+}
+#footer p {
+   float: left;
+   margin: 5px 0;
+}
+#footer form {
+   margin-top: 5px;
+}      
+#options input.submit {
+   float: none;
+}    
+a.download, input.submit {  
+   border: 3px double #999;
+   border-top-color: #CCC;
+   border-left-color: #CCC;
+   padding: 0.25em;
+   color: #333;
+   font: 85%;          
+}
+a:hover.download {
+   text-decoration: none;
+}
+  
+a:active.download, input.submit:active {
+   border: 3px double #CCC;
+   border-top-color: #999;
+   border-left-color: #999;   
+}
+.credits {
+   list-style: disc;
+}
+.credits li {
+   margin: 0 0 5px 15px;
+}
+.ads {
+   background: #f7f7f7;
+   border: 1px dotted #777;
+   border-width: 1px 0;
+   margin: 10px auto;
+   padding: 5px 5px 0 5px;
+   overflow: hidden;
+}
+.ads li {
+   float: left;
+   width: 20% !important;
+   margin-bottom: 5px !important;
+}
+.lang-cn #options input.submit {
+   width: 15em;
+}

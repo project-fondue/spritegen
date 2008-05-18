@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright © {0} & {1}. 
+
+page.title.home = CSS Sprite generator
+page.title.what-are-css-sprites = Vad är CSS sprites?
+page.title.tool-help = Hjälp
+page.title.your-language = Ditt språk
+
+menu.home = Hem
+menu.what-are-css-sprites = Vad är CSS sprites?
+menu.tool-help = Hjälp
+menu.report-bug = Report Bug
+
+menu.language.label = Språk
+menu.language.button = Byt
+menu.language.your-language = Är ditt språk inte med? Hjälp oss att tillhandahålla det.
+
+form.legend.source-files = Källfiler
+form.legend.resize-source-images = Ändra storlek på ursprungsbilder
+form.legend.image-duplicates = Bild dubletter
+form.legend.sprite-output-options = Sprite utdatamöjligheter
+form.legend.css-output-options = CSS utdatamöjligheter
+
+form.label.upload-images = Ladda upp bilder (ZIP)
+form.label.width = Bredd
+form.label.height = Höjd
+form.label.maintain-aspect-ratio = Bibehåll aspektförhållande
+form.label.ignore-duplicates = Ignorera bilddubletter
+form.label.merge-duplicates = Ta bort bilddubletter men förena CSS klasser
+form.label.horizontal-offset = Horisontell kompensation
+form.label.vertical-offset = Vertikal kompensation
+form.label.background-colour = Bakgrund / Transparant färg \# (valfri)
+form.label.use-transparency = Använd bakgrundsfärg för transparans
+form.label.sprite-output-format = Sprite utdataformat
+form.label.css-prefix = CSS prefix (valfri)
+form.label.filename-pattern-match = Filnamns mönsterjämförelse (valfri)
+form.label.class-prefix = Klassprefix (valfri)
+form.label.css-suffix = CSS suffix (valfri)
+
+form.hint.max-upload-size = Max uppladdningsstorlek: {0}MB
+form.hint.transparency = Lämna tom för GIF/PNG transparans
+form.hint.css-prefix = CSS att lägga till före klassnamn
+form.hint.filename-pattern-match = ex. ikon-([0-9]+).png - jämför den numeriska delen av varje filnamn och använder detta för klassnamn i den genererade CSSen
+form.hint.class-prefix = Kan inte börja med ett nummer
+form.hint.css-suffix = CSS att lägga till efter klassnamn
+form.hint.file-selected = Filen är för närvarande vald, lämna uppladdningsboxen tom för att återanvända.
+
+form.button.show-picker = Visa Väljaren
+form.button.hide-picker = Dölj Väljaren
+form.button.create-sprite = Skapa Sprite bild &amp; CSS
+
+form.errors.title = Felmeddelanden
+form.errors.invalid-file = Du valde inte en fil eller filen du laddade upp var inte giltig. Kanske det inte var en ZIP eller så var den större än den maximala uppladdningsstorleken.
+form.errors.zip = ZIP filen du laddade upp innehöll åtminstone inte två bilder. Var god kontrollera ZIP filen (och/eller &quot;Filnamns mönsterjämförelse&quot; om den används) och ladda upp filen på nytt.
+form.errors.missing.widthresize = Ingen bredd preciserad för storleksändring.
+form.errors.missing.heightresize = Ingen höjd preciserad för storleksändring.
+form.errors.missing.hoffset = Ingen horisontell kompensation preciserad.
+form.errors.missing.voffset = Ingen vertikal kompensation preciserad.
+form.errors.invalid.hoffset.isnumber = Ogiltig horisontell kompensation preciserad. Det behöver vara ett nummer mallen 1 och 100.
+form.errors.invalid.voffset.isnumber = Ogiltig vertikal kompensation preciserad. Det behöver vara ett nummer mallen 1 och 100.
+form.errors.invalid.bckground.ishex = Ogiltig bakgrundsfärg preciserad. Det behöver vara ett tre- eller sexsiffrigt hexadecimalt värde.
+form.errors.invalid.tagspre.iscss = Ogiltig CSS prefix preciserad. Det kan endast innehålla tecknena: a-z, 0-9, _, -, \# och .
+form.errors.invalid.classpre.isclassprefix = Ogiltig klassprefix preciserad. Det kan endast innehålla tecknena: a-z, 0-9, _ och -
+form.errors.invalid.tagspost.iscss = Ogiltig CSS suffix preciserad. Det kan endast innehålla tecknena: a-z, 0-9, _, -, \# och .
+
+form.result.reset = Stäng &amp; återställ formulär
+form.result.title.css-rules = CSS regler
+form.result.title.sprite-image = Sprite bild
+form.result.dont-forget = Glöm inte att lägga till en bakgrundsregel för att referera sprite bilden. Som t ex.:
+form.result.download = &raquo;Ladda ner Sprite bild

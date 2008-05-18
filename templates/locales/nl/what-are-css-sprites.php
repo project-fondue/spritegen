@@ -1,0 +1,10 @@
+<p>CSS sprites zijn een manier om het aantal HTTP-verzoeken dat voor een webpagina wordt gedaan te vermindering. Afbeeldingen worden gecombineerd in &eacute;&eacute;n groter beeld op gespecificeerde X en Y coorindates. Na koppelen van deze gegenereerde afbeelding aan de relevante pagina-elementen, kan de CSS <code>achtergrond-positie</code> eigenschap  vervolgens worden gebruikt om het zichtbare kader te verschuivevn naar het gewenste afbeeldingsfragment.</p>
+<p>Deze techniek kan zeer effectief zijn voor het verbeteren van de laadsnelheid van de webpagina; met name in situaties waarin veel kleine beelden, zoals menu iconen, worden gebruikt. De <a href="http://www.yahoo.com/"> Yahoo! Home page</a> bijvoorbeeld, gebruikt deze techniek precies om die reden.</p>
+<h2>Gotchas</h2>
+<p>Er zijn echter een paar zeer storende browserbugs om voor uit te kijken bij het maken van CSS sprites.</p>
+<h3>Opera</h3>
+<p>Opera (tenminste tot en met versie 9.0) zal geen achtergrond posities groter dan 2042px of kleiner dan-2042px herkennen, en gebruikt in plaats daarvan deze grenswaarden. De tool houdt hiermee rekening door nieuwe kolommen in de resulterende afbeelding te creëren, telkens als de verticale limiet is bereikt.</p>
+<h3>Safari</h3>
+<p><a href="http://creativebits.org/webdev/safari_background_repeat_bug_fix"> Safari heeft een probleem met het herhalen van achtergrondafbeeldingen </a>. Gelukkig kan dit gemakkelijk worden opgelost door het opgeven van een groot genoeg horizontale offset waarde (instelbaar).</p>
+<h2>Meer informatie</h2>
+<p><a href="http://www.alistapart.com/"> A List Apart </a> publiceerde een artikel getiteld <a href="http://www.alistapart.com/articles/sprites"> CSS Sprites : Image Slicing's Kiss of Death </a> dat de concepten achter CSS sprites verklaart. Als deze techniek nieuw voor je is raden we je sterk aan de naar <a href="http://www.alistapart.com/"> A List Apart </a> te gaan en een kijkje te nemen.</p>

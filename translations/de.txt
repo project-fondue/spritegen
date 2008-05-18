@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} &amp; {1}. Alle Rechte vorbehalten.
+
+page.title.home =  CSS Sprite Generator
+page.title.what-are-css-sprites = Was sind CSS sprites?
+page.title.tool-help = Hilfe
+page.title.your-language = Deutsch
+ 
+menu.home = Anfangsseite
+menu.what-are-css-sprites = Was sind CSS sprites?
+menu.tool-help = Hilfe
+menu.report-bug = Report Bug
+ 
+menu.language.label = Sprache
+menu.language.button = &Auml;ndern
+menu.language.your-language = Ihre Sprache nicht vorhanden? Helfen Sie uns.
+ 
+form.legend.source-files = Ursprungsdateien
+form.legend.resize-source-images = Ursprungsbilder vergr&ouml;&szlig;ern oder verkleinern
+form.legend.image-duplicates = Doppelte Bilder
+form.legend.sprite-output-options = Sprite Ausgabeoptionen
+form.legend.css-output-options = CSS Ausgabeoptionen
+ 
+form.label.upload-images = Bilder als Zip File hochladen (ZIP)
+form.label.width = Breite
+form.label.height = H&ouml;he
+form.label.maintain-aspect-ratio = Seitenverh\344ltnis beibehalten
+form.label.ignore-duplicates = Doppelte Bilder ignorieren
+form.label.merge-duplicates = Doppelte Bilder l&ouml;schen und CSS zusammenf&uuml;gen
+form.label.horizontal-offset = Horizontaler Abstand
+form.label.vertical-offset = Vertikaler Abstand
+form.label.background-colour = Hintergrundfarbe \# (optional)
+form.label.use-transparency = Benutze Hintergrundfarbe als Transparenz
+form.label.sprite-output-format = Sprite Ausgabeformat
+form.label.css-prefix = CSS Pr&auml;fix (optional)
+form.label.filename-pattern-match = Regul&auml;rer Ausdruck zur Fileauswahl(optional)
+form.label.class-prefix = Class Pr&auml;fix (optional)
+form.label.css-suffix = CSS Suffix (optional)
+ 
+form.hint.max-upload-size = Maximale Dateigr&ouml;&szlig;e: {0}MB
+form.hint.transparency = Falls kein Wert angeben wird ist die Transparenzfarbe Weiss und nicht-transparente Bilder werden mit Schwarz gef&uuml;llt
+form.hint.css-prefix = CSS zum Einf&uuml;gen vor dem Klassennamen
+form.hint.filename-pattern-match = zum Beispiel icon-([0-9]+).png - findet alle Nummern in dem Filenamen und nutzt diese f&uuml;r die Klassennamen in dem erstellten CSS.
+form.hint.class-prefix = darf nicht mit einer Nummer beginnen
+form.hint.css-suffix = CSS zum einf&uuml;gen nach dem Klassennamen
+form.hint.file-selected = Derzeit ausgew&auml;hltes Dokument. Lassen Sie dieses Feld frei um es mehrmals zu verwenden.
+ 
+form.button.show-picker = Picker anzeigen
+form.button.hide-picker = Picker verstecken
+form.button.create-sprite = Erstelle Sprite Bild und CSS
+ 
+form.errors.title = Fehler
+form.errors.invalid-file = Sie haben kein Dokument ausgew&auml;hlt oder das Dokument war in einem nicht verst&auml;ndlichen Format. Eventuell war es kein ZIP oder gr&ouml;&szlig;er als die maximal erlaubte Gr&ouml;&szlig;e.
+form.errors.zip = Das ZIP enthielt weniger als zwei Bilder. Bitte &uuml;berpr&uuml;fen Sie das ZIP oder den regul&auml;ren Ausdruck und laden Sie erneut hoch.
+form.errors.missing.widthresize = Keine neue Breite angegeben.
+form.errors.missing.heightresize = Keine neue H&ouml;he angegeben.
+form.errors.missing.hoffset = Fehlender Horizontalabstand.
+form.errors.missing.voffset = Fehlender Vertikalabstand.
+form.errors.invalid.hoffset.isnumber = Fehlerhafter Horizontalabstand. Der Abstand muss eine Nummer zwischen 1 und 100 sein.
+form.errors.invalid.voffset.isnumber = Fehlerhafter Vertikalabstand. Der Abstand muss eine Nummer zwischen 1 und 100 sein.
+form.errors.invalid.bckground.ishex = Fehlerhafte Hintergrundfarbe. Die Farbe muss als 6 Zeichen lange hexadezimale Zahl angegeben werden.
+form.errors.invalid.tagspre.iscss = Fehlerhafter CSS Pr&auml;fix. Nur die Zeichen a-z, 0-9, _, -, \# und . sind erlaubt.
+form.errors.invalid.classpre.isclassprefix = Fehlerhafter Klassenpr&auml;fix. Nur die Zeichen a-z, 0-9, _ und - sind erlaubt.
+form.errors.invalid.tagspost.iscss = Fehlerhafter CSS Suffix. Nur die Zeichen a-z, 0-9, _, -, \# und . sind erlaubt.
+ 
+form.result.reset = Schlie&szlig;en &amp; Formular zur&uuml;cksetzen
+form.result.title.css-rules = CSS Regeln
+form.result.title.sprite-image = Sprite Bild
+form.result.dont-forget = Vergessen Sie nicht eine Hintergrundregel anzugeben die das Sprite Bild referenziert, zum Beispiel:
+form.result.download = &raquo;Sprite Bild herunterladen

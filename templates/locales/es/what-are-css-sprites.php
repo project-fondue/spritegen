@@ -1,0 +1,10 @@
+<p>Los sprites CSS son una manera de reducir el n&uacute;mero de llamadas HTTP realizadas por los recursos de imagen referenciados de tu sitio web. Las im&aacute;genes se combinan en una &uacute;nica gran imagen con coordenadas X e Y definidas. Teniendo asignada la imagen generada a los elementos de p&aacute;gina necesarios, la propiedad CSS <code>background-position</code> puede usarse para hacer visible el &aacute;rea requerida de la imagen sprite.</p>
+<p>Esta t&eacute;cnica puede ser muy efectiva para mejorar el rendimiento, particularmente en situaciones d&oacute;nde se utilizan muchas im&aacute;genes peque&ntilde;as (como iconos de men&uacute;). La <a href="http://www.yahoo.com/">p&aacute;gina inicial de Yahoo!</a>, por ejemplo, utiliza esta t&eacute;cnica exactamente para eso.</p>
+<h2>Gotchas</h2>
+<p>Hay un par de errores de navegador que hemos de tener en cuenta a la hora de crear un Sprite.</p>
+<h3>Opera</h3>
+<p>Opera (al menos hasta la versi&oacute;n 9) no reconocer&aacute; una posici&oacute;n de fondo mayor de 2042px o menor de -2042px utilizando este valor l&iacute;mite en su lugar. La herramienta tiene en cuenta esto creando nuevas columnas en la imagen cada vez que se alcanza el l&iacute;mite vertical.</p>
+<h3>Safari</h3>
+<p><a href="http://creativebits.org/webdev/safari_background_repeat_bug_fix">Safari tiene un problema con la repetici&oacute;n de las im&aacute;genes de fondo</a>. Afortunadamente esto puede ser resuelto f&aacute;cilmente especificando un desplazamiento horizontal lo bastante grande (configurable).</p>
+<h2>M&aacute;s informaci&oacute;n</h2>
+<p><a href="http://www.alistapart.com/">A List Apart</a> public&oacute; un art&iacute;culo titulado &quot;<a href="http://www.alistapart.com/articles/sprites">CSS Sprites: Image Slicing's Kiss of Death</a>&quot; que explica los conceptos tras los sprites CSS. Si eres nuevo en esta t&eacute;cnica te recomendamos encarecidamente que vayas a <a href="http://www.alistapart.com/">A List Apart</a> y eches un vistazo.</p>

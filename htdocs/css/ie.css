@@ -1,0 +1,18 @@
+#menu ul {
+   margin-top: 1px; /* adjust position - doesn't look quite centered otherwise */
+}
+#menu label { /* language label sits aligned with bottom of select box unless we shift */
+   position: relative;
+   top: -3px;
+}
+#options fieldset { /* fieldsets a bit screwed in IE - adjust accordingly */
+   border-style: solid;
+   padding: 15px 7px 7px;
+   margin: -30px 0 30px 0;
+}
+a.download, input.submit { /* buttons look wrong with default padding */
+   padding: 0.1em;
+}
+.ads {
+   width: 100%;
+}

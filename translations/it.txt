@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} &amp; {1}. Tutti i diritti riservati. 
+
+page.title.home = Generatore di Sprite CSS
+page.title.what-are-css-sprites = Cosa sono gli sprite CSS?
+page.title.tool-help = Aiuto
+page.title.your-language = La tua lingua
+
+menu.home = Home
+menu.what-are-css-sprites = Cosa sono gli sprite CSS?
+menu.tool-help = Aiuto
+menu.report-bug = Report Bug
+
+menu.language.label = Lingua
+menu.language.button = Cambia
+menu.language.your-language = La tua lingua non &egrave; presente? Aiutaci a rimediare!
+
+form.legend.source-files = File sorgenti
+form.legend.resize-source-images = Ridimensionamento Immagini Originali
+form.legend.image-duplicates = Immagini Duplicate
+form.legend.sprite-output-options = Opzioni Sprite Generato
+form.legend.css-output-options = Opzioni CSS Generato
+
+form.label.upload-images = Carica Immagini (ZIP)
+form.label.width = Larghezza
+form.label.height = Altezza
+form.label.maintain-aspect-ratio = Mantienti le proporzioni delle immagini
+form.label.ignore-duplicates = Ignora le immagini duplicate
+form.label.merge-duplicates = Rimuovi le immagini duplicate ma combina le classi CSS
+form.label.horizontal-offset = Spaziatura orizzontale
+form.label.vertical-offset = Spaziatura verticale
+form.label.background-colour = Colore Sfondo / Trasparenza \# (optional)
+form.label.use-transparency = Usa il Colore di Sfondo per la Trasparenza
+form.label.sprite-output-format = Formato Sprite Generato
+form.label.css-prefix = Prefisso CSS (facoltativo)
+form.label.filename-pattern-match = Espressione Regolare per i Nomi dei File (facoltativo)
+form.label.class-prefix = Prefisso Classi (facoltativo)
+form.label.css-suffix = Suffisso CSS (facoltativo)
+
+form.hint.max-upload-size = Massima Dimensione delle Immagini Caricate: {0}MB
+form.hint.transparency = lasciare vuoto per la trasparenza GIF/PNG
+form.hint.css-prefix = CSS da inserire prima del nome della classe
+form.hint.filename-pattern-match = e.g. icon-([0-9]+).png - cattura la parte numerica di ogni nome di file e la usa per il nome della classe nel CSS generato
+form.hint.class-prefix = non pu&ograve; iniziare con un numero
+form.hint.css-suffix = CSS da inserire dopo il nome della classe
+form.hint.file-selected = File attualmente selezionato, lasciare vuoto il campo di upload per riusare.
+
+form.button.show-picker = Mostra Picker
+form.button.hide-picker = Nascondi Picker
+form.button.create-sprite = Crea Immagine e CSS dello Sprite
+
+form.errors.title = Errore nei Dati Inseriti
+form.errors.invalid-file = Non hai selezionato alcun file, oppure il file caricato non &egrave; valido. Forse non hai caricato un file ZIP oppure le sue dimensioni sono maggiori della massima consentita.
+form.errors.zip = Il file ZIP che hai caricato non contiene almeno 2 immagini. Per favore controlla lo ZIP (e/o &quot;l'Espressione Regolare per i Nomi dei File&quot;, se usata) e riprova a caricarlo.
+form.errors.missing.widthresize = Nessuna larghezza specificata per il ridimensionamento.
+form.errors.missing.heightresize = Nessuna altezza specificata per il ridimensionamento.
+form.errors.missing.hoffset = Nessuna spaziatura orizzontale specificata.
+form.errors.missing.voffset = Nessuna spaziatura verticale specificata.
+form.errors.invalid.hoffset.isnumber = La spaziatura orizzontale specificata non &egrave; valida. Deve essere compresa tra 1 and 100.
+form.errors.invalid.voffset.isnumber = La spaziatura verticale specificata non &egrave; valida. Deve essere compresa tra 1 and 100.
+form.errors.invalid.bckground.ishex = Il colore di sfondo specificato non &egrave; valido. Deve essere composto da 3 o 6 caratteri esadecimali.
+form.errors.invalid.tagspre.iscss = Il prefisso CSS specificato non &grave; valido. Pu&ograve; contenere soltanto i caratteri a-z, 0-9, _, -, \# e .
+form.errors.invalid.classpre.isclassprefix = Il prefisso delle classi specificato non &grave; valido. Pu&ograve; contenere soltanto i caratteri a-z, 0-9, _ e -
+form.errors.invalid.tagspost.iscss = Il suffisso CSS specificato non &grave; valido. Pu&ograve; contenere soltanto i caratteri a-z, 0-9, _, -, \# e .
+
+form.result.reset = Chiudi &amp; Reimposta il Form
+form.result.title.css-rules = Regole CSS
+form.result.title.sprite-image = Immagine dello Sprite
+form.result.dont-forget = Non dimenticare di aggiungere una regola di sfondo come riferimento per l'immagine dello sprite. Qualcosa come questo, per esempio:
+form.result.download = &raquo;Scarica l'immagine dello Sprite

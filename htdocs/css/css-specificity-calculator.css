@@ -1,0 +1,168 @@
+body {
+   background: #fff;
+   margin: 10px 0;
+   text-align: center;
+}
+#page {
+   width: 760px;
+   margin: 0 auto;
+   text-align: left;
+}
+#menu {      
+   background: #f6f6f6;
+   border: 1px solid #777;
+   border-width: 1px 0;
+   padding: 3px 0;  
+   margin-top: 5px;
+   text-align: right;
+   
+}
+#menu form, #menu div {
+   display: inline;
+}
+#menu form label {
+   color: #666;
+}
+#menu form input {
+   font-size: 85%;
+}    
+#your-language {
+   margin: 10px 0;
+   font-size: 85%;
+   text-align: right;
+}
+h1 {
+   font-size: 153.9%;
+   text-transform: uppercase;  
+   padding: 7px 0 5px 0;
+   color: #666;  
+   text-align: right;
+}
+h2 {
+   padding: 10px 0;
+   font-weight: bold;
+   font-size: 109%;
+}  
+a {
+   color: #363;
+   text-decoration: none;
+} 
+a:visited {
+   color: #393;
+}
+a:hover {
+   text-decoration: underline;
+}
+#options fieldset { 
+   border: 1px dotted #777;
+   margin-bottom: 20px;
+   /* containing floats */
+   overflow: hidden;
+   zoom: 1;
+}
+#options legend {
+   font-weight: bold;
+}
+#options textarea {
+   border: 1px solid #777;
+   width: 727px;
+   padding: 3px;
+   font-family: Courier New, Serif;
+}
+#options label, #options textarea, #options input {
+   display: block;
+}
+#options textarea, #options select, #options input {
+   margin-bottom: 10px;
+}
+#options div {
+   clear: both;
+}
+#url {
+   width: 727px;
+}
+#additional label, #additional input, #additional select {
+   float: left;
+}
+#additional label {
+   width: 8em;
+}
+#sort-by-label {
+   margin: 3px 5px 0 0;
+}
+#change, #calculate {
+   border: 3px double #999;
+   border-top-color: #CCC;
+   border-left-color: #CCC;
+   padding: 0.25em;
+   color: #333;
+   font: 85%;          
+}
+#change:active, #calculate:active {
+   border: 3px double #CCC;
+   border-top-color: #999;
+   border-left-color: #999;   
+}
+table {
+   border: 1px solid #777;
+   width: 758px;
+   margin-bottom: 10px;
+}
+table th, td {
+   border: 1px solid #ccc;
+   padding: 3px;
+}
+table th {
+   background: #ccc;
+   border-bottom-color: #777;
+}
+table li span {
+   background: #ccc;
+   padding: 3px;
+}
+table li {
+   margin: 7px 0;
+}
+table em {
+   font-weight: bold;
+   text-decoration: underline;
+}
+.highlight {
+   background: #eee;
+}
+.specificity span {
+   float: left;
+   color: #000;
+}
+.specificity {
+   width: 90px;
+}
+td.specificity {
+   color: #777;
+   text-align: right;
+}
+.important {
+   color: #f00;
+}
+.info {
+   margin-left: 20px;
+   list-style: disc;
+}
+.info li {
+   margin-bottom: 5px;
+}
+#footer { 
+   border-top: 1px dotted #777;
+   padding-bottom: 20px;
+   margin: 10px 0;
+   font-size: 93%;
+   color: #333;
+   text-align: right;
+}
+#footer p {
+   float: left;
+   margin: 5px 0;
+}
+#footer form {
+   margin-top: 5px;
+}
