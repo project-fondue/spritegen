@@ -65,6 +65,8 @@
       
       // instantiate template
       $oTemplate = new Template('layout.php', $sLang);
+      
+      // pass data to template
       $oTemplate->Set('appRoot', APP_ROOT);
       $oTemplate->Set('languages', $aLanguages);
       $oTemplate->Set('language', $sLang);
