@@ -51,15 +51,8 @@
       $sAction = 'home';
    }
    
-   // is the template different from the action
-   if (isset($_REQUEST['template']) && preg_match("/^[a-z0-9_-]+$/i", $_REQUEST['template'])) {
-      $sTemplate = $_REQUEST['template'];
-   } else {
-      $sTemplate = $sAction;
-   }
-   
-   // the template has to exist to proceed
-   if (file_exists(TEMPLATE_PATH."$sTemplate.php")) {
+   // the action has to exist to proceed
+   if (file_exists(ACTIONS_DIR."$sAction.php")) {
       // instantiate translations
       $oTranslations = new Translations($sLang);
       
@@ -71,21 +64,26 @@
       $oTemplate->Set('languages', $aLanguages);
       $oTemplate->Set('language', $sLang);
       $oTemplate->Set('action', $sAction);
-      $oTemplate->Set('template', $sTemplate);
+      $oTemplate->Set('template', $sAction);
       $oTemplate->Set('translation', $oTranslations);
       $oTemplate->Set('assetsDir', ASSETS_DIR);
-      $oTemplate->Set('content', new Template("$sTemplate.php", $sLang));
+      $oTemplate->Set('content', new Template("$sAction.php", $sLang));
+      $oTemplate->Set('headerImageUrl', HEADER_IMAGE_URL);
+      $oTemplate->Set('headerImageAlt', HEADER_IMAGE_ALT);
+      $oTemplate->Set('headerImageWidth', HEADER_IMAGE_WIDTH);
+      $oTemplate->Set('headerImageHeight', HEADER_IMAGE_HEIGHT);
+      $oTemplate->Set('headerHref', HEADER_HREF);
+      $oTemplate->Set('reportBugUrl', REPORT_BUG_URL);
+      $oTemplate->Set('actionsDir', ACTIONS_DIR);
    
       // get full action path
       $sAction = ACTIONS_DIR."$sAction.php";
       // action is optional, if it doesn't exist ignore and carry on
-      if (file_exists($sAction)) {
-         require($sAction);
-      }
+      require($sAction);
    
       // display resulting page
       echo $oTemplate->Display();
    } else {
-      die('Invalid template specified.');
+      die('Invalid action specified.');
    }
 ?>

@@ -31,15 +31,15 @@
    /***************************************************************/
    
    // publically accessible document root
-   define('APP_ROOT', '/');
+   define('APP_ROOT', '');
    // location of action scripts (corresponding to page types)
    define('ACTIONS_DIR', '../actions/');
    // directory to store uploaded ZIP files
-   define('UPLOAD_DIR', '../cache/css-sprite-gen-source-files/');
+   define('UPLOAD_DIR', '../cache/source-images/');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
    define('UNZIP_BINARY', '/usr/bin/unzip');
    // location to store generated sprite images
-   define('SPRITE_DIR', '../cache/css-sprite-gen-sprites/');
+   define('SPRITE_DIR', '../cache/sprites/');
    // maximum file upload size - specified in bytes
    define('MAX_FILE_SIZE', 1048576);
    // secret used to check validity of download link request
@@ -64,6 +64,16 @@
    define('TEMPLATE_CONVERT_ENTITIES', false);
    define('TEMPLATE_ENCODING', 'UTF-8');
    define('TEMPLATE_CACHE_LENGTH', 300);
+   // header image
+   define('HEADER_IMAGE_URL', 'images/header.png');
+   define('HEADER_IMAGE_ALT', 'Website Performance');
+   define('HEADER_IMAGE_WIDTH', 659);
+   define('HEADER_IMAGE_HEIGHT', 60);
+   define('HEADER_HREF', 'http://website-performance.org/');
+   // bug reporting
+   define('REPORT_BUG_URL', 'https://bugs.launchpad.net/css-sprite-generator/');
+   // url types
+   define('REWRITTEN_URLS', false);
    
    // installed languages
    $aLanguages = array(

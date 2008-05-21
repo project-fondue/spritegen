@@ -34,7 +34,7 @@
       protected $bFormPosted;
       protected $aFormErrors;
       
-      public function __construct($bFormPosted, $aFormErrors) {
+      public function __construct($bFormPosted = null, $aFormErrors = null) {
          $this->bFormPosted = $bFormPosted;
          $this->aFormErrors = $aFormErrors;
       }
@@ -89,6 +89,14 @@
          $oTemplate->Set('current', $this->GetCurrentValue($sName, $vDefault));
          
          return $oTemplate->Display();
+      }
+      
+      public function GetMenuUrl($sAppRoot, $sSection) {
+         if (REWRITTEN_URLS) {
+            return $sAppRoot."section/$sSection";
+         } else {
+            return $sAppRoot."?action=$sSection";
+         }
       }
    }
 ?>

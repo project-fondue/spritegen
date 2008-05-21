@@ -25,21 +25,25 @@
          };
       </script>
       <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
-      <script type="text/javascript" src="<?php echo $assetsDir; ?>j/tool.js"></script>
+      <script type="text/javascript" src="<?php echo $assetsDir; ?>js/tool.js"></script>
    <?php endif; ?>
 </head>
 
 <body class="lang-<?php echo $language; ?>"> 
-   <div id="page">          
-      <a href="http://www.website-performance.org/"><img src="http://assets.website-performance.org/i/website-performance.png" alt="Website-Performance" width='659' height='60'></a>
+   <div id="page">
+      <?php if (!empty($headerImageUrl)): ?>          
+         <a href="<?php echo $headerHref; ?>"><img src="<?php echo $assetsDir.$headerImageUrl; ?>" alt="<?php echo $headerImageAlt; ?>" width="<?php echo $headerImageWidth; ?>" height="<?php echo $headerImageHeight; ?>"></a>
+      <?php endif; ?>
       <h1><?php echo $title; ?></h1>
       <div id="content">
          <div id="menu">
             <ul>   
                <li<?php if ($action == 'home'): ?> class="active"<?php endif; ?>><a href="<?php echo $appRoot; ?>"><?php echo $translation->Get('menu.home'); ?></a></li>
-               <li<?php if ($action == 'what-are-css-sprites'): ?> class="active"<?php endif; ?>><a href="<?php echo $appRoot; ?>section/what-are-css-sprites/"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
-               <li<?php if ($action == 'tool-help'): ?> class="active"<?php endif; ?>><a href="<?php echo $appRoot; ?>section/tool-help/"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
-               <li><a href="https://bugs.launchpad.net/css-sprite-generator/"<?php if ($language != 'en'): ?> title="Translation required. Can you help by providing the text for this link in your language?"<?php endif; ?>><?php echo $translation->Get('menu.report-bug'); ?></a></li>
+               <li<?php if ($action == 'what-are-css-sprites'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'what-are-css-sprites'); ?>"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
+               <li<?php if ($action == 'tool-help'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'tool-help'); ?>"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
+               <?php if (!empty($reportBugUrl)): ?>
+                  <li><a href="<?php echo $reportBugUrl; ?>"><?php echo $translation->Get('menu.report-bug'); ?></a></li>
+               <?php endif; ?>
             </ul>
             <form method="get" action="<?php echo $appRoot; ?>">
                <div>
@@ -54,14 +58,14 @@
                </div>
             </form>
          </div>
-         <p id="your-language"><a href="<?php echo $appRoot; ?>section/your-language/"><?php echo $translation->Get('menu.language.your-language')?></a></p>
-         <div class="ads">
-            <?php
-               if (file_exists('master/text-ads.inc.php')) {
-                  require('../master/text-ads.inc.php');
-               }
-            ?>
-         </div>
+         <?php if (file_exists($actionsDir.'your-language.php')): ?>
+            <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
+         <?php endif; ?>
+         <?php if (file_exists('../master/text-ads.inc.php')): ?>
+            <div class="ads">
+               <?php require('../master/text-ads.inc.php'); ?>
+            </div>
+         <?php endif; ?>
          <?php echo $content; ?>
          <div id="footer">
             <p><?php echo $translation->Get('site.copyright', '<a href="http://www.ejeliot.com/">Ed Eliot</a>', '<a href="http://muffinresearch.co.uk/">Stuart Colville</a>'); ?></p>
@@ -69,7 +73,7 @@
       </div>
    </div>
    <?php
-      if (file_exists('master/analytics.inc.php')) {
+      if (file_exists('../master/analytics.inc.php')) {
          require('../master/analytics.inc.php');
       }
    ?>
