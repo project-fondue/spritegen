@@ -31,7 +31,7 @@
    /***************************************************************/
    
    class CssSpriteGen {
-      protected $oGD;
+      protected $sImageLibrary;
       protected $aImageTypes = array();
       protected $aFormValues = array();
       protected $aFormErrors = array();
@@ -42,20 +42,27 @@
       protected $bValidImages;
       
       public function __construct() {
-         $this->oGD = gd_info();
+         if (class_exists('Imagick')) {
+            $this->sImageLibrary = 'imagick';
+            $this->aImageTypes = array('PNG', 'GIF', 'JPG');
+         } else {
+            $this->sImageLibrary = 'gd';
+            
+            $oGD = gd_info();
          
-         if ($this->oGD['PNG Support']) {
-            $this->aImageTypes[] = 'PNG';
-         }
-         if ($this->oGD['GIF Create Support']) {
-            $this->aImageTypes[] = 'GIF';
-         }
-         if ($this->oGD['JPG Support']) {
-            $this->aImageTypes[] = 'JPG';
-         }
+            if ($oGD['PNG Support']) {
+               $this->aImageTypes[] = 'PNG';
+            }
+            if ($oGD['GIF Create Support']) {
+               $this->aImageTypes[] = 'GIF';
+            }
+            if ($oGD['JPG Support']) {
+               $this->aImageTypes[] = 'JPG';
+            }
          
-         if (!extension_loaded('gd')) {
-            die('GD extension not loaded. This tool requires GD support.');
+            if (!extension_loaded('gd')) {
+               die('GD extension not loaded. This tool requires GD support.');
+            }
          }
       }
       
@@ -152,6 +159,7 @@
          $aMaxColumnWidth = array();
          $i = 0;
          $bValidImages = false;
+         $sOutputFormat = strtolower($this->aFormValues['imageoutput']);
          
          $oDir = dir($sFolderMD5);
          
@@ -246,27 +254,45 @@
             }
             $this->bTransparent = (!empty($this->aFormValues['use-transparency']) && in_array($this->aFormValues['imageoutput'], array('GIF', 'PNG')));
             
+            if ($this->sImageLibrary == 'imagick') {
+               $oSprite = new Imagick();
+            }
+            
             if ($this->bTransparent && !empty($this->aFormValues['bckground'])) {
-               $oSprite = imagecreate($iSpriteWidth, $iSpriteHeight);
+               if ($this->sImageLibrary == 'imagick') {
+                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickColor("#$sBgColour"), $sOutputFormat);
+               } else {
+                  $oSprite = imagecreate($iSpriteWidth, $iSpriteHeight);
+               }
             } else {
-               $oSprite = imagecreatetruecolor($iSpriteWidth, $iSpriteHeight);
+               if ($this->sImageLibrary == 'imagick') {
+                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickColor('white'), $sOutputFormat);
+               } else {
+                  $oSprite = imagecreatetruecolor($iSpriteWidth, $iSpriteHeight);
+               }
             }
             
             if ($this->bTransparent) {
-               if (!empty($this->aFormValues['bckground'])) {
+               if ($this->sImageLibrary == 'imagick') {
+                  $oSprite->paintTransparentImage(new ImagickPixel("#$sBgColour"), 0.0, 0);
+               } else {
+                  if (!empty($this->aFormValues['bckground'])) {
+                     $iBgColour = hexdec($sBgColour);
+                     $iBgColour = imagecolorallocate($oSprite, 0xFF & ($iBgColour >> 0x10), 0xFF & ($iBgColour >> 0x8), 0xFF & $iBgColour);
+                  } else {
+                     $iBgColour = imagecolorallocate($oSprite, 0, 0, 0);
+                  }
+                  imagecolortransparent($oSprite, $iBgColour);
+               }
+            } else {
+               if ($this->sImageLibrary != 'imagick') {
+                  if (empty($sBgColour)) {
+                     $sBgColour = 'ffffff';
+                  }
                   $iBgColour = hexdec($sBgColour);
                   $iBgColour = imagecolorallocate($oSprite, 0xFF & ($iBgColour >> 0x10), 0xFF & ($iBgColour >> 0x8), 0xFF & $iBgColour);
-               } else {
-                  $iBgColour = imagecolorallocate($oSprite, 0, 0, 0);
+                  imagefill($oSprite, 0, 0, $iBgColour);
                }
-               imagecolortransparent($oSprite, $iBgColour);
-            } else {
-               if (empty($sBgColour)) {
-                  $sBgColour = 'ffffff';
-               }
-               $iBgColour = hexdec($sBgColour);
-               $iBgColour = imagecolorallocate($oSprite, 0xFF & ($iBgColour >> 0x10), 0xFF & ($iBgColour >> 0x8), 0xFF & $iBgColour);
-               imagefill($oSprite, 0, 0, $iBgColour);
             }
          
             $this->sCss = '';
@@ -279,9 +305,17 @@
                   $iWidth = $aImageInfo[0];
                   $iHeight = $aImageInfo[1];
                
-                  imagecopyresampled($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'], $aFilesInfo[$i]['height'], $iWidth, $iHeight);
+                  if ($this->sImageLibrary == 'imagick') {
+                     $oCurrentImage->resampleImage($iWidth, $iHeight, 0, 0);
+                  } else {
+                     imagecopyresampled($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'], $aFilesInfo[$i]['height'], $iWidth, $iHeight);
+                  }
                } else {
-                  imagecopy($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'],  $aFilesInfo[$i]['height']);
+                  if ($this->sImageLibrary == 'imagick') {
+                     $oSprite->compositeImage($oCurrentImage, $oCurrentImage->getImageCompose(), $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y']);
+                  } else {
+                     imagecopy($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'],  $aFilesInfo[$i]['height']);
+                  }
                }
             
                $iX = $aFilesInfo[$i]['x'] != 0 ? '-'.$aFilesInfo[$i]['x'].'px' : '0';
@@ -289,17 +323,24 @@
             
                $this->sCss .= "{$this->aFormValues['tagspre']}{$aFilesInfo[$i]['class']} {$this->aFormValues['tagspost']}{ background-position: $iX $iY; } \n";
             
-               imagedestroy($oCurrentImage);
+               if ($this->sImageLibrary == 'imagick') {
+                  $oCurrentImage->destroy();
+               } else {
+                  imagedestroy($oCurrentImage);
+               }
             }
          
             if (!is_dir(SPRITE_DIR)) {
                mkdir(SPRITE_DIR);
             }
          
-            $sOutputFormat = strtolower($this->aFormValues['imageoutput']);
             $this->sTempSpriteName = SPRITE_DIR.uniqid('csg-').".$sOutputFormat";
             $this->WriteImage($oSprite, $sOutputFormat, $this->sTempSpriteName);
-            imagedestroy($oSprite);
+            if ($this->sImageLibrary == 'imagick') {
+               $oSprite->destroy();
+            } else {
+               imagedestroy($oSprite);
+            }
             
             $this->bValidImages = true;
          }
@@ -310,33 +351,43 @@
       }
       
       protected function CreateImage($sFile, $sExtension) {
-         switch ($sExtension) {
-            case 'jpg':
-            case 'jpeg':
-               return @imagecreatefromjpeg($sFile);
-            case 'gif':
-               return @imagecreatefromgif($sFile);
-            case 'png':
-               return @imagecreatefrompng($sFile);
+         if ($this->sImageLibrary == 'imagick') {
+            $oImage = new Imagick();
+            $oImage->readImage($sFile);
+            return $oImage;
+         } else {
+            switch ($sExtension) {
+               case 'jpg':
+               case 'jpeg':
+                  return @imagecreatefromjpeg($sFile);
+               case 'gif':
+                  return @imagecreatefromgif($sFile);
+               case 'png':
+                  return @imagecreatefrompng($sFile);
+            }
          }
       }
       
       protected function WriteImage($oImage, $sExtension, $sFilename) {
-         switch ($sExtension) {
-            case 'jpg': 
-            case 'jpeg':
-               imagejpeg($oImage, $sFilename);
-               break;
-            case 'gif':
-               if ($this->bTransparent) {
-                  imagetruecolortopalette($oImage, true, 256);
-               }
-               imagegif($oImage, $sFilename);
-               break;
-            case 'png':
-               imagepng($oImage, $sFilename);
-               break;
+         if ($this->sImageLibrary == 'imagick') {
+            $oImage->writeImage($sFilename);
+         } else {
+            switch ($sExtension) {
+               case 'jpg': 
+               case 'jpeg':
+                  imagejpeg($oImage, $sFilename);
+                  break;
+               case 'gif':
+                  if ($this->bTransparent) {
+                     imagetruecolortopalette($oImage, true, 256);
+                  }
+                  imagegif($oImage, $sFilename);
+                  break;
+               case 'png':
+                  imagepng($oImage, $sFilename);
+                  break;
             }
+         }
       }
       
       public function ValidImages() {
