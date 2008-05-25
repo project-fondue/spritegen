@@ -66,8 +66,8 @@ td {
 }
 #menu {      
    background: #f6f6f6;
-   border: 1px solid #777;
-   border-width: 1px 0;
+   border: 2px solid #777;
+   border-width: 2px 0;
    padding: 3px 0;  
    margin-top: 5px;
    text-align: right;
@@ -135,7 +135,8 @@ td {
    height: 200px;
 }
 #options fieldset { 
-   border: 1px dotted #777;
+   border: 2px solid #393;
+   padding: 20px;
    margin-bottom: 20px;
    /* containing floats */
    overflow: hidden;
@@ -143,6 +144,8 @@ td {
 }
 #options legend {
    font-weight: bold;
+   font-size: 130%;
+   color: #393;
 }
 #options label {
    clear: left;
@@ -198,7 +201,7 @@ td {
    margin: 0 0 7px 15px;
 }
 #footer { 
-   border-top: 1px dotted #777;
+   border-top: 1px solid #777;
    padding-bottom: 20px;
    margin: 10px 0;
    font-size: 93%;
@@ -250,6 +253,9 @@ a:active.download, input.submit:active {
    float: left;
    width: 20% !important;
    margin-bottom: 5px !important;
+}
+.ads a {
+   color: #333;
 }
 .lang-cn #options input.submit {
    width: 15em;

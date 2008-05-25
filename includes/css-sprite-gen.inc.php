@@ -1,6 +1,18 @@
 <?php
    /***************************************************************/
-   /* Software License Agreement (BSD License)
+   /* Licensed under BSD License with the following exceptions:
+
+      -----------------------------------------------------------------
+      * Design elements (images, CSS) relating to the "Website Performance" 
+        branding and web site remain copyright of Ed Eliot & 
+        Stuart Colville and should not be used without written 
+        permission.
+      * If you host a copy of the tool publicly in a largely unaltered 
+        form and with the same application name then you must add clear 
+        notices to explain that it is a copy of the original and provide 
+        a link back to our that original hosted version 
+        at http://spritegen.website-performance.org/.
+      ------------------------------------------------------------------
 
       Copyright (C) 2007-2008, Ed Eliot & Stuart Colville.
       All rights reserved.
@@ -42,10 +54,25 @@
       protected $bValidImages;
       
       public function __construct() {
-         if (class_exists('Imagick')) {
+         if (extension_loaded('imagick')) {
             $this->sImageLibrary = 'imagick';
-            $this->aImageTypes = array('PNG', 'GIF', 'JPG');
+            
+            $aImageFormats = Imagick::queryFormats();
+            
+            if (in_array('PNG', $aImageFormats)) {
+               $this->aImageTypes[] = 'PNG';
+            }
+            if (in_array('GIF', $aImageFormats)) {
+               $this->aImageTypes[] = 'GIF';
+            }
+            if (in_array('JPG', $aImageFormats)) {
+               $this->aImageTypes[] = 'JPG';
+            }
          } else {
+            if (!extension_loaded('gd')) {
+               die('GD extension not loaded. This tool requires GD support.');
+            }
+            
             $this->sImageLibrary = 'gd';
             
             $oGD = gd_info();
@@ -58,10 +85,6 @@
             }
             if ($oGD['JPG Support']) {
                $this->aImageTypes[] = 'JPG';
-            }
-         
-            if (!extension_loaded('gd')) {
-               die('GD extension not loaded. This tool requires GD support.');
             }
          }
       }
@@ -170,6 +193,8 @@
             $aPathParts = pathinfo($sFilePath);
             
             if (!empty($this->aFormValues['fileregex'])) {
+               $this->aFormValues['fileregex'] = str_replace('/', '\/', $this->aFormValues['fileregex']);
+               
                if (preg_match('/^'.$this->aFormValues['fileregex'].'$/i', $sFile, $aMatches)) {
                   $sFileClass = $aMatches[1];
                } else {
@@ -258,15 +283,15 @@
                $oSprite = new Imagick();
             }
             
-            if ($this->bTransparent && !empty($this->aFormValues['bckground'])) {
-               if ($this->sImageLibrary == 'imagick') {
-                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickColor("#$sBgColour"), $sOutputFormat);
+            if ($this->sImageLibrary == 'imagick') {
+               if (!empty($this->aFormValues['bckground'])) {
+                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel("#$sBgColour"), $sOutputFormat);
                } else {
-                  $oSprite = imagecreate($iSpriteWidth, $iSpriteHeight);
+                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel('white'), $sOutputFormat);
                }
             } else {
-               if ($this->sImageLibrary == 'imagick') {
-                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickColor('white'), $sOutputFormat);
+               if ($this->bTransparent && !empty($this->aFormValues['bckground'])) {
+                  $oSprite = imagecreate($iSpriteWidth, $iSpriteHeight);
                } else {
                   $oSprite = imagecreatetruecolor($iSpriteWidth, $iSpriteHeight);
                }
@@ -274,7 +299,11 @@
             
             if ($this->bTransparent) {
                if ($this->sImageLibrary == 'imagick') {
-                  $oSprite->paintTransparentImage(new ImagickPixel("#$sBgColour"), 0.0, 0);
+                  if (!empty($this->aFormValues['bckground'])) {
+                     $oSprite->paintTransparentImage(new ImagickPixel("#$sBgColour"), 0.0, 0);
+                  } else {
+                     $oSprite->paintTransparentImage(new ImagickPixel("#ffffff"), 0.0, 0);
+                  }
                } else {
                   if (!empty($this->aFormValues['bckground'])) {
                      $iBgColour = hexdec($sBgColour);

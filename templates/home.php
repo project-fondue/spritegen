@@ -26,7 +26,7 @@
          <p><?php echo $translation->Get('form.result.dont-forget')?></p>
          <pre><code>#container li { background: url(<?php echo $filename; ?>) no-repeat top left; }</code></pre>
          <h2><?php echo $translation->Get('form.result.title.sprite-image'); ?></h2>
-         <p><a class="download" href="<?php echo $appRoot; ?>download.php?file=<?php echo $filename; ?>&hash=<?php echo $hash; ?>"><?php echo $translation->Get('form.result.download'); ?></a></p>
+         <p><a class="download" href="<?php echo $appRoot; ?>download.php?file=<?php echo $filename; ?>&amp;hash=<?php echo $hash; ?>"><?php echo $translation->Get('form.result.download'); ?></a></p>
       </div>
    <?php endif; ?>
 <?php endif; ?>
