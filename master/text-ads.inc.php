@@ -25,10 +25,10 @@ function tla_ads() {
 	$arr_xml = tla_decodeXML($xml);
 
 	if ( is_array($arr_xml) ) {
-		echo "\n<ul style=\"width: 100%; padding: 0; margin: 0; list-style: none;\">\n";
+		echo "\n<ul id=\"text-links\">\n";
 		for ($i = 0; $i < count($arr_xml['URL']); $i++) {
 			if( isset($arr_xml['PostID'][$i]) && $arr_xml['PostID'][$i] > 0 ) continue;
-			echo "<li style=\"padding: 0; margin: 0; clear: none; width: 13%; float: left; display: block;\">".$arr_xml['BeforeText'][$i]." <a href=\"".$arr_xml['URL'][$i]."\">".$arr_xml['Text'][$i]."</a> ".$arr_xml['AfterText'][$i]."</li>\n";
+			echo "<li>".$arr_xml['BeforeText'][$i]." <a href=\"".$arr_xml['URL'][$i]."\">".$arr_xml['Text'][$i]."</a> ".$arr_xml['AfterText'][$i]."</li>\n";
 		}
 		echo "</ul>";
 	}

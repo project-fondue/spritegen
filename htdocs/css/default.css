@@ -115,6 +115,16 @@ td {
    font-size: 85%;
    text-align: right;
 }
+#main {
+   width: 600px;
+   margin-right: 10px;
+}
+#sidebar {
+   width: 150px;
+}
+#main, #sidebar {
+   float: left;
+}
 #result {
    position: relative;
    background: #eee;
@@ -153,8 +163,9 @@ td {
    width: 17em;
 }
 #options span {
-   width: 22em;
+   width: 12em;
    margin-left: 5px;
+   font-size: 92%;
 }
 #options label, #options span {
    line-height: 1.7em;
@@ -201,6 +212,7 @@ td {
    margin: 0 0 7px 15px;
 }
 #footer { 
+   clear: left;
    border-top: 1px solid #777;
    padding-bottom: 20px;
    margin: 10px 0;
@@ -241,21 +253,27 @@ a:active.download, input.submit:active {
 .credits li {
    margin: 0 0 5px 15px;
 }
-.ads {
-   background: #f7f7f7;
-   border: 1px dotted #777;
-   border-width: 1px 0;
-   margin: 10px auto;
-   padding: 5px 5px 0 5px;
-   overflow: hidden;
+#sidebar .ad {
+   background: #cfc;
+   border: 2px solid #393;
+   width: 146px;
+   padding: 30px 0;
+   margin: 8px 0;
+   font-weight: bold;
+   text-align: center;
 }
-.ads li {
-   float: left;
-   width: 20% !important;
-   margin-bottom: 5px !important;
+#sidebar h2 {
+   border-bottom: 2px solid #393;
+   padding-bottom: 3px;
+   margin-bottom: 10px;
+   color: #393;
 }
-.ads a {
-   color: #333;
+#text-links {
+   list-style-type: disc;
+   margin-left: 15px;
+}
+#text-links li {
+   margin-bottom: 5px;
 }
 .lang-cn #options input.submit {
    width: 15em;

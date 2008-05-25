@@ -102,7 +102,7 @@
          );
 
          $aOptionalFields = array(
-            'bckground',
+            'background',
             'tagspre',
             'classpre',
             'tagspost',
@@ -113,7 +113,7 @@
          $aRules = array(
             'voffset' => array('IsNumber'),
             'hoffset' => array('IsNumber'),
-            'bckground' => array('IsHex'),
+            'background' => array('IsHex'),
             'imageoutput' => array('IsImageType'),
             'widthResize' => array('IsNumber', 'IsPercent'),
             'heightResize' => array('IsNumber', 'IsPercent'),
@@ -273,7 +273,7 @@
             $iSpriteHeight = $iMaxHeight;
             $iSpriteWidth = array_sum($aMaxColumnWidth) + $iMaxHOffset;
          
-            $sBgColour = str_replace('#', '', $this->aFormValues['bckground']);
+            $sBgColour = str_replace('#', '', $this->aFormValues['background']);
             if (strlen($sBgColour) == 3) {
                $sBgColour = substr($sBgColour, 0, 1).substr($sBgColour, 0, 1).substr($sBgColour, 1, 1).substr($sBgColour, 1, 1).substr($sBgColour, 2, 1).substr($sBgColour, 2, 1);
             }
@@ -284,13 +284,13 @@
             }
             
             if ($this->sImageLibrary == 'imagick') {
-               if (!empty($this->aFormValues['bckground'])) {
+               if (!empty($this->aFormValues['background'])) {
                   $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel("#$sBgColour"), $sOutputFormat);
                } else {
                   $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel('white'), $sOutputFormat);
                }
             } else {
-               if ($this->bTransparent && !empty($this->aFormValues['bckground'])) {
+               if ($this->bTransparent && !empty($this->aFormValues['background'])) {
                   $oSprite = imagecreate($iSpriteWidth, $iSpriteHeight);
                } else {
                   $oSprite = imagecreatetruecolor($iSpriteWidth, $iSpriteHeight);
@@ -299,13 +299,13 @@
             
             if ($this->bTransparent) {
                if ($this->sImageLibrary == 'imagick') {
-                  if (!empty($this->aFormValues['bckground'])) {
+                  if (!empty($this->aFormValues['background'])) {
                      $oSprite->paintTransparentImage(new ImagickPixel("#$sBgColour"), 0.0, 0);
                   } else {
                      $oSprite->paintTransparentImage(new ImagickPixel("#ffffff"), 0.0, 0);
                   }
                } else {
-                  if (!empty($this->aFormValues['bckground'])) {
+                  if (!empty($this->aFormValues['background'])) {
                      $iBgColour = hexdec($sBgColour);
                      $iBgColour = imagecolorallocate($oSprite, 0xFF & ($iBgColour >> 0x10), 0xFF & ($iBgColour >> 0x8), 0xFF & $iBgColour);
                   } else {

@@ -61,12 +61,27 @@
          <?php if (file_exists($actionsDir.'your-language.php')): ?>
             <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
          <?php endif; ?>
-         <?php if (file_exists('../master/text-ads.inc.php')): ?>
-            <div class="ads">
+         <div id="main">
+            <?php echo $content; ?>
+         </div>
+         <div id="sidebar">
+            <?php if (file_exists('../master/text-ads.inc.php')): ?>
+               <div class="ad">
+                  <a href=""><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
+               </div>
+               <div class="ad">
+                  <a href=""><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
+               </div>
+               <h2><?php echo $translation->Get('sidebar.sponsors-header'); ?></h2>
                <?php require('../master/text-ads.inc.php'); ?>
-            </div>
-         <?php endif; ?>
-         <?php echo $content; ?>
+               <h2><?php echo $translation->Get('sidebar.advertise-header'); ?></h2>
+               <p><a href=""><?php echo $translation->Get('sidebar.advertise-text'); ?></a></p>
+               <h2><?php echo $translation->Get('sidebar.api-header'); ?></h2>
+               <p><a href=""><?php echo $translation->Get('sidebar.api-text'); ?></a></p>
+               <h2><?php echo $translation->Get('sidebar.open-source-header'); ?></h2>
+               <p><a href=""><?php echo $translation->Get('sidebar.open-source-text'); ?></a></p>
+            <?php endif; ?>
+         </div>
          <div id="footer">
             <p><?php echo $translation->Get('site.copyright', '<a href="http://www.ejeliot.com/">Ed Eliot</a>', '<a href="http://muffinresearch.co.uk/">Stuart Colville</a>'); ?></p>
          </div>
