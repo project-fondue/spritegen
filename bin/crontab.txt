@@ -1,0 +1,1 @@
+*/15    *       *       *       *       /<REPLACE_WITH_THE_PATH_TO>/spritegen/bin/cleancache.sh > /dev/null 2>&1
