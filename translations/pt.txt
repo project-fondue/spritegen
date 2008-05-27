@@ -68,3 +68,12 @@ form.result.title.css-rules = Regras CSS
 form.result.title.sprite-image = Imagem Sprite
 form.result.dont-forget = Não se esqueça de adicionar uma regra no fundo que referencie a imagem sprite. Algo com isto, por exemplo:
 form.result.download = » Guardar Imagem Sprite
+
+sidebar.ad-placeholder = Advertise Here
+sidebar.sponsors-header = Sponsors
+sidebar.advertise-header = Advertising
+sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
+sidebar.api-header = Sprite Generator API
+sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
+sidebar.open-source-header = Open Source
+sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

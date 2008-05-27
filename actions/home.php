@@ -75,5 +75,6 @@
    $oTemplate->Set('imageTypes', $oCssSpriteGen->GetImageTypes());
    $oTemplate->Set('formPosted', $bFormPosted);
    $oTemplate->Set('formErrors', $aFormErrors);
+   $oTemplate->Set('useApi', !empty($_GET['use-api']));
    $oTemplate->Set('functions', new TemplateFunctions($bFormPosted, $aFormErrors));
 ?>

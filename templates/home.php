@@ -1,22 +1,24 @@
 <?php if ($formPosted): ?>
    <?php if ($formError || $uploadError || !$validImages): ?>
-      <ul id="error">
+      <div id="error">
          <h2><?php echo $translation->Get('form.errors.title'); ?></h2>
-         <?php if ($uploadError): ?>
-            <li><?php echo $translation->Get('form.errors.invalid-file'); ?></li>
-         <?php endif; ?>
-         <?php if (!$formError && !$uploadError && !$validImages): ?>
-            <li><?php echo $translation->Get('form.errors.zip'); ?></li>
-         <?php endif; ?>
-         <?php if ($formError): ?>
-            <?php foreach ($formErrors['missing'] as $error): ?>
-               <li><?php echo $translation->Get('form.errors.missing.'.strtolower($error)); ?></li>
-            <?php endforeach; ?>
-            <?php foreach ($formErrors['invalid'] as $key => $value): ?>
-               <li><?php echo $translation->Get('form.errors.invalid.'.strtolower($key).'.'.strtolower($value)); ?></li>
-            <?php endforeach; ?>
-         <?php endif; ?>
-      </ul>
+         <ul>
+            <?php if ($uploadError): ?>
+               <li><?php echo $translation->Get('form.errors.invalid-file'); ?></li>
+            <?php endif; ?>
+            <?php if (!$formError && !$uploadError && !$validImages): ?>
+               <li><?php echo $translation->Get('form.errors.zip'); ?></li>
+            <?php endif; ?>
+            <?php if ($formError): ?>
+               <?php foreach ($formErrors['missing'] as $error): ?>
+                  <li><?php echo $translation->Get('form.errors.missing.'.strtolower($error)); ?></li>
+               <?php endforeach; ?>
+               <?php foreach ($formErrors['invalid'] as $key => $value): ?>
+                  <li><?php echo $translation->Get('form.errors.invalid.'.strtolower($key).'.'.strtolower($value)); ?></li>
+               <?php endforeach; ?>
+            <?php endif; ?>
+         </ul>
+      </div>
    <?php endif; ?>
    <?php if ($validImages): ?>
       <div id="result">
@@ -24,13 +26,15 @@
          <h2><?php echo $translation->Get('form.result.title.css-rules'); ?></h2>
          <div class="code-container"><pre><code><?php echo $css; ?></code></pre></div>
          <p><?php echo $translation->Get('form.result.dont-forget')?></p>
-         <pre><code>#container li { background: url(<?php echo $filename; ?>) no-repeat top left; }</code></pre>
+         <pre class="background-example"><code>#container li {
+   background: url(<?php echo $filename; ?>) no-repeat top left;
+}</code></pre>
          <h2><?php echo $translation->Get('form.result.title.sprite-image'); ?></h2>
          <p><a class="download" href="<?php echo $appRoot; ?>download.php?file=<?php echo $filename; ?>&amp;hash=<?php echo $hash; ?>"><?php echo $translation->Get('form.result.download'); ?></a></p>
       </div>
    <?php endif; ?>
 <?php endif; ?>
-<form action="<?php echo $appRoot; ?>" method="post" enctype="multipart/form-data" id="options">
+<form action="<?php echo $appRoot; ?><?php if ($useApi) echo 'api.php'; ?>" method="post" enctype="multipart/form-data" id="options">
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.source-files'); ?></legend>
       <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize; ?>">
@@ -46,32 +50,32 @@
          <?php endif; ?>
       </div>
    </fieldset>  
-   <fieldset id="resize">
-      <legend><?php echo $translation->Get('form.legend.resize-source-images'); ?></legend>
-      <?php echo $functions->TextInput('widthResize', $translation->Get('form.label.width'), 100, 3, '%'); ?>
-      <?php echo $functions->TextInput('heightResize', $translation->Get('form.label.height'), 100, 3, '%'); ?>
-   </fieldset>
    <fieldset class="duplicates">
       <legend><?php echo $translation->Get('form.legend.image-duplicates'); ?></legend>
-      <?php echo $functions->RadioInput('ignore', 'duplicates1', $translation->Get('form.label.ignore-duplicates'), 'ignore', 'ignore'); ?>
-      <?php echo $functions->RadioInput('ignore', 'duplicates2', $translation->Get('form.label.merge-duplicates'), 'merge', 'ignore'); ?>
+      <?php echo $functions->RadioInput('ignore-duplicates', 'duplicates1', $translation->Get('form.label.ignore-duplicates'), 'ignore', 'ignore'); ?>
+      <?php echo $functions->RadioInput('ignore-duplicates', 'duplicates2', $translation->Get('form.label.merge-duplicates'), 'merge', 'ignore'); ?>
+   </fieldset>
+   <fieldset id="resize">
+      <legend><?php echo $translation->Get('form.legend.resize-source-images'); ?></legend>
+      <?php echo $functions->TextInput('width-resize', $translation->Get('form.label.width'), 100, 3, '%'); ?>
+      <?php echo $functions->TextInput('height-resize', $translation->Get('form.label.height'), 100, 3, '%'); ?>
    </fieldset>
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.sprite-output-options'); ?></legend>
-      <?php echo $functions->TextInput('hoffset', $translation->Get('form.label.horizontal-offset'), 150, 5, 'px'); ?>
-      <?php echo $functions->TextInput('voffset', $translation->Get('form.label.vertical-offset'), 30, 5, 'px'); ?>
+      <?php echo $functions->TextInput('horizontal-offset', $translation->Get('form.label.horizontal-offset'), 150, 5, 'px'); ?>
+      <?php echo $functions->TextInput('vertical-offset', $translation->Get('form.label.vertical-offset'), 30, 5, 'px'); ?>
 
       <?php echo $functions->TextInput('background', $translation->Get('form.label.background-colour'), '', 7, $translation->Get('form.hint.transparency'), true); ?>
       <label for="use-transparency"><?php echo $translation->Get('form.label.use-transparency'); ?></label><input type="checkbox" name="use-transparency" id="use-transparency"<?php if (!$formPosted || isset($_POST['use-transparency'])) echo ' checked="checked"'; ?>>
       
-      <?php echo $functions->SelectInput('imageoutput', $translation->Get('form.label.sprite-output-format'), $imageTypes, '', ''); ?> 
+      <?php echo $functions->SelectInput('image-output', $translation->Get('form.label.sprite-output-format'), $imageTypes, '', ''); ?> 
    </fieldset>
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.css-output-options'); ?></legend>
-      <?php echo $functions->TextInput('tagspre', $translation->Get('form.label.css-prefix'), '', null, $translation->Get('form.hint.css-prefix'), true); ?>
-      <?php echo $functions->TextInput('fileregex', $translation->Get('form.label.filename-pattern-match'), '', null, $translation->Get('form.hint.filename-pattern-match'), true); ?>
-      <?php echo $functions->TextInput('classpre', $translation->Get('form.label.class-prefix'), 'sprite-', null, $translation->Get('form.hint.class-prefix'), true); ?>
-      <?php echo $functions->TextInput('tagspost', $translation->Get('form.label.css-suffix'), '', null, $translation->Get('form.hint.css-suffix'), true); ?>
+      <?php echo $functions->TextInput('selector-prefix', $translation->Get('form.label.css-prefix'), '', null, $translation->Get('form.hint.css-prefix'), true); ?>
+      <?php echo $functions->TextInput('file-regex', $translation->Get('form.label.filename-pattern-match'), '', null, $translation->Get('form.hint.filename-pattern-match'), true); ?>
+      <?php echo $functions->TextInput('class-prefix', $translation->Get('form.label.class-prefix'), 'sprite-', null, $translation->Get('form.hint.class-prefix'), true); ?>
+      <?php echo $functions->TextInput('selector-suffix', $translation->Get('form.label.css-suffix'), '', null, $translation->Get('form.hint.css-suffix'), true); ?>
    </fieldset>
    <p><input class="submit" type="submit" name="sub" value="<?php echo $translation->Get('form.button.create-sprite'); ?>"></p>
 </form>

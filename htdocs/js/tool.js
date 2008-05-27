@@ -18,13 +18,13 @@ YAHOO.util.Event.onContentReady('resize', function() {
       var oTarget = YAHOO.util.Event.getTarget(e);
       
       if (document.getElementById('aspect-ratio').checked) {
-         if (oTarget.id == 'widthResize') {
-            document.getElementById('heightResize').value = oTarget.value;
+         if (oTarget.id == 'width-resize') {
+            document.getElementById('height-resize').value = oTarget.value;
          } else {
-            document.getElementById('widthResize').value = oTarget.value;
+            document.getElementById('width-resize').value = oTarget.value;
          }
       }
    }
    
-   YAHOO.util.Event.addListener(['widthResize', 'heightResize'], 'keyup', MaintainAspectRatio);
+   YAHOO.util.Event.addListener(['width-resize', 'height-resize'], 'keyup', MaintainAspectRatio);
 });

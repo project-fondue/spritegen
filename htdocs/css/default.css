@@ -125,6 +125,11 @@ td {
 #main, #sidebar {
    float: left;
 }
+#main h2 {
+   background: #393;
+   padding: 3px;
+   color: #fff;
+}
 #result {
    position: relative;
    background: #eee;
@@ -134,15 +139,19 @@ td {
 }
 #result .close {
    position: absolute;
-   top: 5px;
-   right: 5px;
+   top: 11px;
+   right: 12px;
    font-size: 85%;
+   color: #fff;
 }
 #result .code-container {
    border: 1px solid #ccc;
    overflow: auto;
-   width: 100%;
+   width: 582px;
    height: 200px;
+}
+#result .background-example {
+   margin-bottom: 10px;
 }
 #options fieldset { 
    border: 2px solid #393;
@@ -203,8 +212,15 @@ td {
    border: 1px solid #f00;
 }
 #error {
-   width: 744px;
-   margin: 10px 0;
+   margin-bottom: 10px;
+}
+#error h2 {
+   background: none;
+   color: #000;
+}
+#error ul {
+   width: 582px;
+   margin-top: 10px;
    padding: 0 7px 3px 7px;
    list-style: disc;
 }

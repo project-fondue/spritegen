@@ -103,24 +103,24 @@
 
          $aOptionalFields = array(
             'background',
-            'tagspre',
-            'classpre',
-            'tagspost',
-            'fileregex',
+            'selector-prefix',
+            'class-prefix',
+            'selector-suffix',
+            'file-regex',
             'use-transparency'
          );
 
          $aRules = array(
-            'voffset' => array('IsNumber'),
-            'hoffset' => array('IsNumber'),
+            'vertical-offset' => array('IsNumber'),
+            'horizontal-offset' => array('IsNumber'),
             'background' => array('IsHex'),
-            'imageoutput' => array('IsImageType'),
-            'widthResize' => array('IsNumber', 'IsPercent'),
-            'heightResize' => array('IsNumber', 'IsPercent'),
-            'ignore' => array('IsIgnoreOption'),
-            'classpre' => array('IsClassPrefix'),
-            'tagspre' => array('IsCss'),
-            'tagspost' => array('IsCss')
+            'image-output' => array('IsImageType'),
+            'width-resize' => array('IsNumber', 'IsPercent'),
+            'height-resize' => array('IsNumber', 'IsPercent'),
+            'ignore-duplicates' => array('IsIgnoreOption'),
+            'class-prefix' => array('IsClassPrefix'),
+            'selector-prefix' => array('IsCss'),
+            'selector-suffix' => array('IsCss')
          );
          
          $oValidation = new Validation($_POST, $aFieldsToIgnore, $aOptionalFields, $aRules);
@@ -175,27 +175,27 @@
          $aFilesMD5 = array();
          $bResize = false;
          $iColumnCount = 1;
-         $iTotalHeight = $this->aFormValues['voffset'];
+         $iTotalHeight = $this->aFormValues['vertical-offset'];
          $iMaxWidth = 0;
          $iMaxHeight = 0;
          $iMaxHOffset = 0;
          $aMaxColumnWidth = array();
          $i = 0;
          $bValidImages = false;
-         $sOutputFormat = strtolower($this->aFormValues['imageoutput']);
+         $sOutputFormat = strtolower($this->aFormValues['image-output']);
          
          $oDir = dir($sFolderMD5);
          
          while (false !== ($sFile = $oDir->read())) {
-            $bResize = ($this->aFormValues['widthResize'] != 100 && $this->aFormValues['heightResize'] != 100);
+            $bResize = ($this->aFormValues['width-resize'] != 100 && $this->aFormValues['height-resize'] != 100);
             
             $sFilePath = $sFolderMD5.$sFile;
             $aPathParts = pathinfo($sFilePath);
             
-            if (!empty($this->aFormValues['fileregex'])) {
-               $this->aFormValues['fileregex'] = str_replace('/', '\/', $this->aFormValues['fileregex']);
+            if (!empty($this->aFormValues['file-regex'])) {
+               $this->aFormValues['file-regex'] = str_replace('/', '\/', $this->aFormValues['file-regex']);
                
-               if (preg_match('/^'.$this->aFormValues['fileregex'].'$/i', $sFile, $aMatches)) {
+               if (preg_match('/^'.$this->aFormValues['file-regex'].'$/i', $sFile, $aMatches)) {
                   $sFileClass = $aMatches[1];
                } else {
                   $sFileClass = '';
@@ -218,16 +218,16 @@
                $sKey = array_search($sFileMD5, $aFilesMD5);
             
                if ($sKey !== false) {
-                  if ($this->aFormValues['ignore'] == 'merge') {
+                  if ($this->aFormValues['ignore-duplicates'] == 'merge') {
                      if (isset($aFilesInfo[$sKey]['class'])) {
-                        $aFilesInfo[$sKey]['class'] = $aFilesInfo[$sKey]['class'].$this->aFormValues['tagspost'].', '.$this->aFormValues['tagspre'].'.'.$this->aFormValues['classpre'].$sFileClass;
+                        $aFilesInfo[$sKey]['class'] = $aFilesInfo[$sKey]['class'].$this->aFormValues['selector-suffix'].', '.$this->aFormValues['selector-prefix'].'.'.$this->aFormValues['class-prefix'].$sFileClass;
                         continue;
                      }
                   }
                }
             
                $aFilesMD5[$i] = $sFileMD5;
-               $aFilesInfo[$i]['class'] = ".{$this->aFormValues['classpre']}$sFileClass";
+               $aFilesInfo[$i]['class'] = ".{$this->aFormValues['class-prefix']}$sFileClass";
             
                $aFilesInfo[$i]['path'] = $sFilePath;
                $aFilesInfo[$i]['ext'] = $sExtension;
@@ -235,26 +235,26 @@
                $iWidth = $aImageInfo[0];
                $iHeight = $aImageInfo[1];
                
-               $iCurrentHeight = $iTotalHeight + $this->aFormValues['voffset'] + $iHeight;
+               $iCurrentHeight = $iTotalHeight + $this->aFormValues['vertical-offset'] + $iHeight;
 
                if ($iMaxHeight < $iCurrentHeight) {
                   $iMaxHeight = $iCurrentHeight;
                }
             
-               $aFilesInfo[$i]['width'] = $bResize ? round(($iWidth / 100) * $this->aFormValues['widthResize']) : $iWidth;
-               $aFilesInfo[$i]['height'] = $bResize ? round(($iHeight / 100) * $this->aFormValues['heightResize']) : $iHeight;
+               $aFilesInfo[$i]['width'] = $bResize ? round(($iWidth / 100) * $this->aFormValues['width-resize']) : $iWidth;
+               $aFilesInfo[$i]['height'] = $bResize ? round(($iHeight / 100) * $this->aFormValues['height-resize']) : $iHeight;
                
-               if (($iTotalHeight + $this->aFormValues['voffset']) >= 2000) {
+               if (($iTotalHeight + $this->aFormValues['vertical-offset']) >= 2000) {
                   $iColumnCount++;
-                  $iTotalHeight = $this->aFormValues['voffset'];
+                  $iTotalHeight = $this->aFormValues['vertical-offset'];
                }
             
                $aMaxColumnWidth[$iColumnCount] = $iMaxWidth;
-               $iMaxHOffset = $this->aFormValues['hoffset'] * ($iColumnCount - 1);
+               $iMaxHOffset = $this->aFormValues['horizontal-offset'] * ($iColumnCount - 1);
             
                $aFilesInfo[$i]['y'] = $iTotalHeight;
-               $iTotalHeight += ($aFilesInfo[$i]['height'] + $this->aFormValues['voffset']);
-               $aFilesInfo[$i]['x'] = $iColumnCount == 1 ? 0 : ($this->aFormValues['hoffset'] * ($iColumnCount - 1) + (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount]));
+               $iTotalHeight += ($aFilesInfo[$i]['height'] + $this->aFormValues['vertical-offset']);
+               $aFilesInfo[$i]['x'] = $iColumnCount == 1 ? 0 : ($this->aFormValues['horizontal-offset'] * ($iColumnCount - 1) + (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount]));
                $aFilesInfo[$i]['currentCombinedHeight'] = $iTotalHeight;
                $aFilesInfo[$i]['columnNumber'] = $iColumnCount;
             
@@ -277,7 +277,7 @@
             if (strlen($sBgColour) == 3) {
                $sBgColour = substr($sBgColour, 0, 1).substr($sBgColour, 0, 1).substr($sBgColour, 1, 1).substr($sBgColour, 1, 1).substr($sBgColour, 2, 1).substr($sBgColour, 2, 1);
             }
-            $this->bTransparent = (!empty($this->aFormValues['use-transparency']) && in_array($this->aFormValues['imageoutput'], array('GIF', 'PNG')));
+            $this->bTransparent = (!empty($this->aFormValues['use-transparency']) && in_array($this->aFormValues['image-output'], array('GIF', 'PNG')));
             
             if ($this->sImageLibrary == 'imagick') {
                $oSprite = new Imagick();
@@ -287,7 +287,11 @@
                if (!empty($this->aFormValues['background'])) {
                   $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel("#$sBgColour"), $sOutputFormat);
                } else {
-                  $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel('white'), $sOutputFormat);
+                  if ($this->bTransparent) {
+                     $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel('#000000'), $sOutputFormat);
+                  } else {
+                     $oSprite->newImage($iSpriteWidth, $iSpriteHeight, new ImagickPixel('#ffffff'), $sOutputFormat);
+                  }
                }
             } else {
                if ($this->bTransparent && !empty($this->aFormValues['background'])) {
@@ -302,7 +306,7 @@
                   if (!empty($this->aFormValues['background'])) {
                      $oSprite->paintTransparentImage(new ImagickPixel("#$sBgColour"), 0.0, 0);
                   } else {
-                     $oSprite->paintTransparentImage(new ImagickPixel("#ffffff"), 0.0, 0);
+                     $oSprite->paintTransparentImage(new ImagickPixel("#000000"), 0.0, 0);
                   }
                } else {
                   if (!empty($this->aFormValues['background'])) {
@@ -350,7 +354,7 @@
                $iX = $aFilesInfo[$i]['x'] != 0 ? '-'.$aFilesInfo[$i]['x'].'px' : '0';
                $iY = $aFilesInfo[$i]['y'] != 0 ? '-'.$aFilesInfo[$i]['y'].'px' : '0';
             
-               $this->sCss .= "{$this->aFormValues['tagspre']}{$aFilesInfo[$i]['class']} {$this->aFormValues['tagspost']}{ background-position: $iX $iY; } \n";
+               $this->sCss .= "{$this->aFormValues['selector-prefix']}{$aFilesInfo[$i]['class']} {$this->aFormValues['selector-suffix']}{ background-position: $iX $iY; } \n";
             
                if ($this->sImageLibrary == 'imagick') {
                   $oCurrentImage->destroy();
