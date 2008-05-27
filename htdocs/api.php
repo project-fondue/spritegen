@@ -65,8 +65,6 @@
          }
       }
    } else {
-      $oTemplate = new Template('api.php');
-      
-      echo $oTemplate->Display();
+      echo 'CSS Sprite Generator REST API - for information about how to query visit '.TOOL_URL.'.';
    }
 ?>

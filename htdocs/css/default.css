@@ -28,6 +28,12 @@ h3 {
    padding: 7px;
    font-weight: bold;
 }
+h4 {
+   font-style: italic;
+}
+h2, h3, h4 {
+   margin: 10px 0;
+}
 a {
    color: #363;
    text-decoration: none;
@@ -63,6 +69,9 @@ th {
 td {
    border-bottom: 1px solid #777;
    padding: 2px;
+}
+pre {
+   width: 582px;
 }
 #menu {      
    background: #f6f6f6;
@@ -190,7 +199,7 @@ td {
    float: none;
 }
 #options .duplicates label {
-   width: 35em;
+   width: 25em;
 }
 #options .sub {
    float: none;

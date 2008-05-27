@@ -77,7 +77,7 @@
                <h2><?php echo $translation->Get('sidebar.advertise-header'); ?></h2>
                <p><a href=""><?php echo $translation->Get('sidebar.advertise-text'); ?></a></p>
                <h2><?php echo $translation->Get('sidebar.api-header'); ?></h2>
-               <p><a href=""><?php echo $translation->Get('sidebar.api-text'); ?></a></p>
+               <p><a href="<?php echo $functions->GetMenuUrl($appRoot, 'api'); ?>"><?php echo $translation->Get('sidebar.api-text'); ?></a></p>
                <h2><?php echo $translation->Get('sidebar.open-source-header'); ?></h2>
                <p><a href=""><?php echo $translation->Get('sidebar.open-source-text'); ?></a></p>
             <?php endif; ?>

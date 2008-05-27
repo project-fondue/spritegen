@@ -43,7 +43,7 @@
    /***************************************************************/
    
    // publically accessible document root
-   define('APP_ROOT', '');
+   define('APP_ROOT', '/');
    // location of action scripts (corresponding to page types)
    define('ACTIONS_DIR', '../actions/');
    // directory to store uploaded ZIP files
@@ -57,7 +57,7 @@
    // secret used to check validity of download link request
    define('CHECKSUM', 'ENTER_RANDOM_CHECKSUM_HERE');
    // location of CSS, JS & images - set this if you want to load these from a separate virtual host
-   define('ASSETS_DIR', '');
+   define('ASSETS_DIR', '/');
    // default translations language, this is what it'll use if none is specified
    define('TRANSLATIONS_DEFAULT_LANG', 'en');
    // location of translation files - these contain key/value pairs
