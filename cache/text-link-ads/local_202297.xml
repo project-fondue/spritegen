@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<Links>
+	<Link>
+		<LinkID>OI233745</LinkID>
+		<URL>http://btob.pro</URL>
+		<Text>BtoB.pro</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+	<Link>
+		<LinkID>OI235815</LinkID>
+		<URL>http://www.beth-lehem.com/other_artists_g/gian_marco.html</URL>
+		<Text>Marco songs</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+	<Link>
+		<LinkID>OI237393</LinkID>
+		<URL>http://www.photographerbook.eu</URL>
+		<Text>Fotobuch</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+	<Link>
+		<LinkID>OI240159</LinkID>
+		<URL>http://www.messehotel-erb-muenchen.de</URL>
+		<Text>Book Munich Hotel Germany</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+	<Link>
+		<LinkID>OI240166</LinkID>
+		<URL>http://www.hotel-erb.de</URL>
+		<Text>Best Western Hotel Germany</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+	<Link>
+		<LinkID>OI254003</LinkID>
+		<URL>http://www.sportshop-direct.de/</URL>
+		<Text>Tennisshop</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+	<Link>
+		<LinkID>OI273015</LinkID>
+		<URL>http://www.findyourartschool.com/ep/photography-schools.php</URL>
+		<Text>Photography Schools</Text>
+		<BeforeText> </BeforeText>
+		<AfterText> </AfterText>
+	</Link>
+</Links>
