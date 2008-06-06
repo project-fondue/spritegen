@@ -69,6 +69,7 @@
       <label for="use-transparency"><?php echo $translation->Get('form.label.use-transparency'); ?></label><input type="checkbox" name="use-transparency" id="use-transparency"<?php if (!$formPosted || isset($_POST['use-transparency'])) echo ' checked="checked"'; ?>>
       
       <?php echo $functions->SelectInput('image-output', $translation->Get('form.label.sprite-output-format'), $imageTypes, '', ''); ?> 
+      <?php echo $functions->SelectInput('image-quality', $translation->Get('form.label.sprite-output-quality'), $imageColours, '', ''); ?> 
    </fieldset>
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.css-output-options'); ?></legend>

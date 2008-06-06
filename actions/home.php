@@ -73,6 +73,7 @@
    $oTemplate->Set('title', $oTranslations->Get('page.title.home'));
    $oTemplate->Set('maxFileSize', (int)(MAX_FILE_SIZE));
    $oTemplate->Set('imageTypes', $oCssSpriteGen->GetImageTypes());
+   $oTemplate->Set('imageColours', $oCssSpriteGen->GetImageColours());
    $oTemplate->Set('formPosted', $bFormPosted);
    $oTemplate->Set('formErrors', $aFormErrors);
    $oTemplate->Set('useApi', !empty($_GET['use-api']));

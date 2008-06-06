@@ -53,7 +53,7 @@
    // location to store generated sprite images
    define('SPRITE_DIR', '../cache/sprites/');
    // maximum file upload size - specified in bytes
-   define('MAX_FILE_SIZE', 1048576);
+   define('MAX_FILE_SIZE', 524288);
    // secret used to check validity of download link request
    define('CHECKSUM', 'iweoruewior324239243842f');
    // location of CSS, JS & images - set this if you want to load these from a separate virtual host

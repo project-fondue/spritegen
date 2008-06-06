@@ -45,6 +45,7 @@
    class CssSpriteGen {
       protected $sImageLibrary;
       protected $aImageTypes = array();
+      protected $aImageColours = array(8, 16, 32, 64, 128, 256, -1);
       protected $aFormValues = array();
       protected $aFormErrors = array();
       protected $sZipFolder = '';
@@ -93,6 +94,10 @@
          return $this->aImageTypes;
       }
       
+      public function GetImageColours() {
+         return $this->aImageColours;
+      }
+      
       public function ProcessForm() {
          require('validation.inc.php');
          
@@ -115,6 +120,7 @@
             'horizontal-offset' => array('IsNumber'),
             'background' => array('IsHex'),
             'image-output' => array('IsImageType'),
+            'image-quality' => array('IsNumber'),
             'width-resize' => array('IsNumber', 'IsPercent'),
             'height-resize' => array('IsNumber', 'IsPercent'),
             'ignore-duplicates' => array('IsIgnoreOption'),
@@ -133,7 +139,8 @@
       public function ProcessFile() {
          if (
             isset($_FILES['path']['name']) && 
-            substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip'
+            substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip' && 
+            $_FILES['path']['size'] <= MAX_FILE_SIZE
          ) {
             if (!is_dir(UPLOAD_DIR)) {
                mkdir(UPLOAD_DIR);
@@ -403,6 +410,9 @@
       
       protected function WriteImage($oImage, $sExtension, $sFilename) {
          if ($this->sImageLibrary == 'imagick') {
+            if ($this->aFormValues['image-quality'] != -1) {
+               $oImage->quantizeImage($this->aFormValues['image-quality'], Imagick::COLORSPACE_RGB, 0, false, false);
+            }
             $oImage->writeImage($sFilename);
          } else {
             switch ($sExtension) {
