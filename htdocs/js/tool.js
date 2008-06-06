@@ -1,5 +1,7 @@
 // maintain aspect ratio initalisation
-YAHOO.util.Event.onContentReady('resize', function() {
+YAHOO.util.Event.onDOMReady(function() {
+   
+   // Preserve Aspect Ratio 
    var oResize = document.getElementById('resize');
    var oAspectRatioLabel = document.createElement('label');
    var oAspectRatioCheckbox = document.createElement('input');
@@ -27,4 +29,17 @@ YAHOO.util.Event.onContentReady('resize', function() {
    }
    
    YAHOO.util.Event.addListener(['width-resize', 'height-resize'], 'keyup', MaintainAspectRatio);
+   
+   // Disable the imagequality for jpeg
+   var qual = document.getElementById('image-quality');
+   YAHOO.util.Event.addListener('image-output', 'change', function(){
+       console.log(this);
+       if (this.value == 'JPG'){
+           qual.disabled="disabled";
+       }else{
+           qual.disabled="";
+       }
+   }, this);
+
+
 });
