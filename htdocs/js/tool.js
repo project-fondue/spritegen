@@ -33,7 +33,6 @@ YAHOO.util.Event.onDOMReady(function() {
    // Disable the imagequality for jpeg
    var qual = document.getElementById('image-quality');
    YAHOO.util.Event.addListener('image-output', 'change', function(){
-       console.log(this);
        if (this.value == 'JPG'){
            qual.disabled="disabled";
        }else{
