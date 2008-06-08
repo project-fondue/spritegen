@@ -1,7 +1,7 @@
 // maintain aspect ratio initalisation
 YAHOO.util.Event.onDOMReady(function() {
    
-   // Preserve Aspect Ratio 
+   // preserve aspect ratio 
    var oResize = document.getElementById('resize');
    var oAspectRatioLabel = document.createElement('label');
    var oAspectRatioCheckbox = document.createElement('input');
@@ -30,15 +30,19 @@ YAHOO.util.Event.onDOMReady(function() {
    
    YAHOO.util.Event.addListener(['width-resize', 'height-resize'], 'keyup', MaintainAspectRatio);
    
-   // Disable the imagequality for jpeg
-   var qual = document.getElementById('image-quality');
-   YAHOO.util.Event.addListener('image-output', 'change', function(){
-       if (this.value == 'JPG'){
-           qual.disabled="disabled";
-       }else{
-           qual.disabled="";
+   // disable the number of colours select for jpeg images
+   // disable quality select for gifs and pngs
+   var oNumColours = document.getElementById('image-num-colours');
+   var oQuality = document.getElementById('image-quality');
+   
+   YAHOO.util.Event.addListener('image-output', 'change', function() {
+       if (this.value == 'JPG') {
+           oNumColours.disabled = 'disabled';
+           oQuality.disabled = '';
+       } else {
+           oNumColours.disabled = '';
+           oQuality.disabled  = 'disabled';
        }
    }, this);
-
-
+   
 });

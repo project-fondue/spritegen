@@ -67,9 +67,10 @@
 
       <?php echo $functions->TextInput('background', $translation->Get('form.label.background-colour'), '', 7, $translation->Get('form.hint.transparency'), true); ?>
       <label for="use-transparency"><?php echo $translation->Get('form.label.use-transparency'); ?></label><input type="checkbox" name="use-transparency" id="use-transparency"<?php if (!$formPosted || isset($_POST['use-transparency'])) echo ' checked="checked"'; ?>>
-      
+
       <?php echo $functions->SelectInput('image-output', $translation->Get('form.label.sprite-output-format'), $imageTypes, '', ''); ?> 
-      <?php echo $functions->SelectInput('image-quality', $translation->Get('form.label.sprite-output-quality'), $imageColours, '', ''); ?> 
+      <?php echo $functions->ColourSelectInput('image-num-colours', $translation->Get('form.label.sprite-output-num-colours'), $translation->Get('form.value.true-colour'), 'true-colour', ''); ?>
+      <?php echo $functions->TextInput('image-quality', $translation->Get('form.label.sprite-output-quality'), 75, 3, '%'); ?> 
    </fieldset>
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.css-output-options'); ?></legend>

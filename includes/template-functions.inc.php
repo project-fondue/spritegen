@@ -103,6 +103,27 @@
          return $oTemplate->Display();
       }
       
+      public function ColourSelectInput($sId, $sLabel, $sTrueColourLabel, $vDefault = '', $sHint = '') {
+         $aOptions = array();
+         
+         for ($i = 2; $i < 70000; $i = $i * 2) {
+            $aOptions[$i] = $i;
+         }
+         $aOptions['true-colour'] = $sTrueColourLabel;
+         
+         return $this->SelectInput($sId, $sLabel, $aOptions, $vDefault, $sHint);
+      }
+      
+      public function ConvertArrayToMulti($aArray) {
+         $aMultiArray = array();
+         
+         foreach ($aArray as $sItem) {
+            $aMultiArray[$sItem] = $sItem;
+         }
+         
+         return $aMultiArray;
+      }
+      
       public function GetMenuUrl($sAppRoot, $sSection) {
          if (REWRITTEN_URLS) {
             return $sAppRoot."section/$sSection";

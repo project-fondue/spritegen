@@ -45,7 +45,6 @@
    class CssSpriteGen {
       protected $sImageLibrary;
       protected $aImageTypes = array();
-      protected $aImageColours = array(8, 16, 32, 64, 128, 256, -1);
       protected $aFormValues = array();
       protected $aFormErrors = array();
       protected $sZipFolder = '';
@@ -94,10 +93,6 @@
          return $this->aImageTypes;
       }
       
-      public function GetImageColours() {
-         return $this->aImageColours;
-      }
-      
       public function ProcessForm() {
          require('validation.inc.php');
          
@@ -120,7 +115,8 @@
             'horizontal-offset' => array('IsNumber'),
             'background' => array('IsHex'),
             'image-output' => array('IsImageType'),
-            'image-quality' => array('IsNumber'),
+            'image-num-colours' => array('IsNumber'),
+            'image-quality' => array('IsNumber', 'IsPercent'),
             'width-resize' => array('IsNumber', 'IsPercent'),
             'height-resize' => array('IsNumber', 'IsPercent'),
             'ignore-duplicates' => array('IsIgnoreOption'),
@@ -410,18 +406,31 @@
       
       protected function WriteImage($oImage, $sExtension, $sFilename) {
          if ($this->sImageLibrary == 'imagick') {
-            if ($this->aFormValues['image-quality'] != -1) {
+            if (in_array($sExtension, array('gif', 'png')) && $this->aFormValues['image-num-colours'] != -1) {
                $oImage->quantizeImage($this->aFormValues['image-quality'], Imagick::COLORSPACE_RGB, 0, false, false);
+            }
+            if (in_array($sExtension, array('jpg', 'jpeg'))) {
+               $oImage->setCompression(Imagick::COMPRESSION_JPEG);
+               $oImage->SetCompressionQuality($this->aFormValues['image-quality']);
             }
             $oImage->writeImage($sFilename);
          } else {
+            if (in_array($sExtension, array('gif', 'png'))  && $this->aFormValues['image-num-colours'] != -1) {
+               imagetruecolortopalette($oImage, true, $this->aFormValues['image-num-colours']);
+            }
             switch ($sExtension) {
                case 'jpg': 
                case 'jpeg':
-                  imagejpeg($oImage, $sFilename);
+                  imagejpeg($oImage, $sFilename, $this->aFormValues['image-quality']);
                   break;
                case 'gif':
-                  if ($this->bTransparent) {
+                  if (
+                     $this->bTransparent && 
+                     (
+                        $this->aFormValues['image-num-colours'] == -1 || 
+                        $this->aFormValues['image-num-colours'] > 256
+                     )
+                  ) {
                      imagetruecolortopalette($oImage, true, 256);
                   }
                   imagegif($oImage, $sFilename);

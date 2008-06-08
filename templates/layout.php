@@ -7,11 +7,9 @@
    <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/default.css" type="text/css">
    <!--[if IE]>
       <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/ie.css" type="text/css">
-   <![endif]-->                                                                          
-   <meta name="robots" content="all" >
-   <meta http-equiv="imagetoolbar" content="false" >
-   <meta name="MSSmartTagsPreventParsing" content="true">
-   <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon">        
+   <![endif]-->
+   <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon">                                                                          
+   <meta name="description" content="A tool for generating image sprites and CSS for your web site. Using this tool can help you dramatically reduce the number of HTTP requests made for higher performance.">        
    
    <?php if ($action == 'home'): ?>
       <script type="text/javascript">
