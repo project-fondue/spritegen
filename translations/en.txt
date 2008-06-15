@@ -26,16 +26,21 @@ form.label.width = Width
 form.label.height = Height
 form.label.maintain-aspect-ratio = Maintain aspect ratio
 form.label.ignore-duplicates = Ignore duplicate images
-form.label.merge-duplicates = Remove duplicate images but merge rules
+form.label.merge-duplicates = Remove duplicate images but merge CSS rules
 form.label.horizontal-offset = Horizontal Offset
 form.label.vertical-offset = Vertical Offset
 form.label.background-colour = Background / Transparency Colour \# (optional)
 form.label.use-transparency = Use Background Colour for Transparency
-form.label.sprite-output-format = Sprite Output Format
+form.label.sprite-output-format = Output Format
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS Prefix (optional)
 form.label.filename-pattern-match = Filename Pattern Match (optional)
 form.label.class-prefix = Class Prefix (optional)
 form.label.css-suffix = CSS Suffix (optional)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Max Upload Size: {0}MB
 form.hint.transparency = If left blank white will be used for non-transparent images, black for transparent

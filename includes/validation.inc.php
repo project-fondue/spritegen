@@ -79,7 +79,7 @@
       }
       
       protected function IsNumber($sKey) {
-         if (!is_numeric($this->aFormValues[$sKey])) {
+         if (empty($this->aFormValues[$sKey]) || !is_numeric($this->aFormValues[$sKey])) {
             $this->aFormErrors['invalid'][$sKey] = 'IsNumber';
             return false;
          }
@@ -130,6 +130,14 @@
          echo $sKey;
          if (!preg_match("/^[a-z0-9_\.\s\#-]+$/i", $this->aFormValues[$sKey])) {
             $this->aFormErrors['invalid'][$sKey] = 'IsCss';
+            return false;
+         }
+         return true;
+      }
+      
+      protected function IsColour($sKey) {
+         if (empty($this->aFormValues[$sKey]) || (!is_numeric($sKey) && $this->aFormValues[$sKey] != 'true-colour')) {
+            $this->aFormErrors['invalid'][$sKey] = 'IsColour';
             return false;
          }
          return true;

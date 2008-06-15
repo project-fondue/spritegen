@@ -1,5 +1,5 @@
 // maintain aspect ratio initalisation
-YAHOO.util.Event.onDOMReady(function() {
+YAHOO.util.Event.onDOMReady(function(e) {
    
    // preserve aspect ratio 
    var oResize = document.getElementById('resize');
@@ -32,17 +32,28 @@ YAHOO.util.Event.onDOMReady(function() {
    
    // disable the number of colours select for jpeg images
    // disable quality select for gifs and pngs
+   var oOutput = document.getElementById('image-output');
    var oNumColours = document.getElementById('image-num-colours');
    var oQuality = document.getElementById('image-quality');
+   var oOptiPng = document.getElementById('use-optipng');
    
-   YAHOO.util.Event.addListener('image-output', 'change', function() {
-       if (this.value == 'JPG') {
+   function DisableFields() {
+      if (oOutput.value == 'JPG') {
            oNumColours.disabled = 'disabled';
            oQuality.disabled = '';
        } else {
            oNumColours.disabled = '';
            oQuality.disabled  = 'disabled';
        }
-   }, this);
+       
+       if (oOutput.value == 'PNG') {
+          oOptiPng.disabled = '';
+       } else {
+          oOptiPng.checked = '';
+          oOptiPng.disabled = 'disabled';
+       }
+   }
    
+   YAHOO.util.Event.addListener(oOutput, 'change', DisableFields);
+   DisableFields();
 });

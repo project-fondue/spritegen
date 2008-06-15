@@ -50,6 +50,8 @@
    define('UPLOAD_DIR', '../cache/source-images/');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
    define('UNZIP_BINARY', '/usr/bin/unzip');
+   // otipng binary - compresses PNG images
+   define('OPTIPNG_BINARY', '/usr/local/bin/optipng');
    // location to store generated sprite images
    define('SPRITE_DIR', '../cache/sprites/');
    // maximum file upload size - specified in bytes

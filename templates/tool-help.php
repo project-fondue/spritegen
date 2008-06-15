@@ -21,8 +21,14 @@
    <dd>This determines the vertical spacing between each consecutive image. This should be large enough to take account of user font size increases. Generally we'd recommend that you design your site so that visitors can increase their font size twice before the next background image in the sequence becomes visible.</dd>
    <dt>Background Colour</dt>
    <dd>Sets a background colour for the output image. This field takes a 6 digit hex colour value. If left blank and the output format is set to either GIF or PNG then background will be transparent.</dd>
-   <dt>Sprite Output Format</dt>
+   <dt>Output Format</dt>
    <dd>Supports GIF, PNG and JPG. GIF and PNG can have transparent backgrounds. The default is PNG.</dd>
+   <dt>Number of Colours</dt>
+   <dd>Restrict the number of colours used in the output file to reduce overall file size. This setting applies to PNGs and GIFs.</dd>
+   <dt>Image Quality</dt>
+   <dd>Specify the output image quality as a percentage. This setting only applies to JPEGs.</dd>
+   <dt>Compress Image with OptiPNG</dt>
+   <dd>When checked the output file is processed with <a href="http://optipng.sourceforge.net/">OptiPNG</a> to further reduce its size. Often this will half the size of the file. This setting only applies to PNGs.</dd>
 </dl>
 <h3>CSS Output Options</h3>
 <dl>

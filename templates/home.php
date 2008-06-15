@@ -66,11 +66,13 @@
       <?php echo $functions->TextInput('vertical-offset', $translation->Get('form.label.vertical-offset'), 30, 5, 'px'); ?>
 
       <?php echo $functions->TextInput('background', $translation->Get('form.label.background-colour'), '', 7, $translation->Get('form.hint.transparency'), true); ?>
-      <label for="use-transparency"><?php echo $translation->Get('form.label.use-transparency'); ?></label><input type="checkbox" name="use-transparency" id="use-transparency"<?php if (!$formPosted || isset($_POST['use-transparency'])) echo ' checked="checked"'; ?>>
+      <label for="use-transparency"><?php echo $translation->Get('form.label.use-transparency'); ?>:</label><input type="checkbox" name="use-transparency" id="use-transparency"<?php if (!$formPosted || isset($_POST['use-transparency'])) echo ' checked="checked"'; ?>>
 
       <?php echo $functions->SelectInput('image-output', $translation->Get('form.label.sprite-output-format'), $imageTypes, '', ''); ?> 
       <?php echo $functions->ColourSelectInput('image-num-colours', $translation->Get('form.label.sprite-output-num-colours'), $translation->Get('form.value.true-colour'), 'true-colour', ''); ?>
-      <?php echo $functions->TextInput('image-quality', $translation->Get('form.label.sprite-output-quality'), 75, 3, '%'); ?> 
+      <?php echo $functions->TextInput('image-quality', $translation->Get('form.label.sprite-output-quality'), 75, 3, '%'); ?>
+      
+      <label for="use-optipng"><?php echo $translation->Get('form.label.use-optipng'); ?>:</label><input type="checkbox" name="use-optipng" id="use-optipng"<?php if (isset($_POST['use-optipng'])) echo ' checked="checked"'; ?>> 
    </fieldset>
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.css-output-options'); ?></legend>

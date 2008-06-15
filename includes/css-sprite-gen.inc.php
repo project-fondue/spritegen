@@ -107,7 +107,8 @@
             'class-prefix',
             'selector-suffix',
             'file-regex',
-            'use-transparency'
+            'use-transparency',
+            'use-optipng'
          );
 
          $aRules = array(
@@ -115,7 +116,7 @@
             'horizontal-offset' => array('IsNumber'),
             'background' => array('IsHex'),
             'image-output' => array('IsImageType'),
-            'image-num-colours' => array('IsNumber'),
+            'image-num-colours' => array('IsColour'),
             'image-quality' => array('IsNumber', 'IsPercent'),
             'width-resize' => array('IsNumber', 'IsPercent'),
             'height-resize' => array('IsNumber', 'IsPercent'),
@@ -439,6 +440,10 @@
                   imagepng($oImage, $sFilename);
                   break;
             }
+         }
+         
+         if (OPTIPNG_BINARY != '') {
+            shell_exec(OPTIPNG_BINARY." $sFilename");
          }
       }
       
