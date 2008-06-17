@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} &amp; {1}. All Rights Reserved. 
+
+page.title.home = CSS 圖片合併產生器
+page.title.what-are-css-sprites = 什麼是 CSS sprites?
+page.title.tool-help = 幫助
+page.title.your-language = 繁體中文
+
+menu.home = 首頁
+menu.what-are-css-sprites = 什麼是 CSS sprites?
+menu.tool-help = 幫助
+menu.report-bug = BUG 報告
+
+menu.language.label = 語言
+menu.language.button = 更換
+menu.language.your-language = 您的語言沒被列出? 幫忙提供給我們.
+
+form.legend.source-files = 來源文件
+form.legend.resize-source-images = 調整原圖片大小
+form.legend.image-duplicates = 重複圖片
+form.legend.sprite-output-options = 合併圖片輸出選項
+form.legend.css-output-options = CSS 輸出選項
+
+form.label.upload-images = 上傳圖片文件 (ZIP 壓縮格式)
+form.label.width = 寬度
+form.label.height = 高度
+form.label.maintain-aspect-ratio = 維持比例
+form.label.ignore-duplicates = 忽略重複圖片
+form.label.merge-duplicates = 去除重複圖片但合併規則
+form.label.horizontal-offset = 水平偏移
+form.label.vertical-offset = 垂直偏移
+form.label.background-colour = 背景 / 透明色 \# (選項)
+form.label.use-transparency = 背景色透明
+form.label.sprite-output-format = 合併圖片輸出格式
+form.label.css-prefix = CSS 前文 (選項)
+form.label.filename-pattern-match = 樣式文件名 (選項)
+form.label.class-prefix = Class 前文 (選項)
+form.label.css-suffix = CSS 後文 (選項)
+
+form.hint.max-upload-size = 最大上傳限制: {0}MB
+form.hint.transparency = 如果留空白，將用於非透明圖像，黑色為透明
+form.hint.css-prefix = CSS class 選擇器前文
+form.hint.filename-pattern-match = 例如：icon-([0-9]+).png - 使用文件名中數字部份作為 CSS 類別名稱
+form.hint.class-prefix = 不能以數字為開頭
+form.hint.css-suffix = CSS class 選擇器後文
+form.hint.file-selected = 空白使用上次上傳的文件
+
+form.button.show-picker = 顯示選擇器
+form.button.hide-picker = 隱藏選擇器
+form.button.create-sprite = 產生合併圖片 &amp; CSS
+
+form.errors.title = 提交錯誤
+form.errors.invalid-file = 您未上傳文件或文件已損壞，請確認為 ZIP 壓縮格式且未超過大小限制。
+form.errors.zip = ZIP 文件裡所包含的圖片數少於2個(或符合 &quot;樣式文件名&quot; 規則的文件數 ) 請檢查 ZIP 文件再重新上傳。
+form.errors.missing.widthresize = 未設定圖片調整寬度。
+form.errors.missing.heightresize =未設定圖片調整高度。
+form.errors.missing.hoffset = 未設定圖片水平偏移。
+form.errors.missing.voffset = 未設定圖片垂直偏移。
+form.errors.invalid.hoffset.isnumber = 圖片水平偏移數值超出範圍，應為 1 至 100 之間的整數。
+form.errors.invalid.voffset.isnumber = 圖片垂直偏移數值超出範圍，應為 1 至 100 之間的整數。
+form.errors.invalid.bckground.ishex = 背景色數值超出範圍，應為 3 或 6 位 數字十六進制值。
+form.errors.invalid.tagspre.iscss = CSS 前文錯誤，只能包含 a-z, 0-9, _, -, \# 和 .
+form.errors.invalid.classpre.isclassprefix = Class 前文錯誤，只能包含 a-z, 0-9, _, -
+form.errors.invalid.tagspost.iscss = CSS 後文錯誤，只能包含 a-z, 0-9, _, -, \# 和 .
+
+form.result.reset = 關閉 &amp; 重設表單
+form.result.title.css-rules = CSS 規則
+form.result.title.sprite-image = 合併圖片
+form.result.dont-forget = 需要設定背景圖片規則以合併圖片。範例:
+form.result.download = &raquo;下載合併圖片

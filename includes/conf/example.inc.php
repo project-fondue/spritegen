@@ -93,6 +93,7 @@
    $aLanguages = array(
       'af' => 'Afrikaans',
       'cn' => '中文',
+      'cs' => 'čeština',
       'nl' => 'Nederlands',
       'en' => 'English',
       'fr' => 'français',
@@ -100,6 +101,7 @@
       'it' => 'italiano',
       'pt' => 'português',
       'es' => 'Español',
-      'se' => 'svenska'
+      'se' => 'svenska',
+      'tw' => '臺灣話'
    );
 ?>

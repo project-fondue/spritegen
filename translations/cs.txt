@@ -1,0 +1,70 @@
+site.title = Website Performance |
+site.copyright = Copyright &copy; {0} &amp; {1}. Všechna práva vyhrazena.
+
+page.title.home = CSS Sprite generátor
+page.title.what-are-css-sprites = Co jsou CSS sprites?
+page.title.tool-help = Nápověda
+page.title.your-language = Váš jazyk
+
+menu.home = Úvodní strana
+menu.what-are-css-sprites = Co jsou CSS sprites?
+menu.tool-help = Nápověda
+menu.report-bug = Ohlásit chybu
+
+menu.language.label = Jazyk
+menu.language.button = Změnit
+menu.language.your-language = Není Váš jazyk na seznamu? Pomozte nám s překladem.
+
+form.legend.source-files = Zdrojové obrázky
+form.legend.resize-source-images = Změna velikosti zdrojových obrázků
+form.legend.image-duplicates = Duplicitní obrázky
+form.legend.sprite-output-options = Nastavení Spritů
+form.legend.css-output-options = Nastavení CSS
+
+form.label.upload-images = Nahrát obrázky (ZIP)
+form.label.width = Šířka
+form.label.height = Výška
+form.label.maintain-aspect-ratio = Zachovat poměr stran
+form.label.ignore-duplicates = Ignorovat duplicitní obrázky
+form.label.merge-duplicates = Odstranit duplicitní obrázky a sloučit CSS pravidla
+form.label.horizontal-offset = Horizontální rozestup
+form.label.vertical-offset = Vertikální rozestup
+form.label.background-colour = Pozadí / Průhledná barva \# (nepovinné)
+form.label.use-transparency = Průhledná barva pozadí
+form.label.sprite-output-format = Formát výsledného obrázku
+form.label.css-prefix = CSS selektory "před" (nepovinné)
+form.label.filename-pattern-match = Regulární výraz pro jméno souboru (nepovinné)
+form.label.class-prefix = Předpona CSS tříd (nepovinné)
+form.label.css-suffix = CSS selektory "za" (nepovinné)
+
+form.hint.max-upload-size = Maximální velikost: {0}MB
+form.hint.transparency = Pokud nevyplníte, použije se bílá pro neprůhledné obrázky a černá pro průhledné.
+form.hint.css-prefix = CSS selektory, které se vloží před název třídy
+form.hint.filename-pattern-match = např. icon-([0-9]+).png - odpovídá číselné části každého názvu a ta bude použita ve vygenerovaných názvech CSS tříd
+form.hint.class-prefix = nesmí začnínat číslicí
+form.hint.css-suffix = CSS selektory, které se vloží za název třídy
+form.hint.file-selected = Soubor už byl nahrán. Chcete-li ho znovu použít, nechte toto pole volné.
+
+form.button.show-picker = Zobrazit Picker
+form.button.hide-picker = Skrýt Picker
+form.button.create-sprite = Vygenerovat Sprite &amp; CSS
+
+form.errors.title = Chyby
+form.errors.invalid-file = Nevybral(a) jste soubor k nahrání nebo je tento soubor chybný. Buď se nejedná o validní ZIP archiv, nebo byl větší než maximální přípustná velikost.
+form.errors.zip = ZIP archiv, který byl nahrán, obsahuje méně než 2 obrázky. Prosím, zkontrolujte ZIP soubor (a také &quot;Regulární výraz pro název souboru&quot;, pokud byl použit).
+form.errors.missing.widthresize = Nebyla specifikována šířka pro výstupní sprity.
+form.errors.missing.heightresize = Nebyla specifikována výška pro výstupní sprity.
+form.errors.missing.hoffset = Nebyl zadán horizontální rozestup.
+form.errors.missing.voffset = Nebyl zadán vertikální rozestup.
+form.errors.invalid.hoffset.isnumber = Zadaný horizontální rozestup není platný. Zadejte hodnotu od 1 do 100.
+form.errors.invalid.voffset.isnumber = Zadaný vertikální rozestup není platný. Zadejte hodnotu od 1 do 100.
+form.errors.invalid.bckground.ishex = Byla zadána neplatná barva pozadí. Zadejte tří- nebo šestimístný kód barvy v šestnáctkové soustavě.
+form.errors.invalid.tagspre.iscss = Zkontrolujte, prosím, zadaný CSS prefix. Smí obsahovat pouze následující znaky: a-z, 0-9, _, -, \# a .
+form.errors.invalid.classpre.isclassprefix = Prefix CSS tříd obsahuje neplatné znaky. Použijte pouze následující: a-z, 0-9, _ a -
+form.errors.invalid.tagspost.iscss = Zkontrolujte, prosím, zadaný CSS suffix. Smí obsahovat pouze následující znaky: a-z, 0-9, _, -, \# a .
+
+form.result.reset = Zavřít &amp; Vynulovat formulář
+form.result.title.css-rules = CSS Pravidla
+form.result.title.sprite-image = Sprity
+form.result.dont-forget = Nezapomeňte přidat CSS pravidlo, které nastaví vygenerovaný sprite jako pozadí jednotlivým elementům, např.:
+form.result.download = &raquo;Stáhnout vygenerovaný sprite
