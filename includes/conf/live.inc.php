@@ -90,6 +90,8 @@
    define('REWRITTEN_URLS', true);
    // base URL to tool
    define('TOOL_URL', 'http://dev.spritegen.website-performance.org/');
+   // contact email address
+   define('CONTACT_EMAIL', 'contact@website-performance.org');
    
    // installed languages
    $aLanguages = array(

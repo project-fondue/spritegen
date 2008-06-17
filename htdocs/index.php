@@ -73,6 +73,7 @@
       
       // pass data to template
       $oTemplate->Set('appRoot', APP_ROOT);
+      $oTemplate->Set('contactEmail', CONTACT_EMAIL);
       $oTemplate->Set('languages', $aLanguages);
       $oTemplate->Set('language', $sLang);
       $oTemplate->Set('action', $sAction);
