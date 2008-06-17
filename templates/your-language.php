@@ -27,6 +27,7 @@
 <ul class="credits">
    <li>Afrikaans - <a href="http://adriaannel.com/">Adriaan Nel</a></li>
    <li>Chinese - <a href="http://www.5iya.com/blog">Cloudream</a></li>
+   <li>Czech - <a href="http://janmatyas.net/">Jan Matyáš</a></li>
    <li>Dutch - <a href="http://users.fmg.uva.nl/rgrasman">Raoul Grasman</a></li>
    <li>French - <a href="http://java4it.blogspot.com/">Ludovic Bert</a></li>
    <li>German - <a href="http://www.wait-till-i.com/">Christian Heilmann</a></li>
@@ -34,4 +35,5 @@
    <li>Portuguese - <a href="http://www.codebeautifier.com/">Rob Ornelas</a></li>
    <li>Spanish - <a href="http://www.proyectoscpc.net/">Xavier Pimienta</a></li>
    <li>Swedish - <a href="http://rise.lewander.com/">Henrik Jönsson</a></li>
+   <li>Taiwanese - <a href="http://www.wretch.cc/blog/tony835245">Tony 學習手扎</a></li>
 </ul>
