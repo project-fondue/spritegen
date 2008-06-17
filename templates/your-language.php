@@ -3,7 +3,7 @@
 <p>To get started download our <a href="<?php echo  $appRoot; ?>downloads/language-pack.zip">language pack</a> which contains a copy of the files which need to be localised. It consists of one file which contains all the translation keys for the interface and the HTML and text for the two help pages.</p>
 <p>To help you understand the context of the translation keys you can tell the tool to display the keys in place by passing a  <code>showKeys=true</code> parameter in the query string. For example:</p>
 <p><a href="<?php echo  $appRoot; ?>?showKeys=true">http://spritegen.website-performance.org/?showKeys=true</a></p>
-<p>Once you've translated the files <a href="mailto:contact@website-performance.org">send them back to us</a> and we'll add them to the tool.</p>
+<p>Once you've translated the files <a href="mailto:<?php echo $contactEmail; ?>">send them back to us</a> and we'll add them to the tool.</p>
 <h2>Credits</h2>
 <p>Thanks to the following people who have provided translations:</p>
 <ul class="credits">
