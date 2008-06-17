@@ -1,11 +1,28 @@
-<p>So you're interested in helping us translate this tool into your language. Thank you, we really appreciate it.</p>
-<h2>Instructions</h2>
-<p>To get started download our <a href="<?php echo  $appRoot; ?>downloads/language-pack.zip">language pack</a> which contains a copy of the files which need to be localised. It consists of one file which contains all the translation keys for the interface and the HTML and text for the two help pages.</p>
-<p>To help you understand the context of the translation keys you can tell the tool to display the keys in place by passing a  <code>showKeys=true</code> parameter in the query string. For example:</p>
+<p>In total users of this tool speak a 113 different languages (at least their web browsers are telling us that's the case). Currently we support 12 which is a fantastic achievement but we'd love to add more.</p>
+<h2>Usage Globally</h2>
+<p><img src="<?php echo $appRoot; ?>images/visitors-map.png" width="598" height="276" alt="Map of number of visitors from each country" class="map"></p>
+<h2>Translations Most Needed</h2>
+<p>According to our stats the following languages are those most used by our visitors for which we don't already have translations.</p>
+<ul class="languages">
+   <li>Japanese</li>
+   <li>Russian</li>
+   <li>Dutch</li>
+   <li>Polish</li>
+   <li>Turkish</li>
+   <li>Korean</li>
+   <li>Romanian</li>
+</ul>
+<h2>Contributing</h2>
+<p>Are you interested in helping us translate this tool into your language? If so, thank you, we really appreciate it and I'm sure other users of the tool will to.</p>
+<p>Additionally if you spot a problem with any of the existing translations please <a href="mailto:<?php echo $contactEmail; ?>">drop us an email</a> and will fix as quickly as possible.</p>
+<h3>Instructions</h3>
+<p>To get started download our <a href="<?php echo  $appRoot; ?>downloads/language-pack.zip">language pack</a> which contains a copy of the files which need to be localised. It consists of one file which contains all the translation keys for the interface and the HTML and text for the help pages.</p>
+<p>To help you understand the context of the translation keys you can tell the tool to display the keys in place of the text by passing a  <code>showKeys=true</code> parameter in the query string. For example:</p>
 <p><a href="<?php echo  $appRoot; ?>?showKeys=true">http://spritegen.website-performance.org/?showKeys=true</a></p>
+<p>The tool uses UTF-8 throughout so you shouldn't need to encode entities. Simply make sure that you save the files as UTF-8 in your editor to avoid any corruption of extended characters.</p>
 <p>Once you've translated the files <a href="mailto:<?php echo $contactEmail; ?>">send them back to us</a> and we'll add them to the tool.</p>
 <h2>Credits</h2>
-<p>Thanks to the following people who have provided translations:</p>
+<p>Thanks to the following people who have provided translations. Their contributions have genuinely made this tool more useful.</p>
 <ul class="credits">
    <li>Afrikaans - <a href="http://adriaannel.com/">Adriaan Nel</a></li>
    <li>Chinese - <a href="http://www.5iya.com/blog">Cloudream</a></li>

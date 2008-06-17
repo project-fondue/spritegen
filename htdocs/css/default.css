@@ -272,10 +272,13 @@ a:active.download, input.submit:active {
    border-top-color: #999;
    border-left-color: #999;   
 }
-.credits {
+.map {
+   border: 1px solid #777;
+}
+.languages, .credits {
    list-style: disc;
 }
-.credits li {
+.languages li, .credits li {
    margin: 0 0 5px 15px;
 }
 #sidebar .ad {
