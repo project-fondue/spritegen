@@ -5,6 +5,7 @@ page.title.home = CSS 图片拼合生成器
 page.title.what-are-css-sprites = 什么是 CSS 图片拼合?
 page.title.tool-help = 帮助
 page.title.your-language = 选择语言
+page.title.advertising = Advertising
 
 menu.home = 首页
 menu.what-are-css-sprites = 什么是 CSS 图片拼合?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = 语言
 menu.language.button = 提交
 menu.language.your-language = 没有您的语言？帮我们改进！
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = 源文件
 form.legend.resize-source-images = 调整原图片大小
@@ -32,10 +35,15 @@ form.label.vertical-offset = 垂直偏移
 form.label.background-colour = 背景 / 透明色 \# (可选)
 form.label.use-transparency = 背景色透明
 form.label.sprite-output-format = 拼合图片输出格式
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS 前缀 (可选)
 form.label.filename-pattern-match = 匹配文件名 (可选)
 form.label.class-prefix = Class 前缀 (可选)
 form.label.css-suffix = CSS 后缀 (可选)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = 最大上传尺寸: {0}MB
 form.hint.transparency = 留空设定 GIF/PNG 透明
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

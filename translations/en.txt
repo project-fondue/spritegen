@@ -5,6 +5,7 @@ page.title.home = CSS Sprite Generator
 page.title.what-are-css-sprites = What are CSS sprites?
 page.title.tool-help = Help
 page.title.your-language = Your Language
+page.title.advertising = Advertising
 
 menu.home = Home
 menu.what-are-css-sprites = What are CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = Language
 menu.language.button = Change
 menu.language.your-language = Your language not listed? Help us provide it.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Source Files
 form.legend.resize-source-images = Resize Source Images
@@ -78,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

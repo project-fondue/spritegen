@@ -5,6 +5,7 @@ page.title.home = G&\#233;n&\#233;rateur de Sprites CSS
 page.title.what-are-css-sprites = Qu'est-ce qu'un Sprite CSS ?
 page.title.tool-help = Aide
 page.title.your-language = Votre langue
+page.title.advertising = Advertising
 
 menu.home = Accueil
 menu.what-are-css-sprites = Qu'est-ce qu'un Sprite CSS ?
@@ -14,6 +15,8 @@ menu.report-bug = Signaler un bug
 menu.language.label = Langue
 menu.language.button = Changer
 menu.language.your-language = Votre langue n'est pas list&\#233;e ? Aidez-nous &\#224; la fournir.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Fichiers sources
 form.legend.resize-source-images = Redimensionner les images sources
@@ -32,10 +35,15 @@ form.label.vertical-offset = Espacement vertical
 form.label.background-colour = Couleur de fond / Couleur de transparence \\# (optionnel)
 form.label.use-transparency = Utiliser la couleur de fond pour la transparence
 form.label.sprite-output-format = Format du fichier Sprite
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = Pr&\#233;fixe de CSS (optionnel)
 form.label.filename-pattern-match = Expression r&\#233;guli&\#232;re du nom de fichier Sprite (optionnel)
 form.label.class-prefix = Pr&\#233;fix de classe (optionnel)
 form.label.css-suffix = Suffixe de CSS (optionnel)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Taille maximale de transfert: {0}Mo
 form.hint.transparency = Laissez blanc pour la transparence des GIF/PNG
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

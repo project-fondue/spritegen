@@ -5,6 +5,7 @@ page.title.home = Generador de Sprite CSS
 page.title.what-are-css-sprites = &iquest;Qu&eacute; son los Sprites CSS?
 page.title.tool-help = Ayuda
 page.title.your-language = Tu idioma
+page.title.advertising = Advertising
 
 menu.home = Inicio
 menu.what-are-css-sprites = &iquest;Qu&eacute; son los Sprites CSS?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = Idioma
 menu.language.button = Cambiar
 menu.language.your-language = &iquest;Tu idioma no est&aacute; en la lista? &iexcl;Ay&uacute;danos a incorporarlo!
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Ficheros
 form.legend.resize-source-images = Redimensionar im&aacute;genes originales
@@ -32,10 +35,15 @@ form.label.vertical-offset = Desplazamiento vertical
 form.label.background-colour = Color de fondo / Color de transparencia \# (opcional)
 form.label.use-transparency = Utiliza color de fondo para transparencia
 form.label.sprite-output-format = Formato del fichero Sprite
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = Prefijo CSS (opcional)
 form.label.filename-pattern-match = Plantilla de nombre de fichero (opcional)
 form.label.class-prefix = Prefijo de Clase (opcional)
 form.label.css-suffix = Sufijo CSS (opcional)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = M&aacute;ximo tama&ntilde;o para subir: {0}MB
 form.hint.transparency = dejar en blanco para transparencia GIF/PNG
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

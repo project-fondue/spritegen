@@ -108,4 +108,6 @@
       'se' => 'svenska',
       'tw' => '臺灣話'
    );
+   
+   $aCompletedLanguages = array('en');
 ?>

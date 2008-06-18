@@ -5,6 +5,7 @@ page.title.home =  CSS Sprite Generator
 page.title.what-are-css-sprites = Was sind CSS sprites?
 page.title.tool-help = Hilfe
 page.title.your-language = Deutsch
+page.title.advertising = Advertising
  
 menu.home = Anfangsseite
 menu.what-are-css-sprites = Was sind CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = Sprache
 menu.language.button = &Auml;ndern
 menu.language.your-language = Ihre Sprache nicht vorhanden? Helfen Sie uns.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
  
 form.legend.source-files = Ursprungsdateien
 form.legend.resize-source-images = Ursprungsbilder vergr&ouml;&szlig;ern oder verkleinern
@@ -32,10 +35,15 @@ form.label.vertical-offset = Vertikaler Abstand
 form.label.background-colour = Hintergrundfarbe \# (optional)
 form.label.use-transparency = Benutze Hintergrundfarbe als Transparenz
 form.label.sprite-output-format = Sprite Ausgabeformat
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS Pr&auml;fix (optional)
 form.label.filename-pattern-match = Regul&auml;rer Ausdruck zur Fileauswahl(optional)
 form.label.class-prefix = Class Pr&auml;fix (optional)
 form.label.css-suffix = CSS Suffix (optional)
+
+form.value.true-colour = True Colour
  
 form.hint.max-upload-size = Maximale Dateigr&ouml;&szlig;e: {0}MB
 form.hint.transparency = Falls kein Wert angeben wird ist die Transparenzfarbe Weiss und nicht-transparente Bilder werden mit Schwarz gef&uuml;llt
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

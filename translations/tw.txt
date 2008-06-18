@@ -5,6 +5,7 @@ page.title.home = CSS 圖片合併產生器
 page.title.what-are-css-sprites = 什麼是 CSS sprites?
 page.title.tool-help = 幫助
 page.title.your-language = 繁體中文
+page.title.advertising = Advertising
 
 menu.home = 首頁
 menu.what-are-css-sprites = 什麼是 CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = BUG 報告
 menu.language.label = 語言
 menu.language.button = 更換
 menu.language.your-language = 您的語言沒被列出? 幫忙提供給我們.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = 來源文件
 form.legend.resize-source-images = 調整原圖片大小
@@ -32,10 +35,15 @@ form.label.vertical-offset = 垂直偏移
 form.label.background-colour = 背景 / 透明色 \# (選項)
 form.label.use-transparency = 背景色透明
 form.label.sprite-output-format = 合併圖片輸出格式
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS 前文 (選項)
 form.label.filename-pattern-match = 樣式文件名 (選項)
 form.label.class-prefix = Class 前文 (選項)
 form.label.css-suffix = CSS 後文 (選項)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = 最大上傳限制: {0}MB
 form.hint.transparency = 如果留空白，將用於非透明圖像，黑色為透明
@@ -68,3 +76,10 @@ form.result.title.css-rules = CSS 規則
 form.result.title.sprite-image = 合併圖片
 form.result.dont-forget = 需要設定背景圖片規則以合併圖片。範例:
 form.result.download = &raquo;下載合併圖片
+
+sidebar.ad-placeholder = Advertise Here
+sidebar.sponsors-header = Sponsors
+sidebar.advertise-header = Advertising
+sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
+sidebar.open-source-header = Open Source
+sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

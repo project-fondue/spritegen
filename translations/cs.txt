@@ -5,6 +5,7 @@ page.title.home = CSS Sprite generátor
 page.title.what-are-css-sprites = Co jsou CSS sprites?
 page.title.tool-help = Nápověda
 page.title.your-language = Váš jazyk
+page.title.advertising = Advertising
 
 menu.home = Úvodní strana
 menu.what-are-css-sprites = Co jsou CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = Ohlásit chybu
 menu.language.label = Jazyk
 menu.language.button = Změnit
 menu.language.your-language = Není Váš jazyk na seznamu? Pomozte nám s překladem.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Zdrojové obrázky
 form.legend.resize-source-images = Změna velikosti zdrojových obrázků
@@ -32,10 +35,15 @@ form.label.vertical-offset = Vertikální rozestup
 form.label.background-colour = Pozadí / Průhledná barva \# (nepovinné)
 form.label.use-transparency = Průhledná barva pozadí
 form.label.sprite-output-format = Formát výsledného obrázku
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS selektory "před" (nepovinné)
 form.label.filename-pattern-match = Regulární výraz pro jméno souboru (nepovinné)
 form.label.class-prefix = Předpona CSS tříd (nepovinné)
 form.label.css-suffix = CSS selektory "za" (nepovinné)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Maximální velikost: {0}MB
 form.hint.transparency = Pokud nevyplníte, použije se bílá pro neprůhledné obrázky a černá pro průhledné.
@@ -68,3 +76,10 @@ form.result.title.css-rules = CSS Pravidla
 form.result.title.sprite-image = Sprity
 form.result.dont-forget = Nezapomeňte přidat CSS pravidlo, které nastaví vygenerovaný sprite jako pozadí jednotlivým elementům, např.:
 form.result.download = &raquo;Stáhnout vygenerovaný sprite
+
+sidebar.ad-placeholder = Advertise Here
+sidebar.sponsors-header = Sponsors
+sidebar.advertise-header = Advertising
+sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
+sidebar.open-source-header = Open Source
+sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

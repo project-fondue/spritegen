@@ -5,6 +5,7 @@ page.title.home = CSS Sprite generator
 page.title.what-are-css-sprites = Vad är CSS sprites?
 page.title.tool-help = Hjälp
 page.title.your-language = Ditt språk
+page.title.advertising = Advertising
 
 menu.home = Hem
 menu.what-are-css-sprites = Vad är CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = Språk
 menu.language.button = Byt
 menu.language.your-language = Är ditt språk inte med? Hjälp oss att tillhandahålla det.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Källfiler
 form.legend.resize-source-images = Ändra storlek på ursprungsbilder
@@ -32,10 +35,15 @@ form.label.vertical-offset = Vertikal kompensation
 form.label.background-colour = Bakgrund / Transparant färg \# (valfri)
 form.label.use-transparency = Använd bakgrundsfärg för transparans
 form.label.sprite-output-format = Sprite utdataformat
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS prefix (valfri)
 form.label.filename-pattern-match = Filnamns mönsterjämförelse (valfri)
 form.label.class-prefix = Klassprefix (valfri)
 form.label.css-suffix = CSS suffix (valfri)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Max uppladdningsstorlek: {0}MB
 form.hint.transparency = Lämna tom för GIF/PNG transparans
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

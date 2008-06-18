@@ -5,6 +5,7 @@ page.title.home = CSS Sprite Genereerder
 page.title.what-are-css-sprites = Wat is CSS sprites?
 page.title.tool-help = Help
 page.title.your-language = Jou Taal
+page.title.advertising = Advertising
 
 menu.home = Tuis
 menu.what-are-css-sprites = Wat is CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = Taal
 menu.language.button = Verander
 menu.language.your-language = Jou taal nie gelys? Help ons verbeter.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Oorspronklike Leêrs
 form.legend.resize-source-images = Verstel Oorspronklike Beelde
@@ -32,10 +35,15 @@ form.label.vertical-offset = Vertikale Afset
 form.label.background-colour = Agtergrond / Deursigtigheid Kleur \# (optioneel)
 form.label.use-transparency = Gebruik Agtergrond Kleur as Deursigtigheid Kleur
 form.label.sprite-output-format = Sprite Uitset Formaat
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS Voorvoegsel (optioneel)
 form.label.filename-pattern-match = Leêrnaam Patroon Toets (optioneel)
 form.label.class-prefix = Klas Voorvoegsel (optioneel)
 form.label.css-suffix = CSS Agtervoegsel (optioneel)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Maks Oplaai Grootte: {0}MB
 form.hint.transparency = los leeg vir GIF/PNG deursigtigheid
@@ -68,3 +76,10 @@ form.result.title.css-rules = CSS reëls
 form.result.title.sprite-image = Sprite Beeld
 form.result.dont-forget = Moenie vergeet om `n agtergrond reël by te voeg om na die sprite beeld te verwys nie.  Iets soos hierdie, bv:
 form.result.download = &raquo;Laai die Sprite Beeld Af
+
+sidebar.ad-placeholder = Advertise Here
+sidebar.sponsors-header = Sponsors
+sidebar.advertise-header = Advertising
+sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
+sidebar.open-source-header = Open Source
+sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

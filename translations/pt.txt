@@ -5,6 +5,7 @@ page.title.home = Gerador de Sprites CSS
 page.title.what-are-css-sprites = O que são sprites CSS?
 page.title.tool-help = Ajuda
 page.title.your-language = Língua
+page.title.advertising = Advertising
 
 menu.home = Início
 menu.what-are-css-sprites = O que são sprites CSS?
@@ -14,6 +15,8 @@ menu.report-bug = Reportar Bug
 menu.language.label = Língua
 menu.language.button = Alterar
 menu.language.your-language = A tua língua não está disponível? Ajuda-nos a providencia-la.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Ficheiros Fonte
 form.legend.resize-source-images = Redimensionar Imagens Fonte
@@ -32,10 +35,15 @@ form.label.vertical-offset = Offset Vertical
 form.label.background-colour = Cor do Fundo / Transparência \# (opcional)
 form.label.use-transparency = Utilizar a Cor do Fundo para Transparência
 form.label.sprite-output-format = Formato de Saída da Sprite
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = Prefixo CSS (opcional)
 form.label.filename-pattern-match = Padrão do nome do ficheiro (opcional)
 form.label.class-prefix = Prefixo das classes (opcional)
 form.label.css-suffix = Sufixo CSS (opcional)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Tamanho máximo do ficheiro: {0}MB
 form.hint.transparency = Se deixado em branco será utilizada para imagens opacas, e preto para transparentes
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

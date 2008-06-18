@@ -5,6 +5,7 @@ page.title.home = CSS Sprite Generator
 page.title.what-are-css-sprites = Wat zijn CSS sprites?
 page.title.tool-help = Help
 page.title.your-language = Jouw eigen taal
+page.title.advertising = Advertising
 
 menu.home = Home
 menu.what-are-css-sprites = Wat zijn CSS sprites?
@@ -14,6 +15,8 @@ menu.report-bug = Rapporteer bugs
 menu.language.label = Taal
 menu.language.button = Verander
 menu.language.your-language = Zit jouw taal er niet bij? Help het ons beschikbaar te maken.
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = Bron bestanden
 form.legend.resize-source-images = Herschaal bronafbeeldingen
@@ -32,10 +35,15 @@ form.label.vertical-offset = Verticale offset
 form.label.background-colour = Achtergrond / Transparantie Kleur \# (optioneel)
 form.label.use-transparency = Gebruik achtergrond kleur voor transparantie
 form.label.sprite-output-format = Sprite uitvoer formaat
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = CSS voorvoegsel (optioneel)
 form.label.filename-pattern-match = Bestandsnaam patroon match (optioneel)
 form.label.class-prefix = Class voorvoegsel (optioneel)
 form.label.css-suffix = CSS achtervoegsel (optional)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Max upload grootte: {0}MB
 form.hint.transparency = Default wordt wit gebruikt voor niet-transparante afbeeldingen, en zwart voor transparant
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.

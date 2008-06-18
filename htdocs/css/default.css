@@ -199,7 +199,7 @@ pre {
    float: none;
 }
 #options .duplicates label {
-   width: 25em;
+   width: 27em;
 }
 #options .sub {
    float: none;
@@ -275,11 +275,18 @@ a:active.download, input.submit:active {
 .map {
    border: 1px solid #777;
 }
-.languages, .credits {
+.languages, .credits, .ad-formats {
    list-style: disc;
 }
-.languages li, .credits li {
+.credits {
+   margin-bottom: 20px;
+}
+.languages li, .credits li, .ad-formats li {
    margin: 0 0 5px 15px;
+}
+.missing-translations a {
+   font-weight: bold;
+   color: #f60;
 }
 #sidebar .ad {
    background: #cfc;

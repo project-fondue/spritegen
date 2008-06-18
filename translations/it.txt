@@ -5,6 +5,7 @@ page.title.home = Generatore di Sprite CSS
 page.title.what-are-css-sprites = Cosa sono gli sprite CSS?
 page.title.tool-help = Aiuto
 page.title.your-language = La tua lingua
+page.title.advertising = Advertising
 
 menu.home = Home
 menu.what-are-css-sprites = Cosa sono gli sprite CSS?
@@ -14,6 +15,8 @@ menu.report-bug = Report Bug
 menu.language.label = Lingua
 menu.language.button = Cambia
 menu.language.your-language = La tua lingua non &egrave; presente? Aiutaci a rimediare!
+
+warning.missing-translations = We're missing translations for this language. Can you help provide?
 
 form.legend.source-files = File sorgenti
 form.legend.resize-source-images = Ridimensionamento Immagini Originali
@@ -32,10 +35,15 @@ form.label.vertical-offset = Spaziatura verticale
 form.label.background-colour = Colore Sfondo / Trasparenza \# (optional)
 form.label.use-transparency = Usa il Colore di Sfondo per la Trasparenza
 form.label.sprite-output-format = Formato Sprite Generato
+form.label.sprite-output-num-colours = Number of Colours
+form.label.sprite-output-quality = Image Quality
+form.label.use-optipng = Compress Image with OptiPNG
 form.label.css-prefix = Prefisso CSS (facoltativo)
 form.label.filename-pattern-match = Espressione Regolare per i Nomi dei File (facoltativo)
 form.label.class-prefix = Prefisso Classi (facoltativo)
 form.label.css-suffix = Suffisso CSS (facoltativo)
+
+form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Massima Dimensione delle Immagini Caricate: {0}MB
 form.hint.transparency = lasciare vuoto per la trasparenza GIF/PNG
@@ -73,7 +81,5 @@ sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
 sidebar.advertise-header = Advertising
 sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.api-header = Sprite Generator API
-sidebar.api-text = Looking to automate the process? CSS Sprite Generator has an API!
 sidebar.open-source-header = Open Source
 sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.
