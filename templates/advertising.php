@@ -6,25 +6,11 @@
 <p>The following formats are available for purchase:</p>
 <ul class="ad-formats">
    <li>2 * graphical button ads (displayed at the top of the sidebar on every page)</li>
-   <li>10 * text links (displayed in the sidebar 
-      <script type="text/javascript">
-         function affiliateLink(str){ 
-            str = unescape(str); 
-            var r = ''; 
-            for(var i = 0; i < str.length; i++) r += String.fromCharCode(7^str.charCodeAt(i)); document.write(r); 
-         }
-         document.write(' and sold through ');
-         affiliateLink('%3Bf%27ouba%3A%25ossw%3D%28%28ppp%29sb%7Fs*knil*fct%29dhj%28wfdlf%60bCbsfnk%29wow8wfdlf%60bNC%3A%3F4504%21uba%3A40365%259Sb%7Fs%27Knil%27Fct%3B%28f9');
-      </script>)
+   <li>10 * text links (displayed in the sidebar below the graphical button ads)
    </li>
 </ul>
 <p>Additionally a 3rd rotating ad slot is reserved for those users that have been kind enough to provide us with translations for the tool.</p>
-<p>Graphical button ads are standard <a href="http://www.iab.net/iab_products_and_industry_services/1421/1443/1452">IAB</a> 120 * 90 and cost $200 per month (30 days). Text link ads cost $125 per calendar month.
+<p>Graphical button ads are standard <a href="http://www.iab.net/iab_products_and_industry_services/1421/1443/1452">IAB</a> 120 * 90 and cost $200 per month (30 days). Text links cost $125 per calendar month.
 </p>
 <h2>Purchasing</h2>
-<p>If you'd like to purchase a graphical button ad please <a href="mailto:contact@website-performance.org">email us</a> with details of when you'd like the ad to run. On agreement of dates payment is via <a href="http://www.paypal.com/">Paypal</a>.
-<script type="text/javascript">
-   document.write(' For text link ads please visit ');
-   affiliateLink('%3Bf%27ouba%3A%25ossw%3D%28%28ppp%29sb%7Fs*knil*fct%29dhj%28wfdlf%60bCbsfnk%29wow8wfdlf%60bNC%3A%3F4504%21uba%3A40365%259Sb%7Fs%27Knil%27Fct%3B%28f9');
-</script>.
-</p>
+<p>If you'd like to purchase and ad please <a href="mailto:contact@website-performance.org">email us</a> with details of when you'd like the ad to run and we'll take it from there.</p>

@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteRule ^/section/([0-9a-z-]+)/?$  /index.php?action=$1 [L]
+   RewriteRule ^/api/v1/?$ /api.php [L]
+</IfModule>

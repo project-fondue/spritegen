@@ -66,19 +66,8 @@
             <?php echo $content; ?>
          </div>
          <div id="sidebar">
-            <?php if (file_exists('../master/text-ads.inc.php')): ?>
-               <div class="ad">
-                  <a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
-               </div>
-               <div class="ad">
-                  <a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
-               </div>
-               <h2><?php echo $translation->Get('sidebar.sponsors-header'); ?></h2>
-               <?php require('../master/text-ads.inc.php'); ?>
-               <h2><?php echo $translation->Get('sidebar.advertise-header'); ?></h2>
-               <p><a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.advertise-text'); ?></a></p>
-               <h2><?php echo $translation->Get('sidebar.open-source-header'); ?></h2>
-               <p><a href="https://launchpad.net/css-sprite-generator"><?php echo $translation->Get('sidebar.open-source-text'); ?></a></p>
+            <?php if (file_exists('../templates/sidebar.php')): ?>
+               <?php require('../templates/sidebar.php'); ?>
             <?php endif; ?>
          </div>
          <div id="footer">
@@ -87,8 +76,8 @@
       </div>
    </div>
    <?php
-      if (file_exists('../master/analytics.inc.php')) {
-         require('../master/analytics.inc.php');
+      if (file_exists('../templates/analytics.php')) {
+         require('../templates/analytics.php');
       }
    ?>
 </body> 

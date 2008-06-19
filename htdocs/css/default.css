@@ -125,11 +125,11 @@ pre {
    text-align: right;
 }
 #main {
-   width: 600px;
+   width: 630px;
    margin-right: 10px;
 }
 #sidebar {
-   width: 150px;
+   width: 120px;
 }
 #main, #sidebar {
    float: left;
@@ -199,7 +199,7 @@ pre {
    float: none;
 }
 #options .duplicates label {
-   width: 27em;
+   width: 30em;
 }
 #options .sub {
    float: none;
@@ -291,7 +291,7 @@ a:active.download, input.submit:active {
 #sidebar .ad {
    background: #cfc;
    border: 2px solid #393;
-   width: 146px;
+   width: 116px;
    padding: 30px 0;
    margin: 8px 0;
    font-weight: bold;
