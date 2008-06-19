@@ -1,53 +1,55 @@
 #!/bin/bash
 
+SCRIPTDIR=`dirname $0`
+
 # remove spritegen-deploy and spritegen.tar.gz if they already exist
-rm -fr ../../spritegen-deploy
-rm -fr ../../spritegen.tar.gz
+rm -fr ${SCRIPTDIR}/../../spritegen-deploy
+rm -fr ${SCRIPTDIR}/../../spritegen.tar.gz
 
 # copy spritegen directory to new location
-cp -R ../../spritegen ../../spritegen-deploy
+cp -R ${SCRIPTDIR}/../../spritegen ../../spritegen-deploy
 
 # remove branding images
-rm ../../spritegen-deploy/htdocs/images/header.png
-rm ../../spritegen-deploy/htdocs/favicon.ico
+rm ${SCRIPTDIR}/../../spritegen-deploy/htdocs/images/header.png
+rm ${SCRIPTDIR}/../../spritegen-deploy/htdocs/favicon.ico
 
 # remove text ads
-rm ../../spritegen-deploy/includes/text-ads.inc.php
-rm -fr ../../spritegen-deploy/cache/text-link-ads
+rm ${SCRIPTDIR}/../../spritegen-deploy/includes/text-ads.inc.php
+rm -fr ${SCRIPTDIR}/../../spritegen-deploy/cache/text-link-ads
 
 # clear cache directories
-rm ../../spritegen-deploy/cache/source-images/*
-rm ../../spritgen-deploy/cache/sprites/*
-rm ../../spritegen-deploy/cache/translations/*
+rm ${SCRIPTDIR}/../../spritegen-deploy/cache/source-images/*
+rm ${SCRIPTDIR}/../../spritgen-deploy/cache/sprites/*
+rm ${SCRIPTDIR}/../../spritegen-deploy/cache/translations/*
 
 # remove your language page
-rm ../../spritegen-deploy/actions/your-language.php
-rm ../../spritegen-deploy/templates/your-language.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/actions/your-language.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/templates/your-language.php
 
 # remove advertising page
-rm ../../spritegen-deploy/actions/advertising.php
-rm ../../spritegen-deploy/templates/advertising.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/actions/advertising.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/templates/advertising.php
 
 # remove analytics
-rm ../../spritegen-deploy/templates/analytics.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/templates/analytics.php
 
 # remove sidebar
-rm ../../spritegen-deploy/templates/sidebar.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/templates/sidebar.php
 
 # delete live.inc.conf
-rm ../../spritegen-deploy/includes/conf/live.inc.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/includes/conf/live.inc.php
 
 # remove language pack
-rm -fr ../../spritegen-deploy/htdocs/downloads
+rm -fr ${SCRIPTDIR}/../../spritegen-deploy/htdocs/downloads
 
 # remove future features
-rm -fr ../../spritegen-deploy/future-features
+rm -fr ${SCRIPTDIR}/../../spritegen-deploy/future-features
 
 # remove bzr directory
-rm -fr ../../spritegen-deploy/.bzr
+rm -fr ${SCRIPTDIR}/../../spritegen-deploy/.bzr
 
 # remove deploy script
-rm ../../spritegen-deploy/bin/deploy.sh
+rm ${SCRIPTDIR}/../../spritegen-deploy/bin/deploy.sh
 
 # create spritegen.tar.gz
-tar cvf - ../../spritegen-deploy/ | gzip > ../../spritegen.tar.gz
+tar cvf - ${SCRIPTDIR}/../../spritegen-deploy/ | gzip > ${SCRIPTDIR}/../../spritegen.tar.gz
