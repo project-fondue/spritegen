@@ -7,9 +7,12 @@ rm -fr ../../spritegen.tar.gz
 # copy spritegen directory to new location
 cp -R ../../spritegen ../../spritegen-deploy
 
-# remove files specific to hosted copy
-rm ../../spritegen-deploy/includes/text-ads.inc.php
+# remove branding images
 rm ../../spritegen-deploy/htdocs/images/header.png
+rm ../../spritegen-deploy/htdocs/favicon.ico
+
+# remove text ads
+rm ../../spritegen-deploy/includes/text-ads.inc.php
 rm -fr ../../spritegen-deploy/cache/text-link-ads
 
 # clear cache directories
@@ -25,6 +28,9 @@ rm ../../spritegen-deploy/templates/your-language.php
 rm ../../spritegen-deploy/actions/advertising.php
 rm ../../spritegen-deploy/templates/advertising.php
 
+# remove analytics
+rm ../../spritegen-deploy/templates/analytics.php
+
 # remove sidebar
 rm ../../spritegen-deploy/templates/sidebar.php
 
@@ -33,6 +39,9 @@ rm ../../spritegen-deploy/includes/conf/live.inc.php
 
 # remove language pack
 rm -fr ../../spritegen-deploy/htdocs/downloads
+
+# remove future features
+rm -fr ../../spritegen-deploy/future-features
 
 # remove bzr directory
 rm -fr ../../spritegen-deploy/.bzr
