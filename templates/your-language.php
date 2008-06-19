@@ -1,6 +1,6 @@
 <p>In total users of this tool speak a 113 different languages (at least their web browsers are telling us that's the case). Currently we support 12 which is a fantastic achievement but we'd love to add more.</p>
 <h2>Usage Globally</h2>
-<p><img src="<?php echo $appRoot; ?>images/visitors-map.png" width="598" height="276" alt="Map of number of visitors from each country" class="map"></p>
+<p><img src="<?php echo $appRoot; ?>images/visitors-map.jpg" width="598" height="276" alt="Map of number of visitors from each country" class="map"></p>
 <h2>Translations Most Needed</h2>
 <p>According to our stats the following languages are those most used by our visitors for which we don't already have translations.</p>
 <ul class="languages">
