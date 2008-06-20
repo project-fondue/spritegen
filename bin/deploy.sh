@@ -48,6 +48,9 @@ rm -fr ${SCRIPTDIR}/../../spritegen-deploy/future-features
 # remove bzr directory
 rm -fr ${SCRIPTDIR}/../../spritegen-deploy/.bzr
 
+# remove language pack script
+rm ${SCRIPTDIR}/../../spritegen-deploy/bin/create-language-pack.sh
+
 # remove deploy script
 rm ${SCRIPTDIR}/../../spritegen-deploy/bin/deploy.sh
 
