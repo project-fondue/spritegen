@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Doppelte Bilder ignorieren
 form.label.merge-duplicates = Doppelte Bilder l&ouml;schen und CSS zusammenf&uuml;gen
 form.label.horizontal-offset = Horizontaler Abstand
 form.label.vertical-offset = Vertikaler Abstand
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Hintergrundfarbe \# (optional)
 form.label.use-transparency = Benutze Hintergrundfarbe als Transparenz
 form.label.sprite-output-format = Sprite Ausgabeformat

@@ -64,6 +64,7 @@
       <legend><?php echo $translation->Get('form.legend.sprite-output-options'); ?></legend>
       <?php echo $functions->TextInput('horizontal-offset', $translation->Get('form.label.horizontal-offset'), 150, 5, 'px'); ?>
       <?php echo $functions->TextInput('vertical-offset', $translation->Get('form.label.vertical-offset'), 30, 5, 'px'); ?>
+      <label for="wrap-columns"><?php echo $translation->Get('form.label.wrap-columns'); ?>:</label><input type="checkbox" name="wrap-columns" id="wrap-columns"<?php if (!$formPosted || isset($_POST['wrap-columns'])) echo ' checked="checked"'; ?>>
 
       <?php echo $functions->TextInput('background', $translation->Get('form.label.background-colour'), '', 7, $translation->Get('form.hint.transparency'), true); ?>
       <label for="use-transparency"><?php echo $translation->Get('form.label.use-transparency'); ?>:</label><input type="checkbox" name="use-transparency" id="use-transparency"<?php if (!$formPosted || isset($_POST['use-transparency'])) echo ' checked="checked"'; ?>>

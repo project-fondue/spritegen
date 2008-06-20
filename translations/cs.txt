@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Ignorovat duplicitní obrázky
 form.label.merge-duplicates = Odstranit duplicitní obrázky a sloučit CSS pravidla
 form.label.horizontal-offset = Horizontální rozestup
 form.label.vertical-offset = Vertikální rozestup
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Pozadí / Průhledná barva \# (nepovinné)
 form.label.use-transparency = Průhledná barva pozadí
 form.label.sprite-output-format = Formát výsledného obrázku

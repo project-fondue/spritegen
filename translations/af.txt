@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Ignoreer duplikaat beelde
 form.label.merge-duplicates = Verwyder duplikaat beelde maar verenig reëls
 form.label.horizontal-offset = Horisontale Afset
 form.label.vertical-offset = Vertikale Afset
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Agtergrond / Deursigtigheid Kleur \# (optioneel)
 form.label.use-transparency = Gebruik Agtergrond Kleur as Deursigtigheid Kleur
 form.label.sprite-output-format = Sprite Uitset Formaat

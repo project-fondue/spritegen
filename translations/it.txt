@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Ignora le immagini duplicate
 form.label.merge-duplicates = Rimuovi le immagini duplicate ma combina le classi CSS
 form.label.horizontal-offset = Spaziatura orizzontale
 form.label.vertical-offset = Spaziatura verticale
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Colore Sfondo / Trasparenza \# (optional)
 form.label.use-transparency = Usa il Colore di Sfondo per la Trasparenza
 form.label.sprite-output-format = Formato Sprite Generato

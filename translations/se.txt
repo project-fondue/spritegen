@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Ignorera bilddubletter
 form.label.merge-duplicates = Ta bort bilddubletter men förena CSS klasser
 form.label.horizontal-offset = Horisontell kompensation
 form.label.vertical-offset = Vertikal kompensation
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Bakgrund / Transparant färg \# (valfri)
 form.label.use-transparency = Använd bakgrundsfärg för transparans
 form.label.sprite-output-format = Sprite utdataformat

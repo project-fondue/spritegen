@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Ignorar im&aacute;genes duplicadas
 form.label.merge-duplicates = Quitar im&aacute;genes duplicadas pero combinar las clases en una sola
 form.label.horizontal-offset = Desplazamiento horizontal
 form.label.vertical-offset = Desplazamiento vertical
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Color de fondo / Color de transparencia \# (opcional)
 form.label.use-transparency = Utiliza color de fondo para transparencia
 form.label.sprite-output-format = Formato del fichero Sprite

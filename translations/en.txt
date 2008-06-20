@@ -32,6 +32,7 @@ form.label.ignore-duplicates = Ignore duplicate images
 form.label.merge-duplicates = Remove duplicate images but merge CSS rules
 form.label.horizontal-offset = Horizontal Offset
 form.label.vertical-offset = Vertical Offset
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Background / Transparency Colour \# (optional)
 form.label.use-transparency = Use Background Colour for Transparency
 form.label.sprite-output-format = Output Format

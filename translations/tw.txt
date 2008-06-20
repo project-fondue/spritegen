@@ -32,6 +32,7 @@ form.label.ignore-duplicates = 忽略重複圖片
 form.label.merge-duplicates = 去除重複圖片但合併規則
 form.label.horizontal-offset = 水平偏移
 form.label.vertical-offset = 垂直偏移
+form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = 背景 / 透明色 \# (選項)
 form.label.use-transparency = 背景色透明
 form.label.sprite-output-format = 合併圖片輸出格式
