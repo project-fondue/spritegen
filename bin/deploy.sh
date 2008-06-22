@@ -36,20 +36,20 @@ rm ${SCRIPTDIR}/../../spritegen-deploy/templates/analytics.php
 # remove sidebar
 rm ${SCRIPTDIR}/../../spritegen-deploy/templates/sidebar.php
 
+# create empty sidebar
+touch ${SCRIPTDIR}/../../spritegen-deploy/templates/sidebar.php
+
 # delete live.inc.conf
 rm ${SCRIPTDIR}/../../spritegen-deploy/includes/conf/live.inc.php
 
-# remove language pack
-rm -fr ${SCRIPTDIR}/../../spritegen-deploy/htdocs/downloads
+# remove language pack zips
+rm ${SCRIPTDIR}/../../spritegen-deploy/htdocs/downloads/*
 
 # remove future features
 rm -fr ${SCRIPTDIR}/../../spritegen-deploy/future-features
 
 # remove bzr directory
 rm -fr ${SCRIPTDIR}/../../spritegen-deploy/.bzr
-
-# remove language pack script
-rm ${SCRIPTDIR}/../../spritegen-deploy/bin/create-language-pack.sh
 
 # remove deploy script
 rm ${SCRIPTDIR}/../../spritegen-deploy/bin/deploy.sh

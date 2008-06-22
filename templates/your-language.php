@@ -16,7 +16,7 @@
 <p>Are you interested in helping us translate this tool into your language? If so, thank you, we really appreciate it and I'm sure other users of the tool will to.</p>
 <p>Additionally if you spot a problem with any of the existing translations please <a href="mailto:<?php echo $contactEmail; ?>">drop us an email</a> and will fix as quickly as possible.</p>
 <h3>Instructions</h3>
-<p>To get started download our <a href="<?php echo  $appRoot; ?>downloads/language-pack.zip">language pack</a> which contains a copy of the files which need to be localised. It consists of one file which contains all the translation keys for the interface and the HTML and text for the help pages.</p>
+<p>To get started download our <a href="<?php echo  $appRoot; ?>downloads/language-pack-en.zip">language pack (ZIP)</a> which contains a copy of the files which need to be localised. It consists of one file which contains all the translation keys for the interface and the HTML and text for the help pages.</p>
 <p>To help you understand the context of the translation keys you can tell the tool to display the keys in place of the text by passing a  <code>showKeys=true</code> parameter in the query string. For example:</p>
 <p><a href="<?php echo  $appRoot; ?>?showKeys=true">http://spritegen.website-performance.org/?showKeys=true</a></p>
 <p>The tool uses UTF-8 throughout so you shouldn't need to encode entities. Simply make sure that you save the files as UTF-8 in your editor to avoid any corruption of extended characters.</p>
