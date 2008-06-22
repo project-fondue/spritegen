@@ -19,6 +19,8 @@
    <dd>This determines the horizontal spacing between rows of images in the output. This value needs to be large enough to take account of the <a href="http://creativebits.org/webdev/safari_background_repeat_bug_fix">Safari background repeat bug</a>. We suggest sticking with the default.</dd>
    <dt>Vertical Offset</dt>
    <dd>This determines the vertical spacing between each consecutive image. This should be large enough to take account of user font size increases. Generally we'd recommend that you design your site so that visitors can increase their font size twice before the next background image in the sequence becomes visible.</dd>
+   <dt>Wrap columns to fix Opera bug</dt>
+   <dd>Opera 9.0 and below have a bug which affects CSS background offsets less than -2042px. All values less than this are treated as -2042px exactly. With this option is selected CSS Sprite Generator creates a new column each time the vertical offset reaches -2000px.</dd>
    <dt>Background Colour</dt>
    <dd>Sets a background colour for the output image. This field takes a 6 digit hex colour value. If left blank and the output format is set to either GIF or PNG then background will be transparent.</dd>
    <dt>Output Format</dt>
