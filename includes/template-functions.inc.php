@@ -85,7 +85,7 @@
          if (REWRITTEN_URLS) {
             return $sAppRoot."section/$sSection";
          } else {
-            return $sAppRoot."?action=$sSection";
+            return $sAppRoot."?view=$sSection";
          }
       }
    }

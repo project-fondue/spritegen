@@ -368,8 +368,8 @@
       
       protected function WriteImage($oImage, $sExtension, $sFilename) {
          if ($this->sImageLibrary == 'imagick') {
-            if (in_array($sExtension, array('gif', 'png')) && $this->aFormValues['image-num-colours'] != -1) {
-               $oImage->quantizeImage($this->aFormValues['image-quality'], Imagick::COLORSPACE_RGB, 0, false, false);
+            if (in_array($sExtension, array('gif', 'png')) && $this->aFormValues['image-num-colours'] != 'true-colour') {
+               $oImage->quantizeImage($this->aFormValues['image-num-colours'], Imagick::COLORSPACE_RGB, 0, false, false);
             }
             if (in_array($sExtension, array('jpg', 'jpeg'))) {
                $oImage->setCompression(Imagick::COMPRESSION_JPEG);
@@ -377,7 +377,7 @@
             }
             $oImage->writeImage($sFilename);
          } else {
-            if (in_array($sExtension, array('gif', 'png'))  && $this->aFormValues['image-num-colours'] != -1) {
+            if (in_array($sExtension, array('gif', 'png'))  && $this->aFormValues['image-num-colours'] != 'true-colour') {
                imagetruecolortopalette($oImage, true, $this->aFormValues['image-num-colours']);
             }
             switch ($sExtension) {

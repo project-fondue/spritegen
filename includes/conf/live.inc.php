@@ -1,8 +1,8 @@
 <?php
    // publically accessible document root
    define('APP_ROOT', '/');
-   // location of action scripts (corresponding to page types)
-   define('ACTIONS_DIR', '../actions/');
+   // location of view scripts (corresponding to page types)
+   define('VIEWS_DIR', '../views/');
    // directory to store uploaded ZIP files
    define('UPLOAD_DIR', '../cache/source-images/');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
@@ -49,6 +49,9 @@
    define('TOOL_URL', 'http://dev.spritegen.website-performance.org/');
    // contact email address
    define('CONTACT_EMAIL', 'contact@website-performance.org');
+   
+   // views which don't render the normal HTML layout
+   $aNonPageViews = array('download');
    
    // installed languages
    $aLanguages = array(

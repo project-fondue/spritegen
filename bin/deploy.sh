@@ -23,11 +23,11 @@ rm ${SCRIPTDIR}/../../spritgen-deploy/cache/sprites/*
 rm ${SCRIPTDIR}/../../spritegen-deploy/cache/translations/*
 
 # remove your language page
-rm ${SCRIPTDIR}/../../spritegen-deploy/actions/your-language.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/views/your-language.php
 rm ${SCRIPTDIR}/../../spritegen-deploy/templates/your-language.php
 
 # remove advertising page
-rm ${SCRIPTDIR}/../../spritegen-deploy/actions/advertising.php
+rm ${SCRIPTDIR}/../../spritegen-deploy/views/advertising.php
 rm ${SCRIPTDIR}/../../spritegen-deploy/templates/advertising.php
 
 # remove analytics

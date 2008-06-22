@@ -21,6 +21,7 @@ Set Up
 4. Additionally you may want to GZIP CSS & JS for improved performance and set far futures expires headers for CSS, JS & images (see "setup/gzip-expires.txt" for rules to add to your Apache virtual host config).
 5. Ensure Apache can write to the sub-folders of "cache" (run chmod +w cache/{source-images|sprites|translations}).
 6. Copy "includes/conf/example.inc.php" to "includes/conf/live.inc.php" and configure settings according to your server environment.
+7. Load in browser and enjoy!
 
 Translations
 ------------

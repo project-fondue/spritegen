@@ -1,5 +1,5 @@
 // maintain aspect ratio initalisation
-YAHOO.util.Event.onDOMReady(function(e) {
+YAHOO.util.Event.onDOMReady(function() {
    
    // preserve aspect ratio 
    var oResize = document.getElementById('resize');

@@ -93,7 +93,7 @@
       }
       
       protected function IsColour($sKey) {
-         if (empty($this->aFormValues[$sKey]) || (!is_numeric($sKey) && $this->aFormValues[$sKey] != 'true-colour')) {
+         if (empty($this->aFormValues[$sKey]) || (!is_numeric($this->aFormValues[$sKey]) && $this->aFormValues[$sKey] != 'true-colour')) {
             $this->aFormErrors['invalid'][$sKey] = 'IsColour';
             return false;
          }

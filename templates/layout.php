@@ -11,7 +11,7 @@
    <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon">                                                                          
    <meta name="description" content="A tool for generating image sprites and CSS for your web site. Using this tool can help you dramatically reduce the number of HTTP requests made for higher performance.">        
    
-   <?php if ($action == 'home'): ?>
+   <?php if ($view == 'home'): ?>
       <script type="text/javascript">
          var SPRITEGEN = {
             locale : {
@@ -36,16 +36,16 @@
       <div id="content">
          <div id="menu">
             <ul>   
-               <li<?php if ($action == 'home'): ?> class="active"<?php endif; ?>><a href="<?php echo $appRoot; ?>"><?php echo $translation->Get('menu.home'); ?></a></li>
-               <li<?php if ($action == 'what-are-css-sprites'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'what-are-css-sprites'); ?>"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
-               <li<?php if ($action == 'tool-help'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'tool-help'); ?>"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
+               <li<?php if ($view == 'home'): ?> class="active"<?php endif; ?>><a href="<?php echo $appRoot; ?>"><?php echo $translation->Get('menu.home'); ?></a></li>
+               <li<?php if ($view == 'what-are-css-sprites'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'what-are-css-sprites'); ?>"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
+               <li<?php if ($view == 'tool-help'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'tool-help'); ?>"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
                <?php if (!empty($reportBugUrl)): ?>
                   <li><a href="<?php echo $reportBugUrl; ?>"><?php echo $translation->Get('menu.report-bug'); ?></a></li>
                <?php endif; ?>
             </ul>
             <form method="get" action="<?php echo $appRoot; ?>">
                <div>
-                  <input type="hidden" name="action" id="action" value="<?php echo $action; ?>">
+                  <input type="hidden" name="view" id="view" value="<?php echo $view; ?>">
                   <label for="lang"><?php echo $translation->Get('menu.language.label'); ?>:</label>
                   <select name="lang" id="lang">
                      <?php foreach ($languages as $key => $value): ?>
@@ -56,7 +56,7 @@
                </div>
             </form>
          </div>
-         <?php if (file_exists($actionsDir.'your-language.php')): ?>
+         <?php if (file_exists($viewsDir.'your-language.php')): ?>
             <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
          <?php endif; ?>
          <div id="main">

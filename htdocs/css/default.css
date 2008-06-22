@@ -156,8 +156,9 @@ pre {
 #result .code-container {
    border: 1px solid #ccc;
    overflow: auto;
-   width: 582px;
+   width: 602px;
    height: 200px;
+   padding: 5px;
 }
 #result .background-example {
    margin-bottom: 10px;
