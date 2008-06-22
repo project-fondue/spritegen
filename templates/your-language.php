@@ -21,6 +21,8 @@
 <p><a href="<?php echo  $appRoot; ?>?showKeys=true">http://spritegen.website-performance.org/?showKeys=true</a></p>
 <p>The tool uses UTF-8 throughout so you shouldn't need to encode entities. Simply make sure that you save the files as UTF-8 in your editor to avoid any corruption of extended characters.</p>
 <p>Once you've translated the files <a href="mailto:<?php echo $contactEmail; ?>">send them back to us</a> and we'll add them to the tool.</p>
+<h3>Incomplete Languages</h3>
+<p>If you'd like to provide missing translations for your language please <a href="mailto:<?php echo $contactEmail; ?>">email us</a> amd we'll send you the relevant language pack.</p>
 <h2>Credits</h2>
 <p>Thanks to the following people who have provided translations. Their contributions have genuinely made this tool more useful.</p>
 <ul class="credits">

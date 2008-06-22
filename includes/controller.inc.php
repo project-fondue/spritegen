@@ -69,6 +69,9 @@
       }
       
       protected function SetLanguage($aLanguages) {
+         // check for request to change language
+         // if not present check for cookie specifiying language
+         // finally fall back to english
          if (isset($_GET['lang']) && array_key_exists($_GET['lang'], $aLanguages)) {
             $this->sLanguage = $_GET['lang'];
             setcookie('lang', $this->sLanguage, time() + 60 * 60 * 24 * 365, '/');
