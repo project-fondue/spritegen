@@ -17,6 +17,3 @@ a.download, input.submit { /* buttons look wrong with default padding */
 .ads {
    width: 100%;
 }
-#resize{
-    zoom:1;
-}

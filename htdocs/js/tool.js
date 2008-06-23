@@ -28,6 +28,10 @@ YAHOO.util.Event.onDOMReady(function() {
       }
    }
    
+   if (window.ActiveXObject){
+       document.getElementsByTagName('body')[0].className='ie_redraw_fix';
+   }
+   
    YAHOO.util.Event.addListener(['width-resize', 'height-resize'], 'keyup', MaintainAspectRatio);
    
    // disable the number of colours select for jpeg images
