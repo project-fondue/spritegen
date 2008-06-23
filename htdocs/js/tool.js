@@ -29,7 +29,8 @@ YAHOO.util.Event.onDOMReady(function() {
    }
    
    if (window.ActiveXObject){
-       document.getElementsByTagName('body')[0].className='ie_redraw_fix';
+       var bod = document.getElementsByTagName('body')[0];
+       YAHOO.util.Dom.addClass(bod, 'ie_redraw_fix-name');
    }
    
    YAHOO.util.Event.addListener(['width-resize', 'height-resize'], 'keyup', MaintainAspectRatio);
