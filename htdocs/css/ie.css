@@ -5,14 +5,18 @@
    position: relative;
    top: -3px;
 }
-#options fieldset { /* fieldsets a bit screwed in IE - adjust accordingly */
-   border-style: solid;
-   padding: 15px 7px 7px;
-   margin: -30px 0 30px 0;
+#options fieldset{
+    padding: 0 7px;
+}
+#options span.help{
+    margin-left: 17em;
 }
 a.download, input.submit { /* buttons look wrong with default padding */
    padding: 0.1em;
 }
 .ads {
    width: 100%;
+}
+#resize{
+    zoom:1;
 }

@@ -186,6 +186,13 @@ pre {
    margin-left: 5px;
    font-size: 92%;
 }
+#options span.help{
+    clear:left;
+    width: 30em;
+    margin-left: 18.5em;
+}
+
+
 #options label, #options span {
    line-height: 1.7em;
 }

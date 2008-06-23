@@ -9,6 +9,6 @@
       class="error"
    <?php endif; ?>>
    <?php if (!empty($hint)): ?>
-      <span><?php echo $hint; ?></span>
+      <span<?php if ($hint != '%' && $hint != 'px'): ?> class="help"<?php endif; ?>><?php echo $hint; ?></span>
    <?php endif; ?>
 </div>
