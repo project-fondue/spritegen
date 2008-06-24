@@ -22,8 +22,6 @@
             }
          };
       </script>
-      <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
-      <script type="text/javascript" src="<?php echo $assetsDir; ?>js/tool.js"></script>
    <?php endif; ?>
 </head>
 
@@ -75,6 +73,8 @@
          </div>
       </div>
    </div>
+   <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+   <script type="text/javascript" src="<?php echo $assetsDir; ?>js/tool.js"></script>
    <?php
       if (file_exists('../templates/analytics.php')) {
          require('../templates/analytics.php');
