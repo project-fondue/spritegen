@@ -7,7 +7,7 @@ YAHOO.util.Event.onDOMReady(function() {
    var oAspectRatioCheckbox = document.createElement('input');
    
    oAspectRatioLabel.setAttribute('for', 'aspect-ratio');
-   oAspectRatioLabel.appendChild(document.createTextNode(SPRITEGEN.locale.aspectRatio));
+   oAspectRatioLabel.innerHTML = SPRITEGEN.locale.aspectRatio;
    oResize.appendChild(oAspectRatioLabel);
    
    oAspectRatioCheckbox.setAttribute('type', 'checkbox');
