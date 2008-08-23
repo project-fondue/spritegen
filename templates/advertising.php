@@ -1,7 +1,7 @@
 <p>Thank you for your interest in advertising on CSS Sprite Generator.</p>
 <h2>Statistics</h2>
-<p>Since launch in September 2007 CSS Sprite Generator has averaged just over 300 visitors per day with peaks reaching around 7000 visitors per day. It's been featured on popular sites like <a href="http://cssvault.com/">CSS Vault</a>, <a href="http://ajaxian.com/">Ajaxian</a> and <a href="http://cssbeauty.com/">CSS Beauty</a>. In total over 1000 sites have linked to or written about the tool and it's been bookmarked nearly 1900 times in <a href="http://del.icio.us/">del.icio.us</a>.</p>
-<p>The nature of the tool encourages regular repeat visits and its users speak a total of 113 different languages. To date it's been translated into 12 languages by its users.</p>
+<p>Since launch in September 2007 CSS Sprite Generator has averaged just over 300 visitors per day with peaks reaching around 7000 visitors per day. It's been featured on popular sites like <a href="http://cssvault.com/">CSS Vault</a>, <a href="http://ajaxian.com/">Ajaxian</a> and <a href="http://cssbeauty.com/">CSS Beauty</a>. In total over 1000 sites have linked to or written about the tool and it's been bookmarked over 2000 times in <a href="http://del.icio.us/">del.icio.us</a>.</p>
+<p>The nature of the tool encourages regular repeat visits and its users speak a total of 113 different languages. To date it's available  in <?php echo $numLanguages; ?> languages thanks to translations provided by its users.</p>
 <h2>Formats</h2>
 <p>The following formats are available for purchase:</p>
 <ul class="ad-formats">

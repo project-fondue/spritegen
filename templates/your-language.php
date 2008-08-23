@@ -1,4 +1,4 @@
-<p>In total users of this tool speak a 113 different languages (at least their web browsers are telling us that's the case). Currently we support 12 which is a fantastic achievement but we'd love to add more.</p>
+<p>In total users of this tool speak 113 different languages (at least their web browsers are telling us that's the case). Currently we support <?php echo $numLanguages; ?> which is a fantastic achievement but we'd love to add more.</p>
 <h2>Usage Globally</h2>
 <p><img src="<?php echo $appRoot; ?>images/visitors-map.jpg" width="628" height="289" alt="Map of number of visitors from each country" class="map"></p>
 <h2>Translations Most Needed</h2>
@@ -31,7 +31,7 @@
    <li>French - <a href="http://java4it.blogspot.com/">Ludovic Bert</a></li>
    <li>German - <a href="http://www.wait-till-i.com/">Christian Heilmann</a></li>
    <li>Italian - <a href="http://www.jappit.com/">Alessandro La Rosa</a></li>
-   <li>Polish - Łukasz 'ZeeWolf' Kieres</li>
+   <li>Polish - <a href="http://www.zee.friko.pl/">Łukasz 'ZeeWolf' Kieres</a></li>
    <li>Portuguese - <a href="http://www.codebeautifier.com/">Rob Ornelas</a></li>
    <li>Japanese - <a href="http://css.studiomohawk.com/">Yuya Saito</a></li>
    <li>Spanish - <a href="http://www.proyectoscpc.net/">Xavier Pimienta</a></li>

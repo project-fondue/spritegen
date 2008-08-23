@@ -14,9 +14,9 @@ menu.report-bug = Zgłoś błąd
 
 menu.language.label = Język
 menu.language.button = Zmień
-menu.language.your-language = Your language not listed? Help us provide it.
+menu.language.your-language = Nie ma na liście Twojego języka? Pomóż nam w tłumaczeniu.
 
-warning.missing-translations = We're missing translations for this language. Can you help provide?
+warning.missing-translations = Tłumaczenie dla tego języka nie jest kompletne. Czy zechciałbyś pomóc?
 
 form.legend.source-files = Pliki źródłowe
 form.legend.resize-source-images = Zmiana rozmiaru obrazków źródłowych
@@ -44,7 +44,7 @@ form.label.filename-pattern-match = Wzorzec nazwy pliku (opcjonalnie)
 form.label.class-prefix = Przedrostek klasy (opcjonalnie)
 form.label.css-suffix = Przyrostek CSS (opcjonalnie)
 
-form.value.true-colour = True Colour
+form.value.true-colour = True Color
 
 form.hint.max-upload-size = Maksymalny rozmiar pliku: {0}MB
 form.hint.transparency = Jeśli pole zostanie puste, kolor biały zostanie użyty dla obrazków nie zawierających przezroczystości, czarny dla przezroczystych
