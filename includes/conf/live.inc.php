@@ -63,7 +63,9 @@
       'fr' => 'français',
       'de' => 'Deutsch',
       'it' => 'italiano',
+      'pl' => 'polski',
       'pt' => 'português',
+      'ja' => '日本語',
       'es' => 'Español',
       'se' => 'svenska',
       'tw' => '臺灣話'

@@ -4,10 +4,8 @@
 <h2>Translations Most Needed</h2>
 <p>According to our stats the following languages are those most used by our visitors for which we don't already have translations.</p>
 <ul class="languages">
-   <li>Japanese</li>
+   <li>Japanese (translations for help files required)</li>
    <li>Russian</li>
-   <li>Dutch</li>
-   <li>Polish</li>
    <li>Turkish</li>
    <li>Korean</li>
    <li>Romanian</li>
@@ -33,7 +31,9 @@
    <li>French - <a href="http://java4it.blogspot.com/">Ludovic Bert</a></li>
    <li>German - <a href="http://www.wait-till-i.com/">Christian Heilmann</a></li>
    <li>Italian - <a href="http://www.jappit.com/">Alessandro La Rosa</a></li>
+   <li>Polish - Łukasz 'ZeeWolf' Kieres</li>
    <li>Portuguese - <a href="http://www.codebeautifier.com/">Rob Ornelas</a></li>
+   <li>Japanese - <a href="http://css.studiomohawk.com/">Yuya Saito</a></li>
    <li>Spanish - <a href="http://www.proyectoscpc.net/">Xavier Pimienta</a></li>
    <li>Swedish - <a href="http://rise.lewander.com/">Henrik Jönsson</a></li>
    <li>Taiwanese - <a href="http://www.wretch.cc/blog/tony835245">Tony 學習手扎</a></li>

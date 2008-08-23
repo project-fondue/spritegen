@@ -64,6 +64,7 @@
       'de' => 'Deutsch',
       'it' => 'italiano',
       'pt' => 'português',
+      'ja' => '日本語',
       'es' => 'Español',
       'se' => 'svenska',
       'tw' => '臺灣話'
