@@ -23,6 +23,12 @@
    <dd>设置输出图片背景色. 可设置 3 或 6 位 hex 值. 如果留空, 并且输出格式为 GIF 或 PNG, 则将输出透明背景色.</dd>
    <dt>拼合图片输出格式</dt>
    <dd>支持 GIF, PNG 和 JPG 格式. GIF 和 PNG 可设置背景色透明. 默认为 PNG.</dd>
+   <dt>颜色数量</dt>
+   <dd>限制图片颜色数量可减小文件大小，对 PNG 和 GIF 格式有效.</dd>
+   <dt>图片质量</dt>
+   <dd>设定输出文件图片质量，对 JPEG 格式有效.</dd>
+   <dt>使用 OptiPNG 压缩图片</dt>
+   <dd>选中时使用 <a href="http://optipng.sourceforge.net/">OptiPNG</a> 压缩文件体积. 通常可减少一半文件大小。对 PNG 格式有效.</dd>
 </dl>
 <h3>CSS 输出选项</h3>
 <dl>

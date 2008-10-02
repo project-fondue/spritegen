@@ -70,5 +70,5 @@
       'tw' => '臺灣話'
    );
    
-   $aCompletedLanguages = array('en', 'pl', 'pt');
+   $aCompletedLanguages = array('cn', 'en', 'pl', 'pt');
 ?>

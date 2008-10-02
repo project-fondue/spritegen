@@ -5,24 +5,25 @@ page.title.home = CSS 图片拼合生成器
 page.title.what-are-css-sprites = 什么是 CSS 图片拼合?
 page.title.tool-help = 帮助
 page.title.your-language = 选择语言
-page.title.advertising = Advertising
+page.title.advertising = 广告
 
 menu.home = 首页
 menu.what-are-css-sprites = 什么是 CSS 图片拼合?
 menu.tool-help = 帮助
-menu.report-bug = Report Bug
+menu.report-bug = 报告问题
 
 menu.language.label = 语言
 menu.language.button = 提交
 menu.language.your-language = 没有您的语言？帮我们改进！
 
-warning.missing-translations = We're missing translations for this language. Can you help provide?
+warning.missing-translations = 我们缺少一些语言的翻译. 可以帮助我们吗?
 
 form.legend.source-files = 源文件
 form.legend.resize-source-images = 调整原图片大小
 form.legend.image-duplicates = 重复图片
-form.legend.image-output-options = 拼合图片输出选项
+form.legend.sprite-output-options = 拼合图片输出选项
 form.legend.css-output-options = CSS 输出选项
+form.legend.image-output-options = 拼合图片输出选项
 
 form.label.upload-images = 上传图片文件 (ZIP压缩格式)
 form.label.width = 宽度
@@ -32,26 +33,27 @@ form.label.ignore-duplicates = 忽略重复图片
 form.label.merge-duplicates = 合并重复图片，并合并重复图片 CSS 规则
 form.label.horizontal-offset = 水平偏移
 form.label.vertical-offset = 垂直偏移
-form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = 背景 / 透明色 \# (可选)
 form.label.use-transparency = 背景色透明
-form.label.image-output-format = 拼合图片输出格式
-form.label.image-output-num-colours = Number of Colours
-form.label.image-output-quality = Image Quality
-form.label.use-optipng = Compress Image with OptiPNG
+form.label.sprite-output-format = 拼合图片输出格式
+form.label.image-output-format = 输出格式
+form.label.image-output-num-colours = 颜色数量
+form.label.image-output-quality = 图片质量
+form.label.use-optipng = 使用 OptiPNG 压缩图片
 form.label.css-prefix = CSS 前缀 (可选)
 form.label.filename-pattern-match = 匹配文件名 (可选)
-form.label.class-prefix = Class 前缀 (可选)
+form.label.class-prefix = 类前缀 (可选)
 form.label.css-suffix = CSS 后缀 (可选)
+form.label.wrap-columns = 多列图片以修复 Opera bug
 
-form.value.true-colour = True Colour
+form.value.true-colour = 真色彩
 
 form.hint.max-upload-size = 最大上传尺寸: {0}MB
 form.hint.transparency = 留空设定 GIF/PNG 透明
-form.hint.css-prefix = CSS class 选择器前缀
-form.hint.filename-pattern-match = 例如 icon-([0-9]+).png - 使用文件名中数字部分作为 CSS class 选择器名称
+form.hint.css-prefix = CSS 类选择器前缀
+form.hint.filename-pattern-match = 例如 icon-([0-9]+).png - 使用文件名中数字部分作为 CSS 类选择器名称
 form.hint.class-prefix = 不能以数字开始
-form.hint.css-suffix = CSS class 选择器后缀
+form.hint.css-suffix = CSS 类选择器后缀
 form.hint.file-selected = 可选：留空使用上次上传的文件.
 
 form.button.show-picker = 显示选择器
@@ -61,16 +63,27 @@ form.button.create-sprite = 生成拼合图片 &amp; CSS
 form.errors.title = 提交错误
 form.errors.invalid-file = 未上传文件或文件已损坏. 请确认为ZIP压缩格式并且未超过文件大小限制.
 form.errors.zip = 上传的ZIP文件包含图片数少于2个(或符合 &quot;匹配文件名&quot; 规则的文件数). 请检查 ZIP 文件并重新上传.
+form.errors.missing.widthresize = 未设定图片调整宽度.
+form.errors.missing.heightresize = 未设定图片调整高度.
+form.errors.missing.hoffset = 未设定图片水平偏移.
+form.errors.missing.voffset = 未设定图片垂直偏移.
+form.errors.invalid.hoffset.isnumber = 图片水平偏移数值错误. 应为 1 至 100 间整数.
+form.errors.invalid.voffset.isnumber = 图片垂直偏移数值错误. 应为 1 至 100 间整数.
+form.errors.invalid.bckground.ishex = 背景色数值错误. 应为 3 或 6 位 hex 值.(如 FF0 或 FDCA96)
+form.errors.invalid.tagspre.iscss = CSS 前缀错误. 只能包含 a-z, 0-9, _, -, \# 和 .
+form.errors.invalid.classpre.isclassprefix = 类选择器前缀错误. 只能包含 a-z, 0-9, _ 和 -
+form.errors.invalid.tagspost.iscss = CSS 后缀错误. 只能包含: a-z, 0-9, _, -, \# 和 .
+
 form.errors.missing.width = 未设定图片调整宽度.
 form.errors.missing.height = 未设定图片调整高度.
 form.errors.missing.horizontal-offset = 未设定图片水平偏移.
-form.errors.missing.vvertical-offset = 未设定图片垂直偏移.
+form.errors.missing.vertical-offset = 未设定图片垂直偏移.
 form.errors.invalid.horizontal-offset.isnumber = 图片水平偏移数值错误. 应为 1 至 100 间整数.
-form.errors.invalid.verticsl-offset.isnumber = 图片垂直偏移数值错误. 应为 1 至 100 间整数.
+form.errors.invalid.vertical-offset.isnumber = 图片垂直偏移数值错误. 应为 1 至 100 间整数.
 form.errors.invalid.background-colour.ishex = 背景色数值错误. 应为 3 或 6 位 hex 值.(如 FF0 或 FDCA96)
-form.errors.invalid.image-output-quality.isnumber = Invalid JPEG output quality specified. It should be a number between 1 and 100.
+form.errors.invalid.image-output-quality.isnumber = JPEG 输出质量错粗. 应为 1 至 100 间整数.
 form.errors.invalid.css-prefix.iscss = CSS 前缀错误. 只能包含 a-z, 0-9, _, -, \# 和 .
-form.errors.invalid.class-prefix.isclassprefix = Class 前缀错误. 只能包含 a-z, 0-9, _ 和 -
+form.errors.invalid.class-prefix.isclassprefix = 类选择器前缀错误. 只能包含 a-z, 0-9, _ 和 -
 form.errors.invalid.css-suffix.iscss = CSS 后缀错误. 只能包含: a-z, 0-9, _, -, \# 和 .
 
 form.result.reset = 关闭 并重置表单
@@ -79,9 +92,9 @@ form.result.title.sprite-image = 拼合图片
 form.result.dont-forget = 需设定背景图片规则以使用拼合图片. 例子:
 form.result.download = &raquo;下载已拼合图片
 
-sidebar.ad-placeholder = Advertise Here
-sidebar.sponsors-header = Sponsors
-sidebar.advertise-header = Advertising
-sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
-sidebar.open-source-header = Open Source
-sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.
+sidebar.ad-placeholder = 广告服务
+sidebar.sponsors-header = 赞助商
+sidebar.advertise-header = 广告
+sidebar.advertise-text = 在本站投放文字或图片广告
+sidebar.open-source-header = 开放源代码
+sidebar.open-source-text = CSS 图片拼合生成器 源代码可自由下载。授权方式：BSD 协议。建立自己的生成网站？快来下载。
