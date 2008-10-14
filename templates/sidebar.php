@@ -1,9 +1,11 @@
-<div class="ad">
-   <a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
-</div>
-<div class="ad">
-   <a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
-</div>
+<!--
+   <div class="ad">
+      <a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
+   </div>
+   <div class="ad">
+      <a href="<?php echo $functions->GetMenuUrl($appRoot, 'advertising'); ?>"><?php echo $translation->Get('sidebar.ad-placeholder'); ?></a>
+   </div>
+-->
 <h2><?php echo $translation->Get('sidebar.sponsors-header'); ?></h2>
 <?php require('../includes/text-ads.inc.php'); ?>
 <h2><?php echo $translation->Get('sidebar.advertise-header'); ?></h2>
