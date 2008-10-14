@@ -321,3 +321,11 @@ a:active.download, input.submit:active {
 .lang-cn #options input.submit {
    width: 15em;
 }
+#pf_ad {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+#pf_ad img {
+   border: none;
+}
