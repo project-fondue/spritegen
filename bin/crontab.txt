@@ -1,1 +1,2 @@
-*/15    *       *       *       *       /<REPLACE_WITH_THE_PATH_TO>/spritegen/bin/cleancache.sh > /dev/null 2>&1
+MAILTO=sysops@projectfondue.com
+*/15    *       *       *       *       /<REPLACE_WITH_THE_PATH_TO>/spritegen/bin/cleancache.sh
