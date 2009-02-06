@@ -218,12 +218,15 @@
             // this strips out any which aren't
             $sFileClass = $this->FormatClassName($sFileClass);
             
+            $iImageType = exif_imagetype($sFilePath);
+            
             // if we've got an empty class name then the file wasn't valid and shouldn't be included in the sprite image
             // the file also isn't valid if its extension doesn't match one of the image formats supported by the tool
             if (
                !empty($sFileClass) && 
                isset($aPathParts['extension']) && 
                in_array(strtoupper($aPathParts['extension']), $this->aImageTypes) && 
+               in_array($iImageType, array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG)) && 
                substr($sFile, 0, 1) != '.'
             ) {
                // grab the file extension
