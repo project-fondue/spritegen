@@ -1,4 +1,4 @@
-site.title = Website Performance |
+site.title = Project Fondue |
 site.copyright = Copyright © {0} & {1}
 site.other-tools = Other Tools: 
 

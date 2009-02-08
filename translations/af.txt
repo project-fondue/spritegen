@@ -1,4 +1,4 @@
-site.title = Webblad Prestasie Bevordering |
+site.title = Project Fondue |
 site.copyright = Kopiereg &copy; {0} &amp; {1}
 site.other-tools = Other Tools:
 
