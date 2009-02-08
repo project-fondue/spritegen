@@ -5,7 +5,7 @@ body {
 }
 #header {
     position: relative;
-    border-bottom: 3px solid #12172c;
+    border-bottom: 10px solid #ccc;
     padding-bottom: 10px;
     margin-top: 10px;
     text-align: left;
@@ -17,7 +17,7 @@ body {
     margin: 0;
     font-family: Georgia, Times New Roman, serif;
     font-size: 250%;
-    color: #666;
+    color: #333;
 }
 #logo img {
     border: 1px solid #ccc;
@@ -185,7 +185,6 @@ pre {
    zoom: 1;
 }
 #options legend {
-   font-family: Georgia, Times New Roman, serif;
    font-weight: bold;
 }
 #options label {
@@ -261,7 +260,7 @@ pre {
 }
 #footer {
     clear: left;
-    border-top: 2px solid #12172c;
+    border-top: 10px solid #ccc;
     padding-top: 10px;
     text-align: right;
 }
