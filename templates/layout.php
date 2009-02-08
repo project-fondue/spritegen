@@ -33,15 +33,19 @@
       <h1><?php echo $title; ?></h1>
    </div> 
    <div id="content">
-     <div id="menu">
-        <ul>   
-           <li<?php if ($view == 'home'): ?> class="active"<?php endif; ?>><a href="<?php echo $appRoot; ?>"><?php echo $translation->Get('menu.home'); ?></a></li>
-           <li<?php if ($view == 'what-are-css-sprites'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'what-are-css-sprites'); ?>"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
-           <li<?php if ($view == 'tool-help'): ?> class="active"<?php endif; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'tool-help'); ?>"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
-           <?php if (!empty($reportBugUrl)): ?>
-              <li><a href="<?php echo $reportBugUrl; ?>"><?php echo $translation->Get('menu.report-bug'); ?></a></li>
-           <?php endif; ?>
-        </ul>
+     <ul id="nav">
+        <li<?php if ($view == 'home') echo ' class="selected"'; ?>><a href="<?php echo $appRoot; ?>"><?php echo $translation->Get('menu.home'); ?></a></li>
+        <li<?php if ($view == 'what-are-css-sprites') echo ' class="selected"'; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'what-are-css-sprites'); ?>"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
+        <li<?php if ($view == 'tool-help') echo ' class="selected"'; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'tool-help'); ?>"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
+        <?php if (!empty($reportBugUrl)): ?>
+           <li><a href="<?php echo $reportBugUrl; ?>"><?php echo $translation->Get('menu.report-bug'); ?></a></li>
+        <?php endif; ?>
+     </ul>
+     <div id="frame">
+        <div id="lang-bar">
+        <?php if (file_exists($viewsDir.'your-language.php')): ?>
+           <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
+        <?php endif; ?>
         <form method="get" action="<?php echo $appRoot; ?>">
            <div>
               <input type="hidden" name="view" id="view" value="<?php echo $view; ?>">
@@ -54,20 +58,18 @@
               <input class="submit" type="submit" name="change" id="change" value="<?php echo $translation->Get('menu.language.button'); ?>">
            </div>
         </form>
-     </div>
-     <?php if (file_exists($viewsDir.'your-language.php')): ?>
-        <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
-     <?php endif; ?>
-     <div id="main">
+        </div>
         <?php if ($missingTranslations): ?>
            <p class="missing-translations"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('warning.missing-translations')?></a></p>
         <?php endif; ?>
+     <div id="main">
         <?php echo $content; ?>
      </div>
      <div id="sidebar">
         <?php if (file_exists('../templates/sidebar.php')): ?>
            <?php require('../templates/sidebar.php'); ?>
         <?php endif; ?>
+     </div>
      </div>
    </div>
    <div id="footer">

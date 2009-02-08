@@ -1,3 +1,6 @@
+#frame {
+   zoom: 1;
+}
 #menu ul {
    margin-top: 1px; /* adjust position - doesn't look quite centered otherwise */
 }

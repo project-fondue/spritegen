@@ -1,5 +1,5 @@
 site.title = Project Fondue |
-site.copyright = Copyright &copy; {0} et {1}#
+site.copyright = Copyright &copy; {0} {1}
 site.other-tools = Other Tools:
 
 page.title.home = G&\#233;n&\#233;rateur de Sprites CSS

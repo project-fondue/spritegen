@@ -24,7 +24,7 @@ body {
     border-color: #ccc #ebebeb;
 }
 #content {
-   width: 760px;
+   width: 830px;
    margin: 20px auto 10px auto;
    text-align: left;
 }
@@ -42,7 +42,7 @@ h4 {
    font-style: italic;
 }
 h2, h3, h4 {
-   margin: 10px 0;
+   margin-bottom: 10px;
 }
 a {
     color: #12172c;
@@ -80,58 +80,64 @@ td {
 pre {
    width: 582px;
 }
-#menu {      
-   background: #f6f6f6;
-   border: 2px solid #ccc;
-   border-width: 2px 0;
-   padding: 3px 0;  
-   margin-top: 5px;
-   text-align: right;
-   
-} 
-#menu ul {
-   float: left;
-   margin-top: 3px;
+
+/* nav specific */
+
+#nav {
+    margin: 10px 0 -1px 0;
+    overflow: hidden;
 }
-#menu li {  
-   float: left;
-   margin-right: 10px;
-   font-size: 120%;
-   font-weight: lighter;
-   text-transform: uppercase;
+#nav li{
+    float: left;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    background: #ccc;
+}
+#nav li.selected{
+    border-bottom-color: #fff;
+    background: #fff;
+}
+#nav li a{
+    display: block;
+    padding: 5px 20px;
+    color: #333;
+}
+#nav li a:hover,
+#nav li a:focus{
+    display: block;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
 }
 
-#menu li a {
-   display: block;
-   padding: 3px 5px;  
-}
-#menu li a:hover {
-   text-decoration: none;
-}
-#menu li.active a, #menu li.active a:link, #menu li.active a:visited {  
+#frame {
    border: 1px solid #ccc;
-   border-color: #ccc #555 #555 #ccc; 
-   background: #777;
-   margin-top: -2px;
-   color:#fff; 
+   padding: 25px 25px 0 25px;
+   overflow: hidden;  
+
 }
-#menu form, #menu div {
+#lang-bar {
+   margin-bottom: 25px;  
+   text-align: right;
+} 
+#lang-bar form, #lang-bar div {
    display: inline;
 }
-#menu form label {
+#lang-bar form label {
    color: #666;
 }
-#menu form input {
+#lang-bar form input {
    font-size: 85%;
-}    
+}
+   
 #your-language {
+   float: left;
    margin: 10px 0;
    font-size: 85%;
-   text-align: right;
 }
 #main {
    width: 630px;
-   margin-right: 10px;
+   margin-right: 20px;
 }
 #sidebar {
    width: 120px;
@@ -169,7 +175,7 @@ pre {
    margin-bottom: 10px;
 }
 #options fieldset { 
-   border: 1px solid #ccc;
+   border: 1px solid #ddd;
    padding: 20px;
    margin-bottom: 20px;
    /* containing floats */
