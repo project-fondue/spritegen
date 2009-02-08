@@ -1,5 +1,6 @@
 site.title = Webblad Prestasie Bevordering |
-site.copyright = Kopiereg &copy; {0} &amp; {1}. Alle Regte Voorbehou. 
+site.copyright = Kopiereg &copy; {0} &amp; {1}
+site.other-tools = Other Tools:
 
 page.title.home = CSS Sprite Genereerder
 page.title.what-are-css-sprites = Wat is CSS sprites?

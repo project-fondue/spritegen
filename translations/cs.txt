@@ -1,5 +1,6 @@
 site.title = Website Performance |
-site.copyright = Copyright &copy; {0} &amp; {1}. Všechna práva vyhrazena.
+site.copyright = Copyright &copy; {0} &amp; {1}
+site.other-tools = Other Tools:
 
 page.title.home = CSS Sprite generátor
 page.title.what-are-css-sprites = Co jsou CSS sprites?

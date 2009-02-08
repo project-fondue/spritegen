@@ -1,5 +1,6 @@
 site.title = Website Performance |
-site.copyright = Copyright &copy; {0} &amp; {1}. Todos los Derechos Reservados. 
+site.copyright = Copyright &copy; {0} &amp; {1}
+site.other-tools = Other Tools: 
 
 page.title.home = Generador de Sprite CSS
 page.title.what-are-css-sprites = &iquest;Qu&eacute; son los Sprites CSS?

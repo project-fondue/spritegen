@@ -1,5 +1,6 @@
 site.title = Website Performance |
-site.copyright = Copyright &copy; {0} &amp; {1}. All Rights Reserved. 
+site.copyright = Copyright &copy; {0} &amp; {1}
+site.other-tools = Other Tools:
 
 page.title.home = CSS 圖片合併產生器
 page.title.what-are-css-sprites = 什麼是 CSS sprites?

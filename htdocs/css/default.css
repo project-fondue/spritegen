@@ -1,22 +1,32 @@
 body {
    background: #fff;
-   margin: 10px 0;
+   margin: 0 10px;
    text-align: center;
 }
-#page {
-   width: 760px;
-   margin: 0 auto;
-   text-align: left;
+#header {
+    position: relative;
+    border-bottom: 3px solid #12172c;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+#header h1 {
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+    margin: 0;
+    font-family: Georgia, Times New Roman, serif;
+    font-size: 250%;
+    color: #666;
+}
+#logo img {
+    border: 1px solid #ccc;
+    border-color: #ccc #ebebeb;
 }
 #content {
-   margin-bottom: 10px;
-}
-h1 {
-   font-size: 153.9%;
-   text-transform: uppercase;  
-   padding: 7px 0 5px 0;
-   color: #666;  
-   text-align: right;
+   width: 760px;
+   margin: 20px auto 10px auto;
+   text-align: left;
 }
 h2 {
    padding: 10px 0;
@@ -24,8 +34,8 @@ h2 {
    font-size: 109%;
 }
 h3 {
-   background: #eee;
-   padding: 7px;
+   background: #ccc;
+   padding: 7px 7px 7px 0;
    font-weight: bold;
 }
 h4 {
@@ -35,20 +45,17 @@ h2, h3, h4 {
    margin: 10px 0;
 }
 a {
-   color: #363;
-   text-decoration: none;
-} 
+    color: #12172c;
+    text-decoration: none;
+}
 a:visited {
-   color: #393;
+    color: #006;
 }
 a:hover {
-   text-decoration: underline;
-}
-img {
-   border: none;
+    text-decoration: underline;
 }
 dt {
-   border-bottom: 1px solid #777;
+   border-bottom: 1px solid #ccc;
    padding: 7px 0;
    margin: 10px 0;
    font-weight: bold;
@@ -57,7 +64,7 @@ dd {
    margin: 0;
 }
 em {
-   color: #393;
+   font-weight: bold;
 }
 table {
    border-collapse: collapse;
@@ -75,7 +82,7 @@ pre {
 }
 #menu {      
    background: #f6f6f6;
-   border: 2px solid #777;
+   border: 2px solid #ccc;
    border-width: 2px 0;
    padding: 3px 0;  
    margin-top: 5px;
@@ -102,11 +109,9 @@ pre {
    text-decoration: none;
 }
 #menu li.active a, #menu li.active a:link, #menu li.active a:visited {  
-   border-top: 1px solid #06c345;    
-   border-left: 1px solid #06c345;    
-   border-right: 1px solid #393;    
-   border-bottom: 1px solid #393;    
-   background: #3c3;
+   border: 1px solid #ccc;
+   border-color: #ccc #555 #555 #ccc; 
+   background: #777;
    margin-top: -2px;
    color:#fff; 
 }
@@ -135,14 +140,14 @@ pre {
    float: left;
 }
 #main h2 {
-   background: #393;
-   padding: 3px;
-   color: #fff;
+   margin-bottom: 10px;
+   font-size: 150%;
+   color: #006;
 }
 #result {
    position: relative;
    background: #eee;
-   border: 1px solid #777;
+   border: 1px solid #ccc;
    padding: 7px;
    margin: 10px 0;
 }
@@ -164,7 +169,7 @@ pre {
    margin-bottom: 10px;
 }
 #options fieldset { 
-   border: 2px solid #393;
+   border: 1px solid #ccc;
    padding: 20px;
    margin-bottom: 20px;
    /* containing floats */
@@ -172,9 +177,8 @@ pre {
    zoom: 1;
 }
 #options legend {
+   font-family: Georgia, Times New Roman, serif;
    font-weight: bold;
-   font-size: 130%;
-   color: #393;
 }
 #options label {
    clear: left;
@@ -222,17 +226,20 @@ pre {
    display: none;
 }
 #options label.error {
-   color: #f00;
+   color: #f60;
 }
 #error, #options input.error {
-   background: #fcc;
-   border: 1px solid #f00;
+   background: #fc6;
+   border: 1px solid #f60;
 }
 #error {
    margin-bottom: 10px;
 }
 #error h2 {
    background: none;
+   margin: 0 0 0 10px;
+   font-family: Georgia, Times New Roman, serif;
+   font-size: 110%;
    color: #000;
 }
 #error ul {
@@ -244,26 +251,30 @@ pre {
 #error li {
    margin: 0 0 7px 15px;
 }
-#footer { 
-   clear: left;
-   border-top: 1px solid #777;
-   padding-bottom: 20px;
-   margin: 10px 0;
-   font-size: 93%;
-   color: #333;
-   text-align: right;
+#footer {
+    clear: left;
+    border-top: 2px solid #12172c;
+    padding-top: 10px;
+    text-align: right;
+}
+#footer h2 {
+    float: left;
+    padding: 0;
+    margin: 0 10px 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+#footer li {
+    float: left;
+    margin-right: 20px;
 }
 #footer p {
-   float: left;
-   margin: 5px 0;
-}
-#footer form {
-   margin-top: 5px;
-}      
+    margin: 0 0 20px 0;
+}     
 #options input.submit {
    float: none;
 }    
-a.download, input.submit {  
+a.download {  
    border: 3px double #999;
    border-top-color: #CCC;
    border-left-color: #CCC;
@@ -275,7 +286,7 @@ a:hover.download {
    text-decoration: none;
 }
   
-a:active.download, input.submit:active {
+a:active.download {
    border: 3px double #CCC;
    border-top-color: #999;
    border-left-color: #999;   
@@ -306,10 +317,10 @@ a:active.download, input.submit:active {
    text-align: center;
 }
 #sidebar h2 {
-   border-bottom: 2px solid #393;
+   border-bottom: 1px solid #ccc;
    padding-bottom: 3px;
    margin-bottom: 10px;
-   color: #393;
+   font-family: Georgia, Times New Roman, serif;
 }
 #text-links {
    list-style-type: disc;
