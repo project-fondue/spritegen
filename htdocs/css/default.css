@@ -25,7 +25,7 @@ body {
 }
 #content {
    width: 830px;
-   margin: 20px auto 10px auto;
+   margin: 20px auto;
    text-align: left;
 }
 h2 {
@@ -117,6 +117,8 @@ pre {
 
 }
 #lang-bar {
+   border-bottom: 1px solid #ddd;
+   padding-bottom: 10px;
    margin-bottom: 25px;  
    text-align: right;
 } 
