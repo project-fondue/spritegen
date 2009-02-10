@@ -5,7 +5,7 @@ body {
 }
 #header {
     position: relative;
-    border-bottom: 10px solid #ccc;
+    border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
     margin-top: 10px;
     text-align: left;
@@ -259,7 +259,7 @@ pre {
 }
 #footer {
     clear: left;
-    border-top: 10px solid #ccc;
+    border-top: 1px solid #ccc;
     padding-top: 10px;
     text-align: right;
 }
