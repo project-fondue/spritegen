@@ -44,15 +44,18 @@ h4 {
 h2, h3, h4 {
    margin-bottom: 10px;
 }
-a {
+a, #content #sidebar a {
     color: #12172c;
     text-decoration: none;
 }
 a:visited {
     color: #006;
 }
-a:hover {
+a:hover, #content #sidebar a:hover {
     text-decoration: underline;
+}
+#content a {
+   color: #000099;
 }
 dt {
    border-bottom: 1px solid #ccc;
