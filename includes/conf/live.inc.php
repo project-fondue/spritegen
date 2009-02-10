@@ -39,7 +39,7 @@
    define('HEADER_IMAGE_URL', 'images/project-fondue-logo.png');
    define('HEADER_IMAGE_ALT', 'Project Fondue');
    define('HEADER_IMAGE_WIDTH', 80);
-   define('HEADER_IMAGE_HEIGHT', 100);
+   define('HEADER_IMAGE_HEIGHT', 80);
    define('HEADER_HREF', 'http://projectfondue.com/');
    // bug reporting
    define('REPORT_BUG_URL', 'https://bugs.launchpad.net/css-sprite-generator/');
