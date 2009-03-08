@@ -188,7 +188,16 @@
          /*******************************************/
          
          // loop through directory (files will be processed in whatever the OS's default file ordering scheme is)
+         // save to array so we can sort alphabetically
+         $aFiles = array();
+         
          while (false !== ($sFile = $oDir->read())) {
+            $aFiles[] = $sFile;
+         }
+         
+         sort($aFiles);
+         
+         foreach ($aFiles as $sFile) {
             // do we want to scale down the source images
             // scaling up isn't supported as that would result in poorer quality images
             $bResize = ($this->aFormValues['width-resize'] != 100 && $this->aFormValues['height-resize'] != 100);
@@ -269,6 +278,11 @@
                if ($iMaxHeight < $iCurrentHeight) {
                   $iMaxHeight = $iCurrentHeight;
                }
+               
+               // store the original width and height of the image
+               // we'll need this later if the image is to be resized
+               $aFilesInfo[$i]['original-width'] = $iWidth;
+               $aFilesInfo[$i]['original-height'] = $iHeight;
             
                // store the width and height of the image
                // if we're resizing they'll be less than the original
@@ -286,6 +300,12 @@
                   $iColumnCount++;
                   $iTotalHeight = $this->aFormValues['vertical-offset'];
                }
+               
+               // if the current image is wider than any other in the current column then set the maximum width to that
+               // it will be used to set the width of the current column
+               if ($aFilesInfo[$i]['width'] > $iMaxWidth) {
+                  $iMaxWidth = $aFilesInfo[$i]['width'];
+               }
             
                // keep track of the width of columns added so far
                $aMaxColumnWidth[$iColumnCount] = $iMaxWidth;
@@ -299,12 +319,6 @@
                $aFilesInfo[$i]['x'] = $iColumnCount == 1 ? 0 : ($this->aFormValues['horizontal-offset'] * ($iColumnCount - 1) + (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount]));
                $aFilesInfo[$i]['currentCombinedHeight'] = $iTotalHeight;
                $aFilesInfo[$i]['columnNumber'] = $iColumnCount;
-            
-               // if the current image is wider than any other in the current column then set the maximum width to that
-               // it will be used to set the width of the current column
-               if ($aFilesInfo[$i]['width'] > $iMaxWidth) {
-                  $iMaxWidth = $aFilesInfo[$i]['width'];
-               }
             
                $i++;
             }
@@ -392,24 +406,33 @@
             // loop through file info for valid images
             for ($i = 0; $i < count($aFilesInfo); $i++) {
                // create a new image object for current file
-               $oCurrentImage = $this->CreateImage($aFilesInfo[$i]['path'], $aFilesInfo[$i]['ext']);
+               if (!$oCurrentImage = $this->CreateImage($aFilesInfo[$i]['path'], $aFilesInfo[$i]['ext'])) {
+                  // if we've got here then a valid but corrupt image was found
+                  // at this stage we've already allocated space for the image so create 
+                  // a blank one to fill the space instead
+                  // this should happen very rarely
+                  $oCurrentImage = new Imagick();
+                  $oCurrentImage->newImage($aFilesInfo[$i]['original-width'], $aFilesInfo[$i]['original-height'], new ImagickPixel('#ffffff'));
+               }
             
                // if resizing get image width and height and resample to new dimensions (percentage of original)
                // and copy to sprite image
                if ($bResize) {
-                  $aImageInfo = getimagesize($sFilePath);
-                  $iWidth = $aImageInfo[0];
-                  $iHeight = $aImageInfo[1];
-               
                   if ($this->sImageLibrary == 'imagick') {
-                     $oCurrentImage->resampleImage($iWidth, $iHeight, 0, 0);
+                     // resample image should work but doesn't seem to - using thumbnailImage instead 
+                     // which achieves the same effect
+                     $oCurrentImage->thumbnailImage($aFilesInfo[$i]['width'], $aFilesInfo[$i]['height']);
                   } else {
-                     imagecopyresampled($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'], $aFilesInfo[$i]['height'], $iWidth, $iHeight);
+                     imagecopyresampled($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'], $aFilesInfo[$i]['height'], $aFilesInfo[$i]['original-width'], $aFilesInfo['original-height']);
                   }
-               } else { // not resizing - copy to sprite image
-                  if ($this->sImageLibrary == 'imagick') {
-                     $oSprite->compositeImage($oCurrentImage, $oCurrentImage->getImageCompose(), $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y']);
-                  } else {
+               }
+               
+               // copy image to sprite
+               if ($this->sImageLibrary == 'imagick') {
+                  $oSprite->compositeImage($oCurrentImage, $oCurrentImage->getImageCompose(), $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y']);
+               } else {
+                  // if using GD and already resized the image will have been copied as part of the resize
+                  if (!$bResize) {
                      imagecopy($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'],  $aFilesInfo[$i]['height']);
                   }
                }
@@ -451,15 +474,25 @@
       }
       
       protected function FormatClassName($sClassName) {
-         return str_ireplace($this->aImageTypes, '', preg_replace("/[^a-z0-9_-]+/i", '', $sClassName));
+         $aExtensions = array();
+         
+         foreach ($this->aImageTypes as $sType) {
+            $aExtensions[] = ".$sType";
+         }
+         
+         return preg_replace("/[^a-z0-9_-]+/i", '', str_ireplace($aExtensions, '', $sClassName));
       }
       
       protected function CreateImage($sFile, $sExtension) {
          if ($this->sImageLibrary == 'imagick') {
             // Imagick auto detects file extension when creating object from image
             $oImage = new Imagick();
-            $oImage->readImage($sFile);
-            return $oImage;
+            try {
+                $oImage->readImage($sFile);
+                return $oImage;
+            } catch (ImagickException $e) {
+                return false;
+            }
          } else {
             // we need to tell GD what type of image it's creating an object from
             switch ($sExtension) {
