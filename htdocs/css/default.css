@@ -10,10 +10,12 @@ body {
     margin-top: 10px;
     text-align: left;
 }
-#header h1 {
+#header h1 {    
+    /* PF_REMOVE */
     position: absolute;
     bottom: 10px;
     left: 100px;
+    /* END_PF_REMOVE */    
     margin: 0;
     font-family: Georgia, Times New Roman, serif;
     font-size: 250%;
@@ -134,11 +136,12 @@ pre {
 #lang-bar form input {
    font-size: 85%;
 }
-   
+/* PF_REMOVE */   
 #your-language {
    float: left;
    margin: 10px 0;
 }
+/* END_PF_REMOVE */
 #main {
    width: 630px;
    margin-right: 20px;
@@ -203,8 +206,6 @@ pre {
     width: 30em;
     margin-left: 18.5em;
 }
-
-
 #options label, #options span {
    line-height: 1.7em;
 }
@@ -265,6 +266,7 @@ pre {
     padding-top: 10px;
     text-align: right;
 }
+/* PF_REMOVE */
 #footer h2 {
     float: left;
     padding: 0;
@@ -276,6 +278,7 @@ pre {
     float: left;
     margin-right: 20px;
 }
+/* END_PF_REMOVE */
 #footer p {
     margin: 0 0 20px 0;
 }     
@@ -330,6 +333,7 @@ a:active.download {
    margin-bottom: 10px;
    font-family: Georgia, Times New Roman, serif;
 }
+/* PF_REMOVE */
 #text-links {
    list-style-type: disc;
    margin-left: 15px;
@@ -337,9 +341,11 @@ a:active.download {
 #text-links li {
    margin-bottom: 5px;
 }
+/* END_PF_REMOVE */
 .lang-cn #options input.submit {
    width: 15em;
 }
+/* PF_REMOVE */
 #pf_ad {
    position: absolute;
    top: 0;
@@ -348,3 +354,4 @@ a:active.download {
 #pf_ad img {
    border: none;
 }
+/* END_PF_REMOVE */

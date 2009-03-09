@@ -38,8 +38,8 @@
    // header image
    define('HEADER_IMAGE_URL', '');
    define('HEADER_IMAGE_ALT', '');
-   define('HEADER_IMAGE_WIDTH', );
-   define('HEADER_IMAGE_HEIGHT', );
+   define('HEADER_IMAGE_WIDTH', '');
+   define('HEADER_IMAGE_HEIGHT', '');
    define('HEADER_HREF', '');
    // bug reporting
    define('REPORT_BUG_URL', '');
