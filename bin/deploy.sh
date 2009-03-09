@@ -25,6 +25,14 @@ rm -fr ${SCRIPTDIR}/../../../spritegen-deploy/cache/source-images/*
 rm ${SCRIPTDIR}/../../../spritegen-deploy/cache/sprites/*
 rm ${SCRIPTDIR}/../../../spritegen-deploy/cache/translations/*
 
+# remove what are CSS sprites page
+rm ${SCRIPTDIR}/../../../spritegen-deploy/views/what-are-css-sprites.php
+rm ${SCRIPTDIR}/../../../spritegen-deploy/templates/what-are-css-sprites.php
+
+# remove tool help page
+rm ${SCRIPTDIR}/../../../spritegen-deploy/views/tool-help.php
+rm ${SCRIPTDIR}/../../../spritegen-deploy/templates/tool-help.php
+
 # remove your language page
 rm ${SCRIPTDIR}/../../../spritegen-deploy/views/your-language.php
 rm ${SCRIPTDIR}/../../../spritegen-deploy/templates/your-language.php
