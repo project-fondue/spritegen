@@ -157,7 +157,8 @@
       protected function UnZipFile($sFile, $sFolderMD5) {
          // this probably won't work if PHP safe mode is enabled
          // you'll have to disable (no way round this)
-         if (shell_exec(FILE_BINARY." -bi $sFile") == 'application/zip') {
+         // finfo_file (available in PHP 5.3 would probably be better but not widely available yet)
+         if (trim(shell_exec(FILE_BINARY." -b --mime-type $sFile")) == 'application/zip') {
             shell_exec(UNZIP_BINARY." -j $sFile -d $sFolderMD5");
             // delete the original ZIP file - we no longer need it
             // for future re-submissions of the form we'll use the unzipped folder
