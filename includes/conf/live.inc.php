@@ -5,6 +5,8 @@
    define('VIEWS_DIR', '../views/');
    // directory to store uploaded ZIP files
    define('UPLOAD_DIR', '../cache/source-images/');
+   // file binary - used to check for a valid ZIP file
+   define('FILE_BINARY', '/usr/bin/file');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
    define('UNZIP_BINARY', '/usr/bin/unzip');
    // otipng binary - compresses PNG images

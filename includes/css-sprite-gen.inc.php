@@ -135,10 +135,8 @@
             // create a temporary name for saving ZIP file
             $sTempName = "{$sFolderMD5}tmp.zip";
 
-            // save the ZIP file
-            if (move_uploaded_file($_FILES['path']['tmp_name'], $sTempName)) {
-               // unzip the file - store the contents in the dir already created
-               $this->UnZipFile($sTempName, $sFolderMD5);
+            // save the ZIP file and unzip - store the contents in the dir already created
+            if (move_uploaded_file($_FILES['path']['tmp_name'], $sTempName) && $this->UnZipFile($sTempName, $sFolderMD5)) {
                $this->sZipFolder = $sFileMD5;
                // if all went well return an MD5 of the dir containing ZIP contents
                return $sFolderMD5;
@@ -159,10 +157,15 @@
       protected function UnZipFile($sFile, $sFolderMD5) {
          // this probably won't work if PHP safe mode is enabled
          // you'll have to disable (no way round this)
-         shell_exec(UNZIP_BINARY." -j $sFile -d $sFolderMD5");
-         // delete the original ZIP file - we no longer need it
-         // for future re-submissions of the form we'll use the unzipped folder
-         unlink($sFile);
+         if (shell_exec(FILE_BINARY." -bi $sFile") == 'application/zip') {
+            shell_exec(UNZIP_BINARY." -j $sFile -d $sFolderMD5");
+            // delete the original ZIP file - we no longer need it
+            // for future re-submissions of the form we'll use the unzipped folder
+            unlink($sFile);
+            
+            return true;
+         }
+         return false;
       }
       
       public function CreateSprite($sFolderMD5) {
