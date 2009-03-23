@@ -114,6 +114,8 @@
          if (
             isset($_FILES['path']['name']) && 
             substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip' && 
+            // finfo_file, available in PHP 5.3, would probably be better but not widely available yet
+            trim(shell_exec(FILE_BINARY.' -b --mime-type '.$_FILES['path']['tmp_name'])) == 'application/zip' && 
             $_FILES['path']['size'] <= MAX_FILE_SIZE
          ) {
             // create the upload dir if it doesn't already exist
@@ -135,8 +137,10 @@
             // create a temporary name for saving ZIP file
             $sTempName = "{$sFolderMD5}tmp.zip";
 
-            // save the ZIP file and unzip - store the contents in the dir already created
-            if (move_uploaded_file($_FILES['path']['tmp_name'], $sTempName) && $this->UnZipFile($sTempName, $sFolderMD5)) {
+            // save the ZIP file
+            if (move_uploaded_file($_FILES['path']['tmp_name'], $sTempName)) {
+               // unzip - store the contents in the dir already created
+               $this->UnZipFile($sTempName, $sFolderMD5);
                $this->sZipFolder = $sFileMD5;
                // if all went well return an MD5 of the dir containing ZIP contents
                return $sFolderMD5;
@@ -157,16 +161,10 @@
       protected function UnZipFile($sFile, $sFolderMD5) {
          // this probably won't work if PHP safe mode is enabled
          // you'll have to disable (no way round this)
-         // finfo_file (available in PHP 5.3 would probably be better but not widely available yet)
-         if (trim(shell_exec(FILE_BINARY." -b --mime-type $sFile")) == 'application/zip') {
-            shell_exec(UNZIP_BINARY." -j $sFile -d $sFolderMD5");
-            // delete the original ZIP file - we no longer need it
-            // for future re-submissions of the form we'll use the unzipped folder
-            unlink($sFile);
-            
-            return true;
-         }
-         return false;
+         shell_exec(UNZIP_BINARY." -j $sFile -d $sFolderMD5");
+         // delete the original ZIP file - we no longer need it
+         // for future re-submissions of the form we'll use the unzipped folder
+         unlink($sFile);
       }
       
       public function CreateSprite($sFolderMD5) {
