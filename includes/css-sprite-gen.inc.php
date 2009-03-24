@@ -115,7 +115,7 @@
             isset($_FILES['path']['name']) && 
             substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip' && 
             // finfo_file, available in PHP 5.3, would probably be better but not widely available yet
-            trim(shell_exec(FILE_BINARY.' -b --mime-type '.$_FILES['path']['tmp_name'])) == 'application/zip' && 
+            in_array(trim(shell_exec(FILE_BINARY.' -bi '.$_FILES['path']['tmp_name'])), array('application/zip', 'application/x-zip')) && 
             $_FILES['path']['size'] <= MAX_FILE_SIZE
          ) {
             // create the upload dir if it doesn't already exist
