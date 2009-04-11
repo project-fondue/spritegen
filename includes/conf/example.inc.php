@@ -69,6 +69,7 @@
       'ja' => '日本語',
       'es' => 'Español',
       'se' => 'svenska',
+      'tr' => 'Türkçe',
       'tw' => '臺灣話'
    );
    
