@@ -50,7 +50,7 @@
    // base URL to tool
    define('TOOL_URL', 'http://spritegen.website-performance.org/');
    // contact email address
-   define('CONTACT_EMAIL', 'contact@website-performance.org');
+   define('CONTACT_EMAIL', 'spritegen@projectfondue.com');
    
    // views which don't render the normal HTML layout
    $aNonPageViews = array('download');
