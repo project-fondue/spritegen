@@ -6,7 +6,7 @@
 <ul class="languages">
    <li>Japanese (translations for help files required)</li>
    <li>Russian</li>
-   <li>Turkish</li>
+   <li>Turkish (translations for help files)</li>
    <li>Korean</li>
    <li>Romanian</li>
 </ul>
@@ -37,4 +37,5 @@
    <li>Spanish - <a href="http://www.proyectoscpc.net/">Xavier Pimienta</a></li>
    <li>Swedish - <a href="http://rise.lewander.com/">Henrik Jönsson</a></li>
    <li>Taiwanese - <a href="http://www.wretch.cc/blog/tony835245">Tony 學習手扎</a></li>
+   <li>Turkish - Kerem Can Caliskan</li>
 </ul>
