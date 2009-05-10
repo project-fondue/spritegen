@@ -60,7 +60,7 @@
       }
       
       protected function IsPercent($sKey) {
-         if ($this->aFormValues[$sKey] < 0 || $this->aFormValues[$sKey] > 100) {
+         if ($this->aFormValues[$sKey] < 10 || $this->aFormValues[$sKey] > 100) {
             $this->aFormErrors['invalid'][$sKey] = 'IsPercent';
             return false;
          }
