@@ -100,6 +100,14 @@
          return true;
       }
       
+      protected function IsBuildDirection($sKey) {
+         if (!in_array($this->aFormValues[$sKey], array('horizontal', 'vertical'))) {
+            $this->aFormErrors['invalid'][$sKey] = 'IsBuildDirection';
+            return false;
+         }
+         return true;
+      }
+      
       public function FormOk() {
          return !count($this->aFormErrors['missing']) && !count($this->aFormErrors['invalid']);
       }

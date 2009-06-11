@@ -88,6 +88,7 @@
          // validation rules for fields which do need to be tested
          // array items refer to methods within the validation library
          $aRules = array(
+            'build-direction' => array('IsBuildDirection'),
             'vertical-offset' => array('IsNumber'),
             'horizontal-offset' => array('IsNumber'),
             'background' => array('IsHex'),
@@ -173,15 +174,23 @@
       
       public function CreateSprite($sFolderMD5) {
          // set up variable defaults used when calculating offsets etc
+         $sBuildDirection = $this->aFormValues['build-direction'];
          $aFilesInfo = array();
          $aFilesMD5 = array();
          $bResize = false;
-         $iColumnCount = 1;
-         $iTotalHeight = $this->aFormValues['vertical-offset'];
+         if ($sBuildDirection == 'horizontal') {
+            $iRowCount = 1;
+            $iTotalWidth = $this->aFormValues['horizontal-offset'];
+            $aMaxRowHeight = array();
+            $iMaxVOffset = 0;
+         } else {
+            $iColumnCount = 1;
+            $iTotalHeight = $this->aFormValues['vertical-offset'];
+            $aMaxColumnWidth = array();
+            $iMaxHOffset = 0;
+         }
          $iMaxWidth = 0;
          $iMaxHeight = 0;
-         $iMaxHOffset = 0;
-         $aMaxColumnWidth = array();
          $i = 0;
          $bValidImages = false;
          $sOutputFormat = strtolower($this->aFormValues['image-output']);
@@ -257,7 +266,10 @@
                   // if so CSS will end up like .filename1, .filename2 { }
                   if ($this->aFormValues['ignore-duplicates'] == 'merge') {
                      if (isset($aFilesInfo[$sKey]['class'])) {
-                        $aFilesInfo[$sKey]['class'] = $aFilesInfo[$sKey]['class'].$this->aFormValues['selector-suffix'].', '.$this->aFormValues['selector-prefix'].'.'.$this->aFormValues['class-prefix'].$sFileClass;
+                        $aFilesInfo[$sKey]['class'] = $aFilesInfo[$sKey]['class'].
+                           $this->aFormValues['selector-suffix'].', '.
+                           $this->aFormValues['selector-prefix'].'.'.
+                           $this->aFormValues['class-prefix'].$sFileClass;
                         continue;
                      }
                   }
@@ -276,13 +288,24 @@
                $iWidth = $aImageInfo[0];
                $iHeight = $aImageInfo[1];
                
-               // get the current height of the sprite image - after images processed so far
-               $iCurrentHeight = $iTotalHeight + $this->aFormValues['vertical-offset'] + $iHeight;
-
-               // store the maximum height reached so far
-               // if we're on a new column current height might be less than the maximum
-               if ($iMaxHeight < $iCurrentHeight) {
-                  $iMaxHeight = $iCurrentHeight;
+               if ($sBuildDirection == 'horizontal') {
+                  // get the current width of the sprite image - after images processed so far
+                  $iCurrentWidth = $iTotalWidth + $this->aFormValues['horizontal-offset'] + $iWidth;
+                  
+                  // store the maximum width reached so far
+                  // if we're on a new column current height might be less than the maximum
+                  if ($iMaxWidth < $iCurrentWidth) {
+                     $iMaxWidth = $iCurrentWidth;
+                  }                  
+               } else {
+                  // get the current height of the sprite image - after images processed so far
+                  $iCurrentHeight = $iTotalHeight + $this->aFormValues['vertical-offset'] + $iHeight;
+                  
+                  // store the maximum height reached so far
+                  // if we're on a new column current height might be less than the maximum
+                  if ($iMaxHeight < $iCurrentHeight) {
+                     $iMaxHeight = $iCurrentHeight;
+                  }
                }
                
                // store the original width and height of the image
@@ -299,32 +322,73 @@
                // all subsequent values are treated as -2042px
                // if we've hit 2000 pixels and we care about this (as set in the interface) then wrap to a new column
                // increment column count and reset current height
-               if (
-                  ($iTotalHeight + $this->aFormValues['vertical-offset']) >= 2000 && 
-                  !empty($this->aFormValues['wrap-columns'])
-               ) {
-                  $iColumnCount++;
-                  $iTotalHeight = $this->aFormValues['vertical-offset'];
-               }
-               
-               // if the current image is wider than any other in the current column then set the maximum width to that
-               // it will be used to set the width of the current column
-               if ($aFilesInfo[$i]['width'] > $iMaxWidth) {
-                  $iMaxWidth = $aFilesInfo[$i]['width'];
+               if ($sBuildDirection == 'horizontal') {
+                  if (
+                     ($iTotalWidth + $this->aFormValues['horizontal-offset']) >= 2000 && 
+                     !empty($this->aFormValues['wrap-columns'])
+                  ) {
+                     $iRowCount++;
+                     $iTotalWidth = $this->aFormValues['horizontal-offset'];
+                  }
+                  
+                  // if the current image is wider than any other in the current column then set the maximum width to that
+                  // it will be used to set the width of the current column
+                  if ($aFilesInfo[$i]['height'] > $iMaxHeight) {
+                     $iMaxHeight = $aFilesInfo[$i]['height'];
+                  }
+               } else {
+                  if (
+                     ($iTotalHeight + $this->aFormValues['vertical-offset']) >= 2000 && 
+                     !empty($this->aFormValues['wrap-columns'])
+                  ) {
+                     $iColumnCount++;
+                     $iTotalHeight = $this->aFormValues['vertical-offset'];
+                  }
+                  
+                  // if the current image is wider than any other in the current column then set the maximum width to that
+                  // it will be used to set the width of the current column
+                  if ($aFilesInfo[$i]['width'] > $iMaxWidth) {
+                     $iMaxWidth = $aFilesInfo[$i]['width'];
+                  }
                }
             
-               // keep track of the width of columns added so far
-               $aMaxColumnWidth[$iColumnCount] = $iMaxWidth;
-               // calculate the current maximum horizontal offset so far
-               $iMaxHOffset = $this->aFormValues['horizontal-offset'] * ($iColumnCount - 1);
+               if ($sBuildDirection == 'horizontal') {
+                  // keep track of the width of columns added so far
+                  $aMaxRowHeight[$iRowCount] = $iMaxHeight;
+                  // calculate the current maximum horizontal offset so far
+                  $iMaxVOffset = $this->aFormValues['vertical-offset'] * ($iRowCount - 1);               
+               } else {
+                  // keep track of the width of columns added so far
+                  $aMaxColumnWidth[$iColumnCount] = $iMaxWidth;
+                  // calculate the current maximum horizontal offset so far
+                  $iMaxHOffset = $this->aFormValues['horizontal-offset'] * ($iColumnCount - 1);
+               }
             
-               // get the y position of current image in overall sprite
-               $aFilesInfo[$i]['y'] = $iTotalHeight;
-               $iTotalHeight += ($aFilesInfo[$i]['height'] + $this->aFormValues['vertical-offset']);
-               // get the x position of current image in overall sprite
-               $aFilesInfo[$i]['x'] = $iColumnCount == 1 ? 0 : ($this->aFormValues['horizontal-offset'] * ($iColumnCount - 1) + (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount]));
-               $aFilesInfo[$i]['currentCombinedHeight'] = $iTotalHeight;
-               $aFilesInfo[$i]['columnNumber'] = $iColumnCount;
+               if ($sBuildDirection == 'horizontal') {
+                  // get the y position of current image in overall sprite
+                  $aFilesInfo[$i]['x'] = $iTotalWidth;
+                  $iTotalWidth += ($aFilesInfo[$i]['width'] + $this->aFormValues['horizontal-offset']);
+                  // get the x position of current image in overall sprite
+                  if ($iRowCount == 1) {
+                     $aFilesInfo[$i]['y'] = 0;
+                  } else {
+                     $aFilesInfo[$i]['y'] = ($this->aFormValues['vertical-offset'] * ($iRowCount - 1) + (array_sum($aMaxRowHeight) - $aMaxRowHeight[$iRowCount]));
+                  }
+                  $aFilesInfo[$i]['currentCombinedWidth'] = $iTotalWidth;
+                  $aFilesInfo[$i]['rowNumber'] = $iRowCount;
+               } else {
+                  // get the y position of current image in overall sprite
+                  $aFilesInfo[$i]['y'] = $iTotalHeight;
+                  $iTotalHeight += ($aFilesInfo[$i]['height'] + $this->aFormValues['vertical-offset']);
+                  // get the x position of current image in overall sprite
+                  if ($iColumnCount == 1) {
+                     $aFilesInfo[$i]['x'] = 0;
+                  } else {
+                     $aFilesInfo[$i]['x'] = ($this->aFormValues['horizontal-offset'] * ($iColumnCount - 1) + (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount]));
+                  }
+                  $aFilesInfo[$i]['currentCombinedHeight'] = $iTotalHeight;
+                  $aFilesInfo[$i]['columnNumber'] = $iColumnCount;
+               }
             
                $i++;
             }
@@ -341,18 +405,31 @@
          // if $i is greater than 1 then we managed to generate enough info to create a sprite
          if ($i > 1) {
             try {
-               // get the sprite width and height
-               $iSpriteHeight = $iMaxHeight;
-               $iSpriteWidth = array_sum($aMaxColumnWidth) + $iMaxHOffset;
+               if ($sBuildDirection == 'horizontal') {
+                  $iSpriteWidth = $iMaxWidth;
+                  $iSpriteHeight = array_sum($aMaxRowHeight) + $iMaxVOffset;
+               } else {
+                  // get the sprite width and height
+                  $iSpriteHeight = $iMaxHeight;
+                  $iSpriteWidth = array_sum($aMaxColumnWidth) + $iMaxHOffset;
+               }
             
                // get background colour - remove # if added
                $sBgColour = str_replace('#', '', $this->aFormValues['background']);
                // convert 3 digit hex values to 6 digit equivalent
                if (strlen($sBgColour) == 3) {
-                  $sBgColour = substr($sBgColour, 0, 1).substr($sBgColour, 0, 1).substr($sBgColour, 1, 1).substr($sBgColour, 1, 1).substr($sBgColour, 2, 1).substr($sBgColour, 2, 1);
+                  $sBgColour = substr($sBgColour, 0, 1).
+                     substr($sBgColour, 0, 1).
+                     substr($sBgColour, 1, 1).
+                     substr($sBgColour, 1, 1).
+                     substr($sBgColour, 2, 1).
+                     substr($sBgColour, 2, 1);
                }
                // should the image be transparent
-               $this->bTransparent = (!empty($this->aFormValues['use-transparency']) && in_array($this->aFormValues['image-output'], array('GIF', 'PNG')));
+               $this->bTransparent = (
+                  !empty($this->aFormValues['use-transparency']) && 
+                  in_array($this->aFormValues['image-output'], array('GIF', 'PNG'))
+               );
                
                // if using Imagick library create new instance of library class
                if ($this->sImageLibrary == 'imagick') {
@@ -431,7 +508,16 @@
                         // which achieves the same effect
                         $oCurrentImage->thumbnailImage($aFilesInfo[$i]['width'], $aFilesInfo[$i]['height']);
                      } else {
-                        imagecopyresampled($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'], $aFilesInfo[$i]['height'], $aFilesInfo[$i]['original-width'], $aFilesInfo['original-height']);
+                        imagecopyresampled(
+                           $oSprite, 
+                           $oCurrentImage, 
+                           $aFilesInfo[$i]['x'], 
+                           $aFilesInfo[$i]['y'], 0, 0, 
+                           $aFilesInfo[$i]['width'], 
+                           $aFilesInfo[$i]['height'], 
+                           $aFilesInfo[$i]['original-width'], 
+                           $aFilesInfo['original-height']
+                        );
                      }
                   }
                   
@@ -441,7 +527,15 @@
                   } else {
                      // if using GD and already resized the image will have been copied as part of the resize
                      if (!$bResize) {
-                        imagecopy($oSprite, $oCurrentImage, $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y'], 0, 0, $aFilesInfo[$i]['width'],  $aFilesInfo[$i]['height']);
+                        imagecopy(
+                           $oSprite, 
+                           $oCurrentImage, 
+                           $aFilesInfo[$i]['x'], 
+                           $aFilesInfo[$i]['y'], 
+                           0, 0, 
+                           $aFilesInfo[$i]['width'],  
+                           $aFilesInfo[$i]['height']
+                        );
                      }
                   }
                
