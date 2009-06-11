@@ -58,20 +58,20 @@
    // installed languages
    $aLanguages = array(
       'af' => 'Afrikaans',
-      'cn' => '中文',
-      'cs' => 'čeština',
-      'nl' => 'Nederlands',
+      'cn' => '中文 (Chinese)',
+      'cs' => 'čeština (Catalan)',
+      'nl' => 'Nederlands (Dutch)',
       'en' => 'English',
-      'fr' => 'français',
-      'de' => 'Deutsch',
-      'it' => 'italiano',
-      'pl' => 'polski',
-      'pt' => 'português',
-      'ja' => '日本語',
-      'es' => 'Español',
-      'se' => 'svenska',
-      'tr' => 'Türkçe',
-      'tw' => '臺灣話'
+      'fr' => 'français (French)',
+      'de' => 'Deutsch (German)',
+      'it' => 'italiano (Italian)',
+      'pl' => 'polski (Polish)',
+      'pt' => 'português (Portuguese)',
+      'ja' => '日本語 (Japanese)',
+      'es' => 'Español (Spanish)',
+      'se' => 'svenska (Swedish)',
+      'tr' => 'Türkçe (Turkish)',
+      'tw' => '臺灣話 (Taiwanese)'
    );
    
    $aCompletedLanguages = array('cn', 'en', 'pl', 'pt');

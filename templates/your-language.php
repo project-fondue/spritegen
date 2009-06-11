@@ -1,4 +1,4 @@
-<p>In total users of this tool speak 113 different languages (at least their web browsers are telling us that's the case). Currently we support <?php echo $numLanguages; ?> which is a fantastic achievement but we'd love to add more.</p>
+<p>In total users of this tool speak 113 different languages (at least their web browsers are telling us that's the case). Currently we support <?php echo count($languages); ?> which is a fantastic achievement but we'd love to add more.</p>
 <h2>Usage Globally</h2>
 <p><img src="<?php echo $appRoot; ?>images/visitors-map.jpg" width="628" height="289" alt="Map of number of visitors from each country" class="map"></p>
 <h2>Translations Most Needed</h2>
@@ -12,7 +12,15 @@
 </ul>
 <h2>Contributing</h2>
 <p>Are you interested in helping us translate this tool into your language? If so, thank you, we really appreciate it and I'm sure other users of the tool will to.</p>
-<p>Additionally if you spot a problem with any of the existing translations please <a href="mailto:<?php echo $contactEmail; ?>">drop us an email</a> and will fix as quickly as possible.</p>
+<p>Additionally if you spot missing translations or another problem with any of the existing translations please consider downloading the corresponding language pack, updating and <a href="mailto:<?php echo $contactEmail; ?>">emailing back to us</a> for inclusion in the tool.</p>
+<h3>Language Packs</h3>
+<?php if (count($languages)): ?>
+   <ul class="languages">
+      <?php foreach ($languages as $code => $name): ?>
+         <li><a href="/downloads/language-pack-<?php echo $code; ?>.zip"><?php echo $name; ?></a></li>
+      <?php endforeach; ?>
+   </ul>
+<?php endif; ?>
 <h3>Instructions</h3>
 <p>To get started download our <a href="<?php echo  $appRoot; ?>downloads/language-pack-en.zip">language pack (ZIP)</a> which contains a copy of the files which need to be localised. It consists of one file which contains all the translation keys for the interface and the HTML and text for the help pages.</p>
 <p>To help you understand the context of the translation keys you can tell the tool to display the keys in place of the text by passing a  <code>showKeys=true</code> parameter in the query string. For example:</p>
