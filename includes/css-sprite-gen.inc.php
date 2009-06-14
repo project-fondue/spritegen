@@ -410,10 +410,10 @@
             try {
                // get the sprite width and height
                if ($this->aFormValues['build-direction'] == 'horizontal') {
-                  $iSpriteWidth = $iMaxWidth - ($this->aFormValues['horizontal-offset'] * 2);
+                  $iSpriteWidth = $iMaxWidth - $this->aFormValues['horizontal-offset'];
                   $iSpriteHeight = array_sum($aMaxRowHeight) + $iMaxVOffset;
                } else {
-                  $iSpriteHeight = $iMaxHeight - ($this->aFormValues['vertical-offset'] * 2);
+                  $iSpriteHeight = $iMaxHeight - $this->aFormValues['vertical-offset'];
                   $iSpriteWidth = array_sum($aMaxColumnWidth) + $iMaxHOffset;
                }
             
