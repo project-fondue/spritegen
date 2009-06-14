@@ -36,6 +36,7 @@ form.label.vertical-offset = 垂直偏移
 form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = 背景 / 透明色 \# (選項)
 form.label.use-transparency = 背景色透明
+form.label.build-direction = Build Direction
 form.label.image-output-format = 合併圖片輸出格式
 form.label.image-output-num-colours = Number of Colours
 form.label.image-output-quality = Image Quality
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = 樣式文件名 (選項)
 form.label.class-prefix = Class 前文 (選項)
 form.label.css-suffix = CSS 後文 (選項)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = True Colour
 
 form.hint.max-upload-size = 最大上傳限制: {0}MB

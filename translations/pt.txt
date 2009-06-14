@@ -36,6 +36,7 @@ form.label.vertical-offset = Afastamento Vertical
 form.label.wrap-columns = Envolver em colunas para consertar o bug no Opera
 form.label.background-colour = Cor do Fundo / Transpar&ecirc;ncia \# (opcional)
 form.label.use-transparency = Utilizar a Cor do Fundo para Transpar&ecirc;ncia
+form.label.build-direction = Build Direction
 form.label.image-output-format = Formato de Sa&iacute;da
 form.label.image-output-num-colours = N&uacute;mero de Cores
 form.label.image-output-quality = Qualidade da Imagem
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = Padr&atilde;o do nome do ficheiro (opcional)
 form.label.class-prefix = Prefixo das Classes (opcional)
 form.label.css-suffix = Sufixo CSS (opcional)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = Cor Verdadeira
 
 form.hint.max-upload-size = Tamanho m&aacute;ximo do ficheiro: {0}MB

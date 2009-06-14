@@ -36,6 +36,7 @@ form.label.vertical-offset = Przesunięcie pionowe
 form.label.wrap-columns = Obejście błędu Opery (tworzy kolumny)
 form.label.background-colour = Kolor tła / przezroczystości \# (opcjonalnie)
 form.label.use-transparency = Użyj koloru tła jako przezroczystość
+form.label.build-direction = Build Direction
 form.label.image-output-format = Format wyjściowy
 form.label.image-output-num-colours = Liczba kolorów
 form.label.image-output-quality = Jakość obrazka
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = Wzorzec nazwy pliku (opcjonalnie)
 form.label.class-prefix = Przedrostek klasy (opcjonalnie)
 form.label.css-suffix = Przyrostek CSS (opcjonalnie)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = True Color
 
 form.hint.max-upload-size = Maksymalny rozmiar pliku: {0}MB

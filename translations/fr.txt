@@ -36,6 +36,7 @@ form.label.vertical-offset = Espacement vertical
 form.label.wrap-columns = Entourer les colonnes pour résoudre le bug d'Opera
 form.label.background-colour = Couleur de fond / Couleur de transparence \\# (optionnel)
 form.label.use-transparency = Utiliser la couleur de fond pour la transparence
+form.label.build-direction = Build Direction
 form.label.image-output-format = Format du fichier Sprite
 form.label.image-output-num-colours = Nombre de couleurs
 form.label.image-output-quality = Qualité d'image
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = Expression r&\#233;guli&\#232;re du nom de f
 form.label.class-prefix = Pr&\#233;fix de classe (optionnel)
 form.label.css-suffix = Suffixe de CSS (optionnel)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = Vraie couleur
 
 form.hint.max-upload-size = Taille maximale de transfert: {0}Mo

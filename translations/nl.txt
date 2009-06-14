@@ -36,6 +36,7 @@ form.label.vertical-offset = Verticale offset
 form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Achtergrond / Transparantie Kleur \# (optioneel)
 form.label.use-transparency = Gebruik achtergrond kleur voor transparantie
+form.label.build-direction = Build Direction
 form.label.image-output-format = Sprite uitvoer formaat
 form.label.image-output-num-colours = Number of Colours
 form.label.image-output-quality = Image Quality
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = Bestandsnaam patroon match (optioneel)
 form.label.class-prefix = Class voorvoegsel (optioneel)
 form.label.css-suffix = CSS achtervoegsel (optional)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Max upload grootte: {0}MB

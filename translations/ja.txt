@@ -36,6 +36,7 @@ form.label.vertical-offset = 垂直オフセット
 form.label.wrap-columns = Operaのバグを修正するためにコラムを囲む
 form.label.background-colour = 背景色 / 透過色 \# (任意)
 form.label.use-transparency = 透過用の背景色を使う
+form.label.build-direction = Build Direction
 form.label.image-output-format = 保存フォーマット
 form.label.image-output-num-colours = 色数
 form.label.image-output-quality = 画質
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = ファイル名の置換パターン (任意
 form.label.class-prefix = CSSクラス名の接頭語 (任意)
 form.label.css-suffix = CSSの接尾語 (任意)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = True Color
 
 form.hint.max-upload-size = アップロード最大サイズ: {0}MB

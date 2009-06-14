@@ -174,18 +174,19 @@
       
       public function CreateSprite($sFolderMD5) {
          // set up variable defaults used when calculating offsets etc
-         $sBuildDirection = $this->aFormValues['build-direction'];
          $aFilesInfo = array();
          $aFilesMD5 = array();
          $bResize = false;
-         if ($sBuildDirection == 'horizontal') {
+         if ($this->aFormValues['build-direction'] == 'horizontal') {
             $iRowCount = 1;
-            $iTotalWidth = $this->aFormValues['horizontal-offset'];
+            $iTotalWidth = 0;
+            $iTotalHeight = 0;
             $aMaxRowHeight = array();
             $iMaxVOffset = 0;
          } else {
             $iColumnCount = 1;
-            $iTotalHeight = $this->aFormValues['vertical-offset'];
+            $iTotalWidth = 0;
+            $iTotalHeight = 0;
             $aMaxColumnWidth = array();
             $iMaxHOffset = 0;
          }
@@ -288,7 +289,7 @@
                $iWidth = $aImageInfo[0];
                $iHeight = $aImageInfo[1];
                
-               if ($sBuildDirection == 'horizontal') {
+               if ($this->aFormValues['build-direction'] == 'horizontal') {
                   // get the current width of the sprite image - after images processed so far
                   $iCurrentWidth = $iTotalWidth + $this->aFormValues['horizontal-offset'] + $iWidth;
                   
@@ -318,31 +319,52 @@
                $aFilesInfo[$i]['width'] = $bResize ? round(($iWidth / 100) * $this->aFormValues['width-resize']) : $iWidth;
                $aFilesInfo[$i]['height'] = $bResize ? round(($iHeight / 100) * $this->aFormValues['height-resize']) : $iHeight;
                
-               // opera (9.0 and below) has a bug which prevents it recognising  offsets of less than -2042px
-               // all subsequent values are treated as -2042px
-               // if we've hit 2000 pixels and we care about this (as set in the interface) then wrap to a new column
-               // increment column count and reset current height
-               if ($sBuildDirection == 'horizontal') {
+               if ($this->aFormValues['build-direction'] == 'horizontal') {
+                  // opera (9.0 and below) has a bug which prevents it recognising  offsets of less than -2042px
+                  // all subsequent values are treated as -2042px
+                  // if we've hit 2000 pixels and we care about this (as set in the interface) then wrap to a new row
+                  // increment row count and reset current height
                   if (
                      ($iTotalWidth + $this->aFormValues['horizontal-offset']) >= 2000 && 
                      !empty($this->aFormValues['wrap-columns'])
                   ) {
                      $iRowCount++;
-                     $iTotalWidth = $this->aFormValues['horizontal-offset'];
+                     $iTotalWidth = 0;
                   }
                   
-                  // if the current image is wider than any other in the current column then set the maximum width to that
-                  // it will be used to set the width of the current column
+                  // if the current image is higher than any other in the current row then set the maximum height to that
+                  // it will be used to set the height of the current row
                   if ($aFilesInfo[$i]['height'] > $iMaxHeight) {
                      $iMaxHeight = $aFilesInfo[$i]['height'];
                   }
+                  
+                  // keep track of the height of rows added so far
+                  $aMaxRowHeight[$iRowCount] = $iMaxHeight;
+                  // calculate the current maximum vertical offset so far
+                  $iMaxVOffset = $this->aFormValues['vertical-offset'] * ($iRowCount - 1);
+                  
+                  // get the x position of current image in overall sprite
+                  $aFilesInfo[$i]['x'] = $iTotalWidth;
+                  $iTotalWidth += ($aFilesInfo[$i]['width'] + $this->aFormValues['horizontal-offset']);
+                  // get the y position of current image in overall sprite
+                  if ($iRowCount == 1) {
+                     $aFilesInfo[$i]['y'] = 0;
+                  } else {
+                     $aFilesInfo[$i]['y'] = ($this->aFormValues['vertical-offset'] * ($iRowCount - 1) + (array_sum($aMaxRowHeight) - $aMaxRowHeight[$iRowCount]));
+                  }
+                  $aFilesInfo[$i]['currentCombinedWidth'] = $iTotalWidth;
+                  $aFilesInfo[$i]['rowNumber'] = $iRowCount;   
                } else {
                   if (
+                     // opera (9.0 and below) has a bug which prevents it recognising  offsets of less than -2042px
+                     // all subsequent values are treated as -2042px
+                     // if we've hit 2000 pixels and we care about this (as set in the interface) then wrap to a new column
+                     // increment column count and reset current height
                      ($iTotalHeight + $this->aFormValues['vertical-offset']) >= 2000 && 
                      !empty($this->aFormValues['wrap-columns'])
                   ) {
                      $iColumnCount++;
-                     $iTotalHeight = $this->aFormValues['vertical-offset'];
+                     $iTotalHeight = 0;
                   }
                   
                   // if the current image is wider than any other in the current column then set the maximum width to that
@@ -350,33 +372,12 @@
                   if ($aFilesInfo[$i]['width'] > $iMaxWidth) {
                      $iMaxWidth = $aFilesInfo[$i]['width'];
                   }
-               }
-            
-               if ($sBuildDirection == 'horizontal') {
-                  // keep track of the width of columns added so far
-                  $aMaxRowHeight[$iRowCount] = $iMaxHeight;
-                  // calculate the current maximum horizontal offset so far
-                  $iMaxVOffset = $this->aFormValues['vertical-offset'] * ($iRowCount - 1);               
-               } else {
+                  
                   // keep track of the width of columns added so far
                   $aMaxColumnWidth[$iColumnCount] = $iMaxWidth;
                   // calculate the current maximum horizontal offset so far
                   $iMaxHOffset = $this->aFormValues['horizontal-offset'] * ($iColumnCount - 1);
-               }
-            
-               if ($sBuildDirection == 'horizontal') {
-                  // get the y position of current image in overall sprite
-                  $aFilesInfo[$i]['x'] = $iTotalWidth;
-                  $iTotalWidth += ($aFilesInfo[$i]['width'] + $this->aFormValues['horizontal-offset']);
-                  // get the x position of current image in overall sprite
-                  if ($iRowCount == 1) {
-                     $aFilesInfo[$i]['y'] = 0;
-                  } else {
-                     $aFilesInfo[$i]['y'] = ($this->aFormValues['vertical-offset'] * ($iRowCount - 1) + (array_sum($aMaxRowHeight) - $aMaxRowHeight[$iRowCount]));
-                  }
-                  $aFilesInfo[$i]['currentCombinedWidth'] = $iTotalWidth;
-                  $aFilesInfo[$i]['rowNumber'] = $iRowCount;
-               } else {
+                  
                   // get the y position of current image in overall sprite
                   $aFilesInfo[$i]['y'] = $iTotalHeight;
                   $iTotalHeight += ($aFilesInfo[$i]['height'] + $this->aFormValues['vertical-offset']);
@@ -404,13 +405,15 @@
          
          // if $i is greater than 1 then we managed to generate enough info to create a sprite
          if ($i > 1) {
+            // if Imagick throws an exception we want the script to terminate cleanly so that 
+            // temporary files are cleaned up
             try {
-               if ($sBuildDirection == 'horizontal') {
-                  $iSpriteWidth = $iMaxWidth;
+               // get the sprite width and height
+               if ($this->aFormValues['build-direction'] == 'horizontal') {
+                  $iSpriteWidth = $iMaxWidth - ($this->aFormValues['horizontal-offset'] * 2);
                   $iSpriteHeight = array_sum($aMaxRowHeight) + $iMaxVOffset;
                } else {
-                  // get the sprite width and height
-                  $iSpriteHeight = $iMaxHeight;
+                  $iSpriteHeight = $iMaxHeight - ($this->aFormValues['vertical-offset'] * 2);
                   $iSpriteWidth = array_sum($aMaxColumnWidth) + $iMaxHOffset;
                }
             

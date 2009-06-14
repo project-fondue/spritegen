@@ -36,6 +36,7 @@ form.label.vertical-offset = Vertikální rozestup
 form.label.wrap-columns = Wrap columns to fix Opera bug
 form.label.background-colour = Pozadí / Průhledná barva \# (nepovinné)
 form.label.use-transparency = Průhledná barva pozadí
+form.label.build-direction = Build Direction
 form.label.image-output-format = Formát výsledného obrázku
 form.label.image-output-num-colours = Number of Colours
 form.label.image-output-quality = Image Quality
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = Regulární výraz pro jméno souboru (nepov
 form.label.class-prefix = Předpona CSS tříd (nepovinné)
 form.label.css-suffix = CSS selektory "za" (nepovinné)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Maximální velikost: {0}MB

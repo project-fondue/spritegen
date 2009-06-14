@@ -37,6 +37,7 @@ form.label.vertical-offset = 垂直偏移
 form.label.background-colour = 背景 / 透明色 \# (可选)
 form.label.use-transparency = 背景色透明
 form.label.sprite-output-format = 拼合图片输出格式
+form.label.build-direction = Build Direction
 form.label.image-output-format = 输出格式
 form.label.image-output-num-colours = 颜色数量
 form.label.image-output-quality = 图片质量
@@ -47,6 +48,8 @@ form.label.class-prefix = 类前缀 (可选)
 form.label.css-suffix = CSS 后缀 (可选)
 form.label.wrap-columns = 多列图片以修复 Opera bug
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = 真色彩
 
 form.hint.max-upload-size = 最大上传尺寸: {0}MB

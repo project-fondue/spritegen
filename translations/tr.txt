@@ -36,6 +36,7 @@ form.label.vertical-offset = Dikey Aralık
 form.label.wrap-columns = Opera hatasını düzeltmek için sütunları kaydır
 form.label.background-colour = Arkaplan / Saydamlık Rengi \# (isteğe bağlı)
 form.label.use-transparency = Saydamlık için Arkaplan Rengini Kullan
+form.label.build-direction = Build Direction
 form.label.image-output-format = Resim Formatı
 form.label.image-output-num-colours = Renk Sayısı
 form.label.image-output-quality = Resim Kalitesi
@@ -45,6 +46,8 @@ form.label.filename-pattern-match = Dosya Adına Göre Eşleştirme (isteğe ba�
 form.label.class-prefix = Sınıf Öneki (isteğe bağlı)
 form.label.css-suffix = CSS Soneki (isteğe bağlı)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = Gerçek Renk
 
 form.hint.max-upload-size = Azami Yükleme Boyutu: {0}MB

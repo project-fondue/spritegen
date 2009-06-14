@@ -62,9 +62,19 @@
    </fieldset>
    <fieldset>
       <legend><?php echo $translation->Get('form.legend.image-output-options'); ?></legend>
-      <?php echo $functions->SelectInput('build-direction', $translation->Get('form.label.build-direction'), array('horizontal', 'vertical'), 'vertical', ''); ?>
-      <?php echo $functions->TextInput('horizontal-offset', $translation->Get('form.label.horizontal-offset'), 150, 5, 'px'); ?>
-      <?php echo $functions->TextInput('vertical-offset', $translation->Get('form.label.vertical-offset'), 30, 5, 'px'); ?>
+      <?php 
+         echo $functions->SelectInput(
+            'build-direction', 
+            $translation->Get('form.label.build-direction'), 
+            array(
+               'horizontal' => $translation->Get('form.value.build-direction.horizontal'), 
+               'vertical' => $translation->Get('form.value.build-direction.vertical')
+            ), 
+            'vertical', ''
+         ); 
+      ?>
+      <?php echo $functions->TextInput('horizontal-offset', $translation->Get('form.label.horizontal-offset'), 50, 5, 'px'); ?>
+      <?php echo $functions->TextInput('vertical-offset', $translation->Get('form.label.vertical-offset'), 50, 5, 'px'); ?>
       <label for="wrap-columns"><?php echo $translation->Get('form.label.wrap-columns'); ?>:</label><input type="checkbox" name="wrap-columns" id="wrap-columns"<?php if (!$formPosted || isset($_POST['wrap-columns'])) echo ' checked="checked"'; ?>>
 
       <?php echo $functions->TextInput('background', $translation->Get('form.label.background-colour'), '', 7, $translation->Get('form.hint.transparency'), true); ?>
