@@ -1,6 +1,11 @@
 <?php
    define('CONF', 'live');
    
+   require('template.inc.php');
+   require('template-functions.inc.php');
+   require('translations.inc.php');
+   require('css-sprite-gen.inc.php');
+   
    $sBasename = dirname(__FILE__).'/';
    $sConfig = $sBasename.'conf/'.CONF.'.inc.php';
    
@@ -14,14 +19,32 @@
       ");
    }
    
-   $sUploadDir = realpath($sBasename.UPLOAD_DIR);
-   $sSpriteDir = realpath($sBasename.SPRITE_DIR);
-   $sTranslationsCache = realpath($sBasename.TRANSLATIONS_CACHE);
+   if (!is_dir(UPLOAD_DIR)) {
+      @mkdir(UPLOAD_DIR);
+   }
+   
+   if (!is_dir(SPRITE_DIR)) {
+      @mkdir(SPRITE_DIR);
+   }
+   
+   if (!is_dir(TRANSLATIONS_CACHE_DIR)) {
+      @mkdir(TRANSLATIONS_CACHE_DIR);
+   }
+   
+   if (defined('TEXT_LINK_ADS_DIR') && defined('TEXT_LINK_ADS_FILE')) {
+      if (!is_dir(TEXT_LINK_ADS_DIR)) {
+         @mkdir(TEXT_LINK_ADS_DIR);
+      }
+      
+      if (!file_exists(TEXT_LINK_ADS_DIR.TEXT_LINK_ADS_FILE)) {
+         @touch(TEXT_LINK_ADS_DIR.TEXT_LINK_ADS_FILE);
+      }
+   }
    
    if (
-      !is_writeable($sUploadDir) || 
-      !is_writeable($sSpriteDir) || 
-      !is_writeable($sTranslationsCache)
+      !is_writeable(UPLOAD_DIR) || 
+      !is_writeable(SPRITE_DIR) || 
+      !is_writeable(TRANSLATIONS_CACHE_DIR)
    ) {
       header('Content-Type: text/plain');
       die("

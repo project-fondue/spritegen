@@ -2,9 +2,9 @@
    class Template {
       protected $sTemplate;
       protected $sLang;
-      protected $sTemplatePath;
+      protected $sTemplateDir;
+      protected $sTemplateLocalesDir;
       protected $aVars = array();
-      protected $aFunctions = array();
       protected $aPostFilters = array();
       protected $bDebug;
       protected $bCacheSupport;
@@ -15,13 +15,15 @@
       public function __construct(
          $sTemplate,
          $sLang = '',
-         $sTemplatePath = TEMPLATE_PATH,
+         $sTemplateDir = TEMPLATE_DIR,
+         $sTemplateLocalesDir = TEMPLATE_LOCALES_DIR,
          $iCacheLength = TEMPLATE_CACHE_LENGTH,
          $bDebug = TEMPLATE_DEBUG
       ) {
          $this->sTemplate = $sTemplate;
          $this->sLang = $sLang;
-         $this->sTemplatePath = $sTemplatePath;
+         $this->sTemplateDir = $sTemplateDir;
+         $this->sTemplateLocalesDir = $sTemplateLocalesDir;
          $this->bDebug = $bDebug;
          $this->bCacheSupport = class_exists('PhpCache') && $iCacheLength;
          $this->iCacheLength = $iCacheLength;
@@ -100,9 +102,6 @@
                }
             }
             
-            // add template functions
-            $methods = $this->aFunctions;
-            
             if ($this->bDebug) {
                $sOutput .= "\n<!-- start $this->sTemplate -->\n";
             }
@@ -110,12 +109,12 @@
             ob_start();
             if (
                $this->sLang != '' && 
-               file_exists($this->sTemplatePath.TEMPLATE_LOCALES_PATH."$this->sLang/".$this->sTemplate)
+               file_exists($this->sTemplateDir.$this->sTemplateLocalesDir."$this->sLang/".$this->sTemplate)
             ) {
                $this->AddCacheCondition($this->sLang);
-               require($this->sTemplatePath.TEMPLATE_LOCALES_PATH."$this->sLang/".$this->sTemplate);
+               require($this->sTemplateDir.$this->sTemplateLocalesDir."$this->sLang/".$this->sTemplate);
             } else {
-               require($this->sTemplatePath.$this->sTemplate);
+               require($this->sTemplateDir.$this->sTemplate);
             }
             $sOutput .= ob_get_clean();
             if ($this->bDebug) {

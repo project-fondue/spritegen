@@ -24,7 +24,7 @@
       <div id="result">
          <a href="<?php echo $appRoot; ?>" class="close"><?php echo $translation->Get('form.result.reset'); ?></a>
          <h2><?php echo $translation->Get('form.result.title.css-rules'); ?></h2>
-         <div class="code-container"><pre><code><?php echo $css; ?></code></pre></div>
+         <form ><div><textarea rows="10" cols="70" readonly="readonly"><?php echo $css; ?></textarea></div></form>
          <p><?php echo $translation->Get('form.result.dont-forget')?></p>
          <pre class="background-example"><code>#container li {
    background: url(<?php echo $filename; ?>) no-repeat top left;

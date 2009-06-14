@@ -1,9 +1,4 @@
 <?php
-   require('../includes/css-sprite-gen.inc.php');
-   require('../includes/template.inc.php');
-   require('../includes/template-functions.inc.php');
-   require('../includes/translations.inc.php');
-   
    class Controller {
       protected $sLanguage;
       protected $sView;
@@ -56,6 +51,8 @@
             $oTemplate->Set('headerHref', HEADER_HREF);
             $oTemplate->Set('reportBugUrl', REPORT_BUG_URL);
             $oTemplate->Set('viewsDir', VIEWS_DIR);
+            
+            $oTemplate->AddPostFilter('StripPfMarkers');
 
             // load view
             require($this->GetViewPath());

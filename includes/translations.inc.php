@@ -1,17 +1,30 @@
 <?php
    class Translations {
+      protected $sLang;
+      protected $sTranslationsDir;
+      protected $sTranslationsCacheDir;
+      protected $bTranslationsAllowShowKeys;
       protected $sFile;
       protected $sCacheFile;
       protected $aTranslations = array();
       
-      public function __construct($sLang = TRANSLATIONS_DEFAULT_LANG, $sTranslationsPath = TRANSLATIONS_PATH) {
+      public function __construct(
+         $sLang = TRANSLATIONS_DEFAULT_LANG, 
+         $sTranslationsDir = TRANSLATIONS_DIR, 
+         $sTranslationsCacheDir = TRANSLATIONS_CACHE_DIR,
+         $bTranslationsAllowShowKeys = TRANSLATIONS_ALLOW_SHOW_KEYS
+      ) {
          // set up file paths
-         $this->sFile = TRANSLATIONS_PATH."$sLang.txt";
-         $this->sCacheFile = TRANSLATIONS_CACHE.md5($sLang).'.cache';
+         $this->sLang = $sLang;
+         $this->sTranslationsDir = $sTranslationsDir;
+         $this->sTranslationsCacheDir = $sTranslationsCacheDir;
+         $this->bTranslationAllowShowKeys = $bTranslationsAllowShowKeys;
+         $this->sFile = $this->sTranslationsDir.$sLang.'.txt';
+         $this->sCacheFile = $this->sTranslationsCacheDir.md5($sLang).'.cache';
          
          // fallback to default language if current doesn't exist
          if (!file_exists($this->sFile)) {
-            $this->sFile = TRANSLATIONS_PATH.TRANSLATIONS_DEFAULT_LANG.'.txt';
+            $this->sFile = $this->sTranslationsDir.$this->sLang.'.txt';
          }
          
          // after first pass translations are stored in serialised PHP array for speed
@@ -46,7 +59,7 @@
          // does this translation file inherit from another
          $aInheritsMatches = array();
          if (isset($aFile[0]) && preg_match("/^\s*{inherits\s+([^}]+)}.*$/", $aFile[0], $aInheritsMatches)) {
-            $sParentFile = TRANSLATIONS_PATH.trim($aInheritsMatches[1]).'.txt';
+            $sParentFile = $this->sTranslationsDir.trim($aInheritsMatches[1]).'.txt';
             // read parent file into array
             $aParentFile = file($sParentFile);
             // merge lines from parent file into main file array, lines in the main file override lines in the parent
@@ -101,7 +114,7 @@
             // whilst translating the user has the option to switch out all values with the corresponding key
             // this helps to see what translated text will appear where
             // set ALLOW_SHOW_KEYS false to disable - might be preferable in production
-            if (!TRANSLATIONS_ALLOW_SHOW_KEYS || !isset($_REQUEST['showKeys'])) {
+            if (!$this->bTranslationsAllowShowKeys || !isset($_REQUEST['showKeys'])) {
                return $sTranslation;
             }
          }

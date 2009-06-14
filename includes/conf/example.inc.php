@@ -4,7 +4,7 @@
    // location of view scripts (corresponding to page types)
    define('VIEWS_DIR', '../views/');
    // directory to store uploaded ZIP files
-   define('UPLOAD_DIR', '../cache/source-images/');
+   define('UPLOAD_DIR', '/tmp/spritegen/source-images/');
    // file binary - used to check for a valid ZIP file
    define('FILE_BINARY', '/usr/bin/file');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
@@ -12,7 +12,7 @@
    // otipng binary - compresses PNG images
    define('OPTIPNG_BINARY', '/usr/local/bin/optipng');
    // location to store generated sprite images
-   define('SPRITE_DIR', '../cache/sprites/');
+   define('SPRITE_DIR', '/tmp/spritegen/sprites/');
    // maximum file upload size - specified in bytes
    define('MAX_FILE_SIZE', 1048576);
    // secret used to check validity of download link request
@@ -22,21 +22,21 @@
    // default translations language, this is what it'll use if none is specified
    define('TRANSLATIONS_DEFAULT_LANG', 'en');
    // location of translation files - these contain key/value pairs
-   define('TRANSLATIONS_PATH', '../translations/');
+   define('TRANSLATIONS_DIR', '../translations/');
    // once parsed translation files are cached, this specifies where to store the cache files
-   define('TRANSLATIONS_CACHE', '../cache/translations/');
+   define('TRANSLATIONS_CACHE_DIR', '/tmp/spritegen/translations/');
    // determines whether or not adding showKeys=true parameter is active
    define('TRANSLATIONS_ALLOW_SHOW_KEYS', true);
    // path to templates
-   define('TEMPLATE_PATH', '../templates/');
+   define('TEMPLATE_DIR', '../templates/');
    // path to localised versions of templates, each locale is stored in a separate directory
-   define('TEMPLATE_LOCALES_PATH', 'locales/');
+   define('TEMPLATE_LOCALES_DIR', 'locales/');
    // other template settings, you don't need to change these
    define('TEMPLATE_DEBUG', false);
    define('TEMPLATE_STRIP_HTML', true);
    define('TEMPLATE_CONVERT_ENTITIES', false);
    define('TEMPLATE_ENCODING', 'UTF-8');
-   define('TEMPLATE_CACHE_LENGTH', 300);
+   define('TEMPLATE_CACHE_LENGTH', 0);
    // header image
    define('HEADER_IMAGE_URL', '');
    define('HEADER_IMAGE_ALT', '');
@@ -74,5 +74,5 @@
       'tw' => '臺灣話 (Taiwanese)'
    );
    
-   $aCompletedLanguages = array('cn', 'en', 'pl', 'pt');
+   $aCompletedLanguages = array('en');
 ?>

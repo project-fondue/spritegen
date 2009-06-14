@@ -170,9 +170,8 @@ pre {
    right: 12px;
    font-size: 85%;
 }
-#result .code-container {
+#result textarea {
    border: 1px solid #ccc;
-   overflow: auto;
    width: 602px;
    height: 200px;
    padding: 5px;
@@ -194,17 +193,17 @@ pre {
 #options label {
    clear: left;
    display: block;
-   width: 17em;
+   width: 22em;
 }
 #options span {
    width: 12em;
    margin-left: 5px;
    font-size: 92%;
 }
-#options span.help{
-    clear:left;
-    width: 30em;
-    margin-left: 18.5em;
+#options span.help {
+   clear: left;
+   width: 22em;
+   margin-left: 24em;
 }
 #options label, #options span {
    line-height: 1.7em;
@@ -345,16 +344,3 @@ a:active.download {
 .lang-cn #options input.submit {
    width: 15em;
 }
-/* PF_REMOVE */
-#pf_ad {
-   position: absolute;
-   top: 0;
-   left: 0;
-}
-#pf_ad img {
-   border: none;
-}
-.google-ads {
-   margin-top: 10px;
-}
-/* END_PF_REMOVE */

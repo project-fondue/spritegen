@@ -9,7 +9,7 @@ function tla_ads() {
 	// Local file to store XML
 	// This file MUST be writable by web server
 	// You should create a blank file and CHMOD it to 666
-	$LOCAL_XML_FILENAME = "../cache/text-link-ads/local_202297.xml";
+	$LOCAL_XML_FILENAME = TEXT_LINK_ADS_DIR.TEXT_LINK_ADS_FILE;
 
 	if( !file_exists($LOCAL_XML_FILENAME) ) die("Script error: $LOCAL_XML_FILENAME does not exist. Please create a blank file named $LOCAL_XML_FILENAME.");
 	if( !is_writable($LOCAL_XML_FILENAME) ) die("Script error: $LOCAL_XML_FILENAME is not writable. Please set write permissions on $LOCAL_XML_FILENAME.");
