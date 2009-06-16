@@ -17,7 +17,7 @@
 <?php if (count($languages)): ?>
    <ul class="languages">
       <?php foreach ($languages as $code => $name): ?>
-         <li><a href="/downloads/language-pack-<?php echo $code; ?>.zip"><?php echo $name; ?></a></li>
+         <li><a href="/downloads/language-pack-<?php echo $code; ?>.zip"><?php echo $name['english']; ?></a></li>
       <?php endforeach; ?>
    </ul>
 <?php endif; ?>

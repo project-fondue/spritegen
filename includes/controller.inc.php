@@ -39,6 +39,7 @@
             $oTemplate->Set('languages', $aLanguages);
             $oTemplate->Set('language', $this->sLanguage);
             $oTemplate->Set('missingTranslations', !in_array($this->sLanguage, $aCompletedLanguages));
+            $oTemplate->Set('languageSwitch', LANGUAGE_SWITCH);
             $oTemplate->Set('view', $this->sView);
             $oTemplate->Set('template', $this->sView);
             $oTemplate->Set('translation', $oTranslations);
@@ -51,6 +52,7 @@
             $oTemplate->Set('headerHref', HEADER_HREF);
             $oTemplate->Set('reportBugUrl', REPORT_BUG_URL);
             $oTemplate->Set('viewsDir', VIEWS_DIR);
+            $oTemplate->Set('toolUrl', str_replace(array('http://', 'https://'), '', TOOL_URL));
             
             $oTemplate->AddPostFilter('StripPfMarkers');
 
@@ -66,18 +68,28 @@
       }
       
       protected function SetLanguage($aLanguages) {
-         // check for request to change language
-         // if not present check for cookie specifiying language
-         // finally fall back to english
-         if (isset($_GET['lang']) && array_key_exists($_GET['lang'], $aLanguages)) {
-            $this->sLanguage = $_GET['lang'];
-            setcookie('lang', $this->sLanguage, time() + 60 * 60 * 24 * 365, '/');
-            header('Location: /');
-            exit;
-         } elseif (isset($_COOKIE['lang']) && array_key_exists($_COOKIE['lang'], $aLanguages)) {
-            $this->sLanguage = $_COOKIE['lang'];
+         if (LANGUAGE_SWITCH == 'host') {
+            $sLanguage = substr($_SERVER['SERVER_NAME'], 0, 2);
+            
+            if (array_key_exists($sLanguage, $aLanguages) && substr($_SERVER['SERVER_NAME'], 2, 1) == '.') {
+               $this->sLanguage = $sLanguage;
+            } else {
+               $this->sLanguage = 'en';
+            }
          } else {
-            $this->sLanguage = 'en';
+            // check for request to change language
+            // if not present check for cookie specifiying language
+            // finally fall back to english
+            if (isset($_GET['lang']) && array_key_exists($_GET['lang'], $aLanguages)) {
+               $this->sLanguage = $_GET['lang'];
+               setcookie('lang', $this->sLanguage, time() + 60 * 60 * 24 * 365, '/');
+               header('Location: /');
+               exit;
+            } elseif (isset($_COOKIE['lang']) && array_key_exists($_COOKIE['lang'], $aLanguages)) {
+               $this->sLanguage = $_COOKIE['lang'];
+            } else {
+               $this->sLanguage = 'en';
+            }
          }
       }
       

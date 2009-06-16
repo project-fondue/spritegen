@@ -47,6 +47,8 @@
    define('REPORT_BUG_URL', 'https://bugs.launchpad.net/css-sprite-generator/');
    // url types
    define('REWRITTEN_URLS', true);
+   // language switching mechanism
+   define('LANGUAGE_SWITCH', 'host');
    // base URL to tool
    define('TOOL_URL', 'http://spritegen.website-performance.org/');
    // contact email address
@@ -60,21 +62,66 @@
    
    // installed languages
    $aLanguages = array(
-      'af' => 'Afrikaans',
-      'cn' => '中文 (Chinese)',
-      'cs' => 'čeština (Catalan)',
-      'nl' => 'Nederlands (Dutch)',
-      'en' => 'English',
-      'fr' => 'français (French)',
-      'de' => 'Deutsch (German)',
-      'it' => 'italiano (Italian)',
-      'pl' => 'polski (Polish)',
-      'pt' => 'português (Portuguese)',
-      'ja' => '日本語 (Japanese)',
-      'es' => 'Español (Spanish)',
-      'se' => 'svenska (Swedish)',
-      'tr' => 'Türkçe (Turkish)',
-      'tw' => '臺灣話 (Taiwanese)'
+      'af' => array(
+         'native' => 'Afrikaans',
+         'english' => 'Afrikaans'
+      ),
+      'cn' => array(
+         'native' => '中文',
+         'english' => 'Chinese',
+      ),
+      'cs' => array(
+         'native' => 'čeština',
+         'english' => 'Catalan'
+      ),
+      'nl' => array(
+         'native' => 'Nederlands',
+         'english' => 'Dutch'
+      ),
+      'en' => array(
+         'native' => 'English',
+         'english' => 'English'
+      ),
+      'fr' => array(
+         'native' => 'français',
+         'english' => 'French'
+      ),
+      'de' => array(
+         'native' => 'Deutsch',
+         'english' => 'German'
+      ),
+      'it' => array(
+         'native' => 'italiano',
+         'english' => 'Italian'
+      ),
+      'pl' => array(
+         'native' => 'polski',
+         'english' => 'Polish)'
+      ),
+      'pt' => array(
+         'native' => 'português',
+         'english' => 'Portuguese'
+      ),
+      'ja' => array(
+         'native' => '日本語',
+         'english' => 'Japanese'
+      ),
+      'es' => array(
+         'native' => 'Español',
+         'english' => 'Spanish'
+      ),
+      'se' => array(
+         'native' => 'svenska',
+         'english' => 'Swedish'
+      ),
+      'tr' => array(
+         'native' => 'Türkçe',
+         'english' => 'Turkish'
+      ),
+      'tw' => array(
+         'native' => '臺灣話',
+         'english' => 'Taiwanese'
+      )
    );
    
    $aCompletedLanguages = array('en');

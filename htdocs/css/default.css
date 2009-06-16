@@ -125,21 +125,25 @@ pre {
    border-bottom: 1px solid #ddd;
    padding-bottom: 10px;
    margin-bottom: 25px;  
-   text-align: right;
+}
+#lang-bar ul {
+   background: #ddd;
+   padding: 5px;
 } 
-#lang-bar form, #lang-bar div {
+#lang-bar li {
    display: inline;
+   margin-right: 15px;
+   line-height: 1.5em;
 }
-#lang-bar form label {
-   color: #666;
-}
-#lang-bar form input {
-   font-size: 85%;
+#lang-bar .selected {
+   background: #ccc;
+   border: 1px solid #bbb;
+   padding: 3px;
 }
 /* PF_REMOVE */   
 #your-language {
-   float: left;
    margin: 10px 0;
+   text-align: right;
 }
 /* END_PF_REMOVE */
 #main {
@@ -219,7 +223,7 @@ pre {
    float: none;
 }
 #options .duplicates label {
-   width: 30em;
+   width: 35em;
 }
 #options .sub {
    float: none;
@@ -314,6 +318,7 @@ a:active.download {
    margin: 0 0 5px 15px;
 }
 .missing-translations a {
+   float: left;
    font-weight: bold;
    color: #f60;
 }

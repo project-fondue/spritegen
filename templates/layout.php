@@ -47,27 +47,30 @@
       </ul>
       <div id="frame">
          <div id="lang-bar">
+            <?php if (count($languages)): ?>
+               <ul>
+                  <?php foreach ($languages as $code => $name): ?>
+                     <?php if ($languageSwitch == 'host'): ?>
+                        <?php if ($code == 'en'): ?>
+                           <li><a href="http://<?php echo $toolUrl; ?>"<?php if ($code == $language) echo ' class="selected"'; ?>><?php echo $name['native']; ?></a></li>
+                        <?php else: ?>
+                           <li><a href="http://<?php echo $code; ?>.<?php echo $toolUrl; ?>"<?php if ($code == $language) echo ' class="selected"'; ?>><?php echo $name['native']; ?></a></li>
+                        <?php endif; ?>
+                     <?php else: ?>
+                        <li><a href="<?php echo $appRoot; ?>?lang=<?php echo $code; ?>"<?php if ($code == $language) echo ' class="selected"'; ?>><?php echo $name['native']; ?></a></li>
+                     <?php endif; ?>
+                  <?php endforeach; ?>
+               </ul>
+            <?php endif; ?>
+            <!-- PF_REMOVE -->
+               <?php if ($missingTranslations): ?>
+                  <p class="missing-translations"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('warning.missing-translations')?></a></p>
+               <?php endif; ?>
+            <!-- END_PF_REMOVE -->
             <!-- PF_REMOVE -->
                <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
             <!-- END_PF_REMOVE -->
-            <form method="get" action="<?php echo $appRoot; ?>">
-               <div>
-                  <input type="hidden" name="view" id="view" value="<?php echo $view; ?>">
-                  <label for="lang"><?php echo $translation->Get('menu.language.label'); ?>:</label>
-                  <select name="lang" id="lang">
-                     <?php foreach ($languages as $key => $value): ?>
-                        <option value="<?php echo $key; ?>"<?php if ($key == $language): ?> selected="selected"<?php endif; ?>><?php echo $value; ?></option>
-                     <?php endforeach; ?>
-                  </select>
-                  <input class="submit" type="submit" name="change" id="change" value="<?php echo $translation->Get('menu.language.button'); ?>">
-               </div>
-            </form>
          </div>
-         <!-- PF_REMOVE -->
-            <?php if ($missingTranslations): ?>
-               <p class="missing-translations"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('warning.missing-translations')?></a></p>
-            <?php endif; ?>
-         <!-- END_PF_REMOVE -->
          <div id="main">
             <?php echo $content; ?>
          </div>
