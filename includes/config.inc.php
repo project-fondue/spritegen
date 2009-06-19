@@ -5,6 +5,7 @@
    require('template-functions.inc.php');
    require('translations.inc.php');
    require('css-sprite-gen.inc.php');
+   require('version.inc.php');
    
    $sBasename = dirname(__FILE__).'/';
    $sConfig = $sBasename.'conf/'.CONF.'.inc.php';

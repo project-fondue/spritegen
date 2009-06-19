@@ -33,3 +33,5 @@ cache/translations/9cfefed8fb9497baa5cd519d7d2bb5d7.cache
 cache/translations/*
 cache/source-images/*
 cache/sprites/*
+htdocs/css/archive/*
+htdocs/js/archive/*

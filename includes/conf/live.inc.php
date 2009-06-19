@@ -56,6 +56,26 @@
    // text link ads
    define('TEXT_LINK_ADS_DIR', '/tmp/spritegen/tla/');
    define('TEXT_LINK_ADS_FILE', 'local_202297.xml');
+   // path to jsmin binary - http://www.crockford.com/javascript/jsmin.html
+   define('JSMIN_BINARY', '/usr/local/bin/jsmin');
+   // jsmin compress JS
+   define('JSMIN_COMPRESS', true);
+   // comments to add at start of jsmin compressed files
+   define('JSMIN_COMMENTS', '
+      /*
+         YUI:
+         
+         Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+         Code licensed under the BSD License:
+         http://developer.yahoo.net/yui/license.txt
+         version: 2.7.0
+      
+         tool.js
+         
+         Copyright (c) 2007-2009 Project Fondue. All Rights Reserved.
+         Code licensed under the BSD License.
+      */
+   ');
    
    // views which don't render the normal HTML layout
    $aNonPageViews = array('download');

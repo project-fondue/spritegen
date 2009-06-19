@@ -3,10 +3,9 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title><?php echo $translation->Get('site.title'); ?> <?php echo $title; ?></title>
-   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/reset.css" type="text/css">
-   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/default.css" type="text/css">
+   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get.<?php require('../htdocs/css/get.php'); ?>.css" type="text/css">
    <!--[if IE]>
-      <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/ie.css" type="text/css">
+      <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get-ie.<?php require('../htdocs/css/get.php'); ?>.css" type="text/css">
    <![endif]-->
    <!-- PF_REMOVE -->
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -32,7 +31,7 @@
 <body class="lang-<?php echo $language; ?>">
    <div id="header">
       <!-- PF_REMOVE -->         
-         <a href="<?php echo $headerHref; ?>" id="logo"><img src="<?php echo $assetsDir.$headerImageUrl; ?>" alt="<?php echo $headerImageAlt; ?>" width="<?php echo $headerImageWidth; ?>" height="<?php echo $headerImageHeight; ?>"></a>
+         <a href="<?php echo $headerHref; ?>" id="logo"><?php echo Version::GetImage($assetsDir.$headerImageUrl, $headerImageWidth, $headerImageHeight, $headerImageAlt); ?></a>
       <!-- END_PF_REMOVE -->
       <h1><?php echo $title; ?></h1>
    </div>
@@ -84,8 +83,7 @@
    <div id="footer">
       <?php require('../templates/footer.php'); ?>
    </div>
-   <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
-   <script type="text/javascript" src="<?php echo $assetsDir; ?>js/tool.js"></script>
+   <script type="text/javascript" src="<?php echo $assetsDir; ?>js/get.<?php require('../htdocs/js/get.php'); ?>.js"></script>
    <!-- PF_REMOVE -->
       <?php require('../templates/analytics.php'); ?>
    <!-- END_PF_REMOVE -->
