@@ -2,9 +2,9 @@ Licensed under BSD License with the following exceptions:
 
 -----------------------------------------------------------------
 * Design elements (images, CSS) relating to the "Website Performance" 
-  branding and web site remain copyright of Ed Eliot & 
-  Stuart Colville and should not be used without written 
-  permission.
+  branding and web site remain copyright of Project Fondue (Ed Eliot, 
+  Stuart Colville & Cyril Doussin) and should not be used without  
+  written permission.
 * If you host a copy of the tool publicly in a largely unaltered 
   form and/or with the same application name then you must add 
   clear notices to explain that it is a copy of the original and 
@@ -12,7 +12,7 @@ Licensed under BSD License with the following exceptions:
   at http://spritegen.website-performance.org/.
 ------------------------------------------------------------------
 
-Copyright (C) 2007-2008, Ed Eliot & Stuart Colville.
+Copyright (C) 2007-2009, Project Fondue (Ed Eliot, Stuart Colville & Cyril Doussin).
 All rights reserved.
 
 Software License Agreement (BSD License)
@@ -25,9 +25,11 @@ modification, are permitted provided that the following conditions are met:
    * Redistributions in binary form must reproduce the above copyright
      notice, this list of conditions and the following disclaimer in the
      documentation and/or other materials provided with the distribution.
-   * Neither the name of Ed Eliot & Stuart Colville nor the names of its contributors 
+   * Neither the name of Project Fondue (Ed Eliot, Stuart Colville & 
+     Cyril Doussin) nor the names of its contributors 
      may be used to endorse or promote products derived from this software 
-     without specific prior written permission of Ed Eliot & Stuart Colville.
+     without specific prior written permission of Project Fondue (Ed Eliot, 
+     Stuart Colville & Cyril Doussin).
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS IS" AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
