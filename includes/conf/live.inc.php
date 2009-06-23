@@ -40,7 +40,7 @@
    // header image
    define('HEADER_IMAGE_URL', 'images/project-fondue-logo.png');
    define('HEADER_IMAGE_ALT', 'Project Fondue');
-   define('HEADER_IMAGE_WIDTH', 80);
+   define('HEADER_IMAGE_WIDTH', 64);
    define('HEADER_IMAGE_HEIGHT', 80);
    define('HEADER_HREF', 'http://projectfondue.com/');
    // bug reporting
