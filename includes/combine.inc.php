@@ -77,7 +77,7 @@
          }
       }
       
-      protected function GetCode() {
+      public function GetCode() {
          $this->Combine();
          $this->SetHeaders();
       
@@ -85,7 +85,7 @@
          return $this->sCode;
       }
       
-      protected function GetTimestamp() {
+      public function GetTimestamp() {
          // get file last modified dates
          $aLastModifieds = array();
          
