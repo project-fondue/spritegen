@@ -57,7 +57,7 @@
    define('TEXT_LINK_ADS_DIR', '../../cache/tla/');
    define('TEXT_LINK_ADS_FILE', 'local_202297.xml');
    // path to jsmin binary - http://www.crockford.com/javascript/jsmin.html
-   define('JSMIN_BINARY', '/usr/local/bin/jsmin');
+   define('JSMIN_BINARY', '/home/pf/bin/jsmin');
    // jsmin compress JS
    define('JSMIN_COMPRESS', true);
    // comments to add at start of jsmin compressed files
