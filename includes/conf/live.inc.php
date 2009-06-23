@@ -59,7 +59,7 @@
    // path to jsmin binary - http://www.crockford.com/javascript/jsmin.html
    define('JSMIN_BINARY', '/usr/local/bin/jsmin');
    // jsmin compress JS
-   define('JSMIN_COMPRESS', true);
+   define('JSMIN_COMPRESS', false);
    // comments to add at start of jsmin compressed files
    define('JSMIN_COMMENTS', '
       /*
