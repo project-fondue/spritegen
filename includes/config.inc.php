@@ -13,54 +13,71 @@
    if (file_exists($sConfig)) {
       require($sConfig);
    } else {
-      header('Content-Type: text/plain');
-      die("
-         Setup Error: Make a copy of '$sConfig' and modify settings to match your system.
-         Then update '{$sBasename}conf/config.inc.php' accordingly.
-      ");
+      $oTemplate = new Template('setup-config-error.php');
+      $oTemplate->Set('config', $sConfig);
+      $oTemplate->Set('basename', $sBasename);
+      echo $oTemplate->Display();
+      exit;
    }
    
-   if (!is_dir(UPLOAD_DIR)) {
-      @mkdir(UPLOAD_DIR);
+   $sUploadDir = ConfigHelper::GetAbsolutePath($sBasename.UPLOAD_DIR);
+   $sSpriteDir = ConfigHelper::GetAbsolutePath($sBasename.SPRITE_DIR);
+   $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath($sBasename.TRANSLATIONS_CACHE_DIR);
+   
+   if (!is_dir($sUploadDir)) {
+      @mkdir($sUploadDir);
    }
    
-   if (!is_dir(SPRITE_DIR)) {
-      @mkdir(SPRITE_DIR);
+   if (!is_dir($sSpriteDir)) {
+      @mkdir($sSpriteDir);
    }
    
-   if (!is_dir(TRANSLATIONS_CACHE_DIR)) {
-      @mkdir(TRANSLATIONS_CACHE_DIR);
+   if (!is_dir($sTranslationsCacheDir)) {
+      @mkdir($sTranslationsCacheDir);
    }
    
    if (defined('TEXT_LINK_ADS_DIR') && defined('TEXT_LINK_ADS_FILE')) {
-      if (!is_dir(TEXT_LINK_ADS_DIR)) {
-         @mkdir(TEXT_LINK_ADS_DIR);
+      $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath($sBasename.TEXT_LINK_ADS_DIR);
+      
+      if (!is_dir($sTextLinkAdsDir)) {
+         @mkdir($sTextLinkAdsDir);
       }
       
-      if (!file_exists(TEXT_LINK_ADS_DIR.TEXT_LINK_ADS_FILE)) {
-         @touch(TEXT_LINK_ADS_DIR.TEXT_LINK_ADS_FILE);
+      if (!file_exists($sTextLinkAdsDir.TEXT_LINK_ADS_FILE)) {
+         @touch("$sTextLinkAdsDir/".TEXT_LINK_ADS_FILE);
       }
    }
    
    if (
-      !is_writeable(UPLOAD_DIR) || 
-      !is_writeable(SPRITE_DIR) || 
-      !is_writeable(TRANSLATIONS_CACHE_DIR)
+      !is_writeable($sUploadDir) || 
+      !is_writeable($sSpriteDir) || 
+      !is_writeable($sTranslationsCacheDir)
    ) {
-      header('Content-Type: text/plain');
-      die("
-         Setup Error: Ensure all cache directories are writeable by the web server process:
-         
-         $sUploadDir
-         $sSpriteDir
-         $sTranslationsCache
-         
-         e.g:
-         
-         sudo chgrp -R www-data $sUploadDir $sSpriteDir $sTranslationsCache
-         sudo chmod -R g+w $sUploadDir $sSpriteDir $sTranslationsCache
-         
-         For more information about setting file permissions check out our Unix Permissions Calculator - http://permissions-calculator.org/
-      ");
+      $oTemplate = new Template('setup-permissions-error.php');
+      $oTemplate->Set('uploadDir', $sUploadDir);
+      $oTemplate->Set('spriteDir', $sSpriteDir);
+      $oTemplate->Set('translationsCacheDir', $sTranslationsCacheDir);
+      echo $oTemplate->Display();
+      exit;
+   }
+   
+   class ConfigHelper {
+      // derived from http://uk.php.net/manual/en/function.realpath.php#84012
+      function GetAbsolutePath($sPath) {
+         $aParts = array_filter(explode('/', $sPath), 'strlen');
+         $aAbsolutes = array();
+        
+         foreach ($aParts as $sPart) {
+            if ($sPart == '.') {
+               continue;
+            }
+            if ($sPart == '..') {
+               array_pop($aAbsolutes);
+            } else {
+               $aAbsolutes[] = $sPart;
+            }
+         }
+         return '/'.implode('/', $aAbsolutes);
+      }
    }
 ?>

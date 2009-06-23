@@ -4,7 +4,7 @@
    // location of view scripts (corresponding to page types)
    define('VIEWS_DIR', '../views/');
    // directory to store uploaded ZIP files
-   define('UPLOAD_DIR', '/tmp/spritegen/source-images/');
+   define('UPLOAD_DIR', '../../cache/upload/');
    // file binary - used to check for a valid ZIP file
    define('FILE_BINARY', '/usr/bin/file');
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
@@ -12,7 +12,7 @@
    // otipng binary - compresses PNG images
    define('OPTIPNG_BINARY', '/usr/local/bin/optipng');
    // location to store generated sprite images
-   define('SPRITE_DIR', '/tmp/spritegen/sprites/');
+   define('SPRITE_DIR', '../../cache/sprites/');
    // maximum file upload size - specified in bytes
    define('MAX_FILE_SIZE', 524288);
    // secret used to check validity of download link request
@@ -24,7 +24,7 @@
    // location of translation files - these contain key/value pairs
    define('TRANSLATIONS_DIR', '../translations/');
    // once parsed translation files are cached, this specifies where to store the cache files
-   define('TRANSLATIONS_CACHE_DIR', '/tmp/spritegen/translations/');
+   define('TRANSLATIONS_CACHE_DIR', '../../cache/translations/');
    // determines whether or not adding showKeys=true parameter is active
    define('TRANSLATIONS_ALLOW_SHOW_KEYS', true);
    // path to templates
@@ -54,7 +54,7 @@
    // contact email address
    define('CONTACT_EMAIL', 'spritegen@projectfondue.com');
    // text link ads
-   define('TEXT_LINK_ADS_DIR', '/tmp/spritegen/tla/');
+   define('TEXT_LINK_ADS_DIR', '../../cache/tla/');
    define('TEXT_LINK_ADS_FILE', 'local_202297.xml');
    // path to jsmin binary - http://www.crockford.com/javascript/jsmin.html
    define('JSMIN_BINARY', '/usr/local/bin/jsmin');
