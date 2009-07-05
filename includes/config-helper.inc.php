@@ -28,6 +28,8 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
+         print_r($aProperty);
+         
          foreach ($aProperty as $sComponent) {
             if (isset($this->aConfig[$sComponent])) {
                $vSection = $this->aConfig[$sComponent];
