@@ -25,14 +25,14 @@
       }
       
       function Get($sProperty, $vDefaultValue = null) {
+         $aConfig = $this->aConfig;
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
-         print_r($aProperty);
-         
          foreach ($aProperty as $sComponent) {
-            if (isset($this->aConfig[$sComponent])) {
+            if (isset($aConfig[$sComponent])) {
                $vSection = $this->aConfig[$sComponent];
+               $aConfig = $aConfig[$sComponent];
             } else {
                if (is_null($vDefaultValue)) {
                   return false;
@@ -41,7 +41,11 @@
                }
             }
          }
-         return false;
+         if (!is_null($vSection)) {
+            return $vSection;
+         } else {
+            return false;
+         }
       }
    }
 ?>
