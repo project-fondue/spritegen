@@ -9,7 +9,7 @@
 
 <body>
    <h1>Setup Error</h1>
-   <p>>Make a copy of '<?php echo $config; ?>' and modify settings to match your system.</p>
+   <p>Make a copy of '<?php echo $config; ?>' and modify settings to match your system.</p>
    <p>Then update '<?php echo $basename; ?>conf/config.inc.php' accordingly.</p>
 </body> 
  
