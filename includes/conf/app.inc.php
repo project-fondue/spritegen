@@ -8,7 +8,7 @@
    $aConfig['cache']['upload_dir'] = '../../cache/upload/';
    
    // file binary - used to check for a valid ZIP file
-   $aConfig['binaries']['file', '/usr/bin/file'];
+   $aConfig['binaries']['file'] = '/usr/bin/file';
    
    // easier to use a command line binary as many installs of PHP won't have ZIP libraries compiled in
    $aConfig['binaries']['unzip'] = '/usr/bin/unzip';
