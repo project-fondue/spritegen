@@ -8,9 +8,9 @@
       protected $aTranslations = array();
       
       public function __construct(
-         $sLang = ConfigHelper::Get('/translations/default_lang'), 
-         $sTranslationsCacheDir = ConfigHelper::Get('/cache/translations_dir'),
-         $bTranslationsAllowShowKeys = ConfigHelper::Get('/translations/allow_show_keys')
+         $sLang = 'en', 
+         $sTranslationsCacheDir = '../../cache/translations/',
+         $bTranslationsAllowShowKeys = true
       ) {
          // set up file paths
          $this->sLang = $sLang;
