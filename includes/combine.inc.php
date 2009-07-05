@@ -1,4 +1,6 @@
 <?php
+   require('../ext/jsmin.inc.php');
+   
    class Combine {
       protected $sDocRoot;
       protected $aConfig;
@@ -58,16 +60,15 @@
             rsort($aLastModifieds);
             
             if ($this->aConfig['create_archive']) {
-               if ($this->iETag == $aLastModifieds[0]) { // check for valid etag, we don't want invalid requests to fill up archive folder
-                  file_put_contents($sMergedFilename, $this->sCode);
+               // check for valid etag, we don't want invalid requests to fill up archive folder
+               if ($this->iETag == $aLastModifieds[0]) {
                   if ($this->aConfig['file_type'] == 'text/javascript' && $this->aConfig['jsmin_compress']) {
                      if ($this->aConfig['jsmin_comments'] != '') {
-                        $this->sCode = shell_exec($this->aConfig['jsmin_binary']." < $sMergedFilename '".$this->aConfig['jsmin_comments']."'");
-                     } else {
-                        $this->sCode = shell_exec($this->aConfig['jsmin_binary']." < $sMergedFilename");
+                        $this->sCode = $this->aConfig['jsmin_comments'].'\n\n'.$this->sCode;
                      }
-                     file_put_contents($sMergedFilename, $this->sCode);
+                     $this->sCode = JSMin::minify($this->sCode);
                   }
+                  file_put_contents($sMergedFilename, $this->sCode);
                } else {
                   // archive file no longer exists or invalid etag specified
                   header("{$_SERVER['SERVER_PROTOCOL']} 404 Not Found");

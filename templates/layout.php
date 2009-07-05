@@ -6,13 +6,7 @@
    <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get.<?php require('../htdocs/css/get.php'); ?>.css" type="text/css">
    <!--[if IE]>
       <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get-ie.<?php require('../htdocs/css/get.php'); ?>.css" type="text/css">
-   <![endif]-->
-   <!-- PF_REMOVE -->
-      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-      <link rel="icon" href="/favicon.ico" type="image/x-icon">
-      <meta name="description" content="A tool for generating image sprites and CSS for your web site. Using this tool can help you dramatically reduce the number of HTTP requests made for higher performance.">
-      <meta name="keywords" content="css sprites, css, sprites, sprite, tool, generate, http requests, http, request">
-   <!-- END_PF_REMOVE -->                                                                               
+   <![endif]-->                                                                              
    
    <?php if ($view == 'home'): ?>
       <script type="text/javascript">
@@ -30,19 +24,11 @@
 
 <body class="lang-<?php echo $language; ?>">
    <div id="header">
-      <!-- PF_REMOVE -->         
-         <a href="<?php echo $headerHref; ?>" id="logo"><?php echo Version::GetImage($assetsDir.$headerImageUrl, $headerImageWidth, $headerImageHeight, $headerImageAlt); ?></a>
-      <!-- END_PF_REMOVE -->
       <h1><?php echo $title; ?></h1>
    </div>
    <div id="content">
       <ul id="nav">
          <li<?php if ($view == 'home') echo ' class="selected"'; ?>><a href="<?php echo $appRoot; ?>"><?php echo $translation->Get('menu.home'); ?></a></li>
-         <!-- PF_REMOVE -->
-            <li<?php if ($view == 'what-are-css-sprites') echo ' class="selected"'; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'what-are-css-sprites'); ?>"><?php echo $translation->Get('menu.what-are-css-sprites'); ?></a></li>
-            <li<?php if ($view == 'tool-help') echo ' class="selected"'; ?>><a href="<?php echo $functions->GetMenuUrl($appRoot, 'tool-help'); ?>"><?php echo $translation->Get('menu.tool-help'); ?></a></li>
-            <li><a href="<?php echo $reportBugUrl; ?>"><?php echo $translation->Get('menu.report-bug'); ?></a></li>
-         <!-- END_PF_REMOVE -->
       </ul>
       <div id="frame">
          <div id="lang-bar">
@@ -61,22 +47,12 @@
                   <?php endforeach; ?>
                </ul>
             <?php endif; ?>
-            <!-- PF_REMOVE -->
-               <?php if ($missingTranslations): ?>
-                  <p class="missing-translations"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('warning.missing-translations')?></a></p>
-               <?php endif; ?>
-            <!-- END_PF_REMOVE -->
-            <!-- PF_REMOVE -->
-               <p id="your-language"><a href="<?php echo $functions->GetMenuUrl($appRoot, 'your-language'); ?>"><?php echo $translation->Get('menu.language.your-language')?></a></p>
-            <!-- END_PF_REMOVE -->
          </div>
          <div id="main">
             <?php echo $content; ?>
          </div>
          <div id="sidebar">
-            <!-- PF_REMOVE -->
-               <?php require('../templates/sidebar.php'); ?>
-            <!-- END_PF_REMOVE -->
+            
          </div>
       </div>
    </div>
@@ -84,9 +60,6 @@
       <?php require('../templates/footer.php'); ?>
    </div>
    <script type="text/javascript" src="<?php echo $assetsDir; ?>js/get.<?php require('../htdocs/js/get.php'); ?>.js"></script>
-   <!-- PF_REMOVE -->
-      <?php require('../templates/analytics.php'); ?>
-   <!-- END_PF_REMOVE -->
 </body> 
  
 </html>

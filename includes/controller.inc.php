@@ -13,48 +13,50 @@
          if (
             isset($_REQUEST['view']) &&
             preg_match("/^[a-z0-9_-]+$/i", $_REQUEST['view']) &&
-            file_exists(VIEWS_DIR.$_REQUEST['view'].'.php')
+            file_exists('../views/'.$_REQUEST['view'].'.php')
          ) {
             // we now have a safe string
             $this->sView = $_REQUEST['view'];
-            $this->sViewPath = VIEWS_DIR.$_REQUEST['view'].'.php';
-         } elseif (empty($_REQUEST['view']) && file_exists(VIEWS_DIR.'home.php')) { // look for default view
+            $this->sViewPath = '../views/'.$_REQUEST['view'].'.php';
+         } elseif (empty($_REQUEST['view']) && file_exists('../views/home.php')) { // look for default view
    			$this->sView = 'home';
-   			$this->sViewPath = VIEWS_DIR.'home.php';
+   			$this->sViewPath = '../views/home.php';
    		} else {
 		      // invalid request and no default view available - quit application
             die('Invalid view specified.');
          }
 
-         if (!in_array($this->sView, $aNonPageViews)) {
+         if (!in_array($this->sView, array('download'))) {
             // instantiate translations
             $oTranslations = new Translations($this->sLanguage);
 
             // instantiate layout template
-            $oTemplate = new Template('layout.php', $this->sLanguage);
+            if (!empty($aTemplatePaths)) {
+               $oTemplate = new Template('layout.php', $this->sLanguage, $aTemplatePaths);
+            } else {
+               $oTemplate = new Template('layout.php', $this->sLanguage);
+            }
 
             // pass common data to template
-            $oTemplate->Set('appRoot', APP_ROOT);
-            $oTemplate->Set('contactEmail', CONTACT_EMAIL);
+            $oTemplate->Set('appRoot', ConfigHelper::Get('/app_root'));
+            $oTemplate->Set('contactEmail', ConfigHelper::Get('/emails/contact'));
             $oTemplate->Set('languages', $aLanguages);
             $oTemplate->Set('language', $this->sLanguage);
             $oTemplate->Set('missingTranslations', !in_array($this->sLanguage, $aCompletedLanguages));
-            $oTemplate->Set('languageSwitch', LANGUAGE_SWITCH);
+            $oTemplate->Set('languageSwitch', ConfigHelper::Get('/languages/switch'));
             $oTemplate->Set('view', $this->sView);
             $oTemplate->Set('template', $this->sView);
             $oTemplate->Set('translation', $oTranslations);
-            $oTemplate->Set('assetsDir', ASSETS_DIR);
+            $oTemplate->Set('assetsDir', ConfigHelper::Get('/assets_dir'));
             $oTemplate->Set('content', new Template("$this->sView.php", $this->sLanguage)); // add content template
-            $oTemplate->Set('headerImageUrl', HEADER_IMAGE_URL);
-            $oTemplate->Set('headerImageAlt', HEADER_IMAGE_ALT);
-            $oTemplate->Set('headerImageWidth', HEADER_IMAGE_WIDTH);
-            $oTemplate->Set('headerImageHeight', HEADER_IMAGE_HEIGHT);
-            $oTemplate->Set('headerHref', HEADER_HREF);
-            $oTemplate->Set('reportBugUrl', REPORT_BUG_URL);
-            $oTemplate->Set('viewsDir', VIEWS_DIR);
-            $oTemplate->Set('toolUrl', str_replace(array('http://', 'https://'), '', TOOL_URL));
-            
-            $oTemplate->AddPostFilter('StripPfMarkers');
+            $oTemplate->Set('headerImageUrl', ConfigHelper::Get('/images/header/url'));
+            $oTemplate->Set('headerImageAlt', ConfigHelper::Get('/images/header/alt'));
+            $oTemplate->Set('headerImageWidth', ConfigHelper::Get('/images/header/width'));
+            $oTemplate->Set('headerImageHeight', ConfigHelper::Get('/images/header/height'));
+            $oTemplate->Set('headerHref', ConfigHelper::Get('/urls/header'));
+            $oTemplate->Set('reportBugUrl', ConfigHelper::Get('/urls/report_bug'));
+            $oTemplate->Set('viewsDir', '../views/');
+            $oTemplate->Set('toolUrl', str_replace(array('http://', 'https://'), '', ConfigHelper::Get('/urls/tool')));
 
             // load view
             require($this->GetViewPath());

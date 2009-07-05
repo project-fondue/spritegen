@@ -1,7 +1,6 @@
 <?php
    class Translations {
       protected $sLang;
-      protected $sTranslationsDir;
       protected $sTranslationsCacheDir;
       protected $bTranslationsAllowShowKeys;
       protected $sFile;
@@ -9,14 +8,12 @@
       protected $aTranslations = array();
       
       public function __construct(
-         $sLang = TRANSLATIONS_DEFAULT_LANG, 
-         $sTranslationsDir = TRANSLATIONS_DIR, 
-         $sTranslationsCacheDir = TRANSLATIONS_CACHE_DIR,
-         $bTranslationsAllowShowKeys = TRANSLATIONS_ALLOW_SHOW_KEYS
+         $sLang = ConfigHelper::Get('/translations/default_lang'), 
+         $sTranslationsCacheDir = ConfigHelper::Get('/cache/translations_dir'),
+         $bTranslationsAllowShowKeys = ConfigHelper::Get('/translations/allow_show_keys')
       ) {
          // set up file paths
          $this->sLang = $sLang;
-         $this->sTranslationsDir = $sTranslationsDir;
          $this->sTranslationsCacheDir = $sTranslationsCacheDir;
          $this->bTranslationAllowShowKeys = $bTranslationsAllowShowKeys;
          $this->sFile = $this->sTranslationsDir.$sLang.'.txt';
@@ -24,7 +21,7 @@
          
          // fallback to default language if current doesn't exist
          if (!file_exists($this->sFile)) {
-            $this->sFile = $this->sTranslationsDir.$this->sLang.'.txt';
+            $this->sFile = '../translations/'.$this->sLang.'.txt';
          }
          
          // after first pass translations are stored in serialised PHP array for speed

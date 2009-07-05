@@ -17,7 +17,7 @@
             $this->sImageLibrary = 'imagick';
             
             // what image formats does the installed version of Imagick support
-            // probably overkill to call as PNG, GIF, JPEG surely supported but doen for completeness 
+            // probably overkill to call as PNG, GIF, JPEG surely supported but done for completeness 
             try {
                $aImageFormats = Imagick::queryFormats();
             } catch (ImagickException $e) {
@@ -350,7 +350,11 @@
                   if ($iRowCount == 1) {
                      $aFilesInfo[$i]['y'] = 0;
                   } else {
-                     $aFilesInfo[$i]['y'] = ($this->aFormValues['vertical-offset'] * ($iRowCount - 1) + (array_sum($aMaxRowHeight) - $aMaxRowHeight[$iRowCount]));
+                     $aFilesInfo[$i]['y'] = (
+                        $this->aFormValues['vertical-offset'] * 
+                        ($iRowCount - 1) + 
+                        (array_sum($aMaxRowHeight) - $aMaxRowHeight[$iRowCount])
+                     );
                   }
                   $aFilesInfo[$i]['currentCombinedWidth'] = $iTotalWidth;
                   $aFilesInfo[$i]['rowNumber'] = $iRowCount;   
@@ -385,7 +389,11 @@
                   if ($iColumnCount == 1) {
                      $aFilesInfo[$i]['x'] = 0;
                   } else {
-                     $aFilesInfo[$i]['x'] = ($this->aFormValues['horizontal-offset'] * ($iColumnCount - 1) + (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount]));
+                     $aFilesInfo[$i]['x'] = (
+                        $this->aFormValues['horizontal-offset'] * 
+                        ($iColumnCount - 1) + 
+                        (array_sum($aMaxColumnWidth) - $aMaxColumnWidth[$iColumnCount])
+                     );
                   }
                   $aFilesInfo[$i]['currentCombinedHeight'] = $iTotalHeight;
                   $aFilesInfo[$i]['columnNumber'] = $iColumnCount;
@@ -469,7 +477,12 @@
                   } else { // using GD - do the same thing
                      if (!empty($this->aFormValues['background'])) {
                         $iBgColour = hexdec($sBgColour);
-                        $iBgColour = imagecolorallocate($oSprite, 0xFF & ($iBgColour >> 0x10), 0xFF & ($iBgColour >> 0x8), 0xFF & $iBgColour);
+                        $iBgColour = imagecolorallocate(
+                           $oSprite, 
+                           0xFF & ($iBgColour >> 0x10), 
+                           0xFF & ($iBgColour >> 0x8), 
+                           0xFF & $iBgColour
+                        );
                      } else {
                         $iBgColour = imagecolorallocate($oSprite, 0, 0, 0);
                      }
@@ -482,7 +495,11 @@
                         $sBgColour = 'ffffff';
                      }
                      $iBgColour = hexdec($sBgColour);
-                     $iBgColour = imagecolorallocate($oSprite, 0xFF & ($iBgColour >> 0x10), 0xFF & ($iBgColour >> 0x8), 0xFF & $iBgColour);
+                     $iBgColour = imagecolorallocate(
+                        $oSprite, 0xFF & ($iBgColour >> 0x10), 
+                        0xFF & ($iBgColour >> 0x8), 
+                        0xFF & $iBgColour
+                     );
                      imagefill($oSprite, 0, 0, $iBgColour);
                   }
                }
@@ -500,7 +517,11 @@
                      // this should happen very rarely
                      $oCurrentImage = new Imagick();
                      
-                     $oCurrentImage->newImage($aFilesInfo[$i]['original-width'], $aFilesInfo[$i]['original-height'], new ImagickPixel('#ffffff'));
+                     $oCurrentImage->newImage(
+                        $aFilesInfo[$i]['original-width'], 
+                        $aFilesInfo[$i]['original-height'], 
+                        new ImagickPixel('#ffffff')
+                     );
                   }
                
                   // if resizing get image width and height and resample to new dimensions (percentage of original)
@@ -526,7 +547,12 @@
                   
                   // copy image to sprite
                   if ($this->sImageLibrary == 'imagick') {
-                     $oSprite->compositeImage($oCurrentImage, $oCurrentImage->getImageCompose(), $aFilesInfo[$i]['x'], $aFilesInfo[$i]['y']);
+                     $oSprite->compositeImage(
+                        $oCurrentImage, 
+                        $oCurrentImage->getImageCompose(), 
+                        $aFilesInfo[$i]['x'], 
+                        $aFilesInfo[$i]['y']
+                     );
                   } else {
                      // if using GD and already resized the image will have been copied as part of the resize
                      if (!$bResize) {

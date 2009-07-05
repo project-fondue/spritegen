@@ -89,8 +89,4 @@
          }
       }
    }
-   
-   function StripPfMarkers($sContent) {
-      return str_replace(array('<!-- PF_REMOVE -->', '<!-- END_PF_REMOVE -->'), '', $sContent);
-   }
 ?>

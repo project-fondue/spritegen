@@ -1,18 +1,20 @@
 <?php
-   define('CONF', 'live');
-   
    require('template.inc.php');
    require('template-functions.inc.php');
    require('translations.inc.php');
    require('css-sprite-gen.inc.php');
    require('version.inc.php');
+   require('config-helper.inc.php')
+   require('conf/app.inc.php');
+   require('conf/languages.inc.php');
    
    $sBasename = dirname(__FILE__).'/';
-   $sConfig = $sBasename.'conf/'.CONF.'.inc.php';
    
-   if (file_exists($sConfig)) {
-      require($sConfig);
-   } else {
+   if (file_exists($sBasename.'conf/overrides.inc.php')) {
+      require('conf/overrides.inc.php');
+   }
+   
+   if (!defined('APP_ROOT')) {
       $oTemplate = new Template('setup-config-error.php');
       $oTemplate->Set('config', $sConfig);
       $oTemplate->Set('basename', $sBasename);
@@ -20,9 +22,9 @@
       exit;
    }
    
-   $sUploadDir = ConfigHelper::GetAbsolutePath($sBasename.UPLOAD_DIR);
-   $sSpriteDir = ConfigHelper::GetAbsolutePath($sBasename.SPRITE_DIR);
-   $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath($sBasename.TRANSLATIONS_CACHE_DIR);
+   $sUploadDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/upload_dir'));
+   $sSpriteDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/sprite_dir'));
+   $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/translations_dir'));
    
    if (!is_dir($sUploadDir)) {
       @mkdir($sUploadDir);
@@ -36,15 +38,15 @@
       @mkdir($sTranslationsCacheDir);
    }
    
-   if (defined('TEXT_LINK_ADS_DIR') && defined('TEXT_LINK_ADS_FILE')) {
-      $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath($sBasename.TEXT_LINK_ADS_DIR);
+   if (!empty(ConfigHelper::Get('/cache/tla/dir'))) {
+      $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/tla/dir'));
       
       if (!is_dir($sTextLinkAdsDir)) {
          @mkdir($sTextLinkAdsDir);
       }
       
-      if (!file_exists($sTextLinkAdsDir.TEXT_LINK_ADS_FILE)) {
-         @touch("$sTextLinkAdsDir/".TEXT_LINK_ADS_FILE);
+      if (!file_exists($sTextLinkAdsDir.ConfigHelper::Get('/cache/tla/file'))) {
+         @touch("$sTextLinkAdsDir/".ConfigHelper::Get('/cache/tla/file'));
       }
    }
    
@@ -59,25 +61,5 @@
       $oTemplate->Set('translationsCacheDir', $sTranslationsCacheDir);
       echo $oTemplate->Display();
       exit;
-   }
-   
-   class ConfigHelper {
-      // derived from http://uk.php.net/manual/en/function.realpath.php#84012
-      function GetAbsolutePath($sPath) {
-         $aParts = array_filter(explode('/', $sPath), 'strlen');
-         $aAbsolutes = array();
-        
-         foreach ($aParts as $sPart) {
-            if ($sPart == '.') {
-               continue;
-            }
-            if ($sPart == '..') {
-               array_pop($aAbsolutes);
-            } else {
-               $aAbsolutes[] = $sPart;
-            }
-         }
-         return '/'.implode('/', $aAbsolutes);
-      }
    }
 ?>
