@@ -38,7 +38,7 @@
       @mkdir($sTranslationsCacheDir);
    }
    
-   if (!empty(ConfigHelper::Get('/cache/tla/dir'))) {
+   if (ConfigHelper::Get('/cache/tla/dir')) {
       $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/tla/dir'));
       
       if (!is_dir($sTextLinkAdsDir)) {
