@@ -1,5 +1,7 @@
 <?php
    $aConfig = array();
+   
+   $aConfig['setup'] = true;
 
    // publically accessible document root
    $aConfig['app_root'] = '/';
