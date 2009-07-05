@@ -3,9 +3,9 @@
    if (
       isset($_GET['file']) && 
       preg_match("/^csg-[a-f0-9]+\.(gif|png|jpg)$/", $_GET['file']) && 
-      isset($_GET['hash']) && md5($_GET['file'].CHECKSUM) == $_GET['hash']
+      isset($_GET['hash']) && md5($_GET['file'].ConfigHelper::Get('/checksum')) == $_GET['hash']
    ) {
-      $sFilename = SPRITE_DIR.$_GET['file'];
+      $sFilename = ConfigHelper::Get('/cache/sprite_dir').$_GET['file'];
       
       // file may not exist as folder is cleaned up every 30 mins
       if (file_exists($sFilename)) {

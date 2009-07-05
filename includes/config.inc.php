@@ -4,7 +4,7 @@
    require('translations.inc.php');
    require('css-sprite-gen.inc.php');
    require('version.inc.php');
-   require('config-helper.inc.php')
+   require('config-helper.inc.php');
    require('conf/app.inc.php');
    require('conf/languages.inc.php');
    

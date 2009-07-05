@@ -120,19 +120,14 @@
             isset($_FILES['path']['name']) && 
             substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip' && 
             // finfo_file, available in PHP 5.3, would probably be better but not widely available yet
-            in_array(trim(shell_exec(FILE_BINARY.' -bi '.$_FILES['path']['tmp_name'])), array('application/zip', 'application/x-zip')) && 
-            $_FILES['path']['size'] <= MAX_FILE_SIZE
+            in_array(trim(shell_exec(ConfigHelper::Get('/binaries/file').' -bi '.$_FILES['path']['tmp_name'])), array('application/zip', 'application/x-zip')) && 
+            $_FILES['path']['size'] <= ConfigHelper::Get('/upload/max_file_size')
          ) {
-            // create the upload dir if it doesn't already exist
-            if (!is_dir(UPLOAD_DIR)) {
-               mkdir(UPLOAD_DIR);
-            }
-            
             // create MD5 hash of ZIP file - use for path of dir to hold ZIP contents
             // include the current time to prevent clashes when ZIP files of the same name
             // are uploaded by different users
             $sFileMD5 = md5($_FILES['path']['name'].time());
-            $sFolderMD5 = UPLOAD_DIR."$sFileMD5/";
+            $sFolderMD5 = ConfigHelper::Get('/cache/upload_dir')."$sFileMD5/";
             
             // create dir to hold ZIP contents if it doesn't already exist
             if (!is_dir($sFolderMD5)) {
@@ -154,10 +149,10 @@
          } elseif ( // check if file was already uploaded (this happens if they resubmitted the form after tweaking some values)
             !empty($_POST['zip-folder']) &&
             !empty($_POST['zip-folder-hash']) && 
-            md5($_POST['zip-folder'].CHECKSUM) == $_POST['zip-folder-hash']
+            md5($_POST['zip-folder'].ConfigHelper::Get('/checksum')) == $_POST['zip-folder-hash']
          ) {
             $this->sZipFolder = $_POST['zip-folder'];
-            return UPLOAD_DIR."$this->sZipFolder/";
+            return ConfigHelper::Get('/cache/upload_dir')."$this->sZipFolder/";
          }
          // upload failed - no ZIP was uploaded or it was invalid (didn't contain images or was too large)
          return false;
@@ -166,7 +161,7 @@
       protected function UnZipFile($sFile, $sFolderMD5) {
          // this probably won't work if PHP safe mode is enabled
          // you'll have to disable (no way round this)
-         shell_exec(UNZIP_BINARY." -j $sFile -d $sFolderMD5");
+         shell_exec(ConfigHelper::Get('/binaries/unzip')." -j $sFile -d $sFolderMD5");
          // delete the original ZIP file - we no longer need it
          // for future re-submissions of the form we'll use the unzipped folder
          unlink($sFile);
@@ -583,13 +578,8 @@
                   }
                }
             
-               // create output directory for sprite if it doesn't already exist
-               if (!is_dir(SPRITE_DIR)) {
-                  mkdir(SPRITE_DIR);
-               }
-            
                // create a unqiue filename for sprite image
-               $this->sTempSpriteName = SPRITE_DIR.uniqid('csg-').".$sOutputFormat";
+               $this->sTempSpriteName = ConfigHelper::Get('/cache/upload_dir').uniqid('csg-').".$sOutputFormat";
                // write image to file (deleted by cron script after a limited time period)
                $this->WriteImage($oSprite, $sOutputFormat, $this->sTempSpriteName);
                // destroy object created for sprite image to save memory
@@ -696,11 +686,11 @@
          if (
             $sExtension == 'png' && 
             !empty($this->aFormValues['use-optipng']) && 
-            OPTIPNG_BINARY != ''
+            ConfigHelper::Get('/binaries/optipng')
          ) {
             // this probably won't work with PHP safe mode enabled
             // no real alternative - you'll have to enable to use
-            shell_exec(OPTIPNG_BINARY." $sFilename");
+            shell_exec(ConfigHelper::Get('/binaries/optipng')." $sFilename");
          }
       }
       
@@ -714,7 +704,7 @@
       }
       
       public function GetSpriteHash() {
-         return md5($this->GetSpriteFilename().CHECKSUM);
+         return md5($this->GetSpriteFilename().ConfigHelper::Get('/checksum'));
       }
       
       public function GetCss() {
@@ -730,7 +720,7 @@
       }
       
       public function GetZipFolderHash() {
-         return md5($this->sZipFolder.CHECKSUM);
+         return md5($this->sZipFolder.ConfigHelper::Get('/checksum'));
       }
    }
 ?>

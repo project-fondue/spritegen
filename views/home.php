@@ -41,7 +41,7 @@
    
    // pass data to template
    $oTemplate->Set('title', $oTranslations->Get('page.title.home'));
-   $oTemplate->Set('maxFileSize', (int)(MAX_FILE_SIZE));
+   $oTemplate->Set('maxFileSize', (int)(ConfigHelper::Get('/upload/max_file_size')));
    $oTemplate->Set('imageTypes', TemplateFunctions::ConvertArrayToMulti($oCssSpriteGen->GetImageTypes()));
    $oTemplate->Set('formPosted', $bFormPosted);
    $oTemplate->Set('formErrors', $aFormErrors);
