@@ -26,9 +26,7 @@
       
       function Get($sProperty, $vDefaultValue = null) {
          $vSection = null;
-         $aProperty = explode('/', trim($sProperty), '/');
-         
-         print_r($aProperty);
+         $aProperty = explode('/', trim($sProperty, '/'));
          
          foreach ($aProperty as $sComponent) {
             if (isset($this->aConfig[$sComponent])) {
