@@ -19,9 +19,9 @@
       public function Set(
          $sName,
          $vValue,
-         $bStripHtml = ConfigHelper::Get('/template/strip_html'),
-         $bConvertEntities = ConfigHelper::Get('/template/encode_entities'),
-         $sCharSet = ConfigHelper::Get('/template/encoding')
+         $bStripHtml = true,
+         $bConvertEntities = false,
+         $sCharSet = 'UTF-8'
       ) {
          $this->aVars[$sName] = $vValue;
          

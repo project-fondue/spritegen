@@ -37,13 +37,6 @@
    // determines whether or not adding showKeys=true parameter is active
    $aConfig['translations']['allow_show_keys'] = true;
    
-   // other template settings, you don't need to change these
-   $aConfig['template'] = array(
-      'strip_html' => true,
-      'convert_entities' => false,
-      'encoding' => 'UTF-8'
-   );
-   
    // url types
    $aConfig['urls']['rewrite'] = true;
    
