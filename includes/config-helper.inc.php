@@ -29,6 +29,8 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
+         print_r($aProperty);
+         
          for ($i = 0; $i < count($aProperty); $i++) {
             if (isset($aConfig[$aProperty[$i]])) {
                if ($i < count($aProperty)) {
@@ -38,6 +40,8 @@
                }
             }
          }
+         
+         print_r($vSection);
          
          if (!is_null($vSection)) {
             return $vSection;
