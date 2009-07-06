@@ -24,9 +24,9 @@
       exit;
    }
    
-   $sUploadDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/upload_dir'));
-   $sSpriteDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/sprite_dir'));
-   $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/translations_dir'));
+   $sUploadDir = $oConfigHelper->GetAbsolutePath($sBasename.$oConfigHelper->Get('/cache/upload_dir'));
+   $sSpriteDir = $oConfigHelper->GetAbsolutePath($sBasename.$oConfigHelper->Get('/cache/sprite_dir'));
+   $sTranslationsCacheDir = $oConfigHelper->GetAbsolutePath($sBasename.$oConfigHelper->Get('/cache/translations_dir'));
    
    if (!is_dir($sUploadDir)) {
       @mkdir($sUploadDir);
@@ -40,15 +40,15 @@
       @mkdir($sTranslationsCacheDir);
    }
    
-   if (ConfigHelper::Get('/cache/tla/dir')) {
-      $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/tla/dir'));
+   if ($oConfigHelper->Get('/cache/tla/dir')) {
+      $sTextLinkAdsDir = $oConfigHelper->GetAbsolutePath($sBasename.$oConfigHelper->Get('/cache/tla/dir'));
       
       if (!is_dir($sTextLinkAdsDir)) {
          @mkdir($sTextLinkAdsDir);
       }
       
-      if (!file_exists($sTextLinkAdsDir.ConfigHelper::Get('/cache/tla/file'))) {
-         @touch("$sTextLinkAdsDir/".ConfigHelper::Get('/cache/tla/file'));
+      if (!file_exists($sTextLinkAdsDir.$oConfigHelper->Get('/cache/tla/file'))) {
+         @touch("$sTextLinkAdsDir/".$oConfigHelper->Get('/cache/tla/file'));
       }
    }
    
