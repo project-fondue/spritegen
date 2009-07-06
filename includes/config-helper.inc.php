@@ -29,21 +29,17 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
-         print_r($this->aConfig);
-         
          for ($i = 0; $i < count($aProperty); $i++) {
             echo $aConfig[$aProperty[$i]];
             
             if (isset($aConfig[$aProperty[$i]])) {
+               $vSection = $aConfig[$aProperty[$i]];
+               
                if ($i < count($aProperty)) {
                   $aConfig = $aConfig[$aProperty[$i]];
-               } else {
-                  $vSection = $aConfig[$aProperty[$i]];
                }
             }
          }
-         
-         echo 'Value: '.$vSection;
          
          if (!is_null($vSection)) {
             return $vSection;
