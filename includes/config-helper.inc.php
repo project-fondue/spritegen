@@ -29,7 +29,7 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
-         print_r($aConfig);
+         print_r($this->aConfig);
          
          for ($i = 0; $i < count($aProperty); $i++) {
             echo $aConfig[$aProperty[$i]];
