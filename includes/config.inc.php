@@ -4,6 +4,7 @@
    require('translations.inc.php');
    require('css-sprite-gen.inc.php');
    require('version.inc.php');
+   require('config-helper.inc.php');
    require('conf/app.inc.php');
    require('conf/languages.inc.php');
    
@@ -13,9 +14,9 @@
       require('conf/overrides.inc.php');
    }
    
-   require('config-helper.inc.php');
+   $oConfigHelper = new ConfigHelper($aConfig);
    
-   if (!ConfigHelper::Get('/setup')) {
+   if (!ConfigHelper->Get('/setup')) {
       $oTemplate = new Template('setup-config-error.php');
       $oTemplate->Set('config', $sConfig);
       $oTemplate->Set('basename', $sBasename);
