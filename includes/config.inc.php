@@ -4,7 +4,6 @@
    require('translations.inc.php');
    require('css-sprite-gen.inc.php');
    require('version.inc.php');
-   require('config-helper.inc.php');
    require('conf/app.inc.php');
    require('conf/languages.inc.php');
    
@@ -21,6 +20,8 @@
       echo $oTemplate->Display();
       exit;
    }
+   
+   require('config-helper.inc.php');
    
    $sUploadDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/upload_dir'));
    $sSpriteDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/sprite_dir'));
