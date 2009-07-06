@@ -29,18 +29,16 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
-         foreach ($aProperty as $sComponent) {
-            if (isset($aConfig[$sComponent])) {
-               $vSection = $this->aConfig[$sComponent];
-               $aConfig = $aConfig[$sComponent];
-            } else {
-               if (is_null($vDefaultValue)) {
-                  return false;
+         for ($i = 0; $i < count($aProperty); $i++) {
+            if (isset($aConfig[$aProperty[$i]])) {
+               if ($i < count($aProperty)) {
+                  $aConfig = $aConfig[$aProperty[$i]];
                } else {
-                  return $vDefaultValue;
+                  $vSection = $aConfig[$aProperty[$i]];
                }
             }
          }
+         
          if (!is_null($vSection)) {
             return $vSection;
          } else {
