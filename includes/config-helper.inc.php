@@ -29,6 +29,8 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
+         print_r($aConfig);
+         
          for ($i = 0; $i < count($aProperty); $i++) {
             echo $aConfig[$aProperty[$i]];
             
