@@ -3,9 +3,9 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title><?php echo $translation->Get('site.title'); ?> <?php echo $title; ?></title>
-   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get.<?php require('../htdocs/css/get.php'); ?>.css" type="text/css">
+   <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get.<?php require(dirname(__FILE__).'/../htdocs/css/get.php'); ?>.css" type="text/css">
    <!--[if IE]>
-      <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get-ie.<?php require('../htdocs/css/get.php'); ?>.css" type="text/css">
+      <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get-ie.<?php require(dirname(__FILE__).'/../htdocs/css/get.php'); ?>.css" type="text/css">
    <![endif]-->                                                                              
    
    <?php if ($view == 'home'): ?>
@@ -59,7 +59,7 @@
    <div id="footer">
       <?php require('../templates/footer.php'); ?>
    </div>
-   <script type="text/javascript" src="<?php echo $assetsDir; ?>js/get.<?php require('../htdocs/js/get.php'); ?>.js"></script>
+   <script type="text/javascript" src="<?php echo $assetsDir; ?>js/get.<?php require(dirname(__FILE__).'/../htdocs/js/get.php'); ?>.js"></script>
 </body> 
  
 </html>
