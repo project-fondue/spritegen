@@ -13,6 +13,8 @@
       require('conf/overrides.inc.php');
    }
    
+   require('config-helper.inc.php');
+   
    if (!ConfigHelper::Get('/setup')) {
       $oTemplate = new Template('setup-config-error.php');
       $oTemplate->Set('config', $sConfig);
@@ -20,8 +22,6 @@
       echo $oTemplate->Display();
       exit;
    }
-   
-   require('config-helper.inc.php');
    
    $sUploadDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/upload_dir'));
    $sSpriteDir = ConfigHelper::GetAbsolutePath($sBasename.ConfigHelper::Get('/cache/sprite_dir'));
