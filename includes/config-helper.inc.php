@@ -30,7 +30,6 @@
          $aProperty = explode('/', trim($sProperty, '/'));
          
          for ($i = 0; $i < count($aProperty); $i++) {
-            echo $i;
             if (isset($aConfig[$aProperty[$i]])) {
                if ($i < count($aProperty)) {
                   $aConfig = $aConfig[$aProperty[$i]];
@@ -39,6 +38,8 @@
                }
             }
          }
+         
+         echo 'Value: '.$vSection;
          
          if (!is_null($vSection)) {
             return $vSection;
