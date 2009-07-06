@@ -31,7 +31,8 @@
          
          print_r($aProperty);
          
-         for ($i = 0; $i <= count($aProperty); $i++) {
+         for ($i = 0; $i < count($aProperty); $i++) {
+            echo "$i<br>";
             if (isset($aConfig[$aProperty[$i]])) {
                if ($i < count($aProperty)) {
                   $aConfig = $aConfig[$aProperty[$i]];
