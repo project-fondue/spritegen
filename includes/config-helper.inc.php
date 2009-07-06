@@ -1,11 +1,5 @@
 <?php
    class ConfigHelper {
-      protected $aConfig;
-      
-      function __construct($aConfig) {
-         $this->aConfig = $aConfig;
-      }
-      
       // derived from http://uk.php.net/manual/en/function.realpath.php#84012
       function GetAbsolutePath($sPath) {
          $aParts = array_filter(explode('/', $sPath), 'strlen');
@@ -25,25 +19,21 @@
       }
       
       function Get($sProperty, $vDefaultValue = null) {
-         $aConfig = $this->aConfig;
+         global $aConfig;
+         
+         $aCurrentConfigItem = $aConfig;
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
-         print_r($aProperty);
-         
          for ($i = 0; $i < count($aProperty); $i++) {
-            echo $i.': '.$aProperty[$i].'<br>';
-            echo $aConfig[$aProperty[$i]].'<br>';
-            if (isset($aConfig[$aProperty[$i]])) {
+            if (isset($aCurrentConfigItem[$aProperty[$i]])) {
                if ($i < count($aProperty)) {
-                  $aConfig = $aConfig[$aProperty[$i]];
+                  $aCurrentConfigItem = $aCurrentConfigItem[$aProperty[$i]];
                } else {
-                  $vSection = $aConfig[$aProperty[$i]];
+                  $vSection = $aCurrentConfigItem[$aProperty[$i]];
                }
             }
          }
-         
-         print_r($vSection);
          
          if (!is_null($vSection)) {
             return $vSection;
