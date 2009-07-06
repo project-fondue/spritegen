@@ -32,7 +32,7 @@
          print_r($aProperty);
          
          for ($i = 0; $i < count($aProperty); $i++) {
-            echo "$i<br>";
+            echo $i.': '.$aProperty[$i].'<br>';
             echo $aConfig[$aProperty[$i]].'<br>';
             if (isset($aConfig[$aProperty[$i]])) {
                if ($i < count($aProperty)) {
