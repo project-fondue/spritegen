@@ -29,7 +29,7 @@
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
-         for ($i = 0; $i < count($aProperty); $i++) {
+         for ($i = 0; $i <= count($aProperty); $i++) {
             echo $i
             if (isset($aConfig[$aProperty[$i]])) {
                if ($i < count($aProperty)) {
