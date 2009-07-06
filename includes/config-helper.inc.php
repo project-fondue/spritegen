@@ -21,6 +21,8 @@
       function Get($sProperty, $vDefaultValue = null) {
          global $aConfig;
          
+         print_r($aConfig);
+         
          $aCurrentConfigItem = $aConfig;
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
