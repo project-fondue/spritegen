@@ -1,13 +1,25 @@
 <?php
    class ConfigHelper {
-      protected $aConfig;
-      
-      function __construct($aConfig) {
-         $this->aConfig = $aConfig;
-      }
+      protected static $aConfig;
+
+		protected static SetConfig($aConfig) {
+			self::$aConfig = $aConfig;
+		}
+
+		public static CreateDir($sDir) {
+			if (!is_dir($sDir)) {
+      		@mkdir($sDir);
+   		}
+		}
+
+		public static CreateFile($sFile) {
+			if (!file_exists($sFile)) {
+         	@touch($sFile);
+      	}
+		}
       
       // derived from http://uk.php.net/manual/en/function.realpath.php#84012
-      function GetAbsolutePath($sPath) {
+      public static function GetAbsolutePath($sPath) {
          $aParts = array_filter(explode('/', $sPath), 'strlen');
          $aAbsolutes = array();
         
@@ -24,17 +36,17 @@
          return '/'.implode('/', $aAbsolutes);
       }
       
-      function Get($sProperty, $vDefaultValue = null) {
-         $aConfig = $this->aConfig;
+      public static function Get($sProperty, $vDefaultValue = null) {
+         $aCurrentConfig = self::$aConfig;
          $vSection = null;
          $aProperty = explode('/', trim($sProperty, '/'));
          
          for ($i = 0; $i < count($aProperty); $i++) {
-            if (isset($aConfig[$aProperty[$i]])) {
-               $vSection = $aConfig[$aProperty[$i]];
+            if (isset($aCurrentConfig[$aProperty[$i]])) {
+               $vSection = $aCurrentConfig[$aProperty[$i]];
                
                if ($i < count($aProperty)) {
-                  $aConfig = $aConfig[$aProperty[$i]];
+                  $aCurrentConfig = $aCurrentConfig[$aProperty[$i]];
                }
             }
          }

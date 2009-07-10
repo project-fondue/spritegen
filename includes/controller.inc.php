@@ -28,11 +28,19 @@
 
          if (!in_array($this->sView, array('download'))) {
             // instantiate translations
-            $oTranslations = new Translations($this->sLanguage);
+            $oTranslations = new Translations(
+					$this->sLanguage, 
+					ConfigHelper::Get('/cache/translations/'),
+					ConfigHelper::Get('/translations/allow_show_keys')
+				);
 
             // instantiate layout template
-            if (!empty($aTemplatePaths)) {
-               $oTemplate = new Template('layout.php', $this->sLanguage, $aTemplatePaths);
+            if (ConfigHelper::Get('/template/paths')) {
+               $oTemplate = new Template(
+						'layout.php', 
+						$this->sLanguage, 
+						ConfigHelper::Get('/template/paths')
+					);
             } else {
                $oTemplate = new Template('layout.php', $this->sLanguage);
             }
