@@ -2,17 +2,17 @@
    class ConfigHelper {
       protected static $aConfig;
 
-		protected static SetConfig($aConfig) {
+		protected static function SetConfig($aConfig) {
 			self::$aConfig = $aConfig;
 		}
 
-		public static CreateDir($sDir) {
+		public static function CreateDir($sDir) {
 			if (!is_dir($sDir)) {
       		@mkdir($sDir);
    		}
 		}
 
-		public static CreateFile($sFile) {
+		public static function CreateFile($sFile) {
 			if (!file_exists($sFile)) {
          	@touch($sFile);
       	}
