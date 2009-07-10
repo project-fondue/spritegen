@@ -2,7 +2,7 @@
    class ConfigHelper {
       protected static $aConfig;
 
-		protected static function SetConfig($aConfig) {
+		public static function SetConfig($aConfig) {
 			self::$aConfig = $aConfig;
 		}
 
