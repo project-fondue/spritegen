@@ -38,7 +38,7 @@
    ConfigHelper::CreateDir($sSpriteDir);
    ConfigHelper::CreateDir($sTranslationsCacheDir);
    
-   if ($oConfigHelper->Get('/cache/tla/dir')) {
+   if (ConfigHelper::Get('/cache/tla/dir')) {
       $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath(
 			$sBasename.ConfigHelper::Get('/cache/tla/dir')
 		);
