@@ -16,7 +16,7 @@
 
 	ConfigHelper::SetConfig($aConfig);
    
-   if (ConfigHelper::Get('/setup')) {
+   if (!ConfigHelper::Get('/setup')) {
       $oTemplate = new Template('setup-config-error.php');
       $oTemplate->Set('config', $sConfig);
       $oTemplate->Set('basename', $sBasename);
