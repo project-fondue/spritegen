@@ -127,7 +127,7 @@ pre {
 } 
 #lang-bar li {
    display: inline;
-   margin-right: 15px;
+   margin: 5px 20px 5px 0;
    line-height: 1.5em;
 }
 #lang-bar .selected {
@@ -291,7 +291,7 @@ a:active.download {
    margin-bottom: 20px;
 }
 .languages li, .credits li, .ad-formats li {
-   margin: 0 0 10px 20px;
+   margin: 0 0 5px 15px;
 }
 .missing-translations a {
    float: left;
