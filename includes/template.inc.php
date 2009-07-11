@@ -50,7 +50,7 @@
             }
          }
 
-         echo $oTemplate->render();
+         echo $oTemplate->Display();
       }
       
       public function AddPostFilter($sFunctionName) {
