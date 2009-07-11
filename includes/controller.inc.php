@@ -7,7 +7,7 @@
       public function __construct() {
          require('../includes/config.inc.php');
          
-         $this->SetLanguage($aLanguages);
+         $this->SetLanguage(ConfigHelper::Get('/languages/installed'));
          
          // check validity of selected view (to prevent loading of other files from the filesystem)        
          if (
@@ -48,7 +48,7 @@
             // pass common data to template
             $oTemplate->Set('appRoot', ConfigHelper::Get('/app_root'));
             $oTemplate->Set('contactEmail', ConfigHelper::Get('/emails/contact'));
-            $oTemplate->Set('languages', $aLanguages);
+            $oTemplate->Set('languages', ConfigHelper::Get('/languages/installed'));
             $oTemplate->Set('language', $this->sLanguage);
             $oTemplate->Set('missingTranslations', !in_array($this->sLanguage, $aCompletedLanguages));
             $oTemplate->Set('languageSwitch', ConfigHelper::Get('/languages/switch'));
