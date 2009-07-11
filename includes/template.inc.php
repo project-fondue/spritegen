@@ -39,7 +39,7 @@
 
       protected function IncTemplate(
 			$sTemplate, 
-			$aVariables = array(), 
+			$aVariables = array() 
 		) {
          $oTemplate = new Template($sTemplate, $this->aTemplatePaths);
          $oTemplate->aVars = $this->aVars;
