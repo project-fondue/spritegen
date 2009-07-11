@@ -15,7 +15,7 @@ menu.report-bug = Report Bug
 
 menu.language.label = Language
 menu.language.button = Change
-menu.language.your-language = Your language not listed? Help us provide it.
+menu.language.your-language = Provide Translation
 
 warning.missing-translations = We're missing translations for this language. Can you help provide?
 
