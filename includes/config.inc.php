@@ -44,7 +44,7 @@
 		);
       
       ConfigHelper::CreateDir($sTextLinkAdsDir);
-      ConfigHelper::CreateFile($sTextLinkAdsDir.ConfigHelper::Get('/cache/tla/file'));
+      ConfigHelper::CreateFile($sTextLinkAdsDir.'/'.ConfigHelper::Get('/cache/tla/file'));
    }
    
    if (
