@@ -1,0 +1,88 @@
+site.title = Project Fondue |
+site.copyright = Авторские права &copy; 2007-{0} {1}
+site.other-tools = Другие инструменты:
+
+page.title.home = Генератор CSS спрайтов
+page.title.what-are-css-sprites = Что такое CSS спрайты?
+page.title.tool-help = Помощь
+page.title.your-language = Ваш язык
+page.title.advertising = Реклама
+
+menu.home = Главная
+menu.what-are-css-sprites = Что такое CSS спрайты?
+menu.tool-help = Помощь
+menu.report-bug = Сообщить об ошибке
+
+menu.language.label = Язык
+menu.language.button = Заменить
+menu.language.your-language = Ваш язык отсутствует в списке? Помогите нам добавить его.
+
+warning.missing-translations = У нас нет перевода для этого языка. Можете ли вы помочь добавить его?
+
+form.legend.source-files = Исходные файлы
+form.legend.resize-source-images = Изменение размера исходных изображений
+form.legend.image-duplicates = Дубликаты изображений
+form.legend.image-output-options = Настройки получаемого спрайта
+form.legend.css-output-options = Настройки получаемого CSS
+
+form.label.upload-images = Загрузить изображения (ZIP)
+form.label.width = Ширина
+form.label.height = Высота
+form.label.maintain-aspect-ratio = Сохранение пропорций
+form.label.ignore-duplicates = Игнорировать дубликаты изображений
+form.label.merge-duplicates = Удалить повторяющиеся изображения, но объединить правила CSS
+form.label.horizontal-offset = Смещение по горизонтали
+form.label.vertical-offset = Смещение по вертикали
+form.label.wrap-columns = Обернуть колонки для исправления ошибки Opera
+form.label.background-colour = Фон / Прозрачность Цвет \# (необязательно)
+form.label.use-transparency = Использовать цвет фона для прозрачности
+form.label.image-output-format = Получаемый формат
+form.label.image-output-num-colours = Количество цветов
+form.label.image-output-quality = Качество изображения
+form.label.use-optipng = Сжать изображение с помощью OptiPNG
+form.label.css-prefix = CSS префикс (необязательно)
+form.label.filename-pattern-match = Согласование образца имени файла (необязательно)
+form.label.class-prefix = Class префикс (необязательно)
+form.label.css-suffix = CSS суффикс (необязательно)
+
+form.value.true-colour = Истинный цвет
+
+form.hint.max-upload-size = Максимальный загружаемый размер: {0}MB 
+form.hint.transparency = Если оставить пустым, белый будет использоваться для непрозрачных изображений, черный для прозрачных
+form.hint.css-prefix = CSS вставить перед именем класса
+form.hint.filename-pattern-match = например значок-([0-9] +).png - соответствует числовой части каждого файла, и используется для имен классов в созданном CSS
+form.hint.class-prefix = не может начинаться с числа
+form.hint.css-suffix = CSS вставить после имени класса
+form.hint.file-selected = Файл выбран, оставьте поле пустым для повторного использования.
+
+form.button.show-picker = Показать сборщик
+form.button.hide-picker = Скрыть сборщик
+form.button.create-sprite = Создать спрайт изображение и CSS
+
+form.errors.title = Ошибки передачи
+form.errors.invalid-file = Вы не выбрали файл или файл, который вы добавили, недействителен. Возможно, это был не ZIP или он был больше, чем максимальный размер загрузки.
+form.errors.zip = В вашем ZIP архиве не содержится по крайней мере 2 изображения. Пожалуйста, проверьте ZIP (и/или &quot;Согласование образца имени файла&quot;, если используется) и перезагрузите.
+form.errors.missing.width-resize = Не указана ширина.
+form.errors.missing.height-resize = Не указана высота.
+form.errors.missing.horizontal-offset = Не указано горизонтальное смещение.
+form.errors.missing.vertical-offset = Не указано вертикальное смещение.
+form.errors.invalid.horizontal-offset.isnumber = Указано недействительное горизонтальное смещение. Оно должно быть числом от 1 до 100.
+form.errors.invalid.vertical-offset.isnumber = Указано недействительное вертикальное смещение. Оно должно быть числом от 1 до 100.
+form.errors.invalid.background.ishex = Указан неправильный цвет фона. Оно должен быть 3 или 6 цифр шестнадцатеричного значения.
+form.errors.invalid.image-output-quality.isnumber = Указано недействительное качество выходного JPEG. Оно должно быть числом от 1 до 100.
+form.errors.invalid.css-prefix.iscss = Указан недействительный CSS префикс. Он может содержать только символы: a-z, 0-9, _, -, \# и .
+form.errors.invalid.class-prefix.isclassprefix = Указан недействительный префикс класса. Он может содержать только символы: a-z, 0-9, _ и -
+form.errors.invalid.css-suffix.iscss = Указан недействительный CSS суффикс. Он может содержать только символы: a-z, 0-9, _, -, \# и .
+
+form.result.reset = Зыкрыть и очистить форму
+form.result.title.css-rules = CSS правила
+form.result.title.sprite-image = Спрайт изображение
+form.result.dont-forget = Не забудьте добавить правило для ссылки на спрайт изображение. Например такое:
+form.result.download = &raquo;Загрузить спрайт изображение
+
+sidebar.ad-placeholder = Реклама здесь
+sidebar.sponsors-header = Спонсоры
+sidebar.advertise-header = Реклама
+sidebar.advertise-text = Реклама на этом сайте с графическим объявлением или текстовой ссылкой.
+sidebar.open-source-header = Открытый исходный код
+sidebar.open-source-text = Исходный код для Генератора CSS Спрайтов доступен для загрузки по лицензии  BSD. Хотите запустить локальную копию? Теперь вы это можете.

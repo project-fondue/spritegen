@@ -33,6 +33,10 @@
          'native' => 'italiano',
          'english' => 'Italian'
       ),
+      'ja' => array(
+         'native' => '日本語',
+         'english' => 'Japanese'
+      ),
       'pl' => array(
          'native' => 'polski',
          'english' => 'Polish)'
@@ -41,9 +45,9 @@
          'native' => 'português',
          'english' => 'Portuguese'
       ),
-      'ja' => array(
-         'native' => '日本語',
-         'english' => 'Japanese'
+      'ru' => array(
+         'native' => 'Pyccĸий',
+         'english' => 'Russian',
       ),
       'es' => array(
          'native' => 'Español',
