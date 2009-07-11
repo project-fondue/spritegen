@@ -298,21 +298,6 @@ a:active.download {
    font-weight: bold;
    color: #f60;
 }
-#sidebar .ad {
-   background: #cfc;
-   border: 2px solid #393;
-   width: 116px;
-   padding: 30px 0;
-   margin: 8px 0;
-   font-weight: bold;
-   text-align: center;
-}
-#sidebar h2 {
-   border-bottom: 1px solid #ccc;
-   padding-bottom: 3px;
-   margin-bottom: 10px;
-   font-family: Georgia, Times New Roman, serif;
-}
 .lang-cn #options input.submit {
    width: 15em;
 }
