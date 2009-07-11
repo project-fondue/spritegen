@@ -30,7 +30,7 @@
             // instantiate translations
             $oTranslations = new Translations(
 					$this->sLanguage, 
-					ConfigHelper::Get('/cache/translations/'),
+					ConfigHelper::Get('/cache/translations_dir/'),
 					ConfigHelper::Get('/translations/allow_show_keys')
 				);
 
