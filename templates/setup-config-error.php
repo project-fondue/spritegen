@@ -9,8 +9,7 @@
 
 <body>
    <h1>Setup Error</h1>
-   <p>Make a copy of '<?php echo $config; ?>' and modify settings to match your system.</p>
-   <p>Then update '<?php echo $basename; ?>conf/config.inc.php' accordingly.</p>
+   <p>Running in configuration mode. Make sure you're happy with the settings in includes/conf/app.inc.php and then set <code>$aConfig['setup'] = true;</code> in the file.</p>
 </body> 
  
 </html>
