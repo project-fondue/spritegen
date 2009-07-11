@@ -64,7 +64,7 @@
                if ($this->iETag == $aLastModifieds[0]) {
                   if ($this->aConfig['file_type'] == 'text/javascript' && $this->aConfig['jsmin_compress']) {
                      if ($this->aConfig['jsmin_comments'] != '') {
-                        $this->sCode = $this->aConfig['jsmin_comments'].'\n\n'.$this->sCode;
+                        $this->sCode = $this->aConfig['jsmin_comments']."\n\n".$this->sCode;
                      }
                      $this->sCode = JSMin::minify($this->sCode);
                   }
