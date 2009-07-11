@@ -52,7 +52,6 @@
             $aLastModifieds = array();
             
             foreach ($this->aConfig['files'] as $sFile) {
-					echo "$sFile<br>";
                $aLastModifieds[] = filemtime("$this->sDocRoot/$sFile");
                $this->sCode .= file_get_contents("$this->sDocRoot/$sFile");
             }
