@@ -2,9 +2,9 @@
 <?php
    $sCurrentDir = dirname(__FILE__);
    
-   require("$sCurrentDir/../includes/config.inc.php");
+   require("$sCurrentDir/../includes/conf/languages.inc.php");
    
-   foreach ($aLanguages as $sKey => $sValue) {
+   foreach ($aConfig['languages']['installed'] as $sKey => $aValue) {
       if ($sKey != 'en') {
       	shell_exec("zip -j $sCurrentDir/../htdocs/downloads/language-pack-$sKey.zip \
       		$sCurrentDir/../translations/$sKey.txt \
