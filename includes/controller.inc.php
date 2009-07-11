@@ -50,7 +50,7 @@
             $oTemplate->Set('contactEmail', ConfigHelper::Get('/emails/contact'));
             $oTemplate->Set('languages', ConfigHelper::Get('/languages/installed'));
             $oTemplate->Set('language', $this->sLanguage);
-            $oTemplate->Set('missingTranslations', !in_array($this->sLanguage, ConfigHelper::Get('/languages/complete'));
+            $oTemplate->Set('missingTranslations', !in_array($this->sLanguage, ConfigHelper::Get('/languages/complete')));
             $oTemplate->Set('languageSwitch', ConfigHelper::Get('/languages/switch'));
             $oTemplate->Set('view', $this->sView);
             $oTemplate->Set('template', $this->sView);
