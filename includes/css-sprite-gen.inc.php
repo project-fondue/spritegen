@@ -579,7 +579,7 @@
                }
             
                // create a unqiue filename for sprite image
-               $this->sTempSpriteName = ConfigHelper::Get('/cache/upload_dir').uniqid('csg-').".$sOutputFormat";
+               $this->sTempSpriteName = ConfigHelper::Get('/cache/sprite_dir').uniqid('csg-').".$sOutputFormat";
                // write image to file (deleted by cron script after a limited time period)
                $this->WriteImage($oSprite, $sOutputFormat, $this->sTempSpriteName);
                // destroy object created for sprite image to save memory
