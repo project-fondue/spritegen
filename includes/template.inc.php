@@ -41,7 +41,7 @@
 			$sTemplate, 
 			$aVariables = array() 
 		) {
-         $oTemplate = new Template($sTemplate, $this->aTemplatePaths);
+         $oTemplate = new Template($sTemplate, $this->sLang, $this->aTemplatePaths);
          $oTemplate->aVars = $this->aVars;
             
          if (count($aVariables)) {
