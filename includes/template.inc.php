@@ -36,6 +36,22 @@
             }
          }
       }
+
+      protected function IncTemplate(
+			$sTemplate, 
+			$aVariables = array(), 
+		) {
+         $oTemplate = new Template($sTemplate, $this->aTemplatePaths);
+         $oTemplate->aVars = $this->aVars;
+            
+         if (count($aVariables)) {
+            foreach ($aVariables as $sKey => $vValue) {
+               $oTemplate->set($sKey, $vValue);
+            }
+         }
+
+         echo $oTemplate->render();
+      }
       
       public function AddPostFilter($sFunctionName) {
          $this->aPostFilters[] = $sFunctionName;

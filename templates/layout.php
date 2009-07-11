@@ -57,7 +57,7 @@
       </div>
    </div>
    <div id="footer">
-      <?php require('../templates/footer.php'); ?>
+      <?php $this->IncTemplate('footer.php'); ?>
    </div>
    <script type="text/javascript" src="<?php echo $assetsDir; ?>js/get.<?php require('get-js.php'); ?>.js"></script>
 </body> 
