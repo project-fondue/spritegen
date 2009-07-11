@@ -291,7 +291,7 @@ a:active.download {
    margin-bottom: 20px;
 }
 .languages li, .credits li, .ad-formats li {
-   margin: 0 0 5px 15px;
+   margin: 0 0 10px 20px;
 }
 .missing-translations a {
    float: left;
