@@ -10,12 +10,7 @@ body {
     margin-top: 10px;
     text-align: left;
 }
-#header h1 {    
-    /* PF_REMOVE */
-    position: absolute;
-    bottom: 10px;
-    left: 80px;
-    /* END_PF_REMOVE */    
+#header h1 { 
     margin: 0;
     font-family: Georgia, Times New Roman, serif;
     font-size: 250%;
@@ -140,12 +135,6 @@ pre {
    border: 1px solid #bbb;
    padding: 3px;
 }
-/* PF_REMOVE */   
-#your-language {
-   margin: 10px 0;
-   text-align: right;
-}
-/* END_PF_REMOVE */
 #main {
    width: 630px;
    margin-right: 20px;
@@ -269,19 +258,6 @@ pre {
     padding-top: 10px;
     text-align: right;
 }
-/* PF_REMOVE */
-#footer h2 {
-    float: left;
-    padding: 0;
-    margin: 0 10px 0 0;
-    font-weight: bold;
-    font-size: 100%;
-}
-#footer li {
-    float: left;
-    margin-right: 20px;
-}
-/* END_PF_REMOVE */
 #footer p {
     margin: 0 0 20px 0;
 }     
@@ -337,15 +313,6 @@ a:active.download {
    margin-bottom: 10px;
    font-family: Georgia, Times New Roman, serif;
 }
-/* PF_REMOVE */
-#text-links {
-   list-style-type: disc;
-   margin-left: 15px;
-}
-#text-links li {
-   margin-bottom: 5px;
-}
-/* END_PF_REMOVE */
 .lang-cn #options input.submit {
    width: 15em;
 }
