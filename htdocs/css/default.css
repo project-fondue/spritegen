@@ -124,9 +124,10 @@ pre {
 #lang-bar ul {
    background: #ddd;
    padding: 5px;
+	overflow: hidden;
 } 
 #lang-bar li {
-   display: inline;
+	float: left;
    margin: 5px 20px 5px 0;
    line-height: 1.5em;
 }

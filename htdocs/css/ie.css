@@ -8,6 +8,9 @@
    position: relative;
    top: -3px;
 }
+#lang-bar ul {
+	zoom: 1;
+}
 #options fieldset{
     padding: 0 7px;
 }
@@ -17,8 +20,6 @@
 a.download, input.submit { /* buttons look wrong with default padding */
    padding: 0.1em;
 }
-/* PF_REMOVE */
 .ads {
    width: 100%;
 }
-/* END_PF_REMOVE */
