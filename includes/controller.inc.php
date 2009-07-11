@@ -56,7 +56,11 @@
             $oTemplate->Set('template', $this->sView);
             $oTemplate->Set('translation', $oTranslations);
             $oTemplate->Set('assetsDir', ConfigHelper::Get('/assets_dir'));
-            $oTemplate->Set('content', new Template("$this->sView.php", $this->sLanguage)); // add content template
+            $oTemplate->Set('content', new Template(
+					"$this->sView.php",
+					$this->sLanguage,
+					ConfigHelper::Get('/template/paths')
+				); // add content template
             $oTemplate->Set('headerImageUrl', ConfigHelper::Get('/images/header/url'));
             $oTemplate->Set('headerImageAlt', ConfigHelper::Get('/images/header/alt'));
             $oTemplate->Set('headerImageWidth', ConfigHelper::Get('/images/header/width'));
@@ -64,7 +68,12 @@
             $oTemplate->Set('headerHref', ConfigHelper::Get('/urls/header'));
             $oTemplate->Set('reportBugUrl', ConfigHelper::Get('/urls/report_bug'));
             $oTemplate->Set('viewsDir', '../views/');
-            $oTemplate->Set('toolUrl', str_replace(array('http://', 'https://'), '', ConfigHelper::Get('/urls/tool')));
+            $oTemplate->Set(
+					'toolUrl',
+					str_replace(array('http://', 'https://'),
+					'',
+					ConfigHelper::Get('/urls/tool'))
+				);
 
             // load view
             require($this->GetViewPath());

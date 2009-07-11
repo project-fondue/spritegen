@@ -1,4 +1,4 @@
-site.title = Fondue Projesi |
+site.title = Project Fondue
 site.copyright = Copyright &copy; {0} {1}. Her hakkı saklıdır. 
 site.other-tools = Other Tools:
 

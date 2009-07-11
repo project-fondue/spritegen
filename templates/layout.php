@@ -2,7 +2,7 @@
 <html lang="<?php echo $language; ?>">
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <title><?php echo $translation->Get('site.title'); ?> <?php echo $title; ?></title>
+   <title><?php echo $title; ?> | <?php echo $translation->Get('site.title'); ?></title>
    <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get.<?php require('get-css.php'); ?>.css" type="text/css">
    <!--[if IE]>
       <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get-ie.<?php require('get-css-ie.php'); ?>.css" type="text/css">

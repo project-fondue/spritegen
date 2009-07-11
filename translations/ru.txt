@@ -1,4 +1,4 @@
-site.title = Project Fondue |
+site.title = Project Fondue
 site.copyright = Авторские права &copy; 2007-{0} {1}
 site.other-tools = Другие инструменты:
 
