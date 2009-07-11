@@ -82,11 +82,14 @@
       }
       
       public function GetMenuUrl($sAppRoot, $sSection) {
-         if (ConfigHelper::Get('/urls/rewritten')) {
-            return $sAppRoot."section/$sSection";
-         } else {
-            return $sAppRoot."?view=$sSection";
-         }
+			if ($sSection != 'home') {
+		      if (ConfigHelper::Get('/urls/rewritten')) {
+		         return $sAppRoot."section/$sSection";
+		      } else {
+		         return $sAppRoot."?view=$sSection";
+		      }
+			}
+			return $sAppRoot;
       }
    }
 ?>
