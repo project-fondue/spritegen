@@ -56,11 +56,12 @@
             $oTemplate->Set('template', $this->sView);
             $oTemplate->Set('translation', $oTranslations);
             $oTemplate->Set('assetsDir', ConfigHelper::Get('/assets_dir'));
+				// add content template
             $oTemplate->Set('content', new Template(
 					"$this->sView.php",
 					$this->sLanguage,
 					ConfigHelper::Get('/template/paths')
-				); // add content template
+				));
             $oTemplate->Set('headerImageUrl', ConfigHelper::Get('/images/header/url'));
             $oTemplate->Set('headerImageAlt', ConfigHelper::Get('/images/header/alt'));
             $oTemplate->Set('headerImageWidth', ConfigHelper::Get('/images/header/width'));
