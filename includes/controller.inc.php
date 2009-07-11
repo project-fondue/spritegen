@@ -78,7 +78,7 @@
       }
       
       protected function SetLanguage($aLanguages) {
-         if (LANGUAGE_SWITCH == 'host') {
+         if (ConfigHelper::Get('/languages/switch') == 'host') {
             $sLanguage = substr($_SERVER['SERVER_NAME'], 0, 2);
             
             if (array_key_exists($sLanguage, $aLanguages) && substr($_SERVER['SERVER_NAME'], 2, 1) == '.') {
