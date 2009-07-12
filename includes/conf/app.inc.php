@@ -26,6 +26,10 @@
    
    // secret used to check validity of download link request
    $aConfig['checksum'] = 'ENTER_CHECKSUM_HERE';
+
+	$aConfig['template']['paths'] = array(
+		'../templates/'
+	);
    
    // location of CSS, JS & images - set this if you want to load these from a separate virtual host
    $aConfig['assets_dir'] = '/';

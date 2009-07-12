@@ -8,8 +8,8 @@
       
       public function __construct(
          $sTemplate,
-         $sLang = '',
-         $aTemplatePaths = array('../templates/')
+         $sLang,
+         $aTemplatePaths
       ) {
          $this->sTemplate = $sTemplate;
          $this->sLang = $sLang;
