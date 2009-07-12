@@ -26,7 +26,7 @@
       }
       
       public function TextInput($sId, $sLabel, $vDefault = '', $iSize = null, $sHint = '', $bOptional = false) {
-         $oTemplate = new Template('text-input.php');
+         $oTemplate = new Template('text-input.php', '', ConfigHelper::Get('/template/paths'));
          $oTemplate->Set('id', $sId);
          $oTemplate->Set('label', $sLabel);
          $oTemplate->Set('value', $this->GetCurrentValue($sId, $vDefault));
@@ -39,7 +39,7 @@
       }
       
       public function SelectInput($sId, $sLabel, $aOptions, $vDefault = '', $sHint = '') {
-         $oTemplate = new Template('select-input.php');
+         $oTemplate = new Template('select-input.php', '', ConfigHelper::Get('/template/paths'));
          $oTemplate->Set('id', $sId);
          $oTemplate->Set('label', $sLabel);
          $oTemplate->Set('options', $aOptions);
@@ -50,7 +50,7 @@
       }
       
       public function RadioInput($sName, $sId, $sLabel, $vValue, $vDefault) {
-         $oTemplate = new Template('radio-input.php');
+         $oTemplate = new Template('radio-input.php', '', ConfigHelper::Get('/template/paths'));
          $oTemplate->Set('name', $sName);
          $oTemplate->Set('id', $sId);
          $oTemplate->Set('label', $sLabel);

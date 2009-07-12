@@ -25,6 +25,7 @@
 <body class="lang-<?php echo $language; ?>">
    <div id="header">
       <h1><?php echo $title; ?></h1>
+		<p>This is a stock install of the open source version of <a href="http://spritegen.website-performance.org/">CSS Sprite Generator</a>. Please modify templates and styling to suit. You can remove this message by editing &quot;templates/layout.php&quot;.</p>
    </div>
    <div id="content">
       <ul id="nav">
