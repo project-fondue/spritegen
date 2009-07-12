@@ -2,7 +2,7 @@
 <html lang="<?php echo $language; ?>">
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="robots" CONTENT="noindex, nofollow">
+   <meta name="robots" CONTENT="noindex, nofollow">
    <title><?php echo $title; ?> | <?php echo $translation->Get('site.title'); ?></title>
    <link rel="stylesheet" href="<?php echo $assetsDir; ?>css/get.<?php require('get-css.php'); ?>.css" type="text/css">
    <!--[if IE]>
