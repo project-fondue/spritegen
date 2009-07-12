@@ -33,11 +33,22 @@
    $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath(
 		$sBasename.ConfigHelper::Get('/cache/translations_dir')
 	);
+
+	$sCssCacheDir = ConfigHelper::GetAbsolutePath(
+		$sBasename.ConfigHelper::Get('/cache/css_archive')
+	);
+
+	$sJsCacheDir = ConfigHelper::GetAbsolutePath(
+		$sBasename.ConfigHelper::Get('/cache/js_archive')
+	);
    
    ConfigHelper::CreateDir($sUploadDir);
    ConfigHelper::CreateDir($sSpriteDir);
    ConfigHelper::CreateDir($sTranslationsCacheDir);
+	ConfigHelper::CreateDir($sCssCacheDir);
+	ConfigHelper::CreateDir($sJsCacheDir);
    
+	// This section is present for Project Fondue use only and can be safely removed */
    if (ConfigHelper::Get('/cache/tla/dir')) {
       $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath(
 			$sBasename.ConfigHelper::Get('/cache/tla/dir')
@@ -46,16 +57,21 @@
       ConfigHelper::CreateDir($sTextLinkAdsDir);
       ConfigHelper::CreateFile($sTextLinkAdsDir.'/'.ConfigHelper::Get('/cache/tla/file'));
    }
+	// End section //
    
    if (
       !is_writeable($sUploadDir) || 
       !is_writeable($sSpriteDir) || 
-      !is_writeable($sTranslationsCacheDir)
+      !is_writeable($sTranslationsCacheDir) ||
+		!is_writeable($sCssCacheDir) ||
+		!is_writeable($sJsCacheDir)
    ) {
       $oTemplate = new Template('setup-permissions-error.php');
       $oTemplate->Set('uploadDir', $sUploadDir);
       $oTemplate->Set('spriteDir', $sSpriteDir);
       $oTemplate->Set('translationsCacheDir', $sTranslationsCacheDir);
+		$oTemplate->Set('cssCacheDir', $sCssCacheDir);
+		$oTemplate->Set('jsCacheDir', $sJsCacheDir);
       echo $oTemplate->Display();
       exit;
    }

@@ -9,7 +9,7 @@
 
 <body>
    <h1>Setup Error</h1>
-   <p>Running in configuration mode. Make sure you're happy with the settings in includes/conf/app.inc.php and then set <code>$aConfig['setup'] = true;</code> in the file.</p>
+   <p>Running in configuration mode. Make sure you're happy with the settings in &quot;includes/conf/app.inc.php&quot; and then set <code>$aConfig['setup'] = true;</code> in the file.</p>
 </body> 
  
 </html>
