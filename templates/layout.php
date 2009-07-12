@@ -20,7 +20,7 @@
          };
       </script>
    <?php endif; ?>
-   <meta name="robots" CONTENT="noindex, nofollow">
+   <meta name="robots" content="noindex, nofollow">
 </head>
 
 <body class="lang-<?php echo $language; ?>">
