@@ -230,7 +230,7 @@ pre {
 #options label.error {
    color: #f60;
 }
-#error, #options input.error {
+#error, #options input.error, .notice {
    background: #fc6;
    border: 1px solid #f60;
 }
@@ -252,6 +252,9 @@ pre {
 }
 #error li {
    margin: 0 0 7px 15px;
+}
+.notice {
+	padding: 5px;
 }
 #footer {
     clear: left;
