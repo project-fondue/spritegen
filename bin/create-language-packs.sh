@@ -8,13 +8,13 @@
       if ($sKey != 'en') {
       	shell_exec("zip -j $sCurrentDir/../htdocs/downloads/language-pack-$sKey.zip \
       		$sCurrentDir/../translations/$sKey.txt \
-      		$sCurrentDir/../templates/locales/$sKey/what-are-css-sprites.php \
-      		$sCurrentDir/../templates/locales/$sKey/tool-help.php");
+      		$sCurrentDir/../../trunk-pf/templates/locales/$sKey/what-are-css-sprites.php \
+      		$sCurrentDir/../../trunk-pf/templates/locales/$sKey/tool-help.php");
       } else {
          shell_exec("zip -j $sCurrentDir/../htdocs/downloads/language-pack-en.zip \
       		$sCurrentDir/../translations/en.txt \
-      		$sCurrentDir/../templates/what-are-css-sprites.php \
-      		$sCurrentDir/../templates/tool-help.php");
+      		$sCurrentDir/../../trunk-pf/templates/what-are-css-sprites.php \
+      		$sCurrentDir/../../trunk-pf/templates/tool-help.php");
       }
    }
 ?>
