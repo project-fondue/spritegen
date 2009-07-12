@@ -1,7 +1,7 @@
 Licensed under BSD License with the following exceptions:
 
 -----------------------------------------------------------------
-* Design elements (images, CSS) relating to the "Website Performance" 
+* Design elements (images, CSS) relating to the "Project Fondue" 
   branding and web site remain copyright of Project Fondue (Ed Eliot, 
   Stuart Colville & Cyril Doussin) and should not be used without  
   written permission.
