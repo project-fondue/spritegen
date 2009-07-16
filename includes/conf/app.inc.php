@@ -1,6 +1,7 @@
 <?php
    $aConfig = array();
    
+   // set this option to true once you've finished setting up
    $aConfig['setup'] = false;
 
    // publically accessible document root
