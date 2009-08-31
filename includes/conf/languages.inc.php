@@ -72,6 +72,6 @@
    );
    
    $aConfig['languages']['complete'] = array(
-      'en'
+      'en', 'ro'
    );
 ?>
