@@ -45,6 +45,10 @@
          'native' => 'português',
          'english' => 'Portuguese'
       ),
+      'ro' => array(
+         'native' => 'Română',
+         'english' => 'Romanian'
+      ),
       'ru' => array(
          'native' => 'Pyccĸий',
          'english' => 'Russian',
