@@ -19,7 +19,9 @@
             // what image formats does the installed version of Imagick support
             // probably overkill to call as PNG, GIF, JPEG surely supported but done for completeness 
             try {
-               $aImageFormats = Imagick::queryFormats();
+               // Fixes #473915 as queryformats no longer works as a static method.
+               $oImagick = new Imagick();
+               $aImageFormats = $oImagick->queryFormats();
             } catch (ImagickException $e) {
                error_log($e->getMessage());
             }
