@@ -47,6 +47,7 @@ form.label.filename-pattern-match = 匹配文件名 (可选)
 form.label.class-prefix = 类前缀 (可选)
 form.label.css-suffix = CSS 后缀 (可选)
 form.label.wrap-columns = 多列图片以修复 Opera bug
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -59,6 +60,7 @@ form.hint.filename-pattern-match = 例如 icon-([0-9]+).png - 使用文件名中
 form.hint.class-prefix = 不能以数字开始
 form.hint.css-suffix = CSS 类选择器后缀
 form.hint.file-selected = 可选：留空使用上次上传的文件.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = 显示选择器
 form.button.hide-picker = 隐藏选择器

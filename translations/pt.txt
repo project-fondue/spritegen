@@ -45,6 +45,7 @@ form.label.css-prefix = Prefixo CSS (opcional)
 form.label.filename-pattern-match = Padr&atilde;o do nome do ficheiro (opcional)
 form.label.class-prefix = Prefixo das Classes (opcional)
 form.label.css-suffix = Sufixo CSS (opcional)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = e.g. icon-([0-9]+).png - corresponde &agrave;
 form.hint.class-prefix = n&atilde;o pode come&ccedil;ar com um n&uacute;mero
 form.hint.css-suffix = CSS a inserir ap&oacute;s o nome das classes
 form.hint.file-selected = Arquivo actualmente seleccionado, deixe caixa de envio em branco para reuso.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Mostrar Selector
 form.button.hide-picker = Ocultar Selector

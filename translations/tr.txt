@@ -45,6 +45,7 @@ form.label.css-prefix = CSS Öneki (isteğe bağlı)
 form.label.filename-pattern-match = Dosya Adına Göre Eşleştirme (isteğe bağlı)
 form.label.class-prefix = Sınıf Öneki (isteğe bağlı)
 form.label.css-suffix = CSS Soneki (isteğe bağlı)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = örn. ikon-([0-9]+).png - her dosya adının 
 form.hint.class-prefix = sayısal bir değerle başlayamaz
 form.hint.css-suffix = CSS sınıf isminin sonuna eklenir
 form.hint.file-selected = Şu anda seçili olan dosya, aynı dosyayı tekrar kullanmak için bu alanı boş bırakınız.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Seçiciyi Göster
 form.button.hide-picker = Seçiciyi Gizle

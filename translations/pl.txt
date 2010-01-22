@@ -45,6 +45,7 @@ form.label.css-prefix = Przedrostek CSS (opcjonalnie)
 form.label.filename-pattern-match = Wzorzec nazwy pliku (opcjonalnie)
 form.label.class-prefix = Przedrostek klasy (opcjonalnie)
 form.label.css-suffix = Przyrostek CSS (opcjonalnie)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Poziomo
 form.value.build-direction.vertical = Pionowo
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = np. icon-([0-9]+).png - wybiera pliki, który
 form.hint.class-prefix = nie może się rozpoczynać od cyfry
 form.hint.css-suffix = CSS doklejany po nazwie klasy
 form.hint.file-selected = Aby użyć ponownie ostatniego załadowanego pliku, zostaw to pole puste
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Pokaż Paletę
 form.button.hide-picker = Ukryj Paletę

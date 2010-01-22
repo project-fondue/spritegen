@@ -45,6 +45,7 @@ form.label.css-prefix = CSS selektory "před" (nepovinné)
 form.label.filename-pattern-match = Regulární výraz pro jméno souboru (nepovinné)
 form.label.class-prefix = Předpona CSS tříd (nepovinné)
 form.label.css-suffix = CSS selektory "za" (nepovinné)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = např. icon-([0-9]+).png - odpovídá čísel
 form.hint.class-prefix = nesmí začnínat číslicí
 form.hint.css-suffix = CSS selektory, které se vloží za název třídy
 form.hint.file-selected = Soubor už byl nahrán. Chcete-li ho znovu použít, nechte toto pole volné.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Zobrazit Picker
 form.button.hide-picker = Skrýt Picker

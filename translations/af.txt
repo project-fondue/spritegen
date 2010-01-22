@@ -45,6 +45,7 @@ form.label.css-prefix = CSS Voorvoegsel (optioneel)
 form.label.filename-pattern-match = Leêrnaam Patroon Toets (optioneel)
 form.label.class-prefix = Klas Voorvoegsel (optioneel)
 form.label.css-suffix = CSS Agtervoegsel (optioneel)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = bv. ikoon-([0-9]+).png - vind die numeriese g
 form.hint.class-prefix = kan nie met `n nommer begin nie
 form.hint.css-suffix = CSS om aan te heg aan die einde van die klas naam
 form.hint.file-selected = Leêr huidiglik geselekteer, hou die oplaai boksie leeg om weer te gebruik.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Wys Kieser
 form.button.hide-picker = Verwyder Kieser
