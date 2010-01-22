@@ -45,6 +45,7 @@ form.label.css-prefix = Prefix CSS (optional)
 form.label.filename-pattern-match = Nume fisier tipar (optional)
 form.label.class-prefix = Prefix clasa (optional)
 form.label.css-suffix = Sufix CSS (optional)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Orizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = e.x. icon-([0-9]+).png - potriveste partea nu
 form.hint.class-prefix = nu poate incepe cu un numar
 form.hint.css-suffix = stilul CSS pentru inserare dupa numele clasei
 form.hint.file-selected = Fisier curent selectat; lasa casuta goala pentru reutilizare.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Arata paletar
 form.button.hide-picker = Ascunde paletar

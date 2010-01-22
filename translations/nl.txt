@@ -45,6 +45,7 @@ form.label.css-prefix = CSS voorvoegsel (optioneel)
 form.label.filename-pattern-match = Bestandsnaam patroon match (optioneel)
 form.label.class-prefix = Class voorvoegsel (optioneel)
 form.label.css-suffix = CSS achtervoegsel (optional)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = bijv. icon-([0-9]+).png - matched het nummeri
 form.hint.class-prefix = kan niet met een getal beginnen
 form.hint.css-suffix = CSS die ingevoegd moet worden na de class naam
 form.hint.file-selected = Huidig geselecteerde bestand, laat upload veld leeg voor hergebruik.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Toon kiezer
 form.button.hide-picker = Verberg kiezer

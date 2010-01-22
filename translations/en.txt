@@ -45,6 +45,7 @@ form.label.css-prefix = CSS Prefix (optional)
 form.label.filename-pattern-match = Filename Pattern Match (optional)
 form.label.class-prefix = Class Prefix (optional)
 form.label.css-suffix = CSS Suffix (optional)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = e.g. icon-([0-9]+).png - matches the numeric 
 form.hint.class-prefix = cannot start with a number
 form.hint.css-suffix = CSS to insert after the class name
 form.hint.file-selected = File currently selected, leave upload box blank to reuse.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Show Picker
 form.button.hide-picker = Hide Picker

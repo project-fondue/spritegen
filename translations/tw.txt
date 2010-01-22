@@ -45,6 +45,7 @@ form.label.css-prefix = CSS 前文 (選項)
 form.label.filename-pattern-match = 樣式文件名 (選項)
 form.label.class-prefix = Class 前文 (選項)
 form.label.css-suffix = CSS 後文 (選項)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = 例如：icon-([0-9]+).png - 使用文件名�
 form.hint.class-prefix = 不能以數字為開頭
 form.hint.css-suffix = CSS class 選擇器後文
 form.hint.file-selected = 空白使用上次上傳的文件
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = 顯示選擇器
 form.button.hide-picker = 隱藏選擇器

@@ -92,6 +92,8 @@
       <?php echo $functions->TextInput('file-regex', $translation->Get('form.label.filename-pattern-match'), '', null, $translation->Get('form.hint.filename-pattern-match'), true); ?>
       <?php echo $functions->TextInput('class-prefix', $translation->Get('form.label.class-prefix'), 'sprite-', null, $translation->Get('form.hint.class-prefix'), true); ?>
       <?php echo $functions->TextInput('selector-suffix', $translation->Get('form.label.css-suffix'), '', null, $translation->Get('form.hint.css-suffix'), true); ?>
+      <label class="optional" for="add-width-height-to-css"><?php echo $translation->Get('form.label.add-width-height-to-css'); ?>:</label><input type="checkbox" name="add-width-height-to-css" id="add-width-height-to-css"<?php if (!$formPosted || isset($_POST['add-width-height-to-css'])) echo ' checked="checked"'; ?>>
+      <span class="help"><?php echo $translation->Get('form.hint.add-width-and-height-to-css'); ?></span>
    </fieldset>
    <p><input class="submit" type="submit" name="sub" value="<?php echo $translation->Get('form.button.create-sprite'); ?>"></p>
 </form>

@@ -19,7 +19,9 @@
             // what image formats does the installed version of Imagick support
             // probably overkill to call as PNG, GIF, JPEG surely supported but done for completeness 
             try {
-               $aImageFormats = Imagick::queryFormats();
+               // Fixes #473915 as queryformats no longer works as a static method.
+               $oImagick = new Imagick();
+               $aImageFormats = $oImagick->queryFormats();
             } catch (ImagickException $e) {
                error_log($e->getMessage());
             }
@@ -115,12 +117,21 @@
       }
       
       public function ProcessFile() {
+
+         // Get mimetype        
+         if (function_exists('mime_content_type')){
+            $sMimeType = mime_content_type($_FILES['path']['tmp_name']);
+         }else{
+            // This gets the mime_type and handles output like "application/zip; charset=binary" too.
+            $aMimeType = explode(';', shell_exec(ConfigHelper::Get('/binaries/file').' -bi '.$_FILES['path']['tmp_name']));
+            $sMimeType = trim($aMimeType[0]);
+         }
+
          // check if a valid file has been uploaded - check for existence, type and file size
          if (
             isset($_FILES['path']['name']) && 
             substr($_FILES['path']['name'], strtolower(strlen($_FILES['path']['name']) - 4)) == '.zip' && 
-            // finfo_file, available in PHP 5.3, would probably be better but not widely available yet
-            in_array(trim(shell_exec(ConfigHelper::Get('/binaries/file').' -bi '.$_FILES['path']['tmp_name'])), array('application/zip', 'application/x-zip')) && 
+            in_array($sMimeType, array('application/zip', 'application/x-zip')) && 
             $_FILES['path']['size'] <= ConfigHelper::Get('/upload/max_file_size')
          ) {
             // create MD5 hash of ZIP file - use for path of dir to hold ZIP contents
@@ -568,8 +579,15 @@
                   $iY = $aFilesInfo[$i]['y'] != 0 ? '-'.$aFilesInfo[$i]['y'].'px' : '0';
                
                   // create CSS rules and append to overall CSS rules
-                  $this->sCss .= "{$this->aFormValues['selector-prefix']}{$aFilesInfo[$i]['class']} {$this->aFormValues['selector-suffix']}{ background-position: $iX $iY; } \n";
-               
+                  $this->sCss .= "{$this->aFormValues['selector-prefix']}{$aFilesInfo[$i]['class']} {$this->aFormValues['selector-suffix']}{ background-position: $iX $iY; ";
+             
+                  // If add widths and heights the sprite image width and height are added to the CSS
+                  if ($this->aFormValues['add-width-height-to-css'] == 'on'){
+                     $this->sCss .= "width: {$aFilesInfo[$i]['width']}px; height: {$aFilesInfo[$i]['height']}px;";
+                  }
+
+                  $this->sCss .= " } \n";
+
                   // destroy object created for current image to save memory
                   if ($this->sImageLibrary == 'imagick') {
                      $oCurrentImage->destroy();

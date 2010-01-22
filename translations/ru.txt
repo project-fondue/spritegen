@@ -36,6 +36,7 @@ form.label.vertical-offset = Смещение по вертикали
 form.label.wrap-columns = Обернуть колонки для исправления ошибки Opera
 form.label.background-colour = Фон / Прозрачность Цвет \# (необязательно)
 form.label.use-transparency = Использовать цвет фона для прозрачности
+form.label.build-direction = Build Direction
 form.label.image-output-format = Получаемый формат
 form.label.image-output-num-colours = Количество цветов
 form.label.image-output-quality = Качество изображения
@@ -44,7 +45,10 @@ form.label.css-prefix = CSS префикс (необязательно)
 form.label.filename-pattern-match = Согласование образца имени файла (необязательно)
 form.label.class-prefix = Class префикс (необязательно)
 form.label.css-suffix = CSS суффикс (необязательно)
+form.label.add-width-height-to-css = Display width and height (optional)
 
+form.value.build-direction.horizontal = Horizontal
+form.value.build-direction.vertical = Vertical
 form.value.true-colour = Истинный цвет
 
 form.hint.max-upload-size = Максимальный загружаемый размер: {0}MB 
@@ -54,6 +58,7 @@ form.hint.filename-pattern-match = например значок-([0-9] +).png -
 form.hint.class-prefix = не может начинаться с числа
 form.hint.css-suffix = CSS вставить после имени класса
 form.hint.file-selected = Файл выбран, оставьте поле пустым для повторного использования.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Показать сборщик
 form.button.hide-picker = Скрыть сборщик

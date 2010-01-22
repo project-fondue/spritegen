@@ -45,6 +45,7 @@ form.label.css-prefix = Pr&\#233;fixe de CSS (optionnel)
 form.label.filename-pattern-match = Expression r&\#233;guli&\#232;re du nom de fichier Sprite (optionnel)
 form.label.class-prefix = Pr&\#233;fix de classe (optionnel)
 form.label.css-suffix = Suffixe de CSS (optionnel)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = ex. icon-([0-9]+).png - recherche la partie n
 form.hint.class-prefix = Ne peux pas commencer par un nombre
 form.hint.css-suffix = CSS &\#224; ins&\#233;rer apr&\#232;s le nom de classe
 form.hint.file-selected = Un fichier est d&\#233;j&\#224; s&\#233;lectionn&\#233;, laissez blanc pour le r&\#233;utiliser.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Afficher le s&\#233;lecteur
 form.button.hide-picker = Masquer le s&\#233;lecteur

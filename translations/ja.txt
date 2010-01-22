@@ -45,6 +45,7 @@ form.label.css-prefix = CSSの接頭語 (任意)
 form.label.filename-pattern-match = ファイル名の置換パターン (任意)
 form.label.class-prefix = CSSクラス名の接頭語 (任意)
 form.label.css-suffix = CSSの接尾語 (任意)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = 例: icon-([0-9]+).png - ファイル名に�
 form.hint.class-prefix = クラス名は番号からは始められません
 form.hint.css-suffix = クラス名の後に挿入するCSS
 form.hint.file-selected = ファイルはすでに選択されています。アップロードフォームを空欄のままにして再度利用できます。
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = ピッカーの表示
 form.button.hide-picker = ピッカーを隠す

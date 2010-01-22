@@ -45,6 +45,7 @@ form.label.css-prefix = CSS prefix (valfri)
 form.label.filename-pattern-match = Filnamns mönsterjämförelse (valfri)
 form.label.class-prefix = Klassprefix (valfri)
 form.label.css-suffix = CSS suffix (valfri)
+form.label.add-width-height-to-css = Display width and height (optional)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
@@ -57,6 +58,7 @@ form.hint.filename-pattern-match = ex. ikon-([0-9]+).png - jämför den numerisk
 form.hint.class-prefix = Kan inte börja med ett nummer
 form.hint.css-suffix = CSS att lägga till efter klassnamn
 form.hint.file-selected = Filen är för närvarande vald, lämna uppladdningsboxen tom för att återanvända.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Visa Väljaren
 form.button.hide-picker = Dölj Väljaren
