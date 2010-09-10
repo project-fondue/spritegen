@@ -579,7 +579,7 @@
                   $iY = $aFilesInfo[$i]['y'] != 0 ? '-'.$aFilesInfo[$i]['y'].'px' : '0';
                
                   // create CSS rules and append to overall CSS rules
-                  $this->sCss .= "{$this->aFormValues['selector-prefix']}{$aFilesInfo[$i]['class']} {$this->aFormValues['selector-suffix']}{ background-position: $iX $iY; ";
+                  $this->sCss .= "{$this->aFormValues['selector-prefix']}{$aFilesInfo[$i]['class']}{$this->aFormValues['selector-suffix']}{ background-position: $iX $iY; ";
              
                   // If add widths and heights the sprite image width and height are added to the CSS
                   if ($this->aFormValues['add-width-height-to-css'] == 'on'){
