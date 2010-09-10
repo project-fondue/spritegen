@@ -6,7 +6,7 @@ page.title.home = CSS Sprite Generator
 page.title.what-are-css-sprites = Wat zijn CSS sprites?
 page.title.tool-help = Help
 page.title.your-language = Jouw eigen taal
-page.title.advertising = Advertising
+page.title.advertising = Adverteren
 
 menu.home = Home
 menu.what-are-css-sprites = Wat zijn CSS sprites?
@@ -38,34 +38,32 @@ form.label.background-colour = Achtergrond / Transparantie Kleur \# (optioneel)
 form.label.use-transparency = Gebruik achtergrond kleur voor transparantie
 form.label.build-direction = Build Direction
 form.label.image-output-format = Sprite uitvoer formaat
-form.label.image-output-num-colours = Number of Colours
-form.label.image-output-quality = Image Quality
-form.label.use-optipng = Compress Image with OptiPNG
+form.label.image-output-num-colours = Aantal kleuren
+form.label.image-output-quality = Afbeeldingskwaliteit
+form.label.use-optipng = Comprimeer de afbeelding met OptiPNG
 form.label.css-prefix = CSS voorvoegsel (optioneel)
 form.label.filename-pattern-match = Bestandsnaam patroon match (optioneel)
 form.label.class-prefix = Class voorvoegsel (optioneel)
-form.label.css-suffix = CSS achtervoegsel (optional)
-form.label.add-width-height-to-css = Display width and height (optional)
+form.label.css-suffix = CSS achtervoegsel (optioneel)
 
 form.value.build-direction.horizontal = Horizontal
 form.value.build-direction.vertical = Vertical
 form.value.true-colour = True Colour
 
 form.hint.max-upload-size = Max upload grootte: {0}MB
-form.hint.transparency = Default wordt wit gebruikt voor niet-transparante afbeeldingen, en zwart voor transparant
+form.hint.transparency = Standaard wordt wit gebruikt voor niet-transparante afbeeldingen, en zwart voor transparant
 form.hint.css-prefix = CSS die ingevoegd moet worden voor de class naam
 form.hint.filename-pattern-match = bijv. icon-([0-9]+).png - matched het nummerieke gedeelte van elke bestandsnaam en gebruikt dat voor de class naam in de gegenereerde CSS
 form.hint.class-prefix = kan niet met een getal beginnen
 form.hint.css-suffix = CSS die ingevoegd moet worden na de class naam
 form.hint.file-selected = Huidig geselecteerde bestand, laat upload veld leeg voor hergebruik.
-form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
 form.button.show-picker = Toon kiezer
 form.button.hide-picker = Verberg kiezer
 form.button.create-sprite = Cre&euml;er Sprite afbeelding &amp; CSS
 
 form.errors.title = Invoer fouten
-form.errors.invalid-file = Je hebt geen file geselecteer, of de file die je hebt geupload is in een ongeldig bestandsformaat. Misschien was het geen ZIP bestand of was de file groter dan de maximale grootte. 
+form.errors.invalid-file = Je hebt geen file geselecteerd, of de file die je hebt geupload is in een ongeldig bestandsformaat. Misschien was het geen ZIP bestand of was de file groter dan de maximale grootte. 
 form.errors.zip = Het ZIP bestand dat je hebt geupload bevatte minder dan 2 afbeeldingen. Controleer het ZIP bestand (en/of &quot;Bestandnaam patroon match&quot; als dat gebruikt is) en probeer het opnieuw.
 form.errors.missing.width-resize = Geen herschalingsbreedte gespecificeerd.
 form.errors.missing.height-resize = Geen herschalingshoogte gespecificeerd.
@@ -87,7 +85,7 @@ form.result.download = &raquo;Download Sprite afbeelding
 
 sidebar.ad-placeholder = Advertise Here
 sidebar.sponsors-header = Sponsors
-sidebar.advertise-header = Advertising
-sidebar.advertise-text = Advertise on this site with a graphical advert or text link.
+sidebar.advertise-header = Advertenties
+sidebar.advertise-text = Adverteer op deze site met een grafische advertentie of text link.
 sidebar.open-source-header = Open Source
-sidebar.open-source-text = The source code for CSS Sprite Generator is available for download and is covered by a BSD license. Want to run a local copy? Well now you can.
+sidebar.open-source-text = De bron code voor de CSS Sprite Generator is als download beschikbaar en gelicentieerd onder de BSD licentie. Een lokale kopie draaien? Dat behoord nu tot de mogelijkheden.
