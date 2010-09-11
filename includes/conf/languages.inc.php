@@ -37,6 +37,10 @@
          'native' => '日本語',
          'english' => 'Japanese'
       ),
+      'ko' => array(
+         'native' => '한국어/조선말',
+         'english' => 'Korean'
+      ),
       'pl' => array(
          'native' => 'polski',
          'english' => 'Polish)'
