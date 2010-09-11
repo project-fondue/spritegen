@@ -102,7 +102,6 @@
             'ignore-duplicates' => array('IsIgnoreOption'),
             'class-prefix' => array('IsClassPrefix'),
             'selector-prefix' => array('IsCss'),
-            'selector-suffix' => array('IsCss')
          );
          
          // create a new instance of validation class and run against form
