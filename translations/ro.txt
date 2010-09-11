@@ -1,93 +1,93 @@
-site.title = Proiectul Fondue
-site.copyright = Copyright &copy; 2007-{0} {1}
-site.other-tools = Alte Unelte:
 
-page.title.home = Generator de CSS Sprite
-page.title.what-are-css-sprites = Ce este un CSS sprite ?
-page.title.tool-help = Ajutor
-page.title.your-language = Limba
-page.title.advertising = Reclama
 
-menu.home = Acasa
-menu.what-are-css-sprites = Ce este un CSS sprite ?
-menu.tool-help = Ajutor
-menu.report-bug = Raporteaza problema
 
-menu.language.label = Limba
-menu.language.button = Schimba
-menu.language.your-language = Trimite traduceri
 
-warning.missing-translations = Ne lipsesc traduceri pentru aceasta limba. Ne poti ajuta ?
 
-form.legend.source-files = Fisiere sursa
-form.legend.resize-source-images = Redimensionare imagine sursa
-form.legend.image-duplicates = Imagine duplicate
-form.legend.image-output-options = Optiuni afisare Sprite
-form.legend.css-output-options = Optiuni afisare
 
-form.label.upload-images = Incarca imagine (ZIP)
-form.label.width = Lungime
-form.label.height = Inaltime
-form.label.maintain-aspect-ratio = Mentine aspectul
-form.label.ignore-duplicates = Ignora imaginile duplicate
-form.label.merge-duplicates = Sterge imaginile duplicate dar combina regulile CSS
-form.label.horizontal-offset = Margine orizontala
-form.label.vertical-offset = Margine verticala
-form.label.wrap-columns = Ascunde coloanele pentru a rezolva o problema in Opera
-form.label.background-colour = Culoare fundal / transparenta \# (optional)
-form.label.use-transparency = Foloseste culoarea fundalului pentru transparenta
-form.label.build-direction = Directia constructiei
-form.label.image-output-format = Format iesire
-form.label.image-output-num-colours = Numar culori
-form.label.image-output-quality = Calitate imagine
-form.label.use-optipng = Compresie imagine cu OptiPNG
-form.label.css-prefix = Prefix CSS (optional)
-form.label.filename-pattern-match = Nume fisier tipar (optional)
-form.label.class-prefix = Prefix clasa (optional)
-form.label.css-suffix = Sufix CSS (optional)
-form.label.add-width-height-to-css = Display width and height (optional)
 
-form.value.build-direction.horizontal = Orizontal
-form.value.build-direction.vertical = Vertical
-form.value.true-colour = Culoare reala
 
-form.hint.max-upload-size = Marime maxima incarcare: {0}MB
-form.hint.transparency = Daca este lasat alb va fi utilizat pentru imaginile non-transparente, negru pentru transparent
-form.hint.css-prefix = CSS pentru inserare inainte de numele clasei
-form.hint.filename-pattern-match = e.x. icon-([0-9]+).png - potriveste partea numerica a fiecarui nume de fisier si o utilizeaza pentru numele clasei in stilul CSS generat
-form.hint.class-prefix = nu poate incepe cu un numar
-form.hint.css-suffix = stilul CSS pentru inserare dupa numele clasei
-form.hint.file-selected = Fisier curent selectat; lasa casuta goala pentru reutilizare.
-form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
 
-form.button.show-picker = Arata paletar
-form.button.hide-picker = Ascunde paletar
+
+
+
 form.button.create-sprite = Creaza imaginea Sprite &amp; stilul CSS
-
-form.errors.title = Erori la depunere
+form.button.hide-picker = Ascunde paletar
+form.button.show-picker = Arata paletar
+form.errors.invalid.background.ishex = Culoarea de fundal precizata este invalida. Trebuie sa o valoare hexazeciamala intre 3 si 6 digiti.
+form.errors.invalid.class-prefix.isclassprefix = Prefixul de clasa precizat este invalid. Poate sa contina numai litere de la a la z, cifre, caracterele _ si -
+form.errors.invalid.css-prefix.iscss = Prefixul CSS specificat este invalid. Poate sa contina numai litere de la a la z, cifre, caractele _, -, \# si .
+form.errors.invalid.css-suffix.iscss = Sufixul CSS precizat este invalid. Poate sa contina numai litere de la a la z, cifre, caractele _, -, \# si .
 form.errors.invalid-file = Nu ai selectat nici un fisier sau cel incarcatcat este invalid. Poate nu era arhiva ZIP sau este mai mare decat marimea maxima de incarcare permisa.
-form.errors.zip = Arhiva ZIP incarcata nu contine cel putin 2 imagini. Verifica, te rog, arhiva ZIP (si/sau &quot;Tiparul Fiserului&quot; daca este utilizat) si re-incarca.
-form.errors.missing.width-resize = Nici o lungime pentru redimensionare nu a fost precizata.
+form.errors.invalid.horizontal-offset.isnumber = Marimea de margine orizontala precizata este invalida. Trebuie sa fie un numar cuprins intre 1 si 100.
+form.errors.invalid.image-output-quality.isnumber = Calitatea JPEG specificata este invalida. Trebuie sa fie un numar cuprins intre 1 si 100.
+form.errors.invalid.vertical-offset.isnumber = Marimea de margine verticala precizata este invalida. Trebuie sa fie un numar cuprins intre 1 si 100.
 form.errors.missing.height-resize = Nici o inaltime pentru redimensionare nu a fost precizata.
 form.errors.missing.horizontal-offset = Nu a fost precizata nici o margine orizontala.
 form.errors.missing.vertical-offset = Nu a fost precizata nici o margine verticala.
-form.errors.invalid.horizontal-offset.isnumber = Marimea de margine orizontala precizata este invalida. Trebuie sa fie un numar cuprins intre 1 si 100.
-form.errors.invalid.vertical-offset.isnumber = Marimea de margine verticala precizata este invalida. Trebuie sa fie un numar cuprins intre 1 si 100.
-form.errors.invalid.background.ishex = Culoarea de fundal precizata este invalida. Trebuie sa o valoare hexazeciamala intre 3 si 6 digiti.
-form.errors.invalid.image-output-quality.isnumber = Calitatea JPEG specificata este invalida. Trebuie sa fie un numar cuprins intre 1 si 100.
-form.errors.invalid.css-prefix.iscss = Prefixul CSS specificat este invalid. Poate sa contina numai litere de la a la z, cifre, caractele _, -, \# si .
-form.errors.invalid.class-prefix.isclassprefix = Prefixul de clasa precizat este invalid. Poate sa contina numai litere de la a la z, cifre, caracterele _ si -
-form.errors.invalid.css-suffix.iscss = Sufixul CSS precizat este invalid. Poate sa contina numai litere de la a la z, cifre, caractele _, -, \# si .
-
+form.errors.missing.width-resize = Nici o lungime pentru redimensionare nu a fost precizata.
+form.errors.title = Erori la depunere
+form.errors.zip = Arhiva ZIP incarcata nu contine cel putin 2 imagini. Verifica, te rog, arhiva ZIP (si/sau &quot;Tiparul Fiserului&quot; daca este utilizat) si re-incarca.
+form.hint.add-width-and-height-to-css = Provides the height and width of each sprite in the CSS.
+form.hint.class-prefix = nu poate incepe cu un numar
+form.hint.css-prefix = CSS pentru inserare inainte de numele clasei
+form.hint.css-suffix = stilul CSS pentru inserare dupa numele clasei
+form.hint.filename-pattern-match = e.x. icon-([0-9]+).png - potriveste partea numerica a fiecarui nume de fisier si o utilizeaza pentru numele clasei in stilul CSS generat
+form.hint.file-selected = Fisier curent selectat; lasa casuta goala pentru reutilizare.
+form.hint.max-upload-size = Marime maxima incarcare: {0}MB
+form.hint.transparency = Daca este lasat alb va fi utilizat pentru imaginile non-transparente, negru pentru transparent
+form.label.add-width-height-to-css = Display width and height (optional)
+form.label.background-colour = Culoare fundal / transparenta \# (optional)
+form.label.build-direction = Directia constructiei
+form.label.class-prefix = Prefix clasa (optional)
+form.label.css-prefix = Prefix CSS (optional)
+form.label.css-suffix = Sufix CSS (optional)
+form.label.filename-pattern-match = Nume fisier tipar (optional)
+form.label.height = Inaltime
+form.label.horizontal-offset = Margine orizontala
+form.label.ignore-duplicates = Ignora imaginile duplicate
+form.label.image-output-format = Format iesire
+form.label.image-output-num-colours = Numar culori
+form.label.image-output-quality = Calitate imagine
+form.label.maintain-aspect-ratio = Mentine aspectul
+form.label.merge-duplicates = Sterge imaginile duplicate dar combina regulile CSS
+form.label.upload-images = Incarca imagine (ZIP)
+form.label.use-optipng = Compresie imagine cu OptiPNG
+form.label.use-transparency = Foloseste culoarea fundalului pentru transparenta
+form.label.vertical-offset = Margine verticala
+form.label.width = Lungime
+form.label.wrap-columns = Ascunde coloanele pentru a rezolva o problema in Opera
+form.legend.css-output-options = Optiuni afisare
+form.legend.image-duplicates = Imagine duplicate
+form.legend.image-output-options = Optiuni afisare Sprite
+form.legend.resize-source-images = Redimensionare imagine sursa
+form.legend.source-files = Fisiere sursa
+form.result.dont-forget = Nu uita sa adaugi o regula fundalului pentru a referentia imaginea sprite. Ceva de genul, spre exemplu:
+form.result.download = &raquo;Descarca imaginea sprite
 form.result.reset = Inchide &amp; Reseteaza formularul
 form.result.title.css-rules = Reguli CSS
 form.result.title.sprite-image = Imagine Sprite
-form.result.dont-forget = Nu uita sa adaugi o regula fundalului pentru a referentia imaginea sprite. Ceva de genul, spre exemplu:
-form.result.download = &raquo;Descarca imaginea sprite
-
+form.value.build-direction.horizontal = Orizontal
+form.value.build-direction.vertical = Vertical
+form.value.true-colour = Culoare reala
+menu.home = Acasa
+menu.language.button = Schimba
+menu.language.label = Limba
+menu.language.your-language = Trimite traduceri
+menu.report-bug = Raporteaza problema
+menu.tool-help = Ajutor
+menu.what-are-css-sprites = Ce este un CSS sprite ?
+page.title.advertising = Reclama
+page.title.home = Generator de CSS Sprite
+page.title.tool-help = Ajutor
+page.title.what-are-css-sprites = Ce este un CSS sprite ?
+page.title.your-language = Limba
 sidebar.ad-placeholder = Reclama ta aici
-sidebar.sponsors-header = Sponsori
 sidebar.advertise-header = Publicitate
 sidebar.advertise-text = Fa-ti reclama grafica sau cu link pe acest site.
 sidebar.open-source-header = Sursa deschisa
 sidebar.open-source-text = Codul sursa pentru Generatorul de CSS Sprite este disponibil pentru descarcare sub licenta BSD. Vrei sa rulezi o copie locala ? Ei bine, acum poti.
+sidebar.sponsors-header = Sponsori
+site.copyright = Copyright &copy; 2007-{0} {1}
+site.other-tools = Alte Unelte:
+site.title = Proiectul Fondue
+warning.missing-translations = Ne lipsesc traduceri pentru aceasta limba. Ne poti ajuta ?
