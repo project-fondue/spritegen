@@ -16,12 +16,12 @@
          $this->sLang = $sLang;
          $this->sTranslationsCacheDir = $sTranslationsCacheDir;
          $this->bTranslationAllowShowKeys = $bTranslationsAllowShowKeys;
-         $this->sFile = $this->sTranslationsDir.$sLang.'.txt';
+         $this->sFile = '../translations/'.$sLang.'.txt';
          $this->sCacheFile = $this->sTranslationsCacheDir.md5($sLang).'.cache';
          
          // fallback to default language if current doesn't exist
          if (!file_exists($this->sFile)) {
-            $this->sFile = '../translations/'.$this->sLang.'.txt';
+            $this->sFile = '../translations/en.txt';
          }
          
          // after first pass translations are stored in serialised PHP array for speed

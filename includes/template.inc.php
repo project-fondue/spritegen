@@ -71,8 +71,6 @@
                      $vValue->aVars[$sSubKey] = $vSubValue;
                   }
                }
-               // disable caching for sub-template
-               $vValue->bCacheSupport = false;
                // display sub-template and assign output to parent variable
                $$sKey = $vValue->Display();
             } else {
@@ -96,10 +94,6 @@
          // process content against defined post filters
          foreach ($this->aPostFilters as $sPostFilter) {
             $sOutput = $sPostFilter($sOutput);
-         }
-         // is caching support available
-         if ($this->bCacheSupport) {
-            $this->oCache->Set($sOutput);
          }
          return $sOutput;
       }

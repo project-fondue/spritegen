@@ -49,13 +49,13 @@
             $oGD = gd_info();
          
             // store supported formats for populating drop downs etc later
-            if ($oGD['PNG Support']) {
+            if (!empty($oGD['PNG Support'])) {
                $this->aImageTypes[] = 'PNG';
             }
-            if ($oGD['GIF Create Support']) {
+            if (!empty($oGD['GIF Create Support'])) {
                $this->aImageTypes[] = 'GIF';
             }
-            if ($oGD['JPG Support']) {
+            if (!empty($oGD['JPG Support'])) {
                $this->aImageTypes[] = 'JPG';
             }
          }

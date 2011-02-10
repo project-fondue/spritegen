@@ -18,7 +18,6 @@
    
    if (!ConfigHelper::Get('/setup')) {
       $oTemplate = new Template('setup-config-error.php');
-      $oTemplate->Set('config', $sConfig);
       $oTemplate->Set('basename', $sBasename);
       echo $oTemplate->Display();
       exit;
