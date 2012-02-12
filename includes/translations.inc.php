@@ -15,7 +15,7 @@
             // set up file paths
             $this->sLang = $sLang;
             $this->sTranslationsCacheDir = $sTranslationsCacheDir;
-            $this->bTranslationAllowShowKeys = $bTranslationsAllowShowKeys;
+            $this->bTranslationsAllowShowKeys = $bTranslationsAllowShowKeys;
             $this->sFile = '../translations/'.$sLang.'.txt';
             $this->sCacheFile = $this->sTranslationsCacheDir.md5($sLang).'.cache';
 
