@@ -15,17 +15,6 @@
 
     ConfigHelper::SetConfig($aConfig);
 
-    function StartsWith($sHaystack, $sNeedle){
-        return strpos($sHaystack, $sNeedle) === 0;
-    }
-
-    function AbsoluteOrRelative($sPath){
-        if (StartsWith($path, "/")) {
-            return $path;
-        } else {
-            return $sBasename.$sPath;
-        }
-    }
 
     if (!ConfigHelper::Get('/setup')) {
         $oTemplate = new Template('setup-config-error.php');
@@ -35,23 +24,23 @@
     }
 
     $sUploadDir = ConfigHelper::GetAbsolutePath(
-        AbsoluteOrRelative(ConfigHelper::Get('/cache/upload_dir'))
+        $sBasename . ConfigHelper::Get('/cache/upload_dir')
     );
 
     $sSpriteDir = ConfigHelper::GetAbsolutePath(
-        AbsoluteOrRelative(ConfigHelper::Get('/cache/sprite_dir'))
+        $sBasename . ConfigHelper::Get('/cache/sprite_dir')
     );
 
     $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath(
-        AbsoluteOrRelative(ConfigHelper::Get('/cache/translations_dir'))
+        $sBasename . ConfigHelper::Get('/cache/translations_dir')
     );
 
     $sCssCacheDir = ConfigHelper::GetAbsolutePath(
-        AbsoluteOrRelative(ConfigHelper::Get('/cache/css_archive'))
+        $sBasename . ConfigHelper::Get('/cache/css_archive')
     );
 
     $sJsCacheDir = ConfigHelper::GetAbsolutePath(
-        AbsoluteOrRelative(ConfigHelper::Get('/cache/js_archive'))
+        $sBasename . ConfigHelper::Get('/cache/js_archive')
     );
 
     ConfigHelper::CreateDir($sUploadDir);
@@ -63,7 +52,7 @@
     // This section is present for Project Fondue use only and can be safely removed */
     if (ConfigHelper::Get('/cache/tla/dir')) {
         $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath(
-            AbsoluteOrRelative(ConfigHelper::Get('/cache/tla/dir'))
+            $sBasename . ConfigHelper::Get('/cache/tla/dir')
         );
         ConfigHelper::CreateDir($sTextLinkAdsDir);
         ConfigHelper::CreateFile($sTextLinkAdsDir.'/'.ConfigHelper::Get('/cache/tla/file'));
