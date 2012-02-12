@@ -1,5 +1,5 @@
 <?php
-   require('../includes/controller.inc.php');
-   
-   $oController = new Controller();
+    require('../includes/controller.inc.php');
+
+    $oController = new Controller();
 ?>
