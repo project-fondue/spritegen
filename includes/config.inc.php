@@ -35,13 +35,12 @@
     }
 
     $sUploadDir = ConfigHelper::GetAbsolutePath(
-    $sUploadDirConf = ConfigHelper::Get('/cache/upload_dir');
-        AbsoluteOrRelative(ConfigHelper::Get('/cache/upload_dir'));
+        AbsoluteOrRelative(ConfigHelper::Get('/cache/upload_dir'))
     );
 
     $sSpriteDir = ConfigHelper::GetAbsolutePath(
         AbsoluteOrRelative(ConfigHelper::Get('/cache/sprite_dir'))
-    ;
+    );
 
     $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath(
         AbsoluteOrRelative(ConfigHelper::Get('/cache/translations_dir'))
