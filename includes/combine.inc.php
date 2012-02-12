@@ -41,7 +41,7 @@
 
             $this->CreateArchiveDir();
 
-            $sMergedFilename = "$this->sDocRoot/".$this->aConfig['archive_folder']."/$this->iETag.cache";
+            $sMergedFilename = $this->aConfig['archive_folder']."/$this->iETag.cache";
 
             // get code from archive folder if it exists, otherwise grab latest files, merge and save in archive folder
             if ($this->aConfig['create_archive'] && file_exists($sMergedFilename)) {

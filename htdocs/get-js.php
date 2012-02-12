@@ -6,7 +6,7 @@
         'file_type' => 'text/javascript',
         'cache_length' => 31356000,
         'create_archive' => true,
-        'archive_folder' => ConfigHelper::Get('/cache/js_archive'),
+        'archive_folder' => $sJsCacheDir,
         'jsmin_compress' => ConfigHelper::Get('/jsmin/compress'),
         'jsmin_comments' => ConfigHelper::Get('/jsmin/comments'),
         'files' => array(
