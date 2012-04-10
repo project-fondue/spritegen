@@ -18,6 +18,30 @@
             }
         }
 
+        // Replicates python's os.path.join in PHP
+        public static function JoinPath() {
+            $args = func_get_args();
+            $paths = array();
+
+            foreach($args as $arg) {
+                $paths = array_merge($paths, (array)$arg);
+            }
+
+            foreach($paths as $key => &$path) {
+                // If the path starts with "/" dump
+                // everything up to this point.
+                if (substr($path, 0, 1) == "/") {
+                    array_splice($paths, 0, $key, NULL);
+                }
+                $path = trim($path, '/');
+            }
+
+            if (substr($args[0], 0, 1) == '/') {
+                $paths[0] = '/' . $paths[0];
+            }
+            return join('/', $paths);
+        }
+
         // derived from http://uk.php.net/manual/en/function.realpath.php#84012
         public static function GetAbsolutePath($sPath) {
             $aParts = array_filter(explode('/', $sPath), 'strlen');
