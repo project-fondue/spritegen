@@ -15,7 +15,6 @@
 
     ConfigHelper::SetConfig($aConfig);
 
-
     if (!ConfigHelper::Get('/setup')) {
         $oTemplate = new Template('setup-config-error.php');
         $oTemplate->Set('basename', $sBasename);
@@ -24,23 +23,23 @@
     }
 
     $sUploadDir = ConfigHelper::GetAbsolutePath(
-        $sBasename . ConfigHelper::Get('/cache/upload_dir')
+        ConfigHelper::JoinPath($sBasename, ConfigHelper::Get('/cache/upload_dir'))
     );
 
     $sSpriteDir = ConfigHelper::GetAbsolutePath(
-        $sBasename . ConfigHelper::Get('/cache/sprite_dir')
+        ConfigHelper::JoinPath($sBasename, ConfigHelper::Get('/cache/sprite_dir'))
     );
 
     $sTranslationsCacheDir = ConfigHelper::GetAbsolutePath(
-        $sBasename . ConfigHelper::Get('/cache/translations_dir')
+        ConfigHelper::JoinPath($sBasename, ConfigHelper::Get('/cache/translations_dir'))
     );
 
     $sCssCacheDir = ConfigHelper::GetAbsolutePath(
-        $sBasename . ConfigHelper::Get('/cache/css_archive')
+        ConfigHelper::JoinPath($sBasename, ConfigHelper::Get('/cache/css_archive'))
     );
 
     $sJsCacheDir = ConfigHelper::GetAbsolutePath(
-        $sBasename . ConfigHelper::Get('/cache/js_archive')
+        ConfigHelper::JoinPath($sBasename, ConfigHelper::Get('/cache/js_archive'))
     );
 
     ConfigHelper::CreateDir($sUploadDir);
@@ -52,7 +51,7 @@
     // This section is present for Project Fondue use only and can be safely removed */
     if (ConfigHelper::Get('/cache/tla/dir')) {
         $sTextLinkAdsDir = ConfigHelper::GetAbsolutePath(
-            $sBasename . ConfigHelper::Get('/cache/tla/dir')
+            ConfigHelper::JoinPath($sBasename, ConfigHelper::Get('/cache/tla/dir'))
         );
         ConfigHelper::CreateDir($sTextLinkAdsDir);
         ConfigHelper::CreateFile($sTextLinkAdsDir.'/'.ConfigHelper::Get('/cache/tla/file'));
