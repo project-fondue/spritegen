@@ -23,7 +23,7 @@
     $aConfig['cache']['sprite_dir'] = '../../cache/sprites/';
 
     // maximum file upload size - specified in bytes
-    $aConfig['upload']['max_file_size'] = 524288;
+    $aConfig['upload']['max_file_size'] = 1048576;
 
     // secret used to check validity of download link request
     $aConfig['checksum'] = 'ENTER_CHECKSUM_HERE';
