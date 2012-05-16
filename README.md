@@ -45,8 +45,3 @@ Donations
 ---------
 
 Use of the tool is free although commercial users are encouraged to make a small donation to support continued development.
-=======
-spritegen
-=========
-
-Public version of Project Fondue's CSS sprite generator.
