@@ -1,4 +1,8 @@
-CSS Sprite Generator is written and maintained by Ed Eliot, Stuart Colville & Cyril Doussin.
+CSS Sprite Generator
+====================
+
+This is the public version of the Project Fondue CSS sprite generator found at http://spritegen.website-performance.org
+
 
 Software Requirements
 ---------------------
